@@ -77,17 +77,35 @@
                         }
                     }
                 }
-                .user-avatar{
-                    width: 34px;
-                    height: 34px;
+                .user-section_onlogin{
+                    display: flex;
                     margin-right: 12px;
-                    cursor: pointer;
-                    img{
-                        width: 32px;
-                        height: 32px;
-                        border: 2px solid $avatar_border_color;
-                        border-radius: 50%;
-                        padding: 2px;
+                    border-radius: 20px;
+                    padding: 4px 0 0 0;
+                    border: 1px solid $user_onlogin_border_color;
+                    .user-avatar{
+                        width: 34px;
+                        height: 34px;
+                        margin: 0px 0 1px 2px;
+                        cursor: pointer;
+                        img{
+                            width: 32px;
+                            height: 32px;
+                            border: 2px solid $avatar_border_color;
+                            border-radius: 50%;
+                            padding: 2px;
+                        }
+                    }
+                    .user_name{
+                        float: right;
+                        padding: 0 10px;
+                        h3{
+                            font-size: $title_size_16px;
+                            font-weight: $font-weight_500;
+                            letter-spacing: 0.1px;
+                            font-family: 'Roboto Mono', monospace;
+                            margin: 0;
+                        }
                     }
                 }
                 button{
