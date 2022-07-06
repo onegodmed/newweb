@@ -1,0 +1,23 @@
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+.faq-back-section{
+    float: left;
+    width: 100%;
+    padding-top: 25px;
+    padding-bottom: 40px;
+    background: $background_gradient_articles;
+    .faq-main-page{
+        width: 100%;
+        float: left;
+        p{
+            letter-spacing: 1px;
+            font-size: 14px;
+            line-height: 25px;
+            font-family: "Roboto Mono", monospace;
+            font-weight: 400;
+            margin-bottom: 30px;
+        }
+    }
+}
+

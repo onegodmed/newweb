@@ -1,0 +1,47 @@
+<div class="header-section">
+    <div class="container">
+        <div class="logo">
+            <!-- <img src="../../assets/images/logo.png"> -->
+            <img src="https://www.onegodmed.com/front-assets/images/header/logo-dark.png">
+        </div>
+        <div class="menu-section">
+            <div class="left-section">
+                <div class="enquiry-box">
+                    <i class="fa fa-headphones" aria-hidden="true"></i>
+                    <a href="tel:+91 9169-305-305">+91 9169-305-305</a>
+                </div>
+                <div class="withoutloginsection" (click)="openDialog()">Login/Signup</div>
+                <div class="withinloginsection">
+                    <div class="wallet-amounts">
+                        <img src="../../assets/images/walletimage.png">
+                        <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i> 0:00 </span>
+                    </div>
+                    <div class="user-avatar">
+                        <img src="../../assets/images/avatar-icon.png" alt="avatar">
+                    </div>
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item>Item 1</button>
+                        <button mat-menu-item>Item 2</button>
+                        <button mat-menu-item>Item 3</button>
+                        <button mat-menu-item>Item 4</button>
+                    </mat-menu>
+                </div>
+            </div>
+            <ul>
+                <li><span (click)="route1()">Talk to astrologer</span></li>
+                <li><span (click)="route2()">Chat with astrologer</span></li>
+                <li><span (click)="route3()">Blog</span></li>
+                <li><span (click)="route5()">Astrology</span></li>
+                <li><span (click)="route6()">Premium Report</span></li>
+                <!-- <li><span (click)="route4()">Login/Signup</span></li> -->
+            </ul>
+
+        </div>
+    </div>
+</div>
+
+
+

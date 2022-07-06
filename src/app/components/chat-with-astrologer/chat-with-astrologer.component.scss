@@ -1,0 +1,849 @@
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+.slider-banner{
+  width: 100%;
+  height: 550px;
+  float: left;
+  padding: 35px 0;
+  box-sizing: border-box;
+  background: $background_gradient_slider;
+}
+.heading h2{
+  font-size: $title_size_30px;
+  display: inline-block;
+  margin: 25px 10px;
+  line-height: 45px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: $font-weight_600;
+  letter-spacing: 1.5px;
+  color: $title_color;
+}
+.heading button{
+float: right;
+margin-top: 30px;
+outline: none;
+border: none;
+background: transparent;
+text-decoration: underline;
+font-size: $title_size_18px;
+font-weight: $font-weight_600;
+padding: 10px;
+cursor: pointer;
+}
+.new_banner, .new_banner_2 {
+  background-size: contain;
+  background-position: 50%;
+}
+
+.talk_full_cover{
+    width: 100%;
+    float: left;
+
+    .login-call-box{
+      width: 100%;
+      float: left;
+      text-align: center;
+      margin: 20px 0;
+      height: 150px;
+      border-radius: 8px;
+      position: relative;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px 0px;
+      background: linear-gradient(42deg, rgba(188, 174, 152, 0) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.1) 100%);
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            float: left;
+            width: 100%;
+            li{
+                float: left;
+                position: relative;
+                width: 32%;
+                margin-right: 20px;
+                transition: transform 0.5s;
+                &:hover{
+                  transition: $transition_out_5s;
+                  .box_direction_flow{
+                    .flow-img-section{
+                      img{
+                        transition: transform 0.5s;
+                        transform: scale(1.04);
+                        transition: $transition_out_5s;
+                      }
+                    }
+                  }
+                }
+                &:last-child{
+                    margin-right: 0;
+                    .box_direction_flow{
+                        .flow-img-section {
+                            &:before{
+                                content: '';
+                                width: 154px;
+                                height: 100px;
+                                left: 20%;
+                                background: url(/../assets/images/CHAT-BLURR-PURPLE.png);
+                                background-repeat: no-repeat;
+                                position: absolute;
+                                background-size: contain;
+                                background-position: center;
+                            }
+                        }
+                    }
+                }
+                &:first-child{
+                    .box_direction_flow{
+                        .flow-img-section {
+                            &:before{
+                                content: '';
+                                width: 154px;
+                                height: 100px;
+                                left: 20%;
+                                background: url(/../assets/images/CHAT-BLURR-BLUE.png);
+                                background-repeat: no-repeat;
+                                position: absolute;
+                                background-size: contain;
+                                background-position: center;
+                            }
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    .box_direction_flow{
+                        .flow-img-section {
+                            &:before{
+                                content: '';
+                                width: 154px;
+                                height: 100px;
+                                left: 18%;
+                                background: url(/../assets/images/CHAT-BLURR-ORANGE.png);
+                                background-repeat: no-repeat;
+                                position: absolute;
+                                background-size: contain;
+                                background-position: center;
+                            }
+                        }
+                    }
+                }
+                .box_direction_flow{
+                    width: 100%;
+                    height: 100%;
+                    margin: 5px auto;
+                    .flow-img-section {
+                        width: 100%;
+                        float: left;
+                        height: 100px;
+                        position: relative;
+                        img{
+                          height: 120px;
+                          position: relative;
+                          z-index: 99;
+                          right: -45px;
+                        }
+                    }
+                    .login{
+                        font-size: $title_size_16px;
+                        font-weight: $font-weight_600;
+                        color: $amount_talkchat_text_black_color;
+                        font-family: "Eagle Lake", cursive;
+                        letter-spacing: 1px;
+                        text-shadow: 1px 1px 2px rgba(54, 49, 49, 0.8509803922);
+                        position: absolute;
+                        bottom: -30px;
+                        left: 35%;
+                    }
+                    .wallet_amount{
+                        font-size: $title_size_16px;
+                        font-weight: $font-weight_600;
+                        color: $amount_talkchat_text_black_color;
+                        text-shadow: 1px 1px 2px rgba(54, 49, 49, 0.8509803922);
+                        font-family: "Eagle Lake", cursive;
+                        letter-spacing: 1px;
+                        position: absolute;
+                        bottom: -30px;
+                        left: 25%;
+                        i{
+                            font-size: $title_size_23px;
+                            color: $amount_talkchat_icon_color;
+                        }
+                        span{
+                            font-size: $title_size_22px;
+                            font-weight: $font-weight_600;
+                            font-family: "Roboto Mono", monospace;
+                            letter-spacing: 1px;
+                            margin: -4px 10px 0;
+                            line-height: 20px;
+                        }
+                    }
+                    .amount-update{
+                      font-size: $title_size_12px;
+                      font-weight: $font-weight_600;
+                      color: $amount_talkchat_text_white_color;
+                      text-shadow: 1px 1px 2px rgba(54, 49, 49, 0.8509803922);
+                      font-family: "Eagle Lake", cursive;
+                      letter-spacing: 1px;
+                      position: absolute;
+                      top: 43%;
+                      left: 38%;
+                      transform: translate(-50%, -50%);
+                      line-height: 25px;
+                      width: 93px;
+                      i{
+                        font-size: 20px;
+                        display: block;
+                        color: #fff;
+                      }
+                    }
+                    .connect_call{
+                      font-size: $title_size_16px;
+                      font-weight: $font-weight_600;
+                      color: $amount_talkchat_text_black_color;
+                      text-shadow: 1px 1px 2px rgba(54, 49, 49, 0.8509803922);
+                      font-family: "Eagle Lake", cursive;
+                      letter-spacing: 1px;
+                      position: absolute;
+                      bottom: -30px;
+                      left: 27%;
+                    }
+                }
+            }
+        }
+    }
+
+    .data-filter-cover{
+        float: left;
+        width: 100%;
+        padding: 10px 0;
+        margin-top: 30px;
+        box-sizing: border-box;
+        .astrologer_breadcrumbs{
+            float: left;
+            margin: 5px 0 0;
+            ul{
+                margin: 0;
+                padding: 6px 0;
+                list-style: none;
+                li{
+                    float: left;
+                    margin: 0 .5em 0 .6em;
+                    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px 0px;
+                    a{
+                        background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+                        padding: .13em .4em;
+                        font-size: 16px;
+                        font-family: "Roboto Mono", monospace;
+                        letter-spacing: 1px;
+                        float: left;
+                        text-decoration: none;
+                        color: $talkchat_color;
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        height: 22px;
+                        text-transform: capitalize;
+                        &:active {
+                            background: $background_gradient_color;
+                            color: $border_color;
+                            // &:before {
+                            //     border-color: #f0df20 #f0df20 #f0df20 #0000;
+                            // }
+                        }
+                        &:after{
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            margin-top: -11px;
+                            border-top: 11px solid transparent;
+                            border-bottom: 11px solid transparent;
+                            border-left: 12px solid $talkchat_border_color;
+                            right: -12px;
+                        }
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            margin-top: -11px;
+                            border-color: #dee2e6 #dee2e6 #dee2e6 rgba(0, 0, 0, 0);
+                            border-style: solid;
+                            border-width: 11px 0 11px 14px;
+                            left: -14px;
+                        }
+                    }
+                }
+            }
+        }
+        .multiple-action{
+          float: right;
+          width: 70%;
+          .recharge-btn{
+            float: left;
+            margin: 10px 30px;
+            button {
+              outline: none;
+              background: transparent;
+              border-radius: 8px;
+              padding: 5px 15px;
+              letter-spacing: 1px;
+              font-family: "Roboto Mono", monospace;
+              font-weight: 600;
+              box-shadow: none;
+              transition: $transition_out_5s;
+              border: 1px solid #999;
+              color: #000;
+              &:hover{
+                transition: all 0.3s ease-in-out;
+                -webkit-transition: all 0.3s ease-in-out;
+                background: linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
+              }
+            }
+          }
+          .filter-section{
+            width: 190px;
+            float: left;
+            margin: 0 20px;
+          }
+          .sort-price{
+            width: 190px;
+            float: left;
+            margin: 0 20px;
+          }
+          .search-box{
+            width: 190px;
+            float: right;
+            margin-left: 20px;
+          }
+        }
+
+    }
+
+    .chat_card{
+        width: 100%;
+        float: left;
+        margin-top: 40px;
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            li{
+                float: left;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                width: 23.1%;  
+                &:nth-child(4n){
+                    margin-right: 0;
+                }
+                .card_astro{
+                    padding: 0;
+                    width: 100%;
+                    float: left;
+                    background-color: #fff;
+                    text-align: center;
+                    border-radius: 8px;
+                    box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                    margin-right: 20px;
+                    text-decoration: none;
+                    min-height: 230px;
+                    transition: $transition_out_5s;
+                    vertical-align: top;
+                    position: relative;
+                    transition: transform .5s;
+                    &:hover{
+                      transition: transform .5s;
+                      -webkit-transform: scale(1.02);
+                      transform: scale(1.02);
+                    }
+                    &:nth-child(5n){
+                      margin-right: 0;
+                    }
+                    .astro-img{
+                      width: 100%;
+                      float: left;
+                      border-radius: 8px;
+                      img{
+                        width: 100%;
+                        margin: 0 auto;
+                        border-radius: 8px;
+                        height: 265px;
+                      }
+                      .light-shad{
+                        position: absolute;
+                        box-sizing: border-box;
+                        z-index: 4;
+                        height: 265px;
+                        top: 0px;
+                        background: linear-gradient(359.56deg, rgb(0 0 0 / 49%) 0%, rgba(0, 0, 0, 0.17) 50%, rgba(0, 0, 0, 0) 100%);
+                        border-radius: 8px 8px 0px 0px;
+                        width: 100%;
+                        left: 0px;
+                      }
+                    }
+                    .astro-section{
+                      float: left;
+                      width: 100%;
+                      padding: 10px;
+                      box-sizing: border-box;
+                      h5{
+                        float: left;
+                        text-align: left;
+                        width: 100%;
+                        font-size: $title_size_22px;
+                        line-height: 25px;
+                        font-family: "Roboto Mono", monospace;
+                        font-weight: $font-weight_600;
+                        letter-spacing: 1.5px;
+                        color: $talkchat_text_color;
+                        position: relative;
+                        &:after{
+                          content: '';
+                          width: 20px;
+                          height: 20px;
+                          background: url(/../assets/images/verified-sign.png);
+                          background-repeat: no-repeat;
+                          position: absolute;
+                          margin-left: 8px;
+                          margin-top: 4px;
+                          background-size: cover;
+                          background-position: center;
+                        }
+                      }
+                      p{
+                        float: left;
+                        width: 100%;
+                        font-size: $title_size_14px;
+                        line-height: 20px;
+                        font-family: "Roboto Mono", monospace;
+                        font-weight: $font-weight_500;
+                        text-align: left;
+                        letter-spacing: 1px;
+                        color: $talkchat_text_gray_color;
+                        margin-bottom: 10px;
+                      }
+                      .ratting{
+                        float: left;
+                        width: 75%;
+                        .price{
+                          font-size: $title_size_16px;
+                          text-align: left;
+                          color: $talkchat_text_color;
+                          font-family: "Roboto Mono", monospace;
+                          float: left;
+                          font-weight: $font-weight_600;
+                          margin-top: 15px;
+                          .discount_price {
+                            display: inline;
+                            margin-left: 5px;
+                            text-decoration-line: line-through;
+                          }
+                        }
+                        .language-astrologer{
+                          float: left;
+                          width: 100%;
+                          font-size: $title_size_12px;
+                          text-align: left;
+                          color: $talkchat_text_color;
+                          font-family: "Roboto Mono", monospace;
+                          font-weight: $font-weight_500;
+                          span{
+                            font-size: $title_size_12px;
+                            letter-spacing: 0.2px;
+                            color: $talkchat_text_color;
+                            font-family: "Roboto Mono", monospace;
+                            font-weight: $font-weight_400;
+                            margin: 0 3px;
+                          }
+                        }
+                        .skills-astrologer{
+                          float: left;
+                          width: 100%;
+                          font-size: $title_size_12px;
+                          text-align: left;
+                          color: $talkchat_text_color;
+                          font-family: "Roboto Mono", monospace;
+                          font-weight: $font-weight_500;
+                          span{
+                            font-size: $title_size_12px;
+                            letter-spacing: 0.2px;
+                            color: $talkchat_text_color;
+                            font-family: "Roboto Mono", monospace;
+                            font-weight: $font-weight_400;
+                            margin: 0 3px;
+                          }
+                        }
+                      }
+                    }
+                    .call-status-astrolger{
+                      float: right;
+                      position: absolute;
+                      right: 0;
+                      bottom: 2px;
+                      a{
+                        text-decoration: none;
+                        color: #fff;
+                        .sprite-chat-astrologer{
+                          background-position: -71px -14px!important;
+                          width: 40px;
+                          height: 43px;
+                          display: inline-block;
+                          background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+                        }
+                        .sprite-call-astrologer{
+                          background-position: -134px -14px!important;
+                          width: 40px;
+                          height: 43px;
+                          display: inline-block;
+                          background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+                        }
+                      }
+                    }
+                    .status-section{
+                      position: absolute;
+                      right: 0;
+                      top: 55%;
+                      z-index: 99;
+                      font-family: "Roboto Mono", monospace;
+                      font-weight: 600;
+                      letter-spacing: 2px;
+                      color: #fff;
+                      span{
+                        i{
+                          font-size: 20px;
+                          color: #fff;
+                          float: left;
+                          margin-right: 3px;
+                          margin-top: 1px;
+                        }
+                      }
+                    }
+                    .switch{
+                      position: absolute;
+                      top: 1px;
+                      right: 0px;
+                      height: 18px;
+                      width: 50px;
+                      transform: rotate(-90deg);
+                      background: linear-gradient(to right, #fafafa, #fafafa, #fafafa, rgb(255 178 95 / 82%), rgb(23 22 20 / 85%));
+                      border-bottom-left-radius: 20px;
+                      border-top-left-radius: 20px;
+                      box-shadow: 1px 1px 3px 2px #999;
+                      &::after{
+                        content: '';
+                        width: 15px;
+                        height: 15px;
+                        background: #000;
+                      }
+                      .online{
+                        width: 15px;
+                        height: 15px;
+                        background-color: green;
+                        border-radius: 50%;
+                        display: inline-block;
+                        margin-right: 4px;
+                        margin-top: 2px;
+                      }
+                      .offline{
+                        width: 15px;
+                        margin-right: 4px;
+                        height: 15px;
+                        background-color: red;
+                        border-radius: 50%;
+                        display: inline-block;
+                      }
+                    }
+                    .star-ratings{
+                      position: absolute;
+                      top: 52%;
+                      left: 0;
+                      box-shadow: 0px -1px 5px 3px #fafafa;
+                      font-family: "Roboto Mono", monospace;
+                      font-weight: 600;
+                      z-index: 99;
+                      padding: 2px 5px;
+                      border-top-right-radius: 5px;
+                      border-bottom-right-radius: 5px;
+                      span{
+                        margin-right: 5px;
+                        i{
+                          font-size: 20px;
+                          color: #E6B91E;
+                        }
+                      }
+                      .count-rating{
+                        letter-spacing: 1px;
+                        font-size: 16px;
+                        color: #fff;
+                        display: inline-block;
+                        line-height: 16px; 
+                        &.newlyaddedastro{
+                          display: none;
+                        }
+                      }
+                    }
+                  }
+            }
+        }
+    }
+
+    .new_banner_2 {
+      float: left;
+      width: 100%;
+      padding-top: 5px;
+      padding-bottom: 20px;
+      min-height: 200px;
+      background: $background_gradient_free_astrolger_services;
+      .astrolger_services {
+          margin-top: 20px;
+          .box_item {
+              background-color: $background_white_color;
+              text-align: center;
+              border-radius: 8px;
+              box-shadow: $box_shadow_astrolger_services;
+              padding: 15px 0;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center;
+              margin-bottom: 20px;
+              text-decoration: none;
+              min-height: 200px;
+              transition: $transition_out_5s;
+              &:hover{
+                  transition: all .3s ease-in-out;
+                  -webkit-transition: all .3s ease-in-out;
+                  border-color: $border_color_articles;
+                  border-radius: 10px;
+                  background: $background_gradient_articles_hover;
+                  position: relative;
+                  bottom: 2px;
+              }
+              .icon {
+                  width: 80px;
+                  border-radius: 100%;
+                  transition: all .3s ease-in-out;
+                  -webkit-transition: all .3s ease-in-out;
+                  height: 80px;
+                  margin: 0 auto 25px;
+                  span {
+                      display: block;
+                  }
+                  img{
+                      width: 80px;
+                      height: 80px;
+                  }
+              }
+              .text {
+                  margin-top: 10px;
+                  color: $title_color;
+                  height: 21px;
+                  font-family: "Roboto Mono", monospace;
+                  font-size: $title_size_22px;
+                  font-weight: $font-weight_500;
+              }
+          }
+      }
+    }
+
+    .articles{
+      float: left;
+      width: 100%;
+      padding-top: 35px;
+      padding-bottom: 40px;
+      height: 600px;
+      background: $background_gradient_articles;
+      .articles-inner-section{
+          float: left;
+          width: 100%;
+          margin: 20px 0;
+          ul{
+              margin: 0;
+              padding: 0;
+              list-style: none;
+              li{
+                  float: left;
+                  border-radius: 8px;
+                  width: 24%;
+                  position: relative;
+                  border: 0.5px solid $border_why_choose_us_color;
+                  margin-right: 15px;
+                  margin-bottom: 15px;
+                  border-radius: 5px;          
+                  vertical-align: top; 
+                  cursor: pointer;
+                  &:nth-child(4n){
+                      margin-right: 0;
+                  }
+                  span{
+                      width: 100%;
+                      float: left;
+                      border-radius: 8px;
+                      img{
+                          width: 100%;
+                          margin: 0 auto;
+                          min-height: 250px;
+                          border-radius: 8px;
+                      }
+                  }
+                  .view-post-section {
+                      position: absolute;
+                      top: 0;
+                      right: 0;
+                      background-color: $background_articles_color;
+                      box-shadow: 0px 2px 10px 5px $border_shadow_astrolger_color;
+                      border-bottom-left-radius: 30px;
+                      padding: 4px 6px;
+                      display: flex;
+                      cursor: pointer;
+                      i{
+                          font-size: $title_size_16px;
+                          margin-top: 1px;
+                          margin-left: 10px;
+                      }
+                      span{
+                          font-size: $title_size_12px;
+                          margin-left: 5px;
+                          font-weight: $font-weight_400;
+                      }
+                  }
+                  .articles-text-box{
+                      background-color: $background_articles_color;
+                      box-shadow: 0px 2px 10px 5px $border_shadow_astrolger_color;
+                      float: left;
+                      width: 90%;
+                      text-align: left;
+                      padding: 10px 20px;
+                      box-sizing: border-box;
+                      margin-bottom: 0;
+                      position: absolute;
+                      bottom: -50px;
+                      border-radius: 8px;
+                      left: 50%;
+                      transform: translate(-50%, 0);
+                      h4{
+                          font-size: $title_size_15px;
+                          line-height: 20px;
+                          font-family: "Roboto Mono", monospace;
+                          font-weight: $font-weight_600;
+                      }
+                      .articles-details-section {
+                          float: left;
+                          width: 100%;
+                          h6{
+                              font-size: $title_size_13px;
+                              font-family: "Roboto Mono", monospace;
+                              font-weight: $font-weight_500;
+                              margin-bottom: 0;
+                              color: $articles_title_color;
+                              display: inline-block;
+                          }
+                          .post-articles-date{
+                              text-align: right;
+                              float: right;
+                              font-size: $title_size_12px;
+                              font-family: "Roboto Mono", monospace;
+                              font-weight: $font-weight_400;
+                              span{
+                                  display: contents;
+                              }
+                          }
+                      }
+                  }         
+              }
+          }
+      }
+    }
+
+    .find-best-astrologers{
+      float: left;
+      width: 100%;
+      padding-top: 35px;
+      padding-bottom: 40px;
+      height: 600px;
+      background: $background_gradient_best_astro;
+      .find_city_astrologer{
+        float: left;
+        width: 100%;
+        margin: 20px 0;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+        .city_title{
+          font-size: 20px;
+          float: left;
+          width: 100%;
+          height: 50px;
+          line-height: 30px;
+          padding: 10px;
+          background: linear-gradient(42deg, rgba(188, 174, 152, 0) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.1) 100%);
+          i{
+            float: left;
+            font-size: 23px;
+            margin:4px 12px;
+          }
+        }
+        .city_category_title{
+          height: 250px;
+          margin: 0;
+          padding: 0 0 10px 0px;
+          list-style: none;
+          border-bottom: 1px solid #d6d6d6;
+          border-left: 1px solid #d6d6d6;
+          max-height: 250px;
+          overflow-y: scroll;
+          ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+              float: left;
+              width: 100%;
+              margin-bottom: 12px;
+              border-bottom: 1px solid #ccc;
+              padding: 10px 20px;
+              transition: $transition_out_5s;
+              transition: transform 0.5s;
+              cursor: pointer;
+                &:last-child{
+                  margin-bottom: 0;
+                }
+                &:hover{
+                  transition: $transition_out_3s;
+                  -webkit-transition: all 0.3s ease-in-out;
+                  position: relative;
+                  bottom: 2px;
+                }
+              }
+              a{
+                color: $title_color;
+                text-decoration: none;
+                line-height: 30px;
+                font-size: 16px;
+                letter-spacing: 1px;
+              }
+              span{
+                i{
+                  float: left;
+                  font-size: 18px;
+                  margin: 6px 10px 3px 2px;
+                }
+              }
+          }
+        }
+      }
+    }
+
+    .faq-back-section{
+      float: left;
+      width: 100%;
+      padding-top: 25px;
+      padding-bottom: 40px;
+      // background: $background_gradient_best_astro;
+      background: $background_gradient_articles;
+    }
+
+}

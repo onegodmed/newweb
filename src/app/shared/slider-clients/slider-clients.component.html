@@ -1,0 +1,35 @@
+
+    <ngx-slick-carousel class="carousel"  #slickModal="slick-carousel"  [config]="slideClientsConfig">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
+            <div class="content-section-cover">
+                <div class="star-ratting-profile">
+                    <div class="wrapper">
+                        <div class="wrapper">
+                            <input type="radio" name="rate" id="rate1">
+                            <label for="rate1"></label>
+                            <input type="radio" name="rate" id="rate2">
+                            <label for="rate2"></label>
+                            <input type="radio" name="rate" id="rate3">
+                            <label for="rate3"></label>
+                            <input type="radio" name="rate" id="rate4">
+                            <label for="rate4"></label>
+                            <input type="radio" name="rate" id="rate5">
+                            <label for="rate5"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="clients-text">
+                    <p>{{slide.subtitle}}</p>
+                    <div class="clients-profile">
+                        <img src="{{ slide.img }}" alt="" width="100%">
+                        <div class="overlap-section">
+                            <h4>{{slide.title}}</h4>
+                            <span>{{slide.designation}}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ngx-slick-carousel>
+
+    
