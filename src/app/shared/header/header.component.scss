@@ -52,11 +52,12 @@
             .withinloginsection{    
                 float: right;
                 display: flex;
-                padding: 3px 0px 3px 15px;
+                padding: 1px 0px 3px 10px;
                 font-family: 'Roboto Mono', monospace;
                 .wallet-amounts{
                     float: right;
-                    margin-right: 10px;
+                    margin-right: 5px;
+                    padding-top: 5px;
                     img{
                         width: 25px;
                         height: 25px;
@@ -64,7 +65,7 @@
                         margin-top: -10px;
                     }
                     span{
-                        font-size: $title_size_16px;
+                        font-size: $title_size_15px;
                         font-weight: $font-weight_500;
                         color: $wallet_amounts_color;
                         letter-spacing: 1px;
@@ -79,28 +80,29 @@
                 }
                 .user-section_onlogin{
                     display: flex;
-                    margin-right: 12px;
+                    margin-right: 5px;
                     border-radius: 20px;
-                    padding: 4px 0 0 0;
-                    border: 1px solid $user_onlogin_border_color;
+                    padding: 2px 0 0 1px;
+                    border: 1px solid $border_light_pink_color;
+                    background: $background_menu_color;
                     .user-avatar{
-                        width: 34px;
-                        height: 34px;
-                        margin: 0px 0 1px 2px;
+                        width: 28px;
+                        height: 28px;
+                        margin: 1px 0px 0px 1px;
                         cursor: pointer;
                         img{
-                            width: 32px;
-                            height: 32px;
-                            border: 2px solid $avatar_border_color;
+                            width: 28px;
+                            height: 28px;
+                            border: 1px solid $avatar_border_color;
                             border-radius: 50%;
-                            padding: 2px;
+                            padding: 1px;
                         }
                     }
                     .user_name{
-                        float: right;
-                        padding: 0 10px;
+                        float: left;
+                        padding: 0 5px;
                         h3{
-                            font-size: $title_size_16px;
+                            font-size: $title_size_14px;
                             font-weight: $font-weight_500;
                             letter-spacing: 0.1px;
                             font-family: 'Roboto Mono', monospace;
