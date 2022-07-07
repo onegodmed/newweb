@@ -598,56 +598,6 @@ cursor: pointer;
       padding-bottom: 20px;
       min-height: 200px;
       background: $background_gradient_free_astrolger_services;
-      .astrolger_services {
-          margin-top: 20px;
-          .box_item {
-              background-color: $background_white_color;
-              text-align: center;
-              border-radius: 8px;
-              box-shadow: $box_shadow_astrolger_services;
-              padding: 15px 0;
-              display: flex;
-              flex-direction: column;
-              align-items: center;
-              justify-content: center;
-              margin-bottom: 20px;
-              text-decoration: none;
-              min-height: 200px;
-              transition: $transition_out_5s;
-              &:hover{
-                  transition: all .3s ease-in-out;
-                  -webkit-transition: all .3s ease-in-out;
-                  border-color: $border_color_articles;
-                  border-radius: 10px;
-                  background: $background_gradient_articles_hover;
-                  position: relative;
-                  bottom: 2px;
-              }
-              .icon {
-                  width: 80px;
-                  border-radius: 100%;
-                  transition: all .3s ease-in-out;
-                  -webkit-transition: all .3s ease-in-out;
-                  height: 80px;
-                  margin: 0 auto 25px;
-                  span {
-                      display: block;
-                  }
-                  img{
-                      width: 80px;
-                      height: 80px;
-                  }
-              }
-              .text {
-                  margin-top: 10px;
-                  color: $title_color;
-                  height: 21px;
-                  font-family: "Roboto Mono", monospace;
-                  font-size: $title_size_22px;
-                  font-weight: $font-weight_500;
-              }
-          }
-      }
     }
 
     .articles-section{
