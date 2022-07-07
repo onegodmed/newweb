@@ -23,6 +23,9 @@ import { MatchMakingPageComponent } from './match-making-page/match-making-page.
 import { PanchangPageComponent } from './panchang-page/panchang-page.component';
 import { HoroscopePageComponent } from './horoscope-page/horoscope-page.component';
 import { NumerologyPageComponent } from './numerology-page/numerology-page.component';
+import { FreeAstrologyComponent } from './free-astrology/free-astrology.component';
+import { TabsOnlineAstrologersComponent } from './tabs-online-astrologers/tabs-online-astrologers.component';
+import { ArticlesBlogComponent } from './articles-blog/articles-blog.component';
 
 
 const routes: Routes = [
@@ -98,7 +101,10 @@ const routes: Routes = [
     MatchMakingPageComponent,
     PanchangPageComponent,
     HoroscopePageComponent,
-    NumerologyPageComponent
+    NumerologyPageComponent,
+    FreeAstrologyComponent,
+    TabsOnlineAstrologersComponent,
+    ArticlesBlogComponent
   ],
   imports: [
     CommonModule,
