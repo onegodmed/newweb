@@ -83,6 +83,10 @@ const routes: Routes = [
     path: 'horoscopepage',
     component: HoroscopePageComponent,
   },
+  {
+    path: 'profileastrologer',
+    component: AstrologersProfilePageComponent,
+  },
 
 
 ];
