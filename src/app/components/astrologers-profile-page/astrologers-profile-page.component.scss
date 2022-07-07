@@ -1,0 +1,27 @@
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+
+.heading h2 {
+    font-size: $title_size_30px;
+    display: inline-block;
+    margin: 25px 10px;
+    line-height: 45px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: $font-weight_600;
+    letter-spacing: 1.5px;
+    color: $title_color;
+  }
+  
+  .heading button {
+    float: right;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    background: transparent;
+    text-decoration: underline;
+    font-size: $title_size_18px;
+    font-weight: $font-weight_600;
+    padding: 10px;
+    cursor: pointer;
+  }

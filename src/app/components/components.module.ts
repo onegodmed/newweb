@@ -27,6 +27,7 @@ import { FreeAstrologyComponent } from './free-astrology/free-astrology.componen
 import { TabsOnlineAstrologersComponent } from './tabs-online-astrologers/tabs-online-astrologers.component';
 import { ArticlesBlogComponent } from './articles-blog/articles-blog.component';
 import { FindCityAstrologersComponent } from './find-city-astrologers/find-city-astrologers.component';
+import { AstrologersProfilePageComponent } from './astrologers-profile-page/astrologers-profile-page.component';
 
 
 const routes: Routes = [
@@ -106,7 +107,8 @@ const routes: Routes = [
     FreeAstrologyComponent,
     TabsOnlineAstrologersComponent,
     ArticlesBlogComponent,
-    FindCityAstrologersComponent
+    FindCityAstrologersComponent,
+    AstrologersProfilePageComponent
   ],
   imports: [
     CommonModule,
