@@ -74,6 +74,12 @@
                         font-weight: 600;
                         line-height: 30px;
                         color: #333333;
+                        display: -webkit-box;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        height: 85px;
                         width: 100%;
                     }
                     .articles-details-section{

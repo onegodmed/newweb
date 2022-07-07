@@ -107,6 +107,11 @@
                             letter-spacing: 0.1px;
                             font-family: 'Roboto Mono', monospace;
                             margin: 0;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            width: 90px;
+                            text-align: left;
                         }
                     }
                 }
