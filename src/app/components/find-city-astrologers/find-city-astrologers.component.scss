@@ -1,0 +1,104 @@
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+.heading h2{
+    font-size: $title_size_30px;
+    display: inline-block;
+    margin: 25px 10px;
+    line-height: 45px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: $font-weight_600;
+    letter-spacing: 1.5px;
+    color: $title_color;
+  }
+  .heading button{
+  float: right;
+  margin-top: 30px;
+  outline: none;
+  border: none;
+  background: transparent;
+  text-decoration: underline;
+  font-size: $title_size_18px;
+  font-weight: $font-weight_600;
+  padding: 10px;
+  cursor: pointer;
+  }
+
+
+  .find-best-astrologers{
+    float: left;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 40px;
+    height: 600px;
+    background: $background_gradient_best_astro;
+    .find_city_astrologer{
+      float: left;
+      width: 100%;
+      margin: 20px 0;
+      border-radius: 8px;
+      box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+      .city_title{
+        font-size: 20px;
+        float: left;
+        width: 100%;
+        height: 50px;
+        line-height: 30px;
+        padding: 10px;
+        background: linear-gradient(42deg, rgba(188, 174, 152, 0) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.1) 100%);
+        i{
+          float: left;
+          font-size: 23px;
+          margin:4px 12px;
+        }
+      }
+      .city_category_title{
+        height: 250px;
+        margin: 0;
+        padding: 0 0 10px 0px;
+        list-style: none;
+        border-bottom: 1px solid #d6d6d6;
+        border-left: 1px solid #d6d6d6;
+        max-height: 250px;
+        overflow-y: scroll;
+        ul{
+          margin: 0;
+          padding: 0;
+          list-style: none;
+          li{
+            float: left;
+            width: 100%;
+            margin-bottom: 12px;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 20px;
+            transition: $transition_out_5s;
+            transition: transform 0.5s;
+            cursor: pointer;
+              &:last-child{
+                margin-bottom: 0;
+              }
+              &:hover{
+                transition: $transition_out_3s;
+                -webkit-transition: all 0.3s ease-in-out;
+                position: relative;
+                bottom: 2px;
+              }
+            }
+            a{
+              color: $title_color;
+              text-decoration: none;
+              line-height: 30px;
+              font-size: 16px;
+              letter-spacing: 1px;
+            }
+            span{
+              i{
+                float: left;
+                font-size: 18px;
+                margin: 6px 10px 3px 2px;
+              }
+            }
+        }
+      }
+    }
+  }  
