@@ -18,6 +18,8 @@ $background_blog_card_section: linear-gradient(90.53deg, rgba(188, 174, 152, 0.3
 $background_blog_Side_bar: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
 $background_blog_side_bar_hover :linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
 
+
+
 /**************transition/transform-in/out*************/
 
 $transition_out_5s: 0.5s all ease-in-out;
@@ -25,13 +27,17 @@ $transition_out_3s: 0.3s all ease-in-out;
 $transform_hover_3d_deg_item: rotate3d(1, 1, 1, 93deg);
 $transform_hover_blog_card_section: scale(1.03);
 
+
 /**************box-shadow-color*************/
+$box_shadow_fixed_header: rgba(0, 0, 0, 0.18) 2px 2px 16px 0px;
 $box_shadow_astrolger_services: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
 $box_shadow_blog_page : rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
 $box_shadow_blog_card_section : rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
 $box_shadow_blog_single_section : (54 51 51 / 12%) -1px -9px 20px 2px;
 $box_shadow_blog_side_bar: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
 $box_shadow_blog_side_bar_inner: inset rgba(0, 0, 0, 0.1) -1px 0px 20px 2px;
+
+
 
 /**************Color**************/
 

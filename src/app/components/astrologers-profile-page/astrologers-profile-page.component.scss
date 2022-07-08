@@ -11,9 +11,9 @@
     font-weight: $font-weight_600;
     letter-spacing: 1.5px;
     color: $title_color;
-  }
+}
   
-  .heading button {
+.heading button {
     float: right;
     margin-top: 30px;
     outline: none;
@@ -24,4 +24,9 @@
     font-weight: $font-weight_600;
     padding: 10px;
     cursor: pointer;
-  }
+}
+
+.astrologer_profile{
+  width: 100%;
+  float: left;
+}  
