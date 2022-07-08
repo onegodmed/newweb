@@ -6,16 +6,16 @@
     width: 25%;
     margin-top: 50px;
     padding: 0 20px 0 30px;
-    border-left: 1px solid #eee;
+    border-left: 1px solid $blog_side_bar_border_color;
     h4{
-        font-size: 20px;
+        font-size: $title_size_20px;
+        font-weight: $font-weight_600;
         margin: 20px 0;
         line-height: 25px;
         font-family: "Roboto Mono", monospace;
-        font-weight: 600;
         letter-spacing: 1.5px;
-        color: #000;
-        background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+        color: $blog_side_bar_black_color;
+        background: $background_blog_Side_bar;
         display: inline-block;
         width: 100%;
         padding: 10px 10px;
@@ -26,7 +26,7 @@
         width: 100%;
         margin: 0 0 20px;  
         padding: 15px 0;
-        border-top: 0.5px solid #eee;
+        border-top: 0.5px solid $blog_side_bar_border_color;
         ul{
             padding: 0;
             margin: 0;
@@ -34,17 +34,17 @@
             li{
                 float: left;
                 margin: 0 10px 10px;
-                border-bottom: 0.2px solid #eee;
+                border-bottom: 0.2px solid $blog_side_bar_border_color;
                 padding-bottom: 10px;
                 width: 100%;
                 &:last-child{
                     margin-bottom: 0;
                 }
                 a{
-                    color: #333;
+                    color: $blog_side_bar_light_gray_color;
                     font-family: "Roboto Mono", monospace;
-                    font-size: 14px;
-                    font-weight: 500;
+                    font-size: $title_size_14px;
+                    font-weight: $font-weight_500;
                     letter-spacing: 1px;
                     padding: 8px 0;
                     box-sizing: border-box;
@@ -62,10 +62,10 @@
             width: 50%;
             display: inline-table;
             .box_item{
-                background-color: #ffffff;
+                background-color: $blog_side_bar_white_color;
                 text-align: center;
                 border-radius: 8px;
-                box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+                box-shadow: $box_shadow_blog_side_bar;
                 padding: 15px 0;
                 display: flex;
                 flex-direction: column;
@@ -73,21 +73,21 @@
                 justify-content: center;
                 margin-bottom: 20px;
                 text-decoration: none;
-                transition: 0.5s all ease-in-out;
+                transition: $transition_out_5s;
                 &:hover{
-                    transition: all 0.3s ease-in-out;
-                    -webkit-transition: all 0.3s ease-in-out;
-                    border-color: #ffffff;
+                    transition: $transition_out_3s;
+                    -webkit-transition: $transition_out_3s;
+                    border-color: $blog_side_bar_white_color;
                     border-radius: 10px;
-                    background: linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
+                    background: $background_blog_side_bar_hover;
                     position: relative;
                     bottom: 2px;
                 }
                 .icon{
                     width: 30px;
                     border-radius: 100%;
-                    transition: all 0.3s ease-in-out;
-                    -webkit-transition: all 0.3s ease-in-out;
+                    transition: $transition_out_3s;
+                    -webkit-transition: $transition_out_3s;
                     height: 30px;
                     margin: 0 auto 25px;
                     img{
@@ -97,11 +97,11 @@
                 }
                 .text{
                     margin-top: 10px;
-                    color: #000000;
+                    color: $blog_side_bar_black_color ;
                     height: auto;
                     font-family: "Roboto Mono", monospace;
-                    font-size: 14px;
-                    font-weight: 500;
+                    font-size: $title_size_14px;
+                    font-weight: $font-weight_500;
                 }
             }
         }
@@ -112,12 +112,11 @@
         margin: 30px 0;
         a{
             text-decoration: none;
-            //background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
             height: 160px;
             width: 100%;
             display: flex;
             border-radius: 8px;
-            box-shadow: inset rgba(0, 0, 0, 0.1) -1px 0px 20px 2px;
+            box-shadow: $box_shadow_blog_side_bar_inner;
             align-items: center;
             padding: 15px;
             img{
