@@ -20,16 +20,17 @@
                 vertical-align: top;
                 margin-bottom: 40px;
                 margin-right: 30px;   
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
+                box-shadow: $box_shadow_blog_card_section;
                 border-radius: 8px;
                 min-height: 350px;
                 position: relative;
                 transition: $transition_out_5s;
-                background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+                background: $blog_card_section_bg_color;
                 cursor: pointer;
                 &:hover{
-                    -webkit-transform: scale(1.03);
-                    transform: scale(1.03);
+                    -webkit-transform: $transform_hover_blog_card_section;
+                    transform: $transform_hover_blog_card_section;
+                    background: $background_blog_card_section;
                 }
                 &:nth-child(3n){
                     margin-right: 0;
@@ -48,13 +49,14 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    background: linear-gradient(90.53deg, #e5ae52c4 0%, rgb(165 165 165 / 92%) 50%, rgb(139 132 130 / 71%) 100%);
+                    background: $background_blog_view_count_section;
                     padding: 4px;
                     display: flex;
-                    color: #fff;
+                    color: $title_white_color;
                     border-bottom-right-radius: 8px;
                     border-top-left-radius: 8px;
-                    font-size: 12px;
+                    font-size: $title_size_12px;
+                    font-weight: $font-weight_400;
                     font-family: "Roboto Mono", monospace;
                     i{
                         margin-top: 3px;
@@ -68,12 +70,12 @@
                     box-sizing: border-box;
                     h4{
                         float: left;
-                        font-size: 16px;
                         font-family: "Roboto Mono", monospace;
                         letter-spacing: 0.5px;
-                        font-weight: 600;
+                        font-size: $title_size_16px;
+                        font-weight: $font-weight_600;
                         line-height: 30px;
-                        color: #333333;
+                        color: $title_dark_gray_color;
                         display: -webkit-box;
                         -webkit-line-clamp: 4;
                         -webkit-box-orient: vertical;
@@ -85,22 +87,23 @@
                     .articles-details-section{
                         float: left;
                         width: 100%;
-                        font-size: 16px;
                         font-family: "Roboto Mono", monospace;
-                        font-weight: 400;
+                        font-size: $title_size_16px;
+                        font-weight: $font-weight_400;
                         letter-spacing: 0.5px;
                         line-height: 25px;
                         h6{
-                            color: #333333;
-                            font-size: 12px;
+                            color: $title_dark_gray_color;
+                            font-size: $title_size_12px;
+                            font-weight: $font-weight_400;
                             line-height: 10px;
                             margin-bottom: 10px;
                             letter-spacing: 1px;
                             float: left;
                         }
                         .post-articles-date {
-                            font-size: 14px;
-                            font-weight: 600;
+                            font-size: $title_size_14px;
+                            font-weight: $font-weight_600;
                             float: right;
                             margin-top: -10px;
                         }
@@ -134,15 +137,15 @@
                 vertical-align: top;
                 margin-bottom: 30px;
                 margin-right: 30px;   
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
+                box-shadow: $box_shadow_blog_page;
                 border-radius: 8px;
                 min-height: 370px;
                 position: relative;
                 transition: $transition_out_5s;
                 cursor: pointer;
                 &:hover{
-                    -webkit-transform: scale(1.03);
-                    transform: scale(1.03);
+                    -webkit-transform: $transform_hover_blog_card_section;
+                    transform: $transform_hover_blog_card_section;
                 }
                 &:nth-child(2){
                     width: 45%;

@@ -6,19 +6,19 @@
     float: left;
     margin: 10px 0;
     p{
-        font-size: 16px;
         font-family: "Roboto Mono", monospace;
         letter-spacing: 0.5px;
-        font-weight: 400;
+        font-size: $title_size_16px;
+        font-weight: $font-weight_400;
         line-height: 30px;
-        color: #333333;
+        color: $title_dark_gray_color;
         width: 100%; 
         float: left;
         margin: 10px 0;
         padding: 10px;
         a{
             text-decoration: none;
-            font-weight: 400;
+            font-weight: $font-weight_400;
             display: inline-block;
             &:hover{
                 text-decoration: underline;
@@ -52,7 +52,7 @@
         float: left;
         overflow: hidden;
         position: relative;
-        box-shadow: rgb(54 51 51 / 12%) -1px -9px 20px 2px;
+        box-shadow: $box_shadow_blog_single_section;
         .image-banner-section{
             width: 100%;
             float: left;
@@ -80,7 +80,7 @@
             width: 100%;
             padding: 15px;
             box-sizing: border-box;
-            background-color: #f3f3e280;
+            background-color: $blog_single_bg_color;
             border-bottom-left-radius: 8px;
             border-bottom-right-radius: 8px;
             .categories-tag{
@@ -91,33 +91,33 @@
                     text-decoration: none;
                     display: inline-block;
                     padding: 4px 10px;
-                    background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+                    background: $background_blog_card_section;
                     margin: 5px;
                     border-radius: 3px;
-                    color: #000;
-                    font-weight: 600;
-                    font-size: 16px;
+                    color: $title_color;
+                    font-size: $title_size_16px;
+                    font-weight: $font-weight_600;
                     letter-spacing: 2px;
                 }
             }
             h4{
                 float: left;
-                font-size: 35px;
                 font-family: "Roboto Mono", monospace;
                 letter-spacing: 0.5px;
-                font-weight: 600;
+                font-size: $title_size_35px;
+                font-weight: $font-weight_600;
                 line-height: 50px;
-                color: #333333;
+                color: $title_dark_gray_color;
                 width: 100%;
             }
             p{
                 float: left;
-                font-size: 18px;
                 font-family: "Roboto Mono", monospace;
                 letter-spacing: 0.5px;
-                font-weight: 400;
+                font-size: $title_size_18px;
+                font-weight: $font-weight_400;
                 line-height: 30px;
-                color: #333333;
+                color: $title_dark_gray_color;
                 width: 100%;
             }
             .inner-details-section{
@@ -125,20 +125,20 @@
                 right: 0;
                 top: 43.4%;
                 display: flex;
-                background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
-                font-size: 15px;
+                background: $background_blog_card_section;
+                font-size: $title_size_15px;
                 z-index: 9;
                 border-bottom-left-radius: 0px;
                 border-top-left-radius: 20px;
                 padding: 10px 20px;
                 line-height: 35px;
-                background-color: #fff;
+                background-color: $title_white_color;
                 font-family: "Roboto Mono", monospace;
-                font-weight: 500;
+                font-weight: $font-weight_500;
                 letter-spacing: 1px;
                 h6{
-                    font-size: 15px;
-                    font-weight: 500;
+                    font-size: $title_size_15px;
+                    font-weight: $font-weight_500;
                     letter-spacing: 1px;
                     margin: 0;
                     padding: 8px;
@@ -163,15 +163,15 @@
                 vertical-align: top;
                 margin-bottom: 40px;
                 margin-right: 30px;   
-                box-shadow: rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
+                box-shadow: $box_shadow_blog_page;
                 border-radius: 8px;
                 min-height: 350px;
                 position: relative;
                 transition: $transition_out_5s;
                 cursor: pointer;
                 &:hover{
-                    -webkit-transform: scale(1.03);
-                    transform: scale(1.03);
+                    -webkit-transform: $transform_hover_blog_card_section;
+                    transform: $transform_hover_blog_card_section;
                 }
                 &:nth-child(3n){
                     margin-right: 0;
@@ -190,13 +190,13 @@
                     position: absolute;
                     top: 0;
                     left: 0;
-                    background: linear-gradient(90.53deg, #e5ae52c4 0%, rgb(165 165 165 / 92%) 50%, rgb(139 132 130 / 71%) 100%);
+                    background: $background_blog_view_count_section;
                     padding: 4px;
                     display: flex;
-                    color: #fff;
+                    color: $title_white_color;
                     border-bottom-right-radius: 8px;
                     border-top-left-radius: 8px;
-                    font-size: 12px;
+                    font-size: $title_size_12px;
                     font-family: "Roboto Mono", monospace;
                     i{
                         margin-top: 3px;
@@ -210,33 +210,34 @@
                     box-sizing: border-box;
                     h4{
                         float: left;
-                        font-size: 16px;
+                        font-size: $title_size_16px;
+                        font-weight: $font-weight_600;
                         font-family: "Roboto Mono", monospace;
                         letter-spacing: 0.5px;
-                        font-weight: 600;
                         line-height: 30px;
-                        color: #333333;
+                        color: $title_dark_gray_color;
                         width: 100%;
                     }
                     .articles-details-section{
                         float: left;
                         width: 100%;
-                        font-size: 16px;
+                        font-size: $title_size_16px;
+                        font-weight: $font-weight_400;
                         font-family: "Roboto Mono", monospace;
-                        font-weight: 400;
                         letter-spacing: 0.5px;
                         line-height: 25px;
                         h6{
-                            color: #333333;
-                            font-size: 12px;
+                            color: $title_dark_gray_color;
+                            font-size: $title_size_14px;
+                            font-weight: $font-weight_500;
                             line-height: 10px;
                             margin-bottom: 10px;
                             letter-spacing: 1px;
                             float: left;
                         }
                         .post-articles-date {
-                            font-size: 14px;
-                            font-weight: 600;
+                            font-size: $title_size_14px;
+                            font-weight: $font-weight_600;
                             float: right;
                             margin-top: -10px;
                         }
