@@ -13,6 +13,8 @@ $background_gradient_best_astro : linear-gradient(42deg, rgba(0, 0, 0, 0.1215686
 $background_menu_color: linear-gradient(42deg, rgb(188 174 152 / 63%) 0%, rgb(221 186 15 / 22%) 50%, rgb(238 148 12 / 38%) 100%);
 $background_blog_inner_page : linear-gradient(90.53deg, #fafafa5c 0%, #fafafa14 50%, #fafafa63 100%);
 $background_blog_inner_shadow: linear-gradient(359.56deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.17) 50%, rgba(0, 0, 0, 0) 100%);
+$background_blog_view_count_section : linear-gradient(90.53deg, #e5ae52c4 0%, rgb(165 165 165 / 92%) 50%, rgb(139 132 130 / 71%) 100%);
+$background_blog_card_section : linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
 
 
 /**************transition/transform-in/out*************/
@@ -20,12 +22,18 @@ $background_blog_inner_shadow: linear-gradient(359.56deg, rgba(0, 0, 0, 0.49) 0%
 $transition_out_5s: 0.5s all ease-in-out;
 $transition_out_3s: 0.3s all ease-in-out;
 $transform_hover_3d_deg_item: rotate3d(1, 1, 1, 93deg);
-$box_shadow_astrolger_services: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+$transform_hover_blog_card_section: scale(1.03);
 
+/**************box-shadow-color*************/
+$box_shadow_astrolger_services: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+$box_shadow_blog_page : rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
+$box_shadow_blog_card_section : rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
+$box_shadow_blog_single_section : (54 51 51 / 12%) -1px -9px 20px 2px;
 
 /**************Color**************/
 
 $title_color: #000000;
+$title_dark_gray_color: #333333;
 $title_white_color: #ffffff;
 $title_gray_color: #cccccc;
 $title_light_gray_color: #eeeeee;
@@ -79,4 +87,6 @@ $wallet_amounts_color : #000000;
 $avatar_border_color: #000000;
 $user_onlogin_border_color : #333333;
 
+$blog_card_section_bg_color : #ffffff;
+$blog_single_bg_color : #f3f3e280;
 
