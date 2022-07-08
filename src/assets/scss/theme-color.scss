@@ -9,13 +9,14 @@ $background_gradient_tabs:linear-gradient(90.53deg, #fafafa5c 0%, #fafafa14 50%,
 $background_gradient_we_have_color: linear-gradient(90.53deg, rgb(209 175 122 / 50%) 0%, rgb(186 182 163 / 13%) 50%, rgb(163 153 139 / 8%) 100%);
 $background_gradient_articles :linear-gradient(42deg, rgb(188 174 152 / 0%) 0%, rgba(221, 186, 15, 0.13) 50%, rgb(238 148 12 / 10%) 100%);
 $background_gradient_articles_hover: linear-gradient(1deg, rgb(255 221 49 / 26%) 20%, rgb(255 255 255 / 50%) 100%);
-$background_gradient_best_astro : linear-gradient(42deg, rgba(0, 0, 0, 0.1215686275) 0%, rgba(239, 236, 222, 0.22) 50%, rgba(0, 0, 0, 0.1215686275) 100%);
+$background_gradient_best_astro: linear-gradient(42deg, rgba(0, 0, 0, 0.1215686275) 0%, rgba(239, 236, 222, 0.22) 50%, rgba(0, 0, 0, 0.1215686275) 100%);
 $background_menu_color: linear-gradient(42deg, rgb(188 174 152 / 63%) 0%, rgb(221 186 15 / 22%) 50%, rgb(238 148 12 / 38%) 100%);
-$background_blog_inner_page : linear-gradient(90.53deg, #fafafa5c 0%, #fafafa14 50%, #fafafa63 100%);
+$background_blog_inner_page: linear-gradient(90.53deg, #fafafa5c 0%, #fafafa14 50%, #fafafa63 100%);
 $background_blog_inner_shadow: linear-gradient(359.56deg, rgba(0, 0, 0, 0.49) 0%, rgba(0, 0, 0, 0.17) 50%, rgba(0, 0, 0, 0) 100%);
-$background_blog_view_count_section : linear-gradient(90.53deg, #e5ae52c4 0%, rgb(165 165 165 / 92%) 50%, rgb(139 132 130 / 71%) 100%);
-$background_blog_card_section : linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
-
+$background_blog_view_count_section: linear-gradient(90.53deg, #e5ae52c4 0%, rgb(165 165 165 / 92%) 50%, rgb(139 132 130 / 71%) 100%);
+$background_blog_card_section: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+$background_blog_Side_bar: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+$background_blog_side_bar_hover :linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
 
 /**************transition/transform-in/out*************/
 
@@ -29,6 +30,8 @@ $box_shadow_astrolger_services: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
 $box_shadow_blog_page : rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
 $box_shadow_blog_card_section : rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
 $box_shadow_blog_single_section : (54 51 51 / 12%) -1px -9px 20px 2px;
+$box_shadow_blog_side_bar: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+$box_shadow_blog_side_bar_inner: inset rgba(0, 0, 0, 0.1) -1px 0px 20px 2px;
 
 /**************Color**************/
 
@@ -89,4 +92,8 @@ $user_onlogin_border_color : #333333;
 
 $blog_card_section_bg_color : #ffffff;
 $blog_single_bg_color : #f3f3e280;
+$blog_side_bar_black_color : #000000;
+$blog_side_bar_white_color : #ffffff;
+$blog_side_bar_border_color : #eeeeee;
+$blog_side_bar_light_gray_color : #333333;
 
