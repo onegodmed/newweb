@@ -17,7 +17,7 @@ $background_blog_view_count_section: linear-gradient(90.53deg, #e5ae52c4 0%, rgb
 $background_blog_card_section: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
 $background_blog_Side_bar: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
 $background_blog_side_bar_hover :linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
-
+$background_unfollow_bg_color: linear-gradient(42deg, #e94a0d 0%, rgb(221 139 15 / 92%) 50%, rgb(116 113 109 / 95%) 100%);
 
 
 /**************transition/transform-in/out*************/
@@ -36,7 +36,7 @@ $box_shadow_blog_card_section : rgba(0, 0, 0, 0.1) 0px 16px 20px 2px;
 $box_shadow_blog_single_section : (54 51 51 / 12%) -1px -9px 20px 2px;
 $box_shadow_blog_side_bar: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
 $box_shadow_blog_side_bar_inner: inset rgba(0, 0, 0, 0.1) -1px 0px 20px 2px;
-
+$box_shadow_unfollow_tag: inset rgba(0, 0, 0, 0.1) 1px -19px 5px 0px;
 
 
 /**************Color**************/
@@ -49,6 +49,7 @@ $title_light_gray_color: #eeeeee;
 $browes_title-color: #333;
 $articles_title_color: #000000;
 $border_color: #000000;
+$follow_bg_color: #f8f9faed;
 
 $hover_text: #333333;
 $hover_white_color: #ffffff;

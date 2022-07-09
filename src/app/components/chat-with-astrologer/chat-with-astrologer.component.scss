@@ -587,6 +587,28 @@
                         }
                       }
                     }
+                    .follow-section{
+                      position: absolute;
+                      top: 10px;
+                      left: 5px;
+                      cursor: pointer;
+                      z-index: 9999;
+                      span{
+                        font-size: $title_size_14px;
+                        font-weight: $font-weight_500;
+                        padding: 5px 10px;
+                        border-radius: 20px;
+                      }
+                      .unfollow-style{
+                        color: $title_white_color;
+                        box-shadow: $box_shadow_unfollow_tag;
+                        background: $background_unfollow_bg_color;
+                      }
+                      .follow-style{
+                        color: $title_color;
+                        background: $follow_bg_color;
+                      }
+                    }
                   }
             }
         }
