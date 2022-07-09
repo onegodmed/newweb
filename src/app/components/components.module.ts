@@ -29,6 +29,7 @@ import { ArticlesBlogComponent } from './articles-blog/articles-blog.component';
 import { FindCityAstrologersComponent } from './find-city-astrologers/find-city-astrologers.component';
 import { AstrologersProfilePageComponent } from './astrologers-profile-page/astrologers-profile-page.component';
 import { FollowUserPageComponent } from './follow-user-page/follow-user-page.component';
+import { AstrologersCardComponent } from './astrologers-card/astrologers-card.component';
 
 
 const routes: Routes = [
@@ -119,7 +120,8 @@ const routes: Routes = [
     ArticlesBlogComponent,
     FindCityAstrologersComponent,
     AstrologersProfilePageComponent,
-    FollowUserPageComponent
+    FollowUserPageComponent,
+    AstrologersCardComponent
   ],
   imports: [
     CommonModule,
