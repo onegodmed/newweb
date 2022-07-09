@@ -37,5 +37,8 @@ export class HeaderComponent implements OnInit {
   route6(){
     this.router.navigateByUrl("/premium-report");
   }
+  follow(){
+    this.router.navigateByUrl("/followinguserdetails");
+  }
 }
 
