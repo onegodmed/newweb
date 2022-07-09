@@ -643,6 +643,29 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
           }
+          .follow-section{
+            position: absolute;
+            top: 10px;
+            left: 5px;
+            cursor: pointer;
+            z-index: 9999;
+            span{
+              font-size: 14px;
+              font-weight: 500;
+              padding: 5px 10px;
+              border-radius: 20px;
+            }
+            .unfollow-style{
+              color: #ffffff;
+              display: none;
+              box-shadow: inset rgba(0, 0, 0, 0.1) 1px -19px 5px 0px;
+              background: linear-gradient(42deg, #e94a0d 0%, rgb(221 139 15 / 92%) 50%, rgb(116 113 109 / 95%) 100%);
+            }
+            .follow-style{
+              color: #000000;
+              background: #f8f9faed;
+            }
+          }
         }
       }
     }
