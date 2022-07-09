@@ -28,6 +28,7 @@ import { TabsOnlineAstrologersComponent } from './tabs-online-astrologers/tabs-o
 import { ArticlesBlogComponent } from './articles-blog/articles-blog.component';
 import { FindCityAstrologersComponent } from './find-city-astrologers/find-city-astrologers.component';
 import { AstrologersProfilePageComponent } from './astrologers-profile-page/astrologers-profile-page.component';
+import { FollowUserPageComponent } from './follow-user-page/follow-user-page.component';
 
 
 const routes: Routes = [
@@ -87,6 +88,11 @@ const routes: Routes = [
     path: 'profileastrologer',
     component: AstrologersProfilePageComponent,
   },
+  {
+    path: 'followinguserdetails',
+    component: FollowUserPageComponent,
+  },
+
 
 
 ];
@@ -112,7 +118,8 @@ const routes: Routes = [
     TabsOnlineAstrologersComponent,
     ArticlesBlogComponent,
     FindCityAstrologersComponent,
-    AstrologersProfilePageComponent
+    AstrologersProfilePageComponent,
+    FollowUserPageComponent
   ],
   imports: [
     CommonModule,
