@@ -38,6 +38,7 @@ export class SliderComponent implements OnInit {
       pauseOnFocus: false,
       pauseOnHover: false,
       dots: true,
+      arrows: false,
       responsive: [
         {
           breakpoint: 1024,
