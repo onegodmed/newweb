@@ -687,14 +687,15 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
     .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{
       margin-top: 8px;
       height: 30px;
+      position: relative;
+      top: 55px;
     }
     .mat-tab-label-container{
         .mat-tab-label, .mat-tab-link{
           box-sizing: border-box;
           z-index: 8;
-          height: 140px !important;
+          height: 160px !important;
           background: #ffffff;
-          // background: linear-gradient(to right, #ffeb6878, #fa88194f, #fa881940, #ffb25f61, #ffb25fa8);
           border-radius: 5px;
           box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 10px 0px;
           cursor: pointer;
