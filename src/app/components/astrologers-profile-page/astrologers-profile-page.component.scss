@@ -29,4 +29,68 @@
 .astrologer_profile{
   width: 100%;
   float: left;
+  .profile_top_section{
+    float: left;
+    width: 100%;
+    padding: 6% 0;
+    box-sizing: border-box;
+    background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+    .astro_profile_img{
+      float: left;
+      transition: 0.5s all ease-in-out;
+      transition: transform 0.5s;
+      &:hover{
+        transition: transform 0.5s;
+        transform: scale(1.02);
+      }
+      img{
+        width: 100%;
+        height: 300px;
+        border-radius: 15px;
+      }
+    }
+    .astro_details_section{
+      float: left;
+      width: 100%;
+      margin: 10px 0;
+      h1{
+        letter-spacing: 1px;
+        font-size: $title_size_32px;
+        font-weight: $font-weight_600;
+        float: left;
+        width: 100%;
+      }
+      .categories-tag{
+        float: left;
+        margin: 10px 0;
+        a{
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            padding: 8px 15px;
+            background: $background_blog_card_section;
+            margin: 5px;
+            border-radius: 3px;
+            color: $title_color;
+            font-size: $title_size_16px;
+            font-weight: $font-weight_600;
+            letter-spacing: 1px;
+            border: 1px solid transparent;
+            &:hover{
+              transition: 0.5s all ease-in-out;
+              border-color: rgb(252, 205, 202);
+              background: rgb(255, 247, 237);
+              transform: scale(1.02);
+            }
+        }
+      }
+    }
+  }
+  .profile_bottom_section{
+    float: left;
+    width: 100%;
+    padding: 10% 0;
+    box-sizing: border-box;
+    background: linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
+  }
 }  
