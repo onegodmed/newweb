@@ -58,6 +58,7 @@
         letter-spacing: 1px;
         font-size: $title_size_32px;
         font-weight: $font-weight_600;
+        font-family: "Roboto Mono", monospace;
         float: left;
         width: 100%;
         position: relative;
@@ -84,10 +85,11 @@
             padding: 8px 15px;
             background: $background_blog_card_section;
             margin: 5px;
-            border-radius: 3px;
+            border-radius: 2px;
             color: $title_color;
-            font-size: $title_size_16px;
+            font-size: $title_size_14px;
             font-weight: $font-weight_600;
+            font-family: "Roboto Mono", monospace;
             letter-spacing: 1px;
             border: 1px solid transparent;
             &:hover{
