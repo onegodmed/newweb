@@ -7,11 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./astrologers-profile-page.component.scss']
 })
 export class AstrologersProfilePageComponent implements OnInit {
-
-  constructor(private router: Router) { }
+  isShown: boolean = false ;
+  constructor(private router: Router) {
+   }
 
   ngOnInit(): void {
     
+  }
+
+  toggleShow() {
+    this.isShown = ! this.isShown;  
   }
 
 }

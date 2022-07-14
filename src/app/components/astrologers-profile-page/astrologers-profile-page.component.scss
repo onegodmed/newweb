@@ -2,7 +2,7 @@
 @import '~src/assets/scss/font-size.scss';
 
 
-.heading h2 {
+.heading h2 , .heading h3{
     font-size: $title_size_30px;
     display: inline-block;
     margin: 25px 10px;
@@ -32,22 +32,84 @@
   .profile_top_section{
     float: left;
     width: 100%;
-    padding: 6% 0;
+    padding: 4% 0 2%;
     box-sizing: border-box;
-    background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
     .astro_profile_img{
       float: left;
-      transition: 0.5s all ease-in-out;
+      width: 100%;
       transition: transform 0.5s;
+      text-align: center;
       &:hover{
         transition: transform 0.5s;
         transform: scale(1.02);
       }
       img{
-        width: 100%;
-        height: 330px;
-        min-width: 330px;
-        border-radius: 15px;
+        height: 300px;
+        min-width: 280px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+        margin: 10px auto;
+      }
+    }
+    .following_section{
+      float: left;
+      width: 80%;
+      margin: 10px 35px;
+      text-align: center;
+      ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        float: left;
+        li{
+          float: left;
+          padding: 10px 15px;
+          border-top-left-radius: 10px;
+          border-bottom-left-radius: 10px;
+          background: #fff;
+          font-family: "Roboto Mono", monospace;
+          text-align: center;
+          border: 0.3px solid #ccc;
+          cursor: pointer;
+          &:last-child{
+            min-height: 40px;
+            padding: 20px 40px;
+            border: 1px solid rgb(252, 205, 202);
+            background: rgb(255, 247, 237);
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+            transition: transform 0.5s;
+            .fa{
+              font-size: 17px;
+              margin-right: 10px;
+            }
+            a{
+              font-size: 14px;
+            }
+            &:hover{
+                transition: transform 0.5s;
+                transform: scale(1.02);
+            }
+          }
+          span{
+            font-size: 15px;
+            font-weight: 600;
+            display: block;
+            font-family: "Roboto Mono", monospace;
+          }
+          a{
+            font-size: 13px;
+            text-decoration: none;
+            text-transform: capitalize;
+            font-weight: 500;
+            font-family: "Roboto Mono", monospace;
+            text-align: center;
+            display: inline-block;
+            color: #000000;
+          }
+        }
       }
     }
     .astro_details_section{
@@ -61,6 +123,7 @@
         font-family: "Roboto Mono", monospace;
         float: left;
         width: 100%;
+        padding: 5px;
         position: relative;
         &:after {
           content: "";
@@ -75,29 +138,295 @@
           background-position: center;
         }
       }
+      .astro-professional{
+        float: left;
+        width: 100%;
+        span{
+          display: inline-block;
+          padding: 8px;
+          // background: $background_blog_card_section;
+          margin: 5px;
+          border-radius: 2px;
+          color: $title_color;
+          font-size: $title_size_15px;
+          font-weight: $font-weight_600;
+          font-family: "Roboto Mono", monospace;
+          letter-spacing: 1px;
+        }
+      }
       .categories-tag{
         float: left;
-        margin: 10px 0;
-        a{
-            cursor: pointer;
-            text-decoration: none;
+        margin: 5px 0;
+        span{
+          display: inline-block;
+          padding: 8px 15px;
+          background: rgb(239 144 16 / 5%);
+          margin: 5px;
+          border-radius: 20px;
+          color: #212529;
+          font-size: 13px;
+          border: 0.4px solid #6666661c;
+          font-weight: 600;
+          font-family: "Roboto Mono", monospace;
+          box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+        }
+      }
+      .language{
+        float: left;
+        width: 100%;
+        span{
+          font-size: 15px;
+          letter-spacing: 0.1px;
+          color: #000000;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 500;
+          margin: 10px;
+          display: inline-block;
+        }
+      }
+      .exprinces{
+        float: left;
+        width: 100%;
+        margin: 15px 10px;
+        font-size: 17px;
+        span{
+          font-weight: 600;
+          font-size: 20px;
+          margin-right: 4px;
+          display: inline-block;
+        }
+      }
+      .callchat-btn{
+        float: left;
+        width: 100%;
+        margin: 35px 0;
+        button{
+          min-width: 150px;
+          width: 40%;
+          margin: 0 10px;
+          border-radius: 20px;
+          height: 50px;
+          line-height: 30px;
+          font-size: 20px;
+          display: inline-flex;
+          align-items: center;
+          box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+          border: 1px solid #000;
+          background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+          transition: transform 0.5s;
+          &:hover{
+            transition: transform 0.5s;
+            transform: scale(1.03);
+            background: #fff;
+          }
+          .icon-call{
+            background-position: -134px -14px !important;
+            width: 40px;
+            height: 43px;
             display: inline-block;
-            padding: 8px 15px;
-            background: $background_blog_card_section;
-            margin: 5px;
-            border-radius: 2px;
-            color: $title_color;
-            font-size: $title_size_14px;
-            font-weight: $font-weight_600;
+            background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+          }
+          .icon-chat{
+            background-position: -71px -14px !important;
+            width: 40px;
+            height: 43px;
+            display: inline-block;
+            background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+          }
+          .icon-chat-bussy{
+            background-position: -77px -144px !important;
+            width: 40px;
+            height: 43px;
+            display: inline-block;
+            background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+          }
+          .icon-call-bussy{
+            background-position: -139px -144px !important;
+            width: 40px;
+            height: 43px;
+            display: inline-block;
+            background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+          }
+          .icon-chat-offline{
+            background-position: -75px -83px !important;
+            width: 40px;
+            height: 43px;
+            display: inline-block;
+            background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+          }
+          .icon-call-offline{
+            background-position: -137px -83px !important;
+            width: 40px;
+            height: 43px;
+            display: inline-block;
+            background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+          }
+          .call-section{
+            font-size: 14px;
+            width: 35%;
+            color: #333;
+          }
+          .price{
+            font-size: 13px;
+            text-align: right;
+            color: #000;
             font-family: "Roboto Mono", monospace;
-            letter-spacing: 1px;
-            border: 1px solid transparent;
-            &:hover{
-              transition: 0.5s all ease-in-out;
-              border-color: rgb(252, 205, 202);
-              background: rgb(255, 247, 237);
-              transform: scale(1.02);
+            float: right;
+            font-weight: 600;
+            line-height: 18px;
+            .discount_price {
+              display: inline-block;
+              margin-left: 5px;
+              text-decoration-line: line-through;
             }
+          }
+        }
+      }
+    }
+    .starrating{
+      width: 90%;
+      min-height: 325px;
+      position: relative;
+      padding-top: 10px;
+      .total_rating{
+        background: rgba(239, 144, 16, 0.05);
+        border-radius: 20px;
+        font-size: 16px;
+        border: 0.4px solid rgba(102, 102, 102, 0.1098039216);
+        font-weight: 600;
+        font-family: "Roboto Mono", monospace;
+        box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+        color: #212529;
+        padding: 18px;
+        margin-bottom: 20px;
+        max-width: 230px;
+      }
+      .side_right_five{
+        width: 200px;
+        height: 60px;
+        margin-left: -20px;
+        display: block;
+        content: '';
+        background: url("../../../assets/images/rating-05.png") no-repeat;
+        background-size: contain;
+        position: relative;
+        .total_count {
+          position: absolute;
+          right: -40px;
+          top: 10px;
+          padding: 5px 10px;
+          background: rgba(239, 144, 16, 0.05);
+          border-radius: 20px;
+          font-size: 20px;
+          border: 0.4px solid rgba(102, 102, 102, 0.1098039216);
+          font-weight: 600;
+          font-family: "Roboto Mono", monospace;
+          box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+          color: #212529;
+        }
+      }
+      .side_right_four{
+        width: 200px;
+        height: 60px;
+        margin-left: -20px;
+        display: block;
+        content: '';
+        background: url("../../../assets/images/rating-04.png") no-repeat;
+        background-size: contain;
+        position: relative;
+        .total_count {
+          position: absolute;
+          right: -40px;
+          top: 10px;
+          padding: 5px 10px;
+          background: rgba(239, 144, 16, 0.05);
+          border-radius: 20px;
+          font-size: 20px;
+          border: 0.4px solid rgba(102, 102, 102, 0.1098039216);
+          font-weight: 600;
+          font-family: "Roboto Mono", monospace;
+          box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+          color: #212529;
+        }
+      }
+      .side_right_three{
+        width: 200px;
+        height: 60px;
+        margin-left: -20px;
+        display: block;
+        content: '';
+        background: url("../../../assets/images/rating-03.png") no-repeat;
+        background-size: contain;
+        position: relative;
+        .total_count {
+          position: absolute;
+          right: -40px;
+          top: 10px;
+          padding: 5px 10px;
+          background: rgba(239, 144, 16, 0.05);
+          border-radius: 20px;
+          font-size: 20px;
+          border: 0.4px solid rgba(102, 102, 102, 0.1098039216);
+          font-weight: 600;
+          font-family: "Roboto Mono", monospace;
+          box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+          color: #212529;
+        }
+      }
+      .side_right_two{
+        width: 200px;
+        height: 60px;
+        margin-left: -20px;
+        display: block;
+        content: '';
+        background: url("../../../assets/images/rating-02.png") no-repeat;
+        background-size: contain;
+        position: relative;
+        .total_count {
+          position: absolute;
+          right: -40px;
+          top: 10px;
+          padding: 5px 10px;
+          background: rgba(239, 144, 16, 0.05);
+          border-radius: 20px;
+          font-size: 20px;
+          border: 0.4px solid rgba(102, 102, 102, 0.1098039216);
+          font-weight: 600;
+          font-family: "Roboto Mono", monospace;
+          box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+          color: #212529;
+        }
+      }
+      .side_right_one{
+        width: 200px;
+        height: 60px;
+        margin-left: -20px;
+        display: block;
+        content: '';
+        background: url("../../../assets/images/rating-01.png") no-repeat;
+        background-size: contain;
+        position: relative;
+        .total_count {
+          position: absolute;
+          right: -40px;
+          top: 10px;
+          padding: 5px 10px;
+          background: rgba(239, 144, 16, 0.05);
+          border-radius: 20px;
+          font-size: 20px;
+          border: 0.4px solid rgba(102, 102, 102, 0.1098039216);
+          font-weight: 600;
+          font-family: "Roboto Mono", monospace;
+          box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+          color: #212529;
+        }
+      }
+      .user_comment_img {
+        position: absolute;
+        top: -15px;
+        right: -28px;
+        img{
+          height: 400px;
         }
       }
     }
@@ -105,8 +434,403 @@
   .profile_bottom_section{
     float: left;
     width: 100%;
-    padding: 10% 0;
+    padding: 2% 0 3%;
     box-sizing: border-box;
-    background: linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
+    background: linear-gradient(90.53deg, rgb(241 241 241 / 11%) 0%, rgb(149 141 101 / 7%) 50%, rgb(255 255 255 / 18%) 100%);
+    .profile-tabs-astrolgers{
+      float: left;
+      width: 100%;
+      padding-top: 5px;
+      padding-bottom: 20px;
+      min-height: 400px;
+      .profile_details{
+        width: 100%;
+        float: left;
+        .aboutus_section{
+          width: 50%;
+          float: left;
+          padding: 0 1%;
+          .text-cover_styles{
+            width: 100%;
+            float: left;
+            box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+            border: 1px solid #e4e4e4;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            .back_color{
+              padding: 0 2%;
+              background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+            }
+            .bx-sd{
+              padding: 20px;
+              box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+              border: 1px solid rgb(252, 205, 202);
+              border-radius: 5px;
+            }
+            p{
+              float: left;
+              font-size: 14px;
+              padding: 20px;
+              font-family: "Roboto Mono", monospace;
+              letter-spacing: 0.5px;
+              font-weight: 400;
+              line-height: 25px;
+              color: #333333;
+              text-align: justify;
+              border-radius: 5px;
+              background: #fff;
+              width: 100%;
+              b, optgroup, strong{
+                font-weight: 700;
+              }
+              span{
+                color: #ff6633;
+                font-weight: 600;
+              }
+              .bg-clr{
+                float: left;
+                width: 100%;
+                margin: 25px 0;
+                border-radius: 5px;
+                padding: 20px;
+                font-weight: 600;
+                line-height: 30px;
+                font-size: 20px;
+                background: linear-gradient(to right, rgba(255, 235, 104, 0.4705882353), rgba(250, 136, 25, 0.3098039216), rgba(250, 136, 25, 0.2509803922), rgba(255, 178, 95, 0.3803921569), rgba(255, 178, 95, 0.6588235294));
+              }
+              .order-listing-about{
+                width: 100%;
+                float: left;
+                padding: 0 2%;
+                ol{
+                  li{
+                    float: left;
+                    font-size: 16px;
+                    font-family: "Roboto Mono", monospace;
+                    font-weight: 400;
+                    line-height: 22px;
+                    color: #333333;
+                    width: 100%;
+                    margin-bottom: 15px;
+                  }
+                }
+              }
+            }
+          }
+          .guarantee_box_section{
+            padding: 10px;
+            border: 1px solid rgb(252, 205, 202);
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+            display: flex;
+            .secure_section {
+              display: inline-grid;
+              text-align: center;
+              flex: auto;
+              padding: 10px 0;
+              font-size: 14px;
+              color: #595959;
+              .sprite_icons{
+                background: url(https://images.astroyogi.com/astroyogi2017/english/images/tta/tta_image/astrologer_sprite.png) no-repeat;
+                width: 50px;
+                height: 50px;
+                margin-right: 10px;
+                float: none;
+                margin: 0 auto;
+              }
+              .money_back_guarantee {
+                background-position: -8px -18px;
+              }
+              .astro_verified {
+                background-position: -67px -17px;
+              }
+              .astro_secure {
+                background-position: -126px -17px;
+              }
+            }
+          }
+        }
+        .sectionright_side{
+          float: right;
+          width: 48%;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 11px 20px 0px;
+          border: 1px solid #e4e4e4;
+          margin-bottom: 20px;
+          .back_color{
+            padding: 0 2%;
+            background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+          }
+          .scroll-fixed{
+            width: 100%;
+            float: left;
+            margin: 10px 0;
+            padding: 0 20px;
+            overflow-y: scroll;
+            height: 500px;
+            .profile-rates{
+              background: #fff;
+              padding: 15px 10px;
+              box-shadow: rgba(0, 0, 0, 0.1) 0px 11px 20px 0px;
+              border: 1px solid #e4e4e4;
+              border-radius: 10px;
+              margin-bottom: 20px;
+              float: left;
+              width: 100%;
+              .rating_h4 {
+                margin: 0px;
+                border-bottom: 1px solid #efefef;
+                padding: 0px 0px 15px 0px;
+                color: #808080;
+                line-height: 40px;
+                .section-left{
+                  float: left;
+                  letter-spacing: 0.2px;
+                  font-family: "Roboto Mono", monospace;
+                  font-weight: 600;
+                  .rating_blue {
+                    background: #b28d1e;
+                    font-size: 25px;
+                    font-weight: bold;
+                    font-family: "Roboto Mono", monospace;
+                    letter-spacing: 0.3px;
+                    color: #fff;
+                    border-radius: 50px;
+                    margin-right: 10px;
+                    text-align: center;
+                    width: 40px;
+                    height: 40px;
+                    line-height: 40px;
+                    display: inline-block;
+                  }
+                }
+                .section-right{
+                  float: left;
+                  font-size: 20px;
+                  color: #333;
+                  font-weight: 600;
+                  letter-spacing: 0.3px;
+                }
+              }
+              .rating_comment{
+                width: 100%;
+                margin-top: 10px;
+                font-size: 15px;
+                color: #999;
+                margin-bottom: 10px;
+                float: left;
+                font-weight: 500;
+                font-family: "Roboto Mono", monospace;
+                letter-spacing: 0.3px;
+                line-height: 25px;
+              }
+              .astro-comment-section{
+                width: 70%;
+                float: right;
+                padding: 10px;
+                border: 1px solid #eee;
+                border-radius: 8px;
+                background: rgba(239, 144, 16, 0.05);
+                span{
+                  float: left;
+                  letter-spacing: 0.2px;
+                  font-family: "Roboto Mono", monospace;
+                  font-weight: 600;
+                }
+                .astro-date {
+                  float: right;
+                  font-size: 16px;
+                  color: #ccc;
+                  font-weight: 400;
+                  letter-spacing: 0.3px;
+                }
+                .ratingastro_comment {
+                  width: 100%;
+                  margin-top: 10px;
+                  font-size: 15px;
+                  color: #999;
+                  margin-bottom: 10px;
+                  float: left;
+                  font-weight: 600;
+                  font-family: "Roboto Mono", monospace;
+                  letter-spacing: 0.3px;
+                  line-height: 25px;
+                }
+              }
+            }
+          }
+          .star_ratinguser{
+            float: left;
+            width: 100%;
+            margin-top: 20px;
+            display: flex;
+            h4{
+              font-size: 20px;
+              color: #000;
+              font-family: "Roboto Mono", monospace;
+              letter-spacing: 0.5px;
+              margin-top: 5px;
+              font-weight: 600;
+            }
+            .star-icon{
+              float: left;
+              margin-left: 20px;
+              margin-bottom: 10px;
+              cursor: pointer;
+              .fa.fa-star.checked{
+                color: #ffc107;
+                font-size: 35px;
+                margin: 0 2px;
+              }
+              .fa.fa-star{
+                color: #333;
+                font-size: 35px;
+                margin: 0 2px;
+              }
+            }
+          }
+          .input-comment-section{
+            width: 100%;
+            float: left;
+            padding: 0 20px 10px;
+            textarea{
+              width: 100%;
+              float: left;
+              font-size: 14px;
+              border-radius: 8px;
+              font-weight: 400;
+              margin: 10px 0;
+              padding: 10px;
+              letter-spacing: 1px;
+              border-color: #595959;
+            }
+            .sendbtn{
+              width: 100%;
+              padding: 0 5%;
+              border-radius: 10px;
+              height: 40px;
+              line-height: 30px;
+              font-size: 20px;
+              display: inline-flex;
+              align-items: center;
+              box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+              border: 1px solid #666;
+              background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+              transition: transform 0.5s;
+              cursor: pointer;
+              &:hover{
+                background: #fff;
+                transition: transform 0.5s;
+              }
+            }
+          }
+          .astrologer_weekly_status{
+            width: 97%;
+            float: left;
+            position: relative;
+            background: #fff;
+            padding: 10px;
+            box-sizing: border-box;
+            margin: 30px 10px 10px;
+            border-radius: 8px;
+            box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+            border: 1px solid #e4e4e4;
+            .btnclass{
+              margin-top: 20px;
+              background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+              border-radius: 20px;
+              cursor: pointer;
+              font-size: 20px;
+              border: 0.4px solid rgba(102, 102, 102, 0.1098039216);
+              font-weight: 600;
+              font-family: "Roboto Mono", monospace;
+              box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+              color: #212529;
+              padding: 18px;
+              margin-bottom: 20px;
+              text-align: center;
+            }
+            .week{
+              float: left;
+              margin: 10px 0;
+              width: 100%;
+              ul{
+                list-style: none;
+                float: left;
+                padding: 0;
+                margin: 0;
+                li{
+                  float: left;
+                  margin: 10px 0 0px 0;
+                  padding-top: 10px;
+                  width: 100%;
+                  padding-left: 50px;
+                  border-top: 1px solid #999;
+                  .days-name{
+                    font-size: 16px;
+                    font-family: "Roboto Mono", monospace;
+                    font-weight: 600;
+                    color: #333333;
+                    float: left;
+                    line-height: 45px;
+                    margin-left: -40px;
+                    border-radius: 10px;
+                  }
+                  a{
+                    font-size: 12px;
+                    font-family: "Roboto Mono", monospace;
+                    font-weight: 600;
+                    padding: 5px;
+                    border-radius: 8px;
+                    background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+                    color: #212529;
+                    text-decoration: none;
+                    margin: 10px 2px;
+                    display: inline-block;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }  
+
+/* Animation property */
+button {
+  animation: wiggle 2s linear infinite;
+}
+
+/* Keyframes */
+@keyframes wiggle {
+  0%, 15% {
+    transform: rotateZ(0);
+  }
+  25% {
+    transform: rotateZ(10deg);
+  }
+  45% {
+    transform: rotateZ(-4deg);
+  }
+  50%, 100% {
+    transform: rotateZ(0);
+  }
+}
+
+button {
+  left: calc(50% - 3em);
+  top: calc(50% - 2em);
+  height: 4em;
+  width: 7em;
+  background: #444;
+  background: linear-gradient(top, #555, #333);
+  border: none;
+  border-top: 3px solid orange;
+  border-radius: 0 0 0.2em 0.2em;
+  color: #fff;
+  font-family: Helvetica, Arial, Sans-serif;
+  font-size: 1em;
+  transform-origin: 50% 5em;
+}
