@@ -7,12 +7,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./astrologers-profile-page.component.scss']
 })
 export class AstrologersProfilePageComponent implements OnInit {
+
   isShown: boolean = false ;
+  isSussessfully: boolean = false;
+
   constructor(private router: Router) {
    }
 
   ngOnInit(): void {
     
+  }
+
+  submitBtn(){
+    this.isSussessfully = true;
   }
 
   toggleShow() {

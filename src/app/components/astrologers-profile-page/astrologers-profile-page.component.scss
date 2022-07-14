@@ -788,11 +788,12 @@
               box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
               border-radius: 5px;
               margin: 20px auto;
+              background: linear-gradient(to right, rgba(255, 235, 104, 0.4705882353), rgba(250, 136, 25, 0.3098039216), rgba(250, 136, 25, 0.2509803922), rgba(255, 178, 95, 0.3803921569), rgba(255, 178, 95, 0.6588235294));
               p{
                 float: left;
                 font-size: 14px;
                 font-family: "Roboto Mono", monospace;
-                font-weight: 400;
+                font-weight: 600;
                 line-height: 22px;
                 color: #333333;
                 width: 100%;
