@@ -780,6 +780,25 @@
                 transition: transform 0.5s;
               }
             }
+            .success_message{
+              width: 100%;
+              float: left;
+              text-align: center;
+              padding: 10px;
+              box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+              border-radius: 5px;
+              margin: 20px auto;
+              p{
+                float: left;
+                font-size: 14px;
+                font-family: "Roboto Mono", monospace;
+                font-weight: 400;
+                line-height: 22px;
+                color: #333333;
+                width: 100%;
+                margin-bottom: 0;
+              }
+            }
           }
           .astrologer_weekly_status{
             width: 97%;
