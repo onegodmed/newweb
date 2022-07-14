@@ -73,7 +73,8 @@
                         color: $wallet_amounts_color;
                         letter-spacing: 1px;
                         display: inline-block;
-                        padding: 5px;
+                        padding: 0px 5px;
+                        margin-top: -6px;
                         i{       
                             float: left;
                             font-size: 18px;
@@ -95,7 +96,7 @@
                         cursor: pointer;
                         display: flex;
                         align-items: center;
-                        margin-top: 7px;
+                        margin-top: 1px;
                         img{
                             width: 28px;
                             height: 28px;
