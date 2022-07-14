@@ -34,6 +34,63 @@
     width: 100%;
     padding: 4% 0 2%;
     box-sizing: border-box;
+    .astrologer_breadcrumbs{
+      float: left;
+      margin: 5px 0 30px;
+      padding-left: 25px;
+      ul{
+          margin: 0;
+          padding: 6px 0;
+          list-style: none;
+          li{
+              float: left;
+              margin: 0 .5em 0 .6em;
+              box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 20px 0px;
+              a{
+                  background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+                  padding: .13em .4em;
+                  font-size: 16px;
+                  font-family: "Roboto Mono", monospace;
+                  letter-spacing: 1px;
+                  float: left;
+                  text-decoration: none;
+                  color: $talkchat_color;
+                  position: relative;
+                  display: flex;
+                  align-items: center;
+                  height: 22px;
+                  text-transform: capitalize;
+                  &:active {
+                      background: $background_gradient_color;
+                      color: $border_color;
+                      // &:before {
+                      //     border-color: #f0df20 #f0df20 #f0df20 #0000;
+                      // }
+                  }
+                  &:after{
+                      content: "";
+                      position: absolute;
+                      top: 50%;
+                      margin-top: -11px;
+                      border-top: 11px solid transparent;
+                      border-bottom: 11px solid transparent;
+                      border-left: 12px solid $talkchat_border_color;
+                      right: -12px;
+                  }
+                  &:before {
+                      content: "";
+                      position: absolute;
+                      top: 50%;
+                      margin-top: -11px;
+                      border-color: #dee2e6 #dee2e6 #dee2e6 rgba(0, 0, 0, 0);
+                      border-style: solid;
+                      border-width: 11px 0 11px 14px;
+                      left: -14px;
+                  }
+              }
+          }
+      }
+    }
     .astro_profile_img{
       float: left;
       width: 100%;
