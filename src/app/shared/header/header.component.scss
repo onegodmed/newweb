@@ -59,6 +59,8 @@
                     margin-right: 5px;
                     padding-top: 5px;
                     cursor: pointer;
+                    display: flex;
+                    align-items: center;
                     img{
                         width: 25px;
                         height: 25px;
@@ -91,6 +93,9 @@
                         height: 28px;
                         margin: 1px 0px 0px 1px;
                         cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        margin-top: 7px;
                         img{
                             width: 28px;
                             height: 28px;
@@ -111,7 +116,7 @@
                             white-space: nowrap;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            width: 90px;
+                            width: 50px;
                             text-align: left;
                         }
                     }
