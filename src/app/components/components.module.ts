@@ -30,6 +30,7 @@ import { FindCityAstrologersComponent } from './find-city-astrologers/find-city-
 import { AstrologersProfilePageComponent } from './astrologers-profile-page/astrologers-profile-page.component';
 import { FollowUserPageComponent } from './follow-user-page/follow-user-page.component';
 import { AstrologersCardComponent } from './astrologers-card/astrologers-card.component';
+import { WalletPageComponent } from './wallet-page/wallet-page.component';
 
 
 const routes: Routes = [
@@ -121,7 +122,8 @@ const routes: Routes = [
     FindCityAstrologersComponent,
     AstrologersProfilePageComponent,
     FollowUserPageComponent,
-    AstrologersCardComponent
+    AstrologersCardComponent,
+    WalletPageComponent
   ],
   imports: [
     CommonModule,

@@ -746,7 +746,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             color: #333333;
             width: 100%;
           }
-          span{
+          .backcolor-astrogy{
             float: left;
             width: 100%;
             margin: 25px 0;
@@ -795,6 +795,200 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
   }
 }
 
+/*************Tabs_astrolgers_profile****************/
+.profile-tabs-astrolgers{
+  .mat-tab-group{
+    .mat-tab-header{
+      border-bottom: none;   
+    }
+    .mat-tab-label-container{
+        .mat-tab-label, .mat-tab-link{
+          box-sizing: border-box;
+          z-index: 8;
+          // width: 300px !important;
+          height: 60px !important;
+          background: linear-gradient(to right, #ffeb6878, #fa88194f, #fa881940, #ffb25f61, #ffb25fa8);;
+          border-radius: 100px;
+          box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 10px 0px;
+          cursor: pointer;
+          margin-right: 20px;
+          margin-bottom: 10px;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 600;
+          &:hover{
+            background: #ffffff;
+            color: #000;
+          }
+        }
+        .mat-tab-labels{
+          margin: 15px;
+          .mat-tab-label-content{
+            font-size: 20px;
+          }
+        }
+        mat-ink-bar.mat-ink-bar{
+          background-color: transparent !important;
+        }
+    }
+    .mat-tab-body-wrapper{
+      .mat-tab-body-content{
+        overflow: hidden !important;
+        .review_section{
+          width: 100%;
+          float: left;
+          padding: 0 2%;
+          .sectionleft_side{
+            float: right;
+            width: 48%;
+            .star-icon{
+              margin: 20px 0;
+              float: left;
+              .fa.fa-star {
+                font-size: 30px;
+                margin: 5px;
+              }
+            }
+            p{
+              float: left;
+              font-size: 22px;
+              font-family: "Roboto Mono", monospace;
+              letter-spacing: 0.5px;
+              font-weight: 400;
+              line-height: 25px;
+              color: #333333;
+              width: 100%;
+              border-bottom: 1px solid #333;
+              padding-bottom: 25px;
+              margin-bottom: 30px;
+            }
+            .checked {
+              color: orange;
+            } 
+            /* Three column layout */
+            .side {
+              float: left;
+              width: 20%;
+              margin-top:10px;
+              font-family: "Roboto Mono", monospace;
+              font-size: 20px;
+            }
+            .middle {
+              margin-top:10px;
+              float: left;
+              width: 60%;
+            }
+            /* Place text to the right */
+            .right {
+              text-align: right;
+            }
+            .back_overlay{
+              border: 1px solid rgb(252, 205, 202);
+              background: #fff;
+              border-radius: 5px;
+              box-shadow: rgba(0, 0, 0, 0.1) 7px -8px 20px 0px;
+              padding: 20px;
+              width: 100%;
+              margin: auto;
+            }
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+            }
+            /* The bar container */
+            .bar-container {
+              width: 100%;
+              background-color: #f1f1f1;
+              text-align: center;
+              color: white;
+            }
+            /* Individual bars */
+            .bar-5 {width: 95%; height: 18px; background-color: #04AA6D;}
+            .bar-4 {width: 68%; height: 18px; background-color: #2196F3;}
+            .bar-3 {width: 30%; height: 18px; background-color: #00bcd4;}
+            .bar-2 {width: 23%; height: 18px; background-color: #ff9800;}
+            .bar-1 {width: 03%; height: 18px; background-color: #f44336;}
+          }
+          .sectionright_side{
+            float: left;
+            width: 45%;
+            margin: 30px 0;
+            .profile-rates{
+              background: #fff;
+              padding: 15px 10px;
+              box-shadow: rgba(0, 0, 0, 0.1) 0px 11px 20px 0px;
+              border: 1px solid #e4e4e4;
+              border-radius: 10px;
+              margin-bottom: 20px;
+              float: left;
+              width: 100%;
+              .rating_h4 {
+                margin: 0px;
+                border-bottom: 1px solid #efefef;
+                padding: 0px 0px 15px 0px;
+                color: #808080;
+                .section-left{
+                  float: left;
+                  letter-spacing: 0.2px;
+                  font-family: "Roboto Mono", monospace;
+                  font-weight: 600;
+                  .rating_blue {
+                    background: #4ea62c;
+                    padding: 5px 16px;
+                    font-size: 14px;
+                    font-weight: bold;
+                    font-family: "Roboto Mono", monospace;
+                    letter-spacing: 0.3px;
+                    color: #fff;
+                    border-radius: 50px;
+                    margin-right: 10px;
+                    text-align: center;
+                    .glyphicon {
+                      position: relative;
+                      top: 1px;
+                      display: inline-block;
+                      font-family: "Glyphicons Halflings";
+                      font-style: normal;
+                      font-weight: 400;
+                      line-height: 1;
+                      -webkit-font-smoothing: antialiased;
+                      -moz-osx-font-smoothing: grayscale;
+                    }
+                  }
+                }
+                .section-right{
+                  float: right;
+                  font-size: 16px;
+                  color: #ccc;
+                  font-weight: 400;
+                  letter-spacing: 0.3px;
+                }
+              }
+              .rating_comment{
+                width: 100%;
+                margin-top: 10px;
+                font-size: 15px;
+                color: #999;
+                margin-bottom: 10px;
+                float: left;
+                font-weight: 500;
+                font-family: "Roboto Mono", monospace;
+                letter-spacing: 0.3px;
+                line-height: 25px;
+              }
+            }
+          }
+        }
+        .availabilty_section{
+          width: 100%;
+          float: left;
+          padding: 0 2%;
+        } 
+      }
+    }
+  }
+}
 /*************modal-dialog**************/
 .mat-dialog-container{
   width: 800px !important;
