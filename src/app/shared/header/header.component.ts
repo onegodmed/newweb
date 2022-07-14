@@ -40,5 +40,8 @@ export class HeaderComponent implements OnInit {
   follow(){
     this.router.navigateByUrl("/followinguserdetails");
   }
+  walletPage(){
+    this.router.navigateByUrl("/wallet");
+  }
 }
 

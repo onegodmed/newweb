@@ -94,6 +94,10 @@ const routes: Routes = [
     path: 'followinguserdetails',
     component: FollowUserPageComponent,
   },
+  {
+    path: 'wallet',
+    component: WalletPageComponent,
+  },
 
 
 
