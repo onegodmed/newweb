@@ -234,7 +234,10 @@
                                     </div>
                                 </div>
                                 <textarea  rows="4" cols="50" placeholder="Please Enter you Comments"></textarea>
-                                <span class="sendbtn">Comments</span>
+                                <span class="sendbtn" (click)="submitBtn()">Comments</span>
+                                <div *ngIf="isSussessfully" class="success_message">
+                                    <p>Your Ratings Successfully, We hope to see you again soon. Thanks!</p>
+                                </div>
                             </div>
                             <div class="astrologer_weekly_status">
                                 <div class="btnclass" (click)="toggleShow()">Check Weekly Availability</div>
@@ -305,7 +308,7 @@
                                             </li>
                                         </ul>
                                 </div>
-                            </div>   
+                            </div>
                         </div>
                     </div>
                 </div>
