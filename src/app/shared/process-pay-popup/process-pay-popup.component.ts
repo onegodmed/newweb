@@ -13,14 +13,16 @@ export class ProcessPayPopupComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    setTimeout(()=>{
+      this.messageSuccess = true;
+    }, 3000);
+
   }
 
   toggleBtnshow(){
     this.isBtnshow = ! this.isBtnshow;
-    this.messageSuccess = true;
-    setTimeout(()=>{
-      this.messageSuccess = false;
-    }, 3000);
   }
+
 
 }
