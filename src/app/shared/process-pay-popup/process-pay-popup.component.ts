@@ -8,14 +8,21 @@ import { Component, OnInit } from '@angular/core';
 export class ProcessPayPopupComponent implements OnInit {
 
   isBtnshow: boolean = false ;
+  messageSuccess: boolean = true;
   
   constructor() { }
 
   ngOnInit(): void {
+
+    setTimeout(()=>{
+      this.messageSuccess = true;
+    }, 3000);
+
   }
 
   toggleBtnshow(){
     this.isBtnshow = ! this.isBtnshow;
   }
+
 
 }

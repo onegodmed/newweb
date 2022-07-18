@@ -1020,9 +1020,16 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               border-right: transparent;
             }
           }
+          &:nth-child(6){
+            border-color: transparent;
+            td{
+              padding: 5px 15px;
+              border-right: transparent;
+            }
+          }
           td{
               padding: 15px 10px;
-              width: 55%;
+              width: 65%;
               line-height: 35px;
               border-right: 1px solid #00ff4e;
               .coupon_section{
@@ -1085,6 +1092,21 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                 }
               }
           }
+          p{
+            justify-content: space-between;
+            font-family: "Roboto Mono", monospace;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 7px 5px;
+            margin: 10px 0 10px;
+            text-align: center;
+            background: #f8f9fa;
+            border-radius: 5px;
+            box-shadow: 0 0 4px #367a01;
+            color: #000000;
+            width: 100%;
+            letter-spacing: 0;
+          }
         }
         .error_coupon{
           color: #D8000C;
@@ -1142,6 +1164,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             }
           }
         }
+
       }
       .payment-process{
         float: left;
