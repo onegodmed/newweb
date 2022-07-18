@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { ProcessPayPopupComponent } from 'src/app/shared/process-pay-popup/process-pay-popup.component';
 
 @Component({
   selector: 'app-wallet-page',
@@ -8,9 +10,13 @@ import { Router } from '@angular/router';
 })
 export class WalletPageComponent implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+  }
+
+  openDialog(){
+    this.dialog.open(ProcessPayPopupComponent);
   }
 
 }

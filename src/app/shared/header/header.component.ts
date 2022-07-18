@@ -26,15 +26,13 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    $( document ).ready(() => { 
-      $(window).scroll(() => {
-        if ($(this).scrollTop() > 10){
-          $('.header-section').removeClass('header-section');
-        }
-        else{
-          $('.header-section').addClass('is--large');
-        }
-      });
+    $(window).scroll(function () {
+  
+      if ($(window).scrollTop() >= 100) {
+          $('.header-section').addClass('fixed-header');
+      } else {
+          $('.header-section').removeClass('fixed-header');
+      }
     });
 
   }

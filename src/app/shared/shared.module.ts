@@ -8,6 +8,7 @@ import { SliderClientsComponent } from './slider-clients/slider-clients.componen
 import { SingUpPopupComponent } from './sing-up-popup/sing-up-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { ProcessPayPopupComponent } from './process-pay-popup/process-pay-popup.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MatMenuModule } from '@angular/material/menu';
     FooterComponent,
     SliderComponent,
     SliderClientsComponent,
-    SingUpPopupComponent
+    SingUpPopupComponent,
+    ProcessPayPopupComponent
   ],
   imports: [
     CommonModule,
@@ -28,7 +30,8 @@ import { MatMenuModule } from '@angular/material/menu';
     FooterComponent,
     SliderComponent,
     SliderClientsComponent,
-    SingUpPopupComponent
+    SingUpPopupComponent,
+    ProcessPayPopupComponent
   ]
 })
 
