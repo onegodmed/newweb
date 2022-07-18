@@ -28,6 +28,9 @@
                     </td>
                 </tr>
                 <tr>
+                    <p *ngIf="messageSuccess">Cash Back will be added to Your Wallet After Recharge. </p>
+                </tr>
+                <tr>
                     <td>
                         <div class="coupon_section">
                             <a (click)="toggleBtnshow()">Do you have coupon code ?  <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
@@ -50,9 +53,6 @@
                         Continue to Secure Pay
                         <i class="fa fa-external-link-square" aria-hidden="true"></i>
                     </button>
-                </div>
-                <div class="payment_mode">
-
                 </div>
             </table>
             <div class="payment-process">
