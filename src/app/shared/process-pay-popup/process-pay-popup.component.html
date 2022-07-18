@@ -1,0 +1,84 @@
+<div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content process_pay">
+        <tbody>
+            <table style="width:80%; margin: 3% 0 1% 2%;">
+                <tr>
+                    <td>Amounts</td>
+                    <td>Rs.
+                        <span>999.00</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GST @ 18.00%</td>
+                    <td>Rs.
+                        <span>180</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Talktime Value</td>
+                    <td>Rs.
+                        <span>1200.00</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Net Amounts Payable (Rs.)</td>
+                    <td>Rs.
+                        <span>1178.00</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="coupon_section">
+                            <a (click)="toggleBtnshow()">Do you have coupon code ?  <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+                            <input type="text" *ngIf="isBtnshow" placeholder="Enter your coupan code...">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="apply_coupon_btn">
+                            <button *ngIf="isBtnshow">Apply</button>
+                        </div>
+                    </td>
+                </tr>
+                <span class="error_coupon">Please Enter valid code</span>
+                <div class="back_popup_img">
+                    <img src="../../assets/images/IMAGE1.png">
+                </div>
+                <div class="continus_pay">
+                    <button>
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        Continue to Secure Pay
+                        <i class="fa fa-external-link-square" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <div class="payment_mode">
+
+                </div>
+            </table>
+            <div class="payment-process">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../../assets/images/verify-img.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../../assets/images/upi.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636130408980x837599417836378900%2FProperty%25201%253DMastercard%2520%25281%2529.png?w=48&h=29&auto=compress&fit=crop&dpr=1.25">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636131379085x235214909677108360%2FProperty%25201%253DVisa.png?w=48&h=29&auto=compress&fit=crop&dpr=1.25">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </tbody>
+    </div>
+</div>

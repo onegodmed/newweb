@@ -989,7 +989,206 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
     }
   }
 }
-/*************modal-dialog**************/
+
+.mat-dialog-container{
+  .modal-dialog{
+    .modal-content.process_pay{
+      border: none;
+      .modal-header{
+        border-bottom: none;
+      }
+      tbody{
+        background: linear-gradient(90.53deg, #f8f9fa 0%, #f8f9fa 50%, #51dd0a3d 100%);
+        tr{
+          border: 1px solid #00ff4e;
+          color: #000;
+          font-weight: 500;
+          letter-spacing: 1px;
+          font-size: 20px;
+          &:nth-child(4){
+            td{
+              font-weight: 500;
+              letter-spacing: 2px;
+              text-shadow: 1px 1px 2px rgba(54, 49, 49, 0.8509803922);
+              background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+            }
+          }
+          &:nth-child(5){
+            border-color: transparent;
+            td{
+              padding: 5px 15px;
+              border-right: transparent;
+            }
+          }
+          td{
+              padding: 15px 10px;
+              width: 55%;
+              line-height: 35px;
+              border-right: 1px solid #00ff4e;
+              .coupon_section{
+                float: left;
+                width: 100%;
+                font-family: "Roboto Mono", monospace;
+                a{
+                  font-size: 16px;
+                  cursor: pointer;
+                  display: block;
+                  font-weight: 400;
+                  font-family: "Roboto Mono", monospace;
+                  line-height: 25px;
+                  margin: 5px auto;
+                  color: #000000;
+                  transition: 0.5s all ease-in-out;
+                  float: left;
+                  i.fa.fa-angle-double-down {
+                    font-size: 20px;
+                    float: right;
+                    padding: 3px 10px 0;
+                  }
+                  &:hover{
+                    transform: scale(1.03);
+                    text-decoration: underline;
+                  }
+                }
+                input{
+                  float: left;
+                  width: 100%;
+                  margin: 10px auto;
+                  height: 45px;
+                  font-size: 16px;
+                  padding: 0 15px;
+                  border-right: 0;
+                  color: #000000;
+                  border-radius: 3px;
+                  background-color: transparent;
+                  transition: all 0.5s;
+                  border: 1px solid rgba(19, 12, 12, 0.2196078431);
+                  outline: none;
+                }
+              }
+              .apply_coupon_btn{
+                width: 100%;
+                float: left;
+                margin-top: 30px;
+                text-align: center;
+                button{
+                  height: 45px;
+                  width: 100%;
+                  box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+                  border: none;
+                  border-top: 6px solid rgb(252, 205, 202);
+                  background: rgb(255, 247, 237);
+                  border-radius: 0 0 0.4em 0.4em;
+                  color: #000000;
+                  transform-origin: 50% 5em;
+                  font-size: 17px;
+                }
+              }
+          }
+        }
+        .error_coupon{
+          color: #D8000C;
+          font-size: 12px;
+          display: none;
+          width: 100%;
+          float: left;
+          padding-left: 5px;
+          font-weight: 500;
+          margin: 0 auto;
+          text-align: center;
+        }
+        .back_popup_img{
+          position: absolute;
+          right: 10px;
+          bottom: 10px;
+          img{
+            height: 180px;
+          }
+        }
+        .continus_pay {
+          width: 100%;
+          float: left;
+          margin: 10px auto;
+          display: flex;
+          align-items: center;
+          button{
+            height: 50px;
+            line-height: 28px;
+            width: 100%;
+            box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+            border: none;
+            border-top: 6px solid rgb(252, 205, 202);
+            background: #000;
+            border-radius: 0 0 0.4em 0.4em;
+            color: #fff;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transform-origin: 50% 5em;
+            font-size: 18px;
+            transition: 0.5s all ease-in-out;
+            i.fa.fa-lock {
+              float: left;
+              font-size: 25px;
+              padding: 0 10px;
+            }
+            i.fa.fa-external-link-square{
+              float: right;
+              font-size: 20px;
+              padding: 5px 10px;
+            }
+            &:hover{
+              transform: scale(1.02);
+              border-top: 6px solid #00ff4e;
+            }
+          }
+        }
+      }
+      .payment-process{
+        float: left;
+        width: 100%;
+        margin: 10px 0 20px;
+        text-align: center;
+        ul {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                display: inline-block;
+                list-style: none;
+                margin: 0 5px;
+                &:first-child{
+                    a{
+                        border: 2px solid #999;
+                        border-radius: 5px;
+                        height: 35px;
+                        line-height: 30px;
+                        padding: 0 5px;
+                    }
+                }
+                a {
+                    float: left;
+                    text-decoration: none;
+                    color: #000;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    -ms-transition: all .5s;
+                    -o-transition: all .5s;
+                    transition: all .5s;
+                    img{
+                        width: 60px;
+                    }
+                }
+            }
+        }
+      }
+    }
+  }
+}
+
+
+/*************login_modal-dialog**************/
 .mat-dialog-container{
   width: 800px !important;
   padding: 0px !important;
