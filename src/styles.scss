@@ -1208,78 +1208,100 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
         }
       }
       .successful_payment_popup{
+        display: none;
         background: #ffffff;
         width: 100%;
         float: left;
         .success_pyment_section {
           animation: scroll 70s linear infinite;
-          background: url("/../../assets/images/lightbackimg.png"), #111111;
-          color: #eee;
-          min-width: 360px;
+          background: url(/../../assets/images/thankback.jpg), #212529;
+          color: #fff;
+          min-width: 500px;
           width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
+          background-size: cover;
           perspective: 1000px;
           perspective-origin: 50% 50%;
+          .screen_section{
+            padding: 20px 0;
+            text-align: center;
+            background: #ffffffb8;
+            width: 100%;
+            .success_icon_section{
+              margin: 30px auto;
+              max-width: 170px;
+              border: 5px solid green;
+              border-radius: 50%;
+              height: 170px;
+              line-height: 220px;
+              i.fa.fa-check{
+                font-size: 100px;
+                color: green;
+              }
+            }
+            p{
+              font-size: 40px;
+              letter-spacing: 3px;
+              font-family: "Roboto Mono", monospace;
+              line-height: 60px;
+              text-align: center;
+              width: 100%;
+              color: #000;
+              font-weight: 600;
+            }
+            .light-weight-text{
+              font-weight: 500;
+              font-family: "Roboto Mono", monospace;
+              font-size: 20px;
+              line-height: 50px;
+              margin-top: 21px;
+              letter-spacing: 1px;
+                span{
+                    font-weight: 600;
+                    display: block;
+                    margin: 10px auto;
+                }
+            }
+          }
         }
         @keyframes scroll {
           100%{
            background-position:0px -3000px;
          }
-       }
-       
+        } 
        @media (prefers-reduced-motion) {
          .success_pyment_section {
            animation: scroll 200s linear infinite;
          }
        }
-        .screen_section{
-          padding: 20px 0;
-          text-align: center;
-          .success_icon_section{
-            margin: 30px auto;
-            max-width: 170px;
-            border: 5px solid green;
-            border-radius: 50%;
-            height: 170px;
-            line-height: 220px;
-            i.fa.fa-check{
-              font-size: 100px;
-              color: green;
-            }
-          }
-          p{
-            font-size: 40px;
-            letter-spacing: 3px;
-            font-family: "Roboto Mono", monospace;
-            line-height: 60px;
-            text-align: center;
-            width: 100%;
-            color: #000;
-            font-weight: 600;
-          }
-          .light-weight-text{
-            font-weight: 500;
-            font-family: "Roboto Mono", monospace;
-            font-size: 20px;
-            line-height: 50px;
-            margin-top: 21px;
-            letter-spacing: 1px;
-              span{
-                  font-weight: 600;
-                  display: block;
-                  margin: 10px auto;
-              }
-          }
-        }
       }
       .failed_payment_popup{
-        display: none;
-        background: #ffffff;
+        //display: none;
+        height: 100%;
         width: 100%;
-        float: left;
-        margin-bottom: 20px;
+        background-color: hsla(200,40%,30%,.4);
+        background-image:   
+          //url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
+          //url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+          url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+          //url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+          url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+        background-repeat: repeat-x;
+        background-position: 
+          0 20%,
+          0 100%,
+          0 50%,
+          0 100%,
+          0 0;
+        background-size: 
+          2500px,
+          800px,
+          500px 200px,
+          1000px,
+          400px 260px;
+        animation: 50s para infinite linear;
         .screen_section{
           padding: 20px 0;
           text-align: center;
@@ -1335,6 +1357,19 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             transition: 0.5s all ease-in-out;
           }
         }
+        @keyframes para {
+          100% {
+            background-position: 
+              -5000px 20%,
+              -800px 95%,
+              500px 50%,
+              1000px 100%,
+              400px 0;
+            }
+        }
+      }
+      .eraly_payment_popup{
+        display: none;
       }
     }
   }
