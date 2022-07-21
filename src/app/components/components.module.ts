@@ -31,6 +31,9 @@ import { AstrologersProfilePageComponent } from './astrologers-profile-page/astr
 import { FollowUserPageComponent } from './follow-user-page/follow-user-page.component';
 import { AstrologersCardComponent } from './astrologers-card/astrologers-card.component';
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 
 
 const routes: Routes = [
@@ -138,7 +141,10 @@ const routes: Routes = [
     MatExpansionModule,
     MatSelectModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    NgxMatTimepickerModule
   ]
 })
 export class ComponentsModule { }

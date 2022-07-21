@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-material-components/datetime-picker": "^8.0.0",
     "@angular/animations": "^14.0.0",
     "@angular/cdk": "^14.0.1",
     "@angular/common": "^14.0.0",
@@ -22,7 +23,9 @@
     "@angular/router": "^14.0.0",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "angular-material-time-picker": "^1.0.8",
     "jquery": "^3.6.0",
+    "ngx-mat-timepicker": "^14.0.2",
     "ngx-slick-carousel": "^0.6.0",
     "rxjs": "~7.5.0",
     "slick-carousel": "^1.8.1",
