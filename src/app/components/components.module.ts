@@ -34,6 +34,7 @@ import { WalletPageComponent } from './wallet-page/wallet-page.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { ChatScreenComponent } from '../shared/chat-screen/chat-screen.component';
 
 
 const routes: Routes = [
@@ -100,6 +101,10 @@ const routes: Routes = [
   {
     path: 'wallet',
     component: WalletPageComponent,
+  },
+  {
+    path: 'chatscreen',
+    component: ChatScreenComponent,
   },
 
 
