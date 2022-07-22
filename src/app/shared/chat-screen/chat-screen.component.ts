@@ -11,16 +11,22 @@ var element : any;
   templateUrl: './chat-screen.component.html',
   styleUrls: ['./chat-screen.component.scss']
 })
+
 export class ChatScreenComponent implements OnInit {
+
+  waitingSuccess: boolean = true;
 
   constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
-
+    setTimeout(()=>{
+      this.waitingSuccess = false;
+    }, 3000);
   }
 
   openDialogclosed() {
     this.dialog.open(AstrologerCallPopupComponent);
   }
+
 
 }

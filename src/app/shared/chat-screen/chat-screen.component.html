@@ -87,7 +87,8 @@
          </div>
         </div>
     </div>
-    <div class="waiting-chat-app">
+
+    <div *ngIf="waitingSuccess" class="waiting-chat-app">
         <div class="chat_waiting_section">
             <div class="chat-text">
               <p>Please wait, <span class="astro_name"> Astro Mang </span> will accept your Chat request in <br>
