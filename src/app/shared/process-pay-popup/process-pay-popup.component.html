@@ -1,30 +1,34 @@
-<div class="modal-dialog">
+ <div class="modal-dialog">
     <!-- Modal content-->
     <div class="modal-content process_pay">
-        <tbody>
+        <tbody id="calulationpopup" *ngIf="calculationpopup" >
             <table style="width:80%; margin: 3% 0 1% 2%;">
                 <tr>
                     <td>Amounts</td>
                     <td>Rs.
-                        <span>999.00</span>
+                        <span>{{ packagecalculation.data.packageAmount }}</span>
+                        <input type="number" id="packageamount" value='{{packagecalculation.data.packageAmount}}' hidden>
                     </td>
                 </tr>
                 <tr>
                     <td>GST @ 18.00%</td>
                     <td>Rs.
-                        <span>180</span>
+                        <span>{{ packagecalculation.data.gstAmount }}</span>
+                        <input type="number" id="gst" value='{{packagecalculation.data.gstAmount}}' hidden>
                     </td>
                 </tr>
                 <tr>
                     <td>Talktime Value</td>
                     <td>Rs.
-                        <span>1200.00</span>
+                        <span>{{ packagecalculation.data.talktimevalue }}</span>
+                        <input type="number" id="talktime" value='{{packagecalculation.data.talktimevalue}}' hidden>
                     </td>
                 </tr>
                 <tr>
                     <td>Net Amounts Payable (Rs.)</td>
                     <td>Rs.
-                        <span>1178.00</span>
+                        <span>{{ packagecalculation.data.totalAmount }}</span>
+                        <input type="number" id="totalamount" value='{{packagecalculation.data.totalAmount}}' hidden>
                     </td>
                 </tr>
                 <tr>
@@ -48,7 +52,7 @@
                     <img src="../../assets/images/IMAGE1.png">
                 </div>
                 <div class="continus_pay">
-                    <button>
+                    <button (click)="pay()">
                         <i class="fa fa-lock" aria-hidden="true"></i>
                         Continue to Secure Pay
                         <i class="fa fa-external-link-square" aria-hidden="true"></i>
@@ -80,7 +84,7 @@
                 </ul>
             </div>
         </tbody>
-        <div class="successful_payment_popup">
+        <div id="success" class="successful_payment_popup">
             <div class="success_pyment_section">
                 <div class="screen_section">
                     <div class="success_icon_section">
@@ -91,7 +95,7 @@
                 </div>
             </div>
         </div>
-        <div class="failed_payment_popup">
+        <div id="failed" class="failed_payment_popup">
             <div class="failure_pyment_section">
                 <div class="screen_section">
                     <div class="faild_icon_section">
@@ -103,17 +107,5 @@
                 </div>
             </div>
         </div>
-        <!-- <div class="eraly_payment_popup">
-            <div class="failure_pyment_section">
-                <div class="screen_section">
-                    <div class="faild_icon_section">
-                        <i class="fa fa-times" aria-hidden="true"></i>
-                    </div>
-                  <p color="danger">Request Failed</p>
-                  <p class="light-weight-text">Your request for pyment could not be processed at this time.</p>
-                  <button>Try Again</button>
-                </div>
-            </div>
-        </div> -->
     </div>
 </div>

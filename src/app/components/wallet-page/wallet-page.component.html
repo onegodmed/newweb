@@ -1,110 +1,27 @@
 <section class="wallet_section">
     <div class="container">
         <div class="balance_wallet heading">
-            <h2>Your Wallet Balance <span><i class="fa fa-inr" aria-hidden="true"></i> 0:00 </span></h2>
+            <h2>Your Wallet Balance <span><i class="fa fa-inr" aria-hidden="true"></i> {{ balance }} </span></h2>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="wallet-card-section">
-                    <div class="wallet_card">
+                    <div class="wallet_card" *ngFor="let list of packagelist.data; let i=index" (click)="setpackageid(list.package_id)">
                         <div class="top_amounts_img">
-                            <img src="../../assets/images/blueback.png">
+                            <!-- <img src="../../assets/images/blueback.png"> -->
+                            <img src='{{ walletimg[i].img }}'>
                             <div class="tag_offer_packages">
                                 <i class="fa fa-inr" aria-hidden="true"></i>
-                                <span>51</span>
+                                <span>{{ list.talktime_value - list.package_value }}</span>
                                 EXTRA
                             </div>
                         </div>
                         <div class="back-title-img">
-                            <div class="title_name">VENUS</div>
+                            <div class="title_name">{{ list.package_name }}</div>
                         </div>
                         <div class="bottom_content_section">
-                            <div class="youpay">Pay Amounts Now<i class="fa fa-inr" aria-hidden="true"></i><span>49</span></div>
-                            <div class="youget">You Get Amounts<i class="fa fa-inr" aria-hidden="true"></i><span>100</span></div>
-                        </div>
-                        <div class="bag_tag">
-                            <button (click)="openDialog()">Buy Now</button>
-                        </div>
-                        <div class="welcomeimg"></div>
-                    </div>
-                    <div class="wallet_card">
-                        <div class="top_amounts_img">
-                            <img src="../../assets/images/redback.png">
-                            <div class="tag_offer_packages">
-                                <i class="fa fa-inr" aria-hidden="true"></i>
-                                <span>101</span>
-                                EXTRA
-                            </div>
-                        </div>
-                        <div class="back-title-img">
-                            <div class="title_name">VENUS</div>
-                        </div>
-                        <div class="bottom_content_section">
-                            <div class="youpay">Pay Amounts Now<i class="fa fa-inr" aria-hidden="true"></i><span>99</span></div>
-                            <div class="youget">You Get Amounts<i class="fa fa-inr" aria-hidden="true"></i><span>200</span></div>
-                        </div>
-                        <div class="bag_tag">
-                            <button (click)="openDialog()">Buy Now</button>
-                        </div>
-                        <div class="welcomeimg"></div>
-                    </div>
-                    <div class="wallet_card">
-                        <div class="top_amounts_img">
-                            <img src="../../assets/images/greenback.png">
-                            <div class="tag_offer_packages">
-                                <i class="fa fa-inr" aria-hidden="true"></i>
-                                <span>101</span>
-                                EXTRA
-                            </div>
-                        </div>
-                        <div class="back-title-img">
-                            <div class="title_name">VENUS</div>
-                        </div>
-                        <div class="bottom_content_section">
-                            <div class="youpay">Pay Amounts Now<i class="fa fa-inr" aria-hidden="true"></i><span>199</span></div>
-                            <div class="youget">You Get Amounts<i class="fa fa-inr" aria-hidden="true"></i><span>300</span></div>
-                        </div>
-                        <div class="bag_tag">
-                            <button (click)="openDialog()">Buy Now</button>
-                        </div>
-                        <div class="welcomeimg"></div>
-                    </div>
-                    <div class="wallet_card">
-                        <div class="top_amounts_img">
-                            <img src="../../assets/images/blueback.png">
-                            <div class="tag_offer_packages">
-                                <i class="fa fa-inr" aria-hidden="true"></i>
-                                <span>51</span>
-                                EXTRA
-                            </div>
-                        </div>
-                        <div class="back-title-img">
-                            <div class="title_name">VENUS</div>
-                        </div>
-                        <div class="bottom_content_section">
-                            <div class="youpay">Pay Amounts Now<i class="fa fa-inr" aria-hidden="true"></i><span>49</span></div>
-                            <div class="youget">You Get Amounts<i class="fa fa-inr" aria-hidden="true"></i><span>100</span></div>
-                        </div>
-                        <div class="bag_tag">
-                            <button (click)="openDialog()">Buy Now</button>
-                        </div>
-                        <div class="welcomeimg"></div>
-                    </div>
-                    <div class="wallet_card">
-                        <div class="top_amounts_img">
-                            <img src="../../assets/images/redback.png">
-                            <div class="tag_offer_packages">
-                                <i class="fa fa-inr" aria-hidden="true"></i>
-                                <span>101</span>
-                                EXTRA
-                            </div>
-                        </div>
-                        <div class="back-title-img">
-                            <div class="title_name">VENUS</div>
-                        </div>
-                        <div class="bottom_content_section">
-                            <div class="youpay">Pay Amounts Now<i class="fa fa-inr" aria-hidden="true"></i><span>99</span></div>
-                            <div class="youget">You Get Amounts<i class="fa fa-inr" aria-hidden="true"></i><span>200</span></div>
+                            <div class="youpay">Pay Amounts Now<i class="fa fa-inr" aria-hidden="true"></i><span>{{ list.package_value }}</span></div>
+                            <div class="youget">You Get Amounts<i class="fa fa-inr" aria-hidden="true"></i><span>{{ list.talktime_value }}</span></div>
                         </div>
                         <div class="bag_tag">
                             <button (click)="openDialog()">Buy Now</button>

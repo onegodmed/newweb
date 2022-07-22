@@ -57,7 +57,7 @@
                 <div class="filter-section">
                     <mat-form-field>
                         <mat-label>Filter</mat-label>
-                        <mat-select multiple>
+                        <mat-select multiple (selectionChange)="changefilter($event.value)">
                           <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -65,7 +65,7 @@
                 <div class="sort-price">
                     <mat-form-field>
                         <mat-label>Sort Price</mat-label>
-                        <mat-select multiple>
+                        <mat-select (selectionChange)="sortingchangefilter($event.value)">
                           <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option>
                         </mat-select>
                     </mat-form-field>
@@ -73,145 +73,31 @@
                 <div class="search-box">
                     <mat-form-field class="example-form-field">
                         <mat-label>Search</mat-label>
-                        <input matInput type="text" placeholder="Search here...">
+                        <input matInput type="text" placeholder="Search here..." id="searchname" (keyup)="seachastrobyname()">
                     </mat-form-field>
                 </div>
             </div>
 
         </section>
 
-        <section class="chat_card">
+        <section class="chat_card"> 
             <ul>
-                <li>
+                <li *ngFor="let list of astrologerlistService?.response.data" (click)="astrodetailspage(list.astrologer_id)">
                     <div class="card_astro">
                         <div class="astro-img">
-                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
-                                alt="kundali">
+                            <img src='{{ list.photo_url }}'>
                             <div class="light-shad"></div>
+                            <input type="text" id="astro_id" value="{{ list.astrologer_id }}" hidden>
                         </div>
                         <div class="status-section">
                             <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                            <span>24</span>Year
+                            <span>{{ list.experience }}</span>Year
+                            <!-- <span *ngIf="(list.experience) === null">N/A</span> -->
                         </div>
                         <div class="star-ratings">
                             <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <div class="count-rating">8.5</div>
-                            <div class="count-rating newlyaddedastro">New</div>
-                        </div>
-                        <div class="call-status-astrolger">
-                            <a (click)="openDialog()">
-                                <span class="sprite-chat-astrologer"></span>
-                            </a>
-                            <a (click)="openDialog()">
-                                <span class="sprite-call-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-joincall-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-offline-astrologer"></span>
-                            </a>
-                        </div>
-                        <div class="astro-section">
-                            <h5>Poonam</h5>
-                            <p>Psychic-Medium</p>
-                            <div class="ratting">
-                                <div class="language-astrologer">
-                                    <i class="fa fa-language" aria-hidden="true"></i>
-                                    <span>Hindi</span>
-                                    <span>English</span>
-                                    <span>Punjabi</span>
-                                </div>
-                                <div class="skills-astrologer">
-                                    <span>Love</span>
-                                    <span>Marriage</span>
-                                </div>
-                                <div class="price">
-                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                        80<span>/Min</span>
-                                    </span>
-                                    <div class="discount_price">30<span>/Min</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="follow-section">
-                            <span class="follow-style">Follow</span>
-                            <span class="unfollow-style">Unfollow</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card_astro">
-                        <div class="astro-img">
-                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
-                                alt="kundali">
-                            <div class="light-shad"></div>
-                        </div>
-                        <div class="status-section">
-                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                            <span>24</span>Year
-                        </div>
-                        <div class="star-ratings">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <div class="count-rating">8.5</div>
-                            <div class="count-rating newlyaddedastro">New</div>
-                        </div>
-                        <div class="call-status-astrolger">
-                            <a (click)="openDialog()">
-                                <span class="sprite-chat-astrologer"></span>
-                            </a>
-                            <a (click)="openDialog()">
-                                <span class="sprite-call-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-joincall-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-offline-astrologer"></span>
-                            </a>
-                        </div>
-                        <div class="astro-section">
-                            <h5>Poonam</h5>
-                            <p>Psychic-Medium</p>
-                            <div class="ratting">
-                                <div class="language-astrologer">
-                                    <i class="fa fa-language" aria-hidden="true"></i>
-                                    <span>Hindi</span>
-                                    <span>English</span>
-                                    <span>Punjabi</span>
-                                </div>
-                                <div class="skills-astrologer">
-                                    <span>Love</span>
-                                    <span>Marriage</span>
-                                </div>
-                                <div class="price">
-                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                        80<span>/Min</span>
-                                    </span>
-                                    <div class="discount_price">30<span>/Min</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="follow-section">
-                            <span class="follow-style">Follow</span>
-                            <span class="unfollow-style">Unfollow</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card_astro">
-                        <div class="astro-img">
-                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
-                                alt="kundali">
-                            <div class="light-shad"></div>
-                        </div>
-                        <div class="status-section">
-                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                            <span>24</span>Year
-                        </div>
-                        <div class="star-ratings">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <div class="count-rating">8.5</div>
+                            <div *ngIf="list.rating" class="count-rating">{{ list.rating | number:'1.0-0' }}</div>
+                            <div *ngIf="!list.rating" class="count-rating">N/A</div>
                             <div class="count-rating newlyaddedastro">New</div>
                         </div>
                         <div class="call-status-astrolger">
@@ -229,14 +115,13 @@
                             </a>
                         </div>
                         <div class="astro-section">
-                            <h5>Poonam</h5>
-                            <p>Psychic-Medium</p>
+                            <h5>{{ list.full_name }}</h5>
+                            <p *ngIf="list.expertise">{{ list.expertise }}</p>
+                            <p *ngIf="!list.expertise" >Expertise Not Mentioned</p>
                             <div class="ratting">
                                 <div class="language-astrologer">
                                     <i class="fa fa-language" aria-hidden="true"></i>
-                                    <span>Hindi</span>
-                                    <span>English</span>
-                                    <span>Punjabi</span>
+                                    <span>{{ list.langknown }}</span>
                                 </div>
                                 <div class="skills-astrologer">
                                     <span>Love</span>
@@ -244,305 +129,17 @@
                                 </div>
                                 <div class="price">
                                     <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                        80<span>/Min</span>
+                                        {{ list.service_price }}<span>/Min</span>
                                     </span>
                                     <div class="discount_price">30<span>/Min</span></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="follow-section">
-                            <span class="follow-style">Follow</span>
-                            <span class="unfollow-style">Unfollow</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card_astro">
-                        <div class="astro-img">
-                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
-                                alt="kundali">
-                            <div class="light-shad"></div>
-                        </div>
-                        <div class="status-section">
-                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                            <span>24</span>Year
-                        </div>
-                        <div class="star-ratings">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <div class="count-rating">8.5</div>
-                            <div class="count-rating newlyaddedastro">New</div>
-                        </div>
-                        <div class="call-status-astrolger">
-                            <a href="#">
-                                <span class="sprite-chat-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-call-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-joincall-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-offline-astrologer"></span>
-                            </a>
-                        </div>
-                        <div class="astro-section">
-                            <h5>Poonam</h5>
-                            <p>Psychic-Medium</p>
-                            <div class="ratting">
-                                <div class="language-astrologer">
-                                    <i class="fa fa-language" aria-hidden="true"></i>
-                                    <span>Hindi</span>
-                                    <span>English</span>
-                                    <span>Punjabi</span>
-                                </div>
-                                <div class="skills-astrologer">
-                                    <span>Love</span>
-                                    <span>Marriage</span>
-                                </div>
-                                <div class="price">
-                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                        80<span>/Min</span>
-                                    </span>
-                                    <div class="discount_price">30<span>/Min</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="follow-section">
-                            <span class="follow-style">Follow</span>
-                            <span class="unfollow-style">Unfollow</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card_astro">
-                        <div class="astro-img">
-                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
-                                alt="kundali">
-                            <div class="light-shad"></div>
-                        </div>
-                        <div class="status-section">
-                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                            <span>24</span>Year
-                        </div>
-                        <div class="star-ratings">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <div class="count-rating">8.5</div>
-                            <div class="count-rating newlyaddedastro">New</div>
-                        </div>
-                        <div class="call-status-astrolger">
-                            <a href="#">
-                                <span class="sprite-chat-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-call-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-joincall-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-offline-astrologer"></span>
-                            </a>
-                        </div>
-                        <div class="astro-section">
-                            <h5>Poonam</h5>
-                            <p>Psychic-Medium</p>
-                            <div class="ratting">
-                                <div class="language-astrologer">
-                                    <i class="fa fa-language" aria-hidden="true"></i>
-                                    <span>Hindi</span>
-                                    <span>English</span>
-                                    <span>Punjabi</span>
-                                </div>
-                                <div class="skills-astrologer">
-                                    <span>Love</span>
-                                    <span>Marriage</span>
-                                </div>
-                                <div class="price">
-                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                        80<span>/Min</span>
-                                    </span>
-                                    <div class="discount_price">30<span>/Min</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="follow-section">
-                            <span class="follow-style">Follow</span>
-                            <span class="unfollow-style">Unfollow</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card_astro">
-                        <div class="astro-img">
-                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
-                                alt="kundali">
-                            <div class="light-shad"></div>
-                        </div>
-                        <div class="status-section">
-                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                            <span>24</span>Year
-                        </div>
-                        <div class="star-ratings">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <div class="count-rating">8.5</div>
-                            <div class="count-rating newlyaddedastro">New</div>
-                        </div>
-                        <div class="call-status-astrolger">
-                            <a href="#">
-                                <span class="sprite-chat-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-call-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-joincall-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-offline-astrologer"></span>
-                            </a>
-                        </div>
-                        <div class="astro-section">
-                            <h5>Poonam</h5>
-                            <p>Psychic-Medium</p>
-                            <div class="ratting">
-                                <div class="language-astrologer">
-                                    <i class="fa fa-language" aria-hidden="true"></i>
-                                    <span>Hindi</span>
-                                    <span>English</span>
-                                    <span>Punjabi</span>
-                                </div>
-                                <div class="skills-astrologer">
-                                    <span>Love</span>
-                                    <span>Marriage</span>
-                                </div>
-                                <div class="price">
-                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                        80<span>/Min</span>
-                                    </span>
-                                    <div class="discount_price">30<span>/Min</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="follow-section">
-                            <span class="follow-style">Follow</span>
-                            <span class="unfollow-style">Unfollow</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card_astro">
-                        <div class="astro-img">
-                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
-                                alt="kundali">
-                            <div class="light-shad"></div>
-                        </div>
-                        <div class="status-section">
-                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                            <span>24</span>Year
-                        </div>
-                        <div class="star-ratings">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <div class="count-rating">8.5</div>
-                            <div class="count-rating newlyaddedastro">New</div>
-                        </div>
-                        <div class="call-status-astrolger">
-                            <a href="#">
-                                <span class="sprite-chat-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-call-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-joincall-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-offline-astrologer"></span>
-                            </a>
-                        </div>
-                        <div class="astro-section">
-                            <h5>Poonam</h5>
-                            <p>Psychic-Medium</p>
-                            <div class="ratting">
-                                <div class="language-astrologer">
-                                    <i class="fa fa-language" aria-hidden="true"></i>
-                                    <span>Hindi</span>
-                                    <span>English</span>
-                                    <span>Punjabi</span>
-                                </div>
-                                <div class="skills-astrologer">
-                                    <span>Love</span>
-                                    <span>Marriage</span>
-                                </div>
-                                <div class="price">
-                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                        80<span>/Min</span>
-                                    </span>
-                                    <div class="discount_price">30<span>/Min</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="follow-section">
-                            <span class="follow-style">Follow</span>
-                            <span class="unfollow-style">Unfollow</span>
-                        </div>
-                    </div>
-                </li>
-                <li>
-                    <div class="card_astro">
-                        <div class="astro-img">
-                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
-                                alt="kundali">
-                            <div class="light-shad"></div>
-                        </div>
-                        <div class="status-section">
-                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                            <span>24</span>Year
-                        </div>
-                        <div class="star-ratings">
-                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                            <div class="count-rating">8.5</div>
-                            <div class="count-rating newlyaddedastro">New</div>
-                        </div>
-                        <div class="call-status-astrolger">
-                            <a href="#">
-                                <span class="sprite-chat-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-call-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-joincall-astrologer"></span>
-                            </a>
-                            <a href="#">
-                                <span class="sprite-offline-astrologer"></span>
-                            </a>
-                        </div>
-                        <div class="astro-section">
-                            <h5>Poonam</h5>
-                            <p>Psychic-Medium</p>
-                            <div class="ratting">
-                                <div class="language-astrologer">
-                                    <i class="fa fa-language" aria-hidden="true"></i>
-                                    <span>Hindi</span>
-                                    <span>English</span>
-                                    <span>Punjabi</span>
-                                </div>
-                                <div class="skills-astrologer">
-                                    <span>Love</span>
-                                    <span>Marriage</span>
-                                </div>
-                                <div class="price">
-                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                        80<span>/Min</span>
-                                    </span>
-                                    <div class="discount_price">30<span>/Min</span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="follow-section">
-                            <span class="follow-style">Follow</span>
-                            <span class="unfollow-style">Unfollow</span>
+                        <div *ngFor="let followunfollow of followunfollowlistService?.followresponse.data" class="follow-section">
+                            <span *ngIf="!followunfollow.astro_id"  (click)="follow()" class="follow-style">Folow</span>
+                            <!-- <span  (click)="follow()" class="follow-style">{{ list.astrologer_id }}</span> -->
+                            <span *ngIf="followunfollow.astro_id" (click)="unfollow()" class="unfollow-style">Unfollow</span>
+                            <!-- <span  (click)="unfollow()" class="unfollow-style">{{ followunfollow.astro_id }}</span> -->
                         </div>
                     </div>
                 </li>
@@ -571,7 +168,7 @@
     </div>
 
     <div class="city-astrologers">
-        <app-find-city-astrologers></app-find-city-astrologers>
+        <app-find-city-astrologers (category)="categorywiselist($event)"></app-find-city-astrologers>
     </div>
 
     <app-faqpage-page></app-faqpage-page>

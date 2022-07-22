@@ -31,10 +31,6 @@ import { AstrologersProfilePageComponent } from './astrologers-profile-page/astr
 import { FollowUserPageComponent } from './follow-user-page/follow-user-page.component';
 import { AstrologersCardComponent } from './astrologers-card/astrologers-card.component';
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
-import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
-import { NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
-import { ChatScreenComponent } from '../shared/chat-screen/chat-screen.component';
 
 
 const routes: Routes = [
@@ -59,8 +55,12 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'astrology',
-    component: AstrologyComponent,
+    path: 'vedic-astrology',
+    component: AstrologyComponent,   
+  },
+  {
+    path: 'vedic-astrology/:id',
+    component: AstrologyComponent,   
   },
   {
     path: 'premium-report',
@@ -102,10 +102,6 @@ const routes: Routes = [
     path: 'wallet',
     component: WalletPageComponent,
   },
-  {
-    path: 'chatscreen',
-    component: ChatScreenComponent,
-  },
 
 
 
@@ -146,10 +142,7 @@ const routes: Routes = [
     MatExpansionModule,
     MatSelectModule,
     MatInputModule,
-    MatPaginatorModule,
-    MatDatepickerModule,
-    MatNativeDateModule,
-    NgxMatTimepickerModule
+    MatPaginatorModule
   ]
 })
 export class ComponentsModule { }

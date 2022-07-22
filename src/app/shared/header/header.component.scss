@@ -29,26 +29,24 @@
             box-sizing: border-box;
             .withoutloginsection {
                 display: inline-block;
-                font-size: 16px;
-                font-weight: 600;
-                color: #fff;
-                border: 3px solid;
+                font-size: $title_size_14px;
+                font-weight: $font-weight_500;
+                color: #000000;
+                border: 2px solid;
                 padding: 7px 15px;
                 cursor: pointer;
                 letter-spacing: 0.3px;
-                transition: 0.5s all ease-in-out;
-                border-color: #f8f9fa;
+                transition: $transition_out_5s;
+                border-color: rgb(224 181 178);
                 border-radius: 20px;
-                background: linear-gradient(130deg,#ffa200,#db9a09 60.07%,#d3bb16c7 76.05%);
+                background: linear-gradient(90.53deg, rgb(188 174 152 / 34%) 0%, rgba(221, 186, 15, 0.13) 50%, #ee940c40 100%);
                 font-family: "Roboto Mono", monospace;
-                box-shadow: -1px 3px 20px 1px #2125296e;
+                box-shadow: inset 0px -2px 1px #f44336;
                 &:hover{
                     transition: $transition_out_5s;
-                    // border-color: $border_light_pink_color;
+                    border-color: $border_light_pink_color;
                     border-radius: 20px;   
-                    // background: $background_menu_color;
-                    border-color: #00ff4e;
-                    border-radius: 20px;
+                    background: $background_menu_color;
                 }
             }
             .withinloginsection{    

@@ -2,7 +2,7 @@
         <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
-                <div class="login-modal-body">
+                <div *ngIf="otpsent" class="login-modal-body">
                     <div class="body-section">
                         <div class="left-side-img">
                             <img src="../../assets/images/signup-popup.png">
@@ -16,9 +16,10 @@
                                 <div class="check-login-signup">Login/Signup With Mobile Number & OTP</div>
                                 <div class="country-code-section">
                                     <span>+91 | IN</span>
-                                    <input type="tel" maxlength="10" autocomplete="off" placeholder="Mobile Number" required="">
+                                    <input type="tel" maxlength="10" autocomplete="off" name="mobilenumber" #mobilenumber placeholder="Mobile Number" required="">
+                                    <div class="error-text">{{ errormsg }}</div>
                                 </div>
-                                <button type="button">Request OTP</button>
+                                <button type="button" (click)="onSendOtp(mobilenumber.value)">Request OTP</button>
                                 <p class="disclaimer"><i class="fa fa-check-square-o" aria-hidden="true"></i>
                                  By proceeding i agree to <a target="_blank" href="https://www.onegodmed.com/terms-and-condition/">Terms &amp; Conditions</a> and <a target="_blank" href="https://www.onegodmed.com/privacy-policy/">Privacy Policy</a>
                                 </p>
@@ -26,7 +27,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="otp-verify-modal-body">
+                <div *ngIf="verfyotp && !otpsent && !register" class="otp-verify-modal-body">
                     <div class="body-section">
                         <div class="left-side-img">
                             <img src="../../assets/images/signup-popup.png">
@@ -37,16 +38,17 @@
                                     <img src="../../assets/images/otp-verify.png">
                                 </div>
                                 <h4>OTP Verification</h4>
+                                <div class="error-text">{{ errormsg }}</div>
                                 <div class="otp-input-section">
-                                    <input type="tel" maxlength="1" id="otpusername" table-index="1" autocomplete="off" required="">
-                                    <input type="tel" maxlength="1" id="otpusername" table-index="2" autocomplete="off" required="">
-                                    <input type="tel" maxlength="1" id="otpusername" table-index="3" autocomplete="off" required="">
-                                    <input type="tel" maxlength="1" id="otpusername" table-index="4" autocomplete="off" required="">
+                                    <input type="tel" maxlength="1" id="otpusername" #otp1 table-index="1" autocomplete="off" required="">
+                                    <input type="tel" maxlength="1" id="otpusername" #otp2 table-index="2" autocomplete="off" required="">
+                                    <input type="tel" maxlength="1" id="otpusername" #otp3 table-index="3" autocomplete="off" required="">
+                                    <input type="tel" maxlength="1" id="otpusername" #otp4 table-index="4" autocomplete="off" required="">
                                 </div>
-                                <div class="massage-otp-recived">Enter OTP Code sent to <span>+919937654322</span> 
+                                <div class="massage-otp-recived">Enter OTP Code sent to <span>{{ showmobilenumber }}</span> 
                                     <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
-                                <p><button class="loginresend_otp">Submit</button> 
-                                    <br>
+                                    <p><button class="loginresend_otp" (click)="onVerifyOtp(otp1.value+otp2.value+otp3.value+otp4.value)">Submit</button> 
+                                        <br>
                                     Didn't Get OTP ? <a class="rsendotp" href="">Rsend OTP</a>
                                 </p>
                                 <div class="timer">OTP available in<span>00:45s</span></div>
@@ -54,23 +56,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="otp-registration-verify-modal-body">
+                <div *ngIf="register && !otpsent && !verfyotp" class="otp-registration-verify-modal-body">
                     <div class="body-section">
                         <div class="right-side-cover">
                             <div class="from-section">
                                 <input type="text" placeholder="Full Name">
                                 <input type="text" placeholder="Mobile Number">
                                 <h4>OTP Verification</h4>
+                                <div class="error-text">{{ errormsg }}</div>
                                 <div class="otp-input-section">
-                                    <input type="tel" maxlength="1" id="otpusername" table-index="1" autocomplete="off" required="">
-                                    <input type="tel" maxlength="1" id="otpusername" table-index="2" autocomplete="off" required="">
-                                    <input type="tel" maxlength="1" id="otpusername" table-index="3" autocomplete="off" required="">
-                                    <input type="tel" maxlength="1" id="otpusername" table-index="4" autocomplete="off" required="">
+                                    <input type="tel" maxlength="1" id="otpusername" #otp1 table-index="1" autocomplete="off" required="">
+                                    <input type="tel" maxlength="1" id="otpusername" #otp2 table-index="2" autocomplete="off" required="">
+                                    <input type="tel" maxlength="1" id="otpusername" #otp3 table-index="3" autocomplete="off" required="">
+                                    <input type="tel" maxlength="1" id="otpusername" #otp4 table-index="4" autocomplete="off" required="">
                                 </div>
-                                <div class="massage-otp-recived">Enter OTP Code sent to <span>+919937654322</span> 
+                                <div class="massage-otp-recived">Enter OTP Code sent to <span>{{ showmobilenumber }}</span> 
                                     <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
-                                <p><button class="loginresend_otp">Submit</button> 
-                                    <br>
+                                    <p><button class="loginresend_otp" (click)="signupwithotp(otp1.value+otp2.value+otp3.value+otp4.value)">Submit</button> 
+                                        <br>
                                     Didn't Get OTP ? <a class="rsendotp" href="">Rsend OTP</a>
                                 </p>
                                 <div class="timer">OTP available in<span>00:45s</span></div>

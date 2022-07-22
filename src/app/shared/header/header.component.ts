@@ -3,68 +3,122 @@ import { MatDialog } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { SingUpPopupComponent } from '../sing-up-popup/sing-up-popup.component';
+import { LogoutService } from "../../services/logout.service";
 
-var $ : any;
-var element : any;
+
+var $: any;
+var element: any;
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
-  animations:[ 
+  animations: [
     trigger('fade',
-    [ 
-      state('void', style({ opacity : 0})),
-      transition(':enter',[ animate(300)]),
-      transition(':leave',[ animate(500)]),
-    ]
-  )]
+      [
+        state('void', style({ opacity: 0 })),
+        transition(':enter', [animate(300)]),
+        transition(':leave', [animate(500)]),
+      ]
+    )]
 })
 export class HeaderComponent implements OnInit {
-  
-  constructor(private router: Router, public dialog: MatDialog) { 
-  }
+  isLoggedIn: any;
+  isLoggedOut: any;
+  showusername: any = '';
+  CurrentBalance: any;
+  logoutresponse: any;
+  redirectUrl: any;
+
+  constructor(private router: Router, public dialog: MatDialog, private logoutService: LogoutService) { }
 
   ngOnInit(): void {
-    $(window).scroll(function () {
-  
-      if ($(window).scrollTop() >= 100) {
+    if (localStorage.getItem("token") != null) {
+      this.isLoggedIn = true;
+      this.isLoggedOut = false;
+    } else {
+      this.isLoggedOut = true;
+      this.isLoggedIn = false;
+    }
+
+    if (localStorage.getItem("UserName") != null) {
+      this.showusername = localStorage.getItem("UserName");
+    } else {
+      this.showusername = '';
+    }
+
+    if (localStorage.getItem("CurrentBalance") != null) {
+      this.CurrentBalance = localStorage.getItem("CurrentBalance");
+    } else {
+      this.CurrentBalance = '';
+    }
+
+    $(document).ready(() => {
+      $(window).scroll(() => {
+        if ($(this).scrollTop() > 10) {
+          $('.header-section').removeClass('header-section');
+        }
+        else {
+          $('.header-section').addClass('is--large');
+        }
+      });
+
+      $(window).scroll(function () {
+
+        if ($(window).scrollTop() >= 100) {
           $('.header-section').addClass('fixed-header');
-      } else {
+        } else {
           $('.header-section').removeClass('fixed-header');
-      }
+        }
+      });
+
     });
-
   }
-  
-
-
   openDialog() {
     this.dialog.open(SingUpPopupComponent);
   }
-  
-  route4(){
+
+  loggedout() {
+    this.logoutService.logout().subscribe((data) => {
+      this.logoutresponse = data;
+      if (this.logoutresponse.status === true) {
+        localStorage.setItem('token', '');
+        localStorage.setItem('UserName', '');
+        localStorage.setItem('CurrentBalance', '');
+        localStorage.removeItem('token');
+        localStorage.removeItem('UserName');
+        localStorage.removeItem('CurrentBalance');
+        // localStorage.clear();
+        this.isLoggedOut = true;
+        this.isLoggedIn = false;
+        window.location.reload();
+        // this.router.navigate([]);
+      }
+    });
+  }
+
+  route4() {
     this.router.navigateByUrl("/loginpage");
   }
-  route1(){
+  route1() {
     this.router.navigateByUrl("/talktoastro");
   }
-  route2(){
+  route2() {
     this.router.navigateByUrl("/chatwithastro");
   }
-  route3(){
+  route3() {
     this.router.navigateByUrl("/blogpage");
   }
-  route5(){
-    this.router.navigateByUrl("/astrology");
+  route5() {
+    this.router.navigateByUrl("/vedic-astrology");
   }
-  route6(){
+  route6() {
     this.router.navigateByUrl("/premium-report");
   }
-  follow(){
+  follow() {
     this.router.navigateByUrl("/followinguserdetails");
   }
-  walletPage(){
+  walletPage() {
     this.router.navigateByUrl("/wallet");
   }
 }
