@@ -21,6 +21,7 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 
 
 
@@ -33,7 +34,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SliderClientsComponent,
     SingUpPopupComponent,
     ProcessPayPopupComponent,
-    AstrologerCallPopupComponent
+    AstrologerCallPopupComponent,
+    ChatScreenComponent
   ],
   imports: [
     CommonModule,
