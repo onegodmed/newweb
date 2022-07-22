@@ -24,5 +24,4 @@ export class ProcessPayPopupComponent implements OnInit {
     this.isBtnshow = ! this.isBtnshow;
   }
 
-
 }
