@@ -15,13 +15,14 @@ var element : any;
 export class ChatScreenComponent implements OnInit {
 
   waitingSuccess: boolean = true;
+  windowsMove: boolean = false;
 
   constructor(private router: Router, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     setTimeout(()=>{
       this.waitingSuccess = false;
-    }, 3000);
+    }, 6000);
   }
 
   openDialogclosed() {

@@ -999,7 +999,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
         border-bottom: none;
       }
       tbody{
-        display: none;
+        //display: none;
         background: linear-gradient(90.53deg, #f8f9fa 0%, #f8f9fa 50%, #51dd0a3d 100%);
         tr{
           border: 1px solid #00ff4e;
@@ -1279,7 +1279,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
        }
       }
       .failed_payment_popup{
-        //display: none;
+        display: none;
         height: 100%;
         width: 100%;
         background-color: hsla(200,40%,30%,.4);

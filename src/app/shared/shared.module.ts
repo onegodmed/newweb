@@ -61,7 +61,8 @@ import { ChatScreenComponent } from './chat-screen/chat-screen.component';
     SliderComponent,
     SliderClientsComponent,
     SingUpPopupComponent,
-    ProcessPayPopupComponent
+    ProcessPayPopupComponent,
+    ChatScreenComponent
   ]
 })
 

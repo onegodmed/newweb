@@ -1,5 +1,10 @@
-<app-header></app-header>
-<div class="min-height">
-    <router-outlet></router-outlet>
-</div>
-<app-footer></app-footer>
+<ng-container>
+    <app-header></app-header>
+    <div class="min-height">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</ng-container>
+<!-- <ng-container *ngIf="hasRoute('chatscreen')">
+    <app-chat-screen></app-chat-screen>
+</ng-container> -->
