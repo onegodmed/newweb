@@ -672,6 +672,331 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
   }
 }
 
+/*************Tabs_vedic_astrolgers****************/
+.user_profile_update{
+  // background: linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
+  padding: 20px 0 40px;
+  .mat-tab-group{
+    .mat-tab-header{
+      border-bottom: none;   
+    }
+    .mat-tab-header-pagination{
+      min-width: 10px;
+    }
+    .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{
+      margin-top: 8px;
+      height: 30px;
+      position: relative;
+      top: 55px;
+    }
+    .mat-tab-label-container{
+        .mat-tab-label, .mat-tab-link{
+          box-sizing: border-box;
+          z-index: 8;
+          background: #ffffff;
+          border-radius: 5px;
+          box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 10px 0px;
+          cursor: pointer;
+          margin-right: 20px;
+          margin-bottom: 10px;
+          font-family: "Roboto Mono", monospace;
+          font-weight: 600;
+          &:hover{
+            background: #ffffff;
+            color: #000;
+          }
+        }
+        .mat-tab-labels{
+          margin: 15px;
+          .mat-tab-label-content{
+            font-size: 16px;
+            display: flow-root;
+            img{
+              display: block;
+              margin: 0 auto 10px;
+            }
+            i{
+              margin-right: 10px;
+            }
+          }
+        }
+        mat-ink-bar.mat-ink-bar{
+          background-color: transparent !important;
+        }
+    }
+    .mat-tab-body-wrapper{
+      .profile-data-section{
+        width: 100%;
+        float: left;
+        .deshboard_bg_color{
+          position: relative;
+          width: 100%;
+          display: flex;
+          border-radius: 5px;
+          align-items: center;
+          flex-flow: column;
+          min-height: 250px;
+          padding: 10% 10px 0;
+          box-shadow: rgba(0, 0, 0, 0.1) -1px 11px 9px 2px;
+          &.lightgreen{
+            background: #00ff4e38;
+          }
+          &.lightyello{
+            background: #2f3a894f;
+          }
+          &.lightpink{
+            background: #ae8b0b7a;
+          }
+          .count-number {
+            font-family: "Roboto Mono", monospace;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            color: #000;
+            font-size: 40px;
+            line-height: 40px;
+            margin-top: 20px;
+          }
+          .imgcat{
+            height: 190px;
+            width: 130px;
+            position: absolute;
+            right: 0px;
+            bottom: 0;
+          }
+          .cat {
+            position: absolute;
+            height: 12px;
+            width: 22px;
+            right: 52px;
+            top: 30%;
+          }       
+          // Ears
+          .ear {
+            position: absolute;
+            top: -30%;
+            height: 60%;
+            width: 25%;
+            background: #ffffff;
+            
+            // Ear hair
+            &::before,
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 24%;
+              height: 10%;
+              width: 5%;
+              border-radius: 50%;
+              background: #333333;
+            }
+            
+            &::after {
+              transform-origin: 50% 100%;
+            }
+          }         
+          // Face
+          .face {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            // background: #333333;
+            border-radius: 50%;
+          }
+          
+          // Eyes
+          .eye {
+            position: absolute;
+            top: 35%;
+            height: 30%;
+            width: 31%;
+            background: #ffffff;
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            
+            // Eyelids
+            &::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: 0;
+              height: 0;
+              width: 100%;
+              border-radius: 0 0 50% 50% / 0 0 40% 40%;
+              background: #333;
+              animation: blink 4s infinite ease-in;
+            }
+            
+            @keyframes blink {
+              0% { height: 0; }
+              90% { height: 0; }
+              92.5% { height: 100%; }
+              95% { height: 0; }
+              97.5% { height: 100%; }
+              100% { height: 0; }
+            }
+            
+            // Tips of the eyes
+            &::before {
+              content: '';
+              position: absolute;
+              top: 60%;
+              height: 10%;
+              width: 15%;
+              background: #ffffff;
+              border-radius: 50%;
+            }
+          }
+          
+          .eye--left {
+            left: 0;
+            
+            &::before {
+              right: -5%;
+            }
+          }
+          
+          .eye--right {
+            right: 0;
+            
+            &::before {
+              left: -5%;
+            }
+          }
+          
+          // Pupils
+          .eye-pupil {
+            position: absolute;
+            top: 25%;
+            left: 30%;
+            height: 50%;
+            width: 50%;
+            background: #333333;
+            border-radius: 50%;
+            animation: look-around 4s infinite;
+            
+            @keyframes look-around {
+              0% { transform: translate(0) }
+              5% { transform: translate(50%, -25%) }
+              10% { transform: translate(50%, -25%) }
+              15% { transform: translate(-100%, -25%) }
+              20% { transform: translate(-100%, -25%) }
+              25% { transform: translate(0, 0) }
+              100% { transform: translate(0, 0) }
+            }
+            
+            .eye--left & {
+              right: 30%;
+            }
+            
+            .eye--right & {
+              left: 30%;
+            }
+            
+            // Glare on the pupil
+            &::after {
+              content: '';
+              position: absolute;
+              top: 30%;
+              right: -5%;
+              height: 20%;
+              width: 35%;
+              border-radius: 50%;
+              background: #ffffff;
+            }
+          }
+        }
+      }
+      .update-user-section{
+        width: 100%;
+        float: left;
+        .edit_section_user{
+          width: 100%;
+          float: left;
+          input{
+            float: left;
+            width: 48%;
+            border-radius: 5px;
+            border: solid 1px #a8afb5;
+            padding: 10px;
+            font-size: 15px;
+            background: #ccc;
+            font-family: Helvetica;
+            color: #000;
+            font-weight: 700;
+            margin-right: 20px;
+            outline: none;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+            &:nth-child(2n){
+              margin-right: 0;
+            }
+          }
+          textarea{
+            float: left;
+            width: 48%;
+            margin-right: 20px;
+            border-radius: 5px;
+            border: solid 1px #a8afb5;
+            padding: 10px;
+            font-size: 15px;
+            background: #ccc;
+            font-family: Helvetica;
+            color: #000;
+            font-weight: 700;
+            outline: none;
+            margin-bottom: 25px;
+            letter-spacing: 2px;
+          }
+        }
+        .data-save-section{
+          width: 80%;
+          float: left;
+          text-align: center;
+          border: 2px solid #eeeeee82;
+          border-radius: 5px;
+          .user-profile-img-section{
+            margin: 0 auto 15px;
+            max-width: 280px;
+            height: 240px;
+            img{
+              width: 225px;
+              height: 225px;
+            }
+          }
+          .profile-handle-btn{
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            button{
+              background: #444;
+              box-shadow: rgba(0, 0, 0, 0.1) 0px -2px 20px 0px;
+              border: none;
+              border-top: 3px solid #11db99d9;
+              border-radius: 0 0 0.2em 0.2em;
+              color: #fff;
+              font-size: 15px;
+              padding: 10px 20px;
+              letter-spacing: 2px;
+              text-decoration: none;
+              margin: auto 10px;
+            }
+          }
+        }
+      }
+      .myastrologer-table-section{
+        width: 100%;
+        float: left;
+        table{
+          tr{
+            font-size: 16px;
+            letter-spacing: 2px;
+            font-family: "Roboto Mono", monospace;
+          }
+        }
+      }
+    }
+  }
+}
 
 /*************Tabs_vedic_astrolgers****************/
 .tabs_vedic_astrolgers{
@@ -999,7 +1324,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
         border-bottom: none;
       }
       tbody{
-        display: none;
+        //display: none;
         background: linear-gradient(90.53deg, #f8f9fa 0%, #f8f9fa 50%, #51dd0a3d 100%);
         tr{
           border: 1px solid #00ff4e;
@@ -1279,7 +1604,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
        }
       }
       .failed_payment_popup{
-        //display: none;
+        display: none;
         height: 100%;
         width: 100%;
         background-color: hsla(200,40%,30%,.4);

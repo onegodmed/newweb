@@ -29,6 +29,7 @@
             box-sizing: border-box;
             .withoutloginsection {
                 display: inline-block;
+                // animation: float 8s ease-in-out infinite;
                 font-size: 16px;
                 font-weight: 600;
                 color: #fff;
@@ -201,3 +202,37 @@
     z-index: 5;
     transition: all 0.5s ease-in-out;
 }
+
+@keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+  @-moz-keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+  @-webkit-keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }

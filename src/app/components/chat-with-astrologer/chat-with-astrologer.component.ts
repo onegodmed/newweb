@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
+import { ChatScreenComponent } from 'src/app/shared/chat-screen/chat-screen.component';
 
 @Component({
   selector: 'app-chat-with-astrologer',
@@ -16,9 +19,13 @@ export class ChatWithAstrologerComponent implements OnInit {
   
   
 
-  constructor() { }
+  constructor(public dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  openchatpage() {
+    this.router.navigateByUrl("/chatscreen");
   }
 
 }

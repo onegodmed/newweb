@@ -26,18 +26,16 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    $(window).scroll(function () {
-  
-      if ($(window).scrollTop() >= 100) {
-          $('.header-section').addClass('fixed-header');
+    $(window).scroll(() => {
+      if ($(window).scrollTop() >= 300) {
+        $('.header-section').addClass('fixed-header');
       } else {
-          $('.header-section').removeClass('fixed-header');
+        $('.header-section').removeClass('fixed-header');
       }
     });
 
   }
   
-
 
   openDialog() {
     this.dialog.open(SingUpPopupComponent);
@@ -66,6 +64,9 @@ export class HeaderComponent implements OnInit {
   }
   walletPage(){
     this.router.navigateByUrl("/wallet");
+  }
+  openProfileedite() {
+    this.router.navigateByUrl("/profileupdate");
   }
 }
 
