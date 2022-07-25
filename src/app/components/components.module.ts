@@ -35,6 +35,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { ChatScreenComponent } from '../shared/chat-screen/chat-screen.component';
+import { ProfileInfoUpdateComponent } from './profile-info-update/profile-info-update.component';
 
 
 const routes: Routes = [
@@ -106,6 +107,11 @@ const routes: Routes = [
     path: 'chatscreen',
     component: ChatScreenComponent,
   },
+  {
+    path: 'profileupdate',
+    component: ProfileInfoUpdateComponent,
+  },
+
 
 
 
@@ -135,7 +141,8 @@ const routes: Routes = [
     AstrologersProfilePageComponent,
     FollowUserPageComponent,
     AstrologersCardComponent,
-    WalletPageComponent
+    WalletPageComponent,
+    ProfileInfoUpdateComponent
   ],
   imports: [
     CommonModule,

@@ -74,6 +74,30 @@
                 width: 100%;
                 left: 0px;
             }
+            .inner-details-section{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                background: $background_blog_card_section;
+                font-size: $title_size_15px;
+                z-index: 9;
+                border-bottom-left-radius: 0px;
+                border-top-left-radius: 20px;
+                padding: 10px 20px;
+                line-height: 35px;
+                background-color: $title_white_color;
+                font-family: "Roboto Mono", monospace;
+                font-weight: $font-weight_500;
+                letter-spacing: 1px;
+                h6{
+                    font-size: $title_size_15px;
+                    font-weight: $font-weight_500;
+                    letter-spacing: 1px;
+                    margin: 0;
+                    padding: 8px;
+                }
+            }
         }
         .inner-text-box{
             float: left;
@@ -86,6 +110,7 @@
             .categories-tag{
                 float: left;
                 margin: 10px 0;
+                width: 100%;
                 a{
                     cursor: pointer;
                     text-decoration: none;
@@ -120,30 +145,6 @@
                 color: $title_dark_gray_color;
                 width: 100%;
             }
-            .inner-details-section{
-                position: absolute;
-                right: 0;
-                top: 43.4%;
-                display: flex;
-                background: $background_blog_card_section;
-                font-size: $title_size_15px;
-                z-index: 9;
-                border-bottom-left-radius: 0px;
-                border-top-left-radius: 20px;
-                padding: 10px 20px;
-                line-height: 35px;
-                background-color: $title_white_color;
-                font-family: "Roboto Mono", monospace;
-                font-weight: $font-weight_500;
-                letter-spacing: 1px;
-                h6{
-                    font-size: $title_size_15px;
-                    font-weight: $font-weight_500;
-                    letter-spacing: 1px;
-                    margin: 0;
-                    padding: 8px;
-                }
-            }
         }
     }
 
@@ -159,10 +160,10 @@
             float: left;
             li{
                 display: inline-block;
-                width: 31.3%;
+                width: 31%;
                 vertical-align: top;
                 margin-bottom: 40px;
-                margin-right: 30px;   
+                margin-right: 3%;   
                 box-shadow: $box_shadow_blog_page;
                 border-radius: 8px;
                 min-height: 350px;
