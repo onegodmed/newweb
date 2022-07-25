@@ -3,11 +3,6 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AstrologyService } from "../../services/astrology.service";
 
-const headers = new HttpHeaders()
-  .set('Access-Control-Allow-Origin', '*')
-  .set('content-type', 'application/json')
-  .set('content-type', 'application/x-www-form-urlencoded');
-
 @Component({
   selector: 'app-astrology',
   templateUrl: './astrology.component.html',

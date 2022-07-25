@@ -29,10 +29,11 @@
             box-sizing: border-box;
             .withoutloginsection {
                 display: inline-block;
-                font-size: $title_size_14px;
-                font-weight: $font-weight_500;
-                color: #000000;
-                border: 2px solid;
+                // animation: float 8s ease-in-out infinite;
+                font-size: 16px;
+                font-weight: 600;
+                color: #fff;
+                border: 3px solid;
                 padding: 7px 15px;
                 cursor: pointer;
                 letter-spacing: 0.3px;
@@ -199,3 +200,37 @@
     z-index: 5;
     transition: all 0.5s ease-in-out;
 }
+
+@keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+  @-moz-keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+  @-webkit-keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }

@@ -5,6 +5,7 @@ import { AstrologerlistService } from "../../services/astrologerlist.service";
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatDialog } from '@angular/material/dialog';
 import { AstrologerCallPopupComponent } from '../../shared/astrologer-call-popup/astrologer-call-popup.component';
+import { ChatScreenComponent } from 'src/app/shared/chat-screen/chat-screen.component';
 
 @Component({
   selector: 'app-chat-with-astrologer',
@@ -70,6 +71,10 @@ export class ChatWithAstrologerComponent implements OnInit {
 
   openDialog(){
     this.dialog.open(AstrologerCallPopupComponent);
+  }
+
+  openchatpage() {
+    this.router.navigateByUrl("/chatscreen");
   }
 
 }

@@ -31,6 +31,11 @@ import { AstrologersProfilePageComponent } from './astrologers-profile-page/astr
 import { FollowUserPageComponent } from './follow-user-page/follow-user-page.component';
 import { AstrologersCardComponent } from './astrologers-card/astrologers-card.component';
 import { WalletPageComponent } from './wallet-page/wallet-page.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+// import { NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
+import { ChatScreenComponent } from '../shared/chat-screen/chat-screen.component';
+import { ProfileInfoUpdateComponent } from './profile-info-update/profile-info-update.component';
 
 
 const routes: Routes = [
@@ -102,6 +107,15 @@ const routes: Routes = [
     path: 'wallet',
     component: WalletPageComponent,
   },
+  {
+    path: 'chatscreen',
+    component: ChatScreenComponent,
+  },
+  {
+    path: 'profileupdate',
+    component: ProfileInfoUpdateComponent,
+  },
+
 
 
 
@@ -131,7 +145,8 @@ const routes: Routes = [
     AstrologersProfilePageComponent,
     FollowUserPageComponent,
     AstrologersCardComponent,
-    WalletPageComponent
+    WalletPageComponent,
+    ProfileInfoUpdateComponent
   ],
   imports: [
     CommonModule,

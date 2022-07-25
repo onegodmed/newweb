@@ -31,7 +31,8 @@ import { ProcessPayPopupComponent } from './process-pay-popup/process-pay-popup.
     SliderComponent,
     SliderClientsComponent,
     SingUpPopupComponent,
-    ProcessPayPopupComponent
+    ProcessPayPopupComponent,
+    ChatScreenComponent
   ]
 })
 

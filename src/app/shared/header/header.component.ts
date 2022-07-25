@@ -74,6 +74,8 @@ export class HeaderComponent implements OnInit {
 
     });
   }
+  
+
   openDialog() {
     this.dialog.open(SingUpPopupComponent);
   }
@@ -120,6 +122,9 @@ export class HeaderComponent implements OnInit {
   }
   walletPage() {
     this.router.navigateByUrl("/wallet");
+  }
+  openProfileedite() {
+    this.router.navigateByUrl("/profileupdate");
   }
 }
 
