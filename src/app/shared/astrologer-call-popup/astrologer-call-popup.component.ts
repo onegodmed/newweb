@@ -15,6 +15,8 @@ export class AstrologerCallPopupComponent implements OnInit {
   hourStep = 1;
   minuteStep = 15;
   secondStep = 30;
+  hide: boolean = false;
+  show: boolean = true;
 
   constructor() { }
 

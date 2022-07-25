@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AstrologerlistService } from "../../services/astrologerlist.service";
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MatDialog } from '@angular/material/dialog';
+import { AstrologerCallPopupComponent } from '../../shared/astrologer-call-popup/astrologer-call-popup.component';
 
 @Component({
   selector: 'app-chat-with-astrologer',
@@ -23,7 +25,7 @@ export class ChatWithAstrologerComponent implements OnInit {
 
 
 
-  constructor(private router: Router, public astrologerlistService: AstrologerlistService) { }
+  constructor(private router: Router, public astrologerlistService: AstrologerlistService,public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
@@ -65,4 +67,9 @@ export class ChatWithAstrologerComponent implements OnInit {
       alert('Astrologer Id Required');
     }
   }
+
+  openDialog(){
+    this.dialog.open(AstrologerCallPopupComponent);
+  }
+
 }

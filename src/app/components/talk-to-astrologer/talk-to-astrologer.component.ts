@@ -3,7 +3,9 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AstrologerlistService } from "../../services/astrologerlist.service";
 import { FollounfollowService } from "../../services/follounfollow.service";
+import { MatDialog } from '@angular/material/dialog';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { ProcessPayPopupComponent } from 'src/app/shared/process-pay-popup/process-pay-popup.component';
 
 
 
@@ -28,7 +30,7 @@ export class TalkToAstrologerComponent implements OnInit {
   sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: High To Low'];
 
 
-  constructor(private router: Router, public astrologerlistService: AstrologerlistService, public followunfollowlistService: FollounfollowService) { }
+  constructor(private router: Router, public astrologerlistService: AstrologerlistService, public followunfollowlistService: FollounfollowService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
@@ -63,6 +65,10 @@ export class TalkToAstrologerComponent implements OnInit {
   //   console.log(this.astro_id);
   //   this.followunfollowlistService.follow(this.astro_id);
   // }
+
+  openDialog(){
+    this.dialog.open(ProcessPayPopupComponent);
+  }
 
   follow() {
     this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
