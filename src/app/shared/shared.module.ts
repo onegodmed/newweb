@@ -9,6 +9,7 @@ import { SingUpPopupComponent } from './sing-up-popup/sing-up-popup.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProcessPayPopupComponent } from './process-pay-popup/process-pay-popup.component';
+import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProcessPayPopupComponent } from './process-pay-popup/process-pay-popup.
     SliderComponent,
     SliderClientsComponent,
     SingUpPopupComponent,
-    ProcessPayPopupComponent
+    ProcessPayPopupComponent,
+    ChatScreenComponent
   ],
   imports: [
     CommonModule,
