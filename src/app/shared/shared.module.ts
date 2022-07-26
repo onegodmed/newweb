@@ -10,6 +10,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { ProcessPayPopupComponent } from './process-pay-popup/process-pay-popup.component';
 import { ChatScreenComponent } from './chat-screen/chat-screen.component';
+import { AstrologerCallPopupComponent } from './astrologer-call-popup/astrologer-call-popup.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ChatScreenComponent } from './chat-screen/chat-screen.component';
     SliderClientsComponent,
     SingUpPopupComponent,
     ProcessPayPopupComponent,
-    ChatScreenComponent
+    ChatScreenComponent,
+    AstrologerCallPopupComponent
   ],
   imports: [
     CommonModule,
@@ -34,7 +36,8 @@ import { ChatScreenComponent } from './chat-screen/chat-screen.component';
     SliderClientsComponent,
     SingUpPopupComponent,
     ProcessPayPopupComponent,
-    ChatScreenComponent
+    ChatScreenComponent,
+    AstrologerCallPopupComponent
   ]
 })
 

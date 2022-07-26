@@ -122,7 +122,7 @@
                             </div>
                         </div>
                         <div class="right-side-cover">
-                            <div class="chat-section-popup">
+                            <div  *ngIf="hide" class="chat-section-popup">
                                 <div class="charge-per-minute">Charge per minute: <span><i class="fa fa-inr" aria-hidden="true"></i> 50</span></div>
                                 <div class="available-balance">Available balance: <span><i class="fa fa-inr" aria-hidden="true"></i> 90000</span></div>
                                 <div class="maximum-call-duration">Call duration: <span>1 Day 6 hours 1 min</span></div>
@@ -361,7 +361,7 @@
                                 </div>
                                 <button class="chatnow-popup" type="button">Chat Now</button>
                             </div>
-                            <div class="waiting-screen-popup">
+                            <div *ngIf="hide" class="waiting-screen-popup">
                                 <div class="waiting-text">
                                     Please wait a while <span> Praveen </span>will accepet your call shortly... 
                                 </div>
@@ -374,7 +374,7 @@
                                     Please wait, will accept your request in<span>00:00:05 Sec</span>
                                 </div>
                             </div>
-                            <div class="oops-screen-popup">
+                            <div *ngIf="hide" class="oops-screen-popup">
                                 <div class="oops-img">
                                     <h1 class="animate-charcter">Oops!</h1>
                                     <img src="/../assets/images/oops-img.png">
@@ -387,7 +387,7 @@
                                     <button>Try Again</button>
                                 </div>
                             </div>
-                            <div class="wallat-balance-popup">
+                            <div *ngIf="show" class="wallat-balance-popup">
                                 <div class="wallat-text">
                                     Your Wallet Balance is Rs.<span>90000</span>
                                 </div>
@@ -396,7 +396,7 @@
                                     <button>Proceed to Chat</button>
                                 </div>
                             </div>
-                            <div class="connect-call-astro-popup">
+                            <div *ngIf="hide" class="connect-call-astro-popup">
                                 <div class="connect-img">
                                     <img src="/../assets/images/connecting-call.png">
                                 </div>
@@ -407,7 +407,7 @@
                                     <!-- <button>Try Again</button> -->
                                 </div>
                             </div>
-                            <div class="closed-chat-astro-popup">
+                            <div *ngIf="hide" class="closed-chat-astro-popup">
                                 <div class="closed-text">
                                     <h1 class="animate-charcter">Are you sure?</h1>
                                     You really want to end this Chat

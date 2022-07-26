@@ -69,8 +69,11 @@ export class ChatWithAstrologerComponent implements OnInit {
     }
   }
 
-  openDialog(){
-    this.dialog.open(AstrologerCallPopupComponent);
+  openDialog(astroId: any){
+    // alert(astroId);
+    this.dialog.open(AstrologerCallPopupComponent, {
+      data: {astroId}
+    });
   }
 
   openchatpage() {

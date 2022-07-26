@@ -66,6 +66,15 @@ export class AstrologerlistService {
     );
   }
 
+  astrodetailspopup(id:any) {
+    alert(id);
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.ASTRO_DETAILS, { 'headers': headers, "id": id }).pipe(
+      map(data => {
+        return data;
+      })
+    );
+  }
+
   addreviewrating() {
     return this.http.post(this.baserurl.BASE_URL + this.endpoint.ADD_REVIEW_RATING, { 'headers': headers, "token": localStorage.getItem('token'), "astro_id": localStorage.getItem('astrologer_id'), "rating":'', "review":'' }).pipe(
       map(data => {
