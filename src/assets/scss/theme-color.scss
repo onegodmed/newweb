@@ -132,7 +132,8 @@ $background_blog_card_section: linear-gradient(90.53deg, rgba(188, 174, 152, 0.3
 $background_blog_Side_bar: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
 $background_blog_side_bar_hover :linear-gradient(1deg, rgba(255, 221, 49, 0.26) 20%, rgba(255, 255, 255, 0.5) 100%);
 $background_unfollow_bg_color: linear-gradient(42deg, #e94a0d 0%, rgb(221 139 15 / 92%) 50%, rgb(116 113 109 / 95%) 100%);
-
+$background_gradient_profile_gallery_bg : linear-gradient(top, #555, #333);
+$background_gradient_profile_bg: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
 
 /**************transition/transform-in/out*************/
 
@@ -151,6 +152,10 @@ $box_shadow_blog_single_section : (54 51 51 / 12%) -1px -9px 20px 2px;
 $box_shadow_blog_side_bar: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
 $box_shadow_blog_side_bar_inner: inset rgba(0, 0, 0, 0.1) -1px 0px 20px 2px;
 $box_shadow_unfollow_tag: inset rgba(0, 0, 0, 0.1) 1px -19px 5px 0px;
+$box_shadow_astrolger_gallery_left_section: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+$box_shadow_astrolger_gallery_right_section: rgba(0, 0, 0, 0.1) 0px 11px 20px 0px;
+$box_shadow_astrolger_gallery: rgba(0, 0, 0, 0.1) 0px 10px 20px 0px;
+$box_shadow_astrolger_gallery_weekly_status: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
 
 
 /**************Color**************/
@@ -164,6 +169,9 @@ $browes_title-color: #333;
 $articles_title_color: #000000;
 $border_color: #000000;
 $follow_bg_color: #f8f9faed;
+$astrolger_gallery_white_bg_color: #ffffff;
+$astrolger_gallery_black_light_bg_color: #444444;
+$astrolger_profile_black_light_color: #212529;
 
 $hover_text: #333333;
 $hover_white_color: #ffffff;
