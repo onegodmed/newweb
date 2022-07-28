@@ -87,6 +87,17 @@
                                             <input type="text" autocomplete="off" placeholder="City">
                                             <input type="text" autocomplete="off" placeholder="State">
                                             <input type="text" autocomplete="off" placeholder="Pin Code">
+                                            <div *ngIf="editprofileshow" class="edit_custom_file">
+                                                <input type="file" class="custom-input" name="image" placeholder="Choose file...">
+                                                <div class="invalid-msg">Example invalid custom Image.</div>
+                                            </div>
+                                            <div *ngIf="editprofileshow" class="Language_section">
+                                                <select class="lang_control" name="status">
+                                                    <option>Language</option>
+                                                    <option value="hindi">Hindi</option>
+                                                    <option value="english">English</option>
+                                                </select>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-md-4 col-lg-4 col-xlg-4 col-xs-12">
@@ -95,7 +106,8 @@
                                                 <img src="https://www.onegodmed.com/admin-assets/assets/images/users/no-image.png" alt="profile-img">
                                             </div>
                                             <div class="profile-handle-btn">
-                                                <button>Edit Profile</button>
+                                                <button (click)="showEditprofile()">Edit Profile</button>
+                                                <button *ngIf="editprofileshow" class="update_edit_profile">Update</button>
                                                 <button>Delete Account</button>
                                             </div>
                                         </div>
@@ -110,11 +122,80 @@
                             <span>My Booking</span>
                         </ng-template>
                         <div class="container">
-                            <div class="vedic_astrolger-section heading">
+                            <div class="booking_astrolger-section heading">
                                 <h3>My Booking</h3>
                                 <div class="row">
-                                    <div class="col-md-4 col-lg-4 col-xlg-4 col-xs-12">
-                                        
+                                    <div class="col-md-4 col-lg-4 col-xlg-4 col-xs-12 booking_cover">
+                                        <div class="booking_card">
+                                            <div class="cover_line"><strong>Booking ID : <span>1023431234421</span></strong></div>
+                                            <div class="cover_line">Date & Time : <span>2022-07-23, 11:00:49</span></div>
+                                            <div class="cover_line">Service Type : <span> Call / Chat</span></div>
+                                            <div class="cover_line">Service Name : <span>Vedic Astrology</span></div>
+                                            <div class="cover_line">Consultant Name : <span>Astro Mang</span></div>
+                                            <div class="cover_line">Call Duration : <span> 04 Min 17 Sec</span></div>
+                                            <div class="cover_line">Service Amount : <span><i class="fa fa-inr" aria-hidden="true"></i>245</span></div>
+                                            <div class="cover_line">Payment Mode : <span>Wallet</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-xlg-4 col-xs-12 booking_cover">
+                                        <div class="booking_card">
+                                            <div class="cover_line"><strong>Booking ID : <span>1023431234421</span></strong></div>
+                                            <div class="cover_line">Date & Time : <span>2022-07-23, 11:00:49</span></div>
+                                            <div class="cover_line">Service Type : <span> Call / Chat</span></div>
+                                            <div class="cover_line">Service Name : <span>Vedic Astrology</span></div>
+                                            <div class="cover_line">Consultant Name : <span>Astro Mang</span></div>
+                                            <div class="cover_line">Call Duration : <span> 04 Min 17 Sec</span></div>
+                                            <div class="cover_line">Service Amount : <span><i class="fa fa-inr" aria-hidden="true"></i>245</span></div>
+                                            <div class="cover_line">Payment Mode : <span>Wallet</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-xlg-4 col-xs-12 booking_cover">
+                                        <div class="booking_card">
+                                            <div class="cover_line"><strong>Booking ID : <span>1023431234421</span></strong></div>
+                                            <div class="cover_line">Date & Time : <span>2022-07-23, 11:00:49</span></div>
+                                            <div class="cover_line">Service Type : <span> Call / Chat</span></div>
+                                            <div class="cover_line">Service Name : <span>Vedic Astrology</span></div>
+                                            <div class="cover_line">Consultant Name : <span>Astro Mang</span></div>
+                                            <div class="cover_line">Call Duration : <span> 04 Min 17 Sec</span></div>
+                                            <div class="cover_line">Service Amount : <span><i class="fa fa-inr" aria-hidden="true"></i>245</span></div>
+                                            <div class="cover_line">Payment Mode : <span>Wallet</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-xlg-4 col-xs-12 booking_cover">
+                                        <div class="booking_card">
+                                            <div class="cover_line"><strong>Booking ID : <span>1023431234421</span></strong></div>
+                                            <div class="cover_line">Date & Time : <span>2022-07-23, 11:00:49</span></div>
+                                            <div class="cover_line">Service Type : <span> Call / Chat</span></div>
+                                            <div class="cover_line">Service Name : <span>Vedic Astrology</span></div>
+                                            <div class="cover_line">Consultant Name : <span>Astro Mang</span></div>
+                                            <div class="cover_line">Call Duration : <span> 04 Min 17 Sec</span></div>
+                                            <div class="cover_line">Service Amount : <span><i class="fa fa-inr" aria-hidden="true"></i>245</span></div>
+                                            <div class="cover_line">Payment Mode : <span>Wallet</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-xlg-4 col-xs-12 booking_cover">
+                                        <div class="booking_card">
+                                            <div class="cover_line"><strong>Booking ID : <span>1023431234421</span></strong></div>
+                                            <div class="cover_line">Date & Time : <span>2022-07-23, 11:00:49</span></div>
+                                            <div class="cover_line">Service Type : <span> Call / Chat</span></div>
+                                            <div class="cover_line">Service Name : <span>Vedic Astrology</span></div>
+                                            <div class="cover_line">Consultant Name : <span>Astro Mang</span></div>
+                                            <div class="cover_line">Call Duration : <span> 04 Min 17 Sec</span></div>
+                                            <div class="cover_line">Service Amount : <span><i class="fa fa-inr" aria-hidden="true"></i>245</span></div>
+                                            <div class="cover_line">Payment Mode : <span>Wallet</span></div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 col-lg-4 col-xlg-4 col-xs-12 booking_cover">
+                                        <div class="booking_card">
+                                            <div class="cover_line"><strong>Booking ID : <span>1023431234421</span></strong></div>
+                                            <div class="cover_line">Date & Time : <span>2022-07-23, 11:00:49</span></div>
+                                            <div class="cover_line">Service Type : <span> Call / Chat</span></div>
+                                            <div class="cover_line">Service Name : <span>Vedic Astrology</span></div>
+                                            <div class="cover_line">Consultant Name : <span>Astro Mang</span></div>
+                                            <div class="cover_line">Call Duration : <span> 04 Min 17 Sec</span></div>
+                                            <div class="cover_line">Service Amount : <span><i class="fa fa-inr" aria-hidden="true"></i>245</span></div>
+                                            <div class="cover_line">Payment Mode : <span>Wallet</span></div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
