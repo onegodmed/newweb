@@ -9,11 +9,17 @@ import { Router } from '@angular/router';
 })
 export class ProfileInfoUpdateComponent implements OnInit {
 
+  editprofileshow: boolean = false;
+  editprofilehide: boolean = false;
+
   constructor(public dialog: MatDialog, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-
+  showEditprofile(){
+    this.editprofileshow = true;
+    this.editprofilehide = true;
+  }
 
 }

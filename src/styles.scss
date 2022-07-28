@@ -946,6 +946,42 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             margin-bottom: 25px;
             letter-spacing: 2px;
           }
+          .edit_custom_file{
+            // display: none;
+            float: left;
+            width: 48%;
+            margin-right: 18px;
+            .custom-input{
+              position: relative;
+              margin: 0;
+              height: 45px;
+              width: 100%;
+              cursor: pointer;
+            }
+            .invalid-msg{
+              display: none;
+              color: red;
+              font-size: 12px;
+              margin: 10px;
+              display: inline-block;
+            }
+          }
+          .Language_section{
+            // display: none;
+            float: left;
+            width: 48%;
+            .lang_control{
+              border-radius: 5px;
+              border: solid 1px #a8afb5;
+              padding: 10px 20px 10px 10px;
+              width: 100%;
+              font-size: 15px;
+              background: #ccc;
+              color: #626278c9;
+              font-weight: 500;
+              outline: none;
+            }
+          }
         }
         .data-save-section{
           width: 80%;
@@ -980,6 +1016,9 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               text-decoration: none;
               margin: auto 10px;
             }
+            button.update_edit_profile{
+              display: none;
+            }
           }
         }
       }
@@ -991,6 +1030,29 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             font-size: 16px;
             letter-spacing: 2px;
             font-family: "Roboto Mono", monospace;
+          }
+        }
+      }
+      .booking_astrolger-section{
+        width: 100%;
+        float: left;
+        .booking_card {
+          width: 100%;
+          float: left;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: rgba(0, 0, 0, 0.1) -3px 3px 10px 0px;
+          margin-bottom: 30px;
+          background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
+          .cover_line{
+            font-family: "Roboto Mono", monospace;
+            letter-spacing: 0.2px;
+            font-size: 16px;
+            font-weight: 500;
+            line-height: 40px;
+            span{
+              float: right;
+            }
           }
         }
       }
