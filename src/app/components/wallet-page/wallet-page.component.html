@@ -1,12 +1,12 @@
 <section class="wallet_section">
     <div class="container">
         <div class="balance_wallet heading">
-            <h2>Your Wallet Balance <span><i class="fa fa-inr" aria-hidden="true"></i> {{ balance }} </span></h2>
+            <h2>Your Wallet Balance <span><i class="fa fa-inr" aria-hidden="true"></i> {{ balance.data.balance }} </span></h2>
         </div>
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="wallet-card-section">
-                    <div class="wallet_card" *ngFor="let list of packagelist.data; let i=index" (click)="setpackageid(list.package_id)">
+                    <div class="wallet_card" *ngFor="let list of packagelist.data; let i=index">
                         <div class="top_amounts_img">
                             <!-- <img src="../../assets/images/blueback.png"> -->
                             <img src='{{ walletimg[i].img }}'>
@@ -24,7 +24,7 @@
                             <div class="youget">You Get Amounts<i class="fa fa-inr" aria-hidden="true"></i><span>{{ list.talktime_value }}</span></div>
                         </div>
                         <div class="bag_tag">
-                            <button (click)="openDialog()">Buy Now</button>
+                            <button (click)="openDialog(list.package_id)">Buy Now</button>
                         </div>
                         <div class="welcomeimg"></div>
                     </div>

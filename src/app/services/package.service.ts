@@ -26,8 +26,8 @@ export class PackageService {
     );
   }
 
-  packagecalculation() {
-    return this.http.post(this.baserurl.BASE_URL + this.endpoint.PACKAGE_CALCULATION, { 'headers': headers, 'package_id': localStorage.getItem('packageId') }).pipe(
+  packagecalculation(packageId: any) {
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.PACKAGE_CALCULATION, { 'headers': headers, 'package_id': packageId }).pipe(
       map(data => {
         return data;
       })

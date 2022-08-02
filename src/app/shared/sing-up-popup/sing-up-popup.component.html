@@ -19,7 +19,7 @@
                                     <input type="tel" maxlength="10" autocomplete="off" name="mobilenumber" #mobilenumber placeholder="Mobile Number" required="">
                                     <div class="error-text">{{ errormsg }}</div>
                                 </div>
-                                <button type="button" (click)="onSendOtp(mobilenumber.value)">Request OTP</button>
+                                <button type="button" id="onsendotp" (click)="onSendOtp(mobilenumber.value)">Request OTP</button>
                                 <p class="disclaimer"><i class="fa fa-check-square-o" aria-hidden="true"></i>
                                  By proceeding i agree to <a target="_blank" href="https://www.onegodmed.com/terms-and-condition/">Terms &amp; Conditions</a> and <a target="_blank" href="https://www.onegodmed.com/privacy-policy/">Privacy Policy</a>
                                 </p>
@@ -46,12 +46,12 @@
                                     <input type="tel" maxlength="1" id="otpusername" #otp4 table-index="4" autocomplete="off" required="">
                                 </div>
                                 <div class="massage-otp-recived">Enter OTP Code sent to <span>{{ showmobilenumber }}</span> 
-                                    <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
+                                    <a (click)="editnumber()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
                                     <p><button class="loginresend_otp" (click)="onVerifyOtp(otp1.value+otp2.value+otp3.value+otp4.value)">Submit</button> 
                                         <br>
-                                    Didn't Get OTP ? <a class="rsendotp" href="">Rsend OTP</a>
-                                </p>
-                                <div class="timer">OTP available in<span>00:45s</span></div>
+                                    Didn't Get OTP ? <a class="rsendotp" (click)="startTimer()">Rsend OTP</a>
+                                </p><br><p *ngIf="otperror">click on resend otp to get OTP</p>
+                                <div *ngIf="!otperror" class="timer">OTP available in<span>00:{{timeLeft}}</span></div>
                             </div>
                         </div>
                     </div>

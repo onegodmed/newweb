@@ -14,7 +14,7 @@
                 <div *ngIf="isLoggedIn"  class="withinloginsection">
                     <div  class="wallet-amounts"  (click)="walletPage()">
                         <img src="../../assets/images/walletimage.png">
-                        <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i> {{ CurrentBalance }} </span>
+                        <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i> {{ CurrentBalance.data.balance }} </span>
                     </div>
                     <div  class="user-section_onlogin">
                         <div class="user-avatar">
@@ -28,7 +28,6 @@
                         <i class="fa fa-bars" aria-hidden="true"></i>
                     </button>
                     <mat-menu #menu="matMenu">
-                        <button mat-menu-item>My Account</button>
                         <button mat-menu-item (click)="openProfileedite()">My Account</button>
                         <button mat-menu-item (click)="follow()">My Astrologers</button>
                         <button mat-menu-item (click)="walletPage()">Wallet Recharge</button>

@@ -25,37 +25,16 @@ export class AstrologerlistService {
   }
 
   astrolist(page: number, category: any, sorting: any, searchbyname: any) {
-    // console.log(sorting);
-    // alert(sorting);
-    // return this.http.get(this.baserurl.BASE_URL + this.endpoint.HOME_ASTROL_IST, { 'headers': headers?'searchFilter': searchfilter }).pipe(
-    //   map(data => {
-    //     return data;
-    //   })
-    // );
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.ALL_ASTROL_IST, { 'headers': headers, 'categories': category, 'sorting': sorting, 'searchbyname': searchbyname, 'limit': page }).pipe(
+      map(data => {
+        return data;
+      })
+    );
 
-    return this.http.post(this.baserurl.BASE_URL + this.endpoint.ALL_ASTROL_IST, { 'headers': headers, 'categories': category, 'sorting': sorting, 'searchbyname': searchbyname }).subscribe(data => {
-      this.response = data;
-      console.log(data);
-    });
-  }
-
-  loadmorelist(page: number, category: any, sorting: any) {
-    // console.log(sorting);
-    // alert(sorting);
-    // return this.http.get(this.baserurl.BASE_URL + this.endpoint.HOME_ASTROL_IST, { 'headers': headers?'searchFilter': searchfilter }).pipe(
-    //   map(data => {
-    //     return data;
-    //   })
-    // );
-
-    return this.http.post(this.baserurl.BASE_URL + this.endpoint.ALL_ASTROL_IST, { 'headers': headers, 'categories': category, 'sorting': sorting }).subscribe(data => {
-      this.loadmore = data;
-      // let arr1 = [1, 2];
-      // let arr2 = [3, 4];
-      // let newArr = this.loadmore.concat(data);
-      this.loadmore = this.response.data.concat(data);
-      console.log(this.loadmore);
-    });
+    // return this.http.post(this.baserurl.BASE_URL + this.endpoint.ALL_ASTROL_IST, { 'headers': headers, 'categories': category, 'sorting': sorting, 'searchbyname': searchbyname, 'limit': page }).subscribe(data => {
+    //   this.response = data;
+    //   console.log(data);
+    // });
   }
 
   astrodetails() {
@@ -67,7 +46,6 @@ export class AstrologerlistService {
   }
 
   astrodetailspopup(id:any) {
-    alert(id);
     return this.http.post(this.baserurl.BASE_URL + this.endpoint.ASTRO_DETAILS, { 'headers': headers, "id": id }).pipe(
       map(data => {
         return data;

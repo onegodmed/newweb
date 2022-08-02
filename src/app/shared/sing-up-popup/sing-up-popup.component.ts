@@ -19,10 +19,13 @@ export class SingUpPopupComponent implements OnInit {
   otpsent = false;
   verfyotp = false;
   register = false;
-  sendotp: any = {}
-  verifyotp: any = {}
-  errormsg: any
-  showmobilenumber: any
+  sendotp: any = {};
+  verifyotp: any = {};
+  errormsg: any;
+  showmobilenumber: any;
+  timeLeft: number = 60;
+  interval: any;
+  otperror: boolean = false;
   constructor(private loginService: LoginService, private router: Router, private formBuilder: FormBuilder) {
   }
 
@@ -45,6 +48,7 @@ export class SingUpPopupComponent implements OnInit {
             this.otpsent = false;
             this.verfyotp = true;
             this.register = false;
+            this.startTimer();
           } else {
             this.errormsg = "Invalid Mobile Number Check Your Number";
             localStorage.setItem('mobilenumber', '');
@@ -73,17 +77,17 @@ export class SingUpPopupComponent implements OnInit {
           if (this.verifyotp.data.token.token != '') {
             localStorage.setItem('token', this.verifyotp.data.token.token);
             localStorage.setItem('UserName', this.verifyotp.data.full_name);
-            localStorage.setItem('CurrentBalance', this.verifyotp.wallet_balance[0].balance);
+            // localStorage.setItem('CurrentBalance', this.verifyotp.wallet_balance[0].balance);
             // this.router.navigate([]);
             window.location.reload();
           } else {
             localStorage.setItem('token', '');
             localStorage.setItem('UserName', '');
-            localStorage.setItem('CurrentBalance', '');
+            // localStorage.setItem('CurrentBalance', '');
             // localStorage.clear();
             localStorage.removeItem('token');
             localStorage.removeItem('UserName');
-            localStorage.removeItem('CurrentBalance');
+            // localStorage.removeItem('CurrentBalance');
             window.location.reload();
           }
         } else {
@@ -123,6 +127,36 @@ export class SingUpPopupComponent implements OnInit {
       this.errormsg = "Incorrect OTP format";
     }
   }
+
+  editnumber() {
+    this.verfyotp = false;
+    this.otpsent = true;
+  }
+
+  resendotp() {
+    alert(localStorage.getItem('mobilenumber'));
+  }
+
+  startTimer() {
+    this.otperror = false;
+    this.otpsent = false;
+    this.verfyotp = true;
+    this.register = false;
+    this.interval = setInterval(() => {
+      if (this.timeLeft > 0) {
+        this.timeLeft--;
+      } else {
+        this.timeLeft = 60;
+        this.pauseTimer();
+      }
+    }, 1000)
+  }
+
+  pauseTimer() {
+    clearInterval(this.interval);
+    this.otperror = true;
+  }
+
 
 
 }

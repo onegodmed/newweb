@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { trigger, state, transition, style, animate } from '@angular/animations';
 import { SingUpPopupComponent } from '../sing-up-popup/sing-up-popup.component';
 import { LogoutService } from "../../services/logout.service";
+import { UserService } from "../../services/user.service";
 
 
 var $: any;
@@ -26,11 +27,11 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: any;
   isLoggedOut: any;
   showusername: any = '';
-  CurrentBalance: any;
+  CurrentBalance: any = [];
   logoutresponse: any;
   redirectUrl: any;
 
-  constructor(private router: Router, public dialog: MatDialog, private logoutService: LogoutService) { }
+  constructor(private router: Router, public dialog: MatDialog, private logoutService: LogoutService, public userService: UserService) { }
 
   ngOnInit(): void {
     if (localStorage.getItem("token") != null) {
@@ -47,11 +48,9 @@ export class HeaderComponent implements OnInit {
       this.showusername = '';
     }
 
-    if (localStorage.getItem("CurrentBalance") != null) {
-      this.CurrentBalance = localStorage.getItem("CurrentBalance");
-    } else {
-      this.CurrentBalance = '';
-    }
+    this.userService.userWalletdetails().subscribe((data: any) => {
+      this.CurrentBalance = data;
+    });
 
     $(document).ready(() => {
       $(window).scroll(() => {
@@ -86,15 +85,12 @@ export class HeaderComponent implements OnInit {
       if (this.logoutresponse.status === true) {
         localStorage.setItem('token', '');
         localStorage.setItem('UserName', '');
-        localStorage.setItem('CurrentBalance', '');
         localStorage.removeItem('token');
         localStorage.removeItem('UserName');
-        localStorage.removeItem('CurrentBalance');
-        // localStorage.clear();
         this.isLoggedOut = true;
         this.isLoggedIn = false;
-        window.location.reload();
-        // this.router.navigate([]);
+        // window.location.reload();
+        this.router.navigate(['']);
       }
     });
   }

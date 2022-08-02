@@ -10,11 +10,15 @@ import { FollounfollowService } from "../../services/follounfollow.service";
 export class AstrologersCardComponent implements OnInit {
 
   followedastro: any = [];
+  followerlist: any = {};
 
   constructor(private router: Router, public followunfollowlistService: FollounfollowService) { }
 
   ngOnInit(): void {
-    this.followunfollowlistService.getfollowlist();
+    this.followunfollowlistService.getfollowlist().subscribe((data) => {
+      this.followerlist = data;
+      console.log('hi sam', this.followerlist);
+    });
   }
 
   astrodetailspage(id: any) {

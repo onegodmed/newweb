@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AstrologerlistService } from "../../services/astrologerlist.service";
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+// import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { MatDialog } from '@angular/material/dialog';
 import { AstrologerCallPopupComponent } from '../../shared/astrologer-call-popup/astrologer-call-popup.component';
 import { ChatScreenComponent } from 'src/app/shared/chat-screen/chat-screen.component';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-chat-with-astrologer',
@@ -14,6 +15,9 @@ import { ChatScreenComponent } from 'src/app/shared/chat-screen/chat-screen.comp
 })
 export class ChatWithAstrologerComponent implements OnInit {
 
+  username: any = '';
+  astrolist: any = [];
+  usercurrentbalance: any = [];
   page: number = 1;
   categoryfilter: any;
   sortingfilter: any;
@@ -24,22 +28,33 @@ export class ChatWithAstrologerComponent implements OnInit {
   sortings = new FormControl('');
   sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: High To Low'];
 
-
-
-  constructor(private router: Router, public astrologerlistService: AstrologerlistService,public dialog: MatDialog) { }
+  constructor(private router: Router, public astrologerlistService: AstrologerlistService,public dialog: MatDialog, public userService: UserService) { }
 
   ngOnInit(): void {
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+    
+    if(localStorage.getItem('token') != null){
+      this.username = localStorage.getItem('UserName');
+      this.userService.userWalletdetails().subscribe((data: any) => {
+        this.usercurrentbalance = data;
+      });
+    }else{
+      this.username = '';
+      this.usercurrentbalance = '';
+    }
+
+    this.alluserlist();
+
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
   }
 
-  // getdata() {
-  //   console.log("Scrolled");
-  //   this.page = this.page + 1;
-  //   this.astrologerlistService.astrolist(this.page);
-  // }
+  alluserlist() {
+    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data) => {
+      this.astrolist = data;
+      // console.log('hi sam',this.astrolist.totalCount);
+    });
+  }
 
   changefilter(value: any) {
-    // alert(value);
     this.categoryfilter = value;
     this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
   }
@@ -69,15 +84,24 @@ export class ChatWithAstrologerComponent implements OnInit {
     }
   }
 
-  openDialog(astroId: any){
-    // alert(astroId);
+  openDialog(astroIdforchat: any){
     this.dialog.open(AstrologerCallPopupComponent, {
-      data: {astroId}
+      data: {astroIdforchat}
     });
   }
 
   openchatpage() {
     this.router.navigateByUrl("/chatscreen");
+  }
+
+  onScroll() {
+    console.log("scrolled down!!");
+    if (this.astrolist.totalCount >= this.page) {
+      this.page = this.page + 10;
+      console.log(this.page);
+      this.alluserlist();
+    }
+    // alert(this.page); 
   }
 
 }

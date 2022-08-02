@@ -16,6 +16,9 @@ export class EndpointService {
   ASTRO_DETAILS = 'Astrologer/astroDetails';
   RATINGS_ALL = 'Astrologer/AstroRating';
   AVAILABILITY = 'Astrologer/AstroAvl';
+  CHECK_USER_BALANCE = 'Astrologer/checkUserBalance';
+  GET_CITY = 'Astrologer/searchCity';
+  ADD_CALL = 'Astrologer/addCall';
 
   ///Blog.php////
   BLOG_LIST_HOME = 'Blog/blogList';
@@ -27,6 +30,7 @@ export class EndpointService {
   CHECKFOLLOWUNFOLLOW = 'User/getUserfollowingAstrologer';
   ADD_REVIEW_RATING = 'User/addreviewRating';
   TESTIMONIAL = 'User/getTestimonial';
+  USER_CURRENT_BALANCE = 'User/userWalletdetails';
 
   ///Package.php///
   PACKAGE_LIST = 'Package/offerPackage';

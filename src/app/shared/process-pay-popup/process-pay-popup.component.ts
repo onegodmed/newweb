@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Inject } from '@angular/core';
+import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { PackageService } from '../../services/package.service';
 import { RazorpayService } from '../../services/razorpay.service';
@@ -22,15 +24,14 @@ export class ProcessPayPopupComponent implements OnInit {
   ordercreated: any = [];
   transactionId: any;
 
-  constructor(private router: Router, public packagelistService: PackageService, public razorpayService: RazorpayService) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: any,private router: Router, public packagelistService: PackageService, public razorpayService: RazorpayService) { }
 
   ngOnInit(): void {
-
     setTimeout(() => {
       this.messageSuccess = false;
     }, 3000);
 
-    this.packagelistService.packagecalculation().subscribe((data: any) => {
+    this.packagelistService.packagecalculation(this.data.packageId).subscribe((data: any) => {
       this.packagecalculation = data;
     });
 

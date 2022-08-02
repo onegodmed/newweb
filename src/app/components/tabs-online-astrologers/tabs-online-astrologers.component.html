@@ -16,8 +16,9 @@
                                     <div class="light-shad"></div>
                                 </div>
                                 <div class="switch">
-                                    <span class="online"></span>
-                                    <span class="offline"></span>
+                                    <span *ngIf="list.current_status === 'Online'" class="online"></span>
+                                    <span *ngIf="list.current_status === 'Offline'" class="offline"></span>
+                                    <span *ngIf="list.current_status === 'Busy'" class="busy"></span>
                                 </div>
                                 <div class="status-section">
                                     <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
@@ -29,17 +30,23 @@
                                     <div class="count-rating newlyaddedastro">New</div>
                                 </div>
                                 <div class="call-status-astrolger">
-                                    <a href="#">
-                                        <span class="sprite-chat-astrologer"></span>
+                                    <a *ngIf="list.current_status === 'Online'">
+                                        <span class="icon-call"></span>
                                     </a>
-                                    <a href="#">
-                                        <span class="sprite-call-astrologer"></span>
+                                    <a *ngIf="list.current_status === 'Offline'">
+                                        <span class="icon-call-bussy"></span>
                                     </a>
-                                    <a href="#">
-                                        <span class="sprite-joincall-astrologer"></span>
+                                    <a *ngIf="list.current_status === 'Busy'">
+                                        <span class="icon-call-offline"></span>
                                     </a>
-                                    <a href="#">
-                                        <span class="sprite-offline-astrologer"></span>
+                                    <a *ngIf="list.current_status === 'Online'">
+                                        <span class="icon-chat"></span>
+                                    </a>
+                                    <a *ngIf="list.current_status === 'Offline'">
+                                        <span class="icon-chat-bussy"></span>
+                                    </a>
+                                    <a *ngIf="list.current_status === 'Busy'">
+                                        <span class="icon-chat-offline"></span>
                                     </a>
                                 </div>
                                 <div class="astro-section">

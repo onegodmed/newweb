@@ -36,7 +36,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 // import { NgxMatTimepickerModule } from '@angular-material-components/datetime-picker';
 import { ChatScreenComponent } from '../shared/chat-screen/chat-screen.component';
 import { ProfileInfoUpdateComponent } from './profile-info-update/profile-info-update.component';
-
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 const routes: Routes = [
   {
@@ -146,7 +146,7 @@ const routes: Routes = [
     FollowUserPageComponent,
     AstrologersCardComponent,
     WalletPageComponent,
-    ProfileInfoUpdateComponent
+    ProfileInfoUpdateComponent,
   ],
   imports: [
     CommonModule,
@@ -157,7 +157,8 @@ const routes: Routes = [
     MatExpansionModule,
     MatSelectModule,
     MatInputModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    InfiniteScrollModule
   ]
 })
 export class ComponentsModule { }

@@ -4,8 +4,9 @@ import { Router } from '@angular/router';
 import { AstrologerlistService } from "../../services/astrologerlist.service";
 import { FollounfollowService } from "../../services/follounfollow.service";
 import { MatDialog } from '@angular/material/dialog';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { ProcessPayPopupComponent } from 'src/app/shared/process-pay-popup/process-pay-popup.component';
+import { AstrologerCallPopupComponent } from 'src/app/shared/astrologer-call-popup/astrologer-call-popup.component';
+import { UserService } from 'src/app/services/user.service';
 
 
 
@@ -15,9 +16,14 @@ import { ProcessPayPopupComponent } from 'src/app/shared/process-pay-popup/proce
   styleUrls: ['./talk-to-astrologer.component.scss']
 })
 export class TalkToAstrologerComponent implements OnInit {
-  page: number = 1;
+
+  username: any = '';
+  usercurrentbalance: any = [];
+  astrolist: any = [];
+  page: number = 10;
   astro_id: any = '';
   followresponse: any = {};
+  followerlist: any = {};
   categoryfilter: any = [];
   sortingfilter: any;
   searchbyname: any;
@@ -29,50 +35,43 @@ export class TalkToAstrologerComponent implements OnInit {
   sortings = new FormControl('');
   sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: High To Low'];
 
-
-  constructor(private router: Router, public astrologerlistService: AstrologerlistService, public followunfollowlistService: FollounfollowService, public dialog: MatDialog) { }
+  constructor(private router: Router, public astrologerlistService: AstrologerlistService, public followunfollowlistService: FollounfollowService, public dialog: MatDialog, public userService: UserService) {
+  }
 
   ngOnInit(): void {
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
-    this.followunfollowlistService.getfollowlist();
 
-    // window.addEventListener('scroll', this.scrollEvent, true);
-
-    // this.followunfollowlistService.getfollowlist().subscribe((data) => {
-    //   this.followresponse = data;
-    //   console.log(this.followresponse.status);
-    // })
+    if (localStorage.getItem('token') != null) {
+      this.username = localStorage.getItem('UserName');
+      this.userService.userWalletdetails().subscribe((data: any) => {
+        this.usercurrentbalance = data;
+      });
+    } else {
+      this.username = '';
+      this.usercurrentbalance = '';
+    }
+  
+    this.alluserlist();
+    // this.followunfollowlistService.getfollowlist();
+    this.followunfollowlistService.getfollowlist().subscribe((data) => {
+      this.followerlist = data;
+      // console.log('hi sam', this.followerlist.data[0].astro_id);
+    });
   }
 
-  ngOnDestroy() {
-    window.removeEventListener('scroll', this.scrollEvent, true);
+  openDialog(astroIdforcall: any) {
+    this.dialog.open(AstrologerCallPopupComponent, {
+      data: { astroIdforcall }
+    });
   }
 
-  scrollEvent = (event: any): void => {
-    // const scrollTopVal = event.target.scrollingElement.scrollTop;
-    // console.log(scrollTopVal);
-    this.getdata();
-  }
-
-  getdata() {
-    console.log("Scrolled");
-    this.page = this.page + 1;
-    this.astrologerlistService.loadmorelist(this.page, this.categoryfilter, this.sortingfilter);
-  }
-
-  // follow() {
-  //   this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
-  //   console.log(this.astro_id);
-  //   this.followunfollowlistService.follow(this.astro_id);
-  // }
-
-  openDialog(){
-    this.dialog.open(ProcessPayPopupComponent);
+  alluserlist() { 
+    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data) => {
+      this.astrolist = data;
+    });
   }
 
   follow() {
     this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
-    console.log(localStorage.getItem("token"));
     if (this.astro_id != null && localStorage.getItem("token") != null) {
       this.followunfollowlistService.follow(this.astro_id).subscribe((data) => {
         this.followresponse = data;
@@ -93,7 +92,6 @@ export class TalkToAstrologerComponent implements OnInit {
 
   unfollow() {
     this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
-    console.log(localStorage.getItem("token"));
     if (this.astro_id != null && localStorage.getItem("token") != null) {
       this.followunfollowlistService.unfollow(this.astro_id).subscribe((data) => {
         this.followresponse = data;
@@ -114,7 +112,8 @@ export class TalkToAstrologerComponent implements OnInit {
 
   changefilter(value: any) {
     this.categoryfilter = value;
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+    this.alluserlist();
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
   }
 
   sortingchangefilter(value: any) {
@@ -135,18 +134,19 @@ export class TalkToAstrologerComponent implements OnInit {
     } else {
       this.sortingfilter = { field: 'experience', sortby: 'DESC' }
     }
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+    this.alluserlist();
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
   }
 
   categorywiselist(category: any) {
     this.categoryfilter = [category];
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+    this.alluserlist();
     window.scroll(0, 0);
   }
 
   seachastrobyname() {
     this.searchbyname = (<HTMLInputElement>document.getElementById("searchname")).value;
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+    this.alluserlist();
     // window.scroll(0, 0);
   }
 
@@ -162,4 +162,15 @@ export class TalkToAstrologerComponent implements OnInit {
       alert('Astrologer Id Required');
     }
   }
+
+
+  onScroll() {
+    console.log("scrolled down!!");
+    if (this.astrolist.totalCount >= this.page) {
+      this.page = this.page + 10;
+      console.log(this.page);
+      this.alluserlist();
+    }
+  }
+
 }

@@ -38,13 +38,14 @@ export class FollounfollowService {
   }
 
   getfollowlist() {
-    // return this.http.post(this.baserurl.BASE_URL + this.endpoint.CHECKFOLLOWUNFOLLOW, { 'headers': headers, "token": localStorage.getItem("token") }).pipe(
-    //   map(data => {
-    //     return data;
-    //   })
-    // );
-    return this.http.post(this.baserurl.BASE_URL + this.endpoint.CHECKFOLLOWUNFOLLOW, { 'headers': headers, "token": localStorage.getItem("token") }).subscribe(data => {
-      this.followresponse = data;
-    });
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.CHECKFOLLOWUNFOLLOW, { 'headers': headers, "token": localStorage.getItem("token") }).pipe(
+      map(data => {
+        return data;
+      })
+    );
   }
+  //   return this.http.post(this.baserurl.BASE_URL + this.endpoint.CHECKFOLLOWUNFOLLOW, { 'headers': headers, "token": localStorage.getItem("token") }).subscribe(data => {
+  //     this.followresponse = data;
+  //   });
+  // }
 }

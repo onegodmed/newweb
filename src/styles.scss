@@ -544,15 +544,44 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             a{
               text-decoration: none;
               color: #fff;
-              .sprite-chat-astrologer{
-                background-position: -71px -14px!important;
+              .icon-call{
+                background-position: -134px -14px !important;
                 width: 40px;
                 height: 43px;
                 display: inline-block;
                 background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
               }
-              .sprite-call-astrologer{
-                background-position: -134px -14px!important;
+              .icon-chat{
+                background-position: -71px -14px !important;
+                width: 40px;
+                height: 43px;
+                display: inline-block;
+                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+              }
+              .icon-chat-bussy{
+                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+                background-position: -77px -144px !important;
+                width: 40px;
+                height: 43px;
+                display: inline-block;
+              }
+              .icon-call-bussy{
+                background-position: -139px -144px !important;
+                width: 40px;
+                height: 43px;
+                display: inline-block;
+                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+              }
+              .icon-chat-offline{
+                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+                background-position: -75px -83px !important;
+                width: 40px;
+                height: 43px;
+                display: inline-block;
+                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+              }
+              .icon-call-offline{
+                background-position: -137px -83px !important;
                 width: 40px;
                 height: 43px;
                 display: inline-block;
@@ -582,9 +611,9 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
           .switch{
             position: absolute;
             top: 1px;
-            right: 0px;
-            height: 18px;
-            width: 50px;
+            right: 4px;
+            height: 20px;
+            width: 25px;        
             transform: rotate(-90deg);
             background: linear-gradient(to right, #fafafa, #fafafa, #fafafa, rgb(255 178 95 / 82%), rgb(23 22 20 / 85%));
             border-bottom-left-radius: 20px;
@@ -601,17 +630,34 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               height: 15px;
               background-color: green;
               border-radius: 50%;
-              display: inline-block;
-              margin-right: 4px;
-              margin-top: 2px;
+              top: 50%;
+              left: 45%;
+              position: absolute;
+              transform: translate(-50%,-50%);          
             }
             .offline{
+              // display: none !important;
               width: 15px;
               margin-right: 4px;
               height: 15px;
               background-color: red;
               border-radius: 50%;
-              display: inline-block;
+              top: 50%;
+              left: 45%;
+              position: absolute;
+              transform: translate(-50%,-50%);          
+            }
+            .busy{
+              // display: none !important;
+              width: 15px;
+              margin-right: 4px;
+              height: 15px;
+              background-color: gray;
+              border-radius: 50%;
+              top: 50%;
+              left: 45%;
+              position: absolute;
+              transform: translate(-50%,-50%);          
             }
           }
           .star-ratings{
@@ -3491,12 +3537,13 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
 .mat-dialog-container{
   .modal-dialog{
     .modal-content{
+      border: none;
       .modal-header{
         border-bottom: none;
       }
       .astro-call-card-modal-body{
         padding: 0;
-        display: none;
+        // display: none;
         .body-section{
           width: 100%;
           float: left;
@@ -3649,7 +3696,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .call-section-popup{
               width: 100%;
               display: inline-block;
-              display: none;
+              // display: none;
               position: absolute;
               left: 48%;
               top: 12%;
@@ -3825,7 +3872,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .waiting-screen-popup{
               width: 420px;
               height: 501px;
-              display: none;
+              // display: none;
               float: left;
               background-color: #80808091;
               margin-left: -20px;
@@ -4161,7 +4208,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .wallat-balance-popup{
-              display: none;
+              // display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -4221,7 +4268,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .tryagain-connect-astro-popup{
-              display: none;
+              // display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -4264,7 +4311,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .connect-call-astro-popup{
-              display: none;
+              // display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -4727,10 +4774,28 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                   outline: none;
                   font-weight: 600;
                 }
+                ul{
+                  list-style: none;
+                  margin: 0;
+                  float: left;
+                  padding: 0;
+                  // border: 0.6px solid #ccc;
+                  width: 100%;
+                  // height: 95px;
+                  // overflow-y: scroll;
+                  li{
+                    width: 100%;
+                    float: left;
+                    padding: 5px 10px;
+                    line-height: 18px;
+                    font-size: 14px;
+                    border-bottom: 0.5px solid #eeeeee;
+                  }
+                }
               }
             }
             .error-validation{
-              display: none;
+              // display: none;
               float: left;
               color: red;
               font-size: 12px;

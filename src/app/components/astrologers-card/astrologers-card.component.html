@@ -1,6 +1,6 @@
 <div class="chat_card">
     <ul>
-        <li *ngFor="let list of followunfollowlistService?.followresponse.data" (click)="astrodetailspage(list.astro_id)">
+        <li *ngFor="let list of followerlist.data" (click)="astrodetailspage(list.astro_id)">
             <div class="card_astro">
                 <div class="astro-img">
                     <img src='{{ list.photo_url }}'
