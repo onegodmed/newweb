@@ -1056,6 +1056,98 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
           }
         }
       }
+      .wallet_history-section{
+        width: 100%;
+        float: left;
+        .recharge-btn {
+          float: right;
+          margin: -50px auto 20px;
+          text-align: center;
+          button{
+            height: 50px;
+            margin-top: 0;
+            padding: 0 30px;
+            width: 100%;
+            float: none;
+            display: inline-block;
+            background: #444;
+            box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+            border: none;
+            border-top: 4px solid #00ff4e;
+            border-radius: 0 0 0.2em 0.2em;
+            color: #fff;
+            transform-origin: 50% 5em;
+            font-size: 20px;
+            letter-spacing: 3px;
+            text-decoration: none;
+            cursor: pointer;
+          }
+        }
+        .wallet-amounts {
+          width: 100%;
+          // opacity: 0.5;
+          position: relative;
+          float: left;
+          img{
+            width: 100%;
+          }
+          p{
+            font-size: 20px;
+            line-height: 30px;
+            font-family: "Roboto Mono", monospace;
+            font-weight: 600;
+            float: left;
+            text-align: center;
+            width: 100%;
+            color: #fff;
+            position: absolute;
+            top: 40%;        
+          }
+          .amouts-lable {
+            font-size: 40px;
+            float: left;
+            width: 85%;
+            position: absolute;
+            text-align: center;
+            color: #fff;
+            bottom: 0;
+            left: 47%;
+            transform: translate(-50%, -50%);
+            i.fa.fa-inr {
+              margin: 0 10px;
+            }
+          }
+        }
+        .scroll-section {
+          overflow-y: scroll;
+          width: 100%;
+          height: 490px;
+          .transaction_details{
+            width: 100%;
+            float: left;
+            box-shadow: rgba(0, 0, 0, 0.1) -6px 5px 11px 0px;
+            margin-bottom: 40px;
+            border: 1px solid #eee;
+            .title {
+              font-size: 16px;
+              letter-spacing: 1px;
+              float: left;
+              padding: 6px 15px;
+              width: 100%;
+              color: #333333;
+              line-height: 22px;
+              font-weight: 600;
+              font-family: "Roboto Mono", monospace;
+              &:nth-child(even) {background: #ffffff}
+              &:nth-child(odd) {background: #eeeeee}
+              span{
+                float: right;
+                margin: auto 10px;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
