@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
       } else {
         $('.header-section').removeClass('fixed-header');
       }
-    });
+    }); 
 
   }
   
