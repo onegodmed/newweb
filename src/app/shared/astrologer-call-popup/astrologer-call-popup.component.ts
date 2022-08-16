@@ -87,6 +87,9 @@ export class AstrologerCallPopupComponent implements OnInit {
       this.showcallmodal = false;
     }
     /// END FOR CHAT ////
+
+
+    
     //START FOR CHAT///
     if (this.forchat != null) {
       this.showchatmodal = true;
@@ -153,10 +156,11 @@ export class AstrologerCallPopupComponent implements OnInit {
   }
 
   callnow() {
-    // this.userService.addCall(this.userId.data.user_id,this.forcall).subscribe((data: any) => {
-    //   this.callApiresponse = data;
-    //   console.log(this.callApiresponse);
-    // });
+    // alert(this.userId.data.user_id);
+    this.userService.addCall(this.userId.data.user_id,this.forcall).subscribe((data: any) => {
+      this.callApiresponse = data;
+      console.log(this.callApiresponse);
+    });
     this.startTimerforcall();
     this.callsectionpopup = false;
     this.callwaitingscreenpopup = true;
