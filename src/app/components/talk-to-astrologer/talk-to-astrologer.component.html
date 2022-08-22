@@ -111,7 +111,10 @@
                 <!-- <a href="#">
                                 <span class="sprite-chat-astrologer"></span>
                             </a> -->
-                <a (click)="openDialog(list.astrologer_id)">
+                <a *ngIf="IsLoggedIn" (click)="openDialog(list.astrologer_id)">
+                  <span class="sprite-call-astrologer"></span>
+                </a>
+                <a *ngIf="!IsLoggedIn" (click)="logindialogopen(list.astrologer_id)">
                   <span class="sprite-call-astrologer"></span>
                 </a>
                 <a href="#">

@@ -1,0 +1,326 @@
+
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+.heading h2 {
+    font-size: $title_size_30px;
+    display: inline-block;
+    margin: 25px 10px;
+    line-height: 45px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: $font-weight_600;
+    letter-spacing: 1.5px;
+    color: $title_color;
+}
+  
+.heading button {
+    float: right;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    background: transparent;
+    text-decoration: underline;
+    font-size: $title_size_18px;
+    font-weight: $font-weight_600;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.myastrologer-table-section{
+    .chat_card{
+        width: 100%;
+        float: left;
+        margin-top: 40px;
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-align: center;
+            li{
+                float: left;
+                margin-right: 30px;
+                margin-bottom: 30px;
+                width: 23.1%;  
+                &:nth-child(4n){
+                    margin-right: 0;
+                }
+                .card_astro{
+                    padding: 0;
+                    width: 100%;
+                    float: left;
+                    background-color: #fff;
+                    text-align: center;
+                    border-radius: 8px;
+                    box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    margin-bottom: 20px;
+                    margin-right: 20px;
+                    text-decoration: none;
+                    min-height: 230px;
+                    transition: $transition_out_5s;
+                    vertical-align: top;
+                    position: relative;
+                    transition: transform .5s;
+                    &:hover{
+                      transition: transform .5s;
+                      -webkit-transform: scale(1.02);
+                      transform: scale(1.02);
+                    }
+                    &:nth-child(5n){
+                      margin-right: 0;
+                    }
+                    .astro-img{
+                      width: 100%;
+                      float: left;
+                      border-radius: 8px;
+                      img{
+                        width: 100%;
+                        margin: 0 auto;
+                        border-radius: 8px;
+                        height: 265px;
+                      }
+                      .light-shad{
+                        position: absolute;
+                        box-sizing: border-box;
+                        z-index: 4;
+                        height: 265px;
+                        top: 0px;
+                        background: linear-gradient(359.56deg, rgb(0 0 0 / 49%) 0%, rgba(0, 0, 0, 0.17) 50%, rgba(0, 0, 0, 0) 100%);
+                        border-radius: 8px 8px 0px 0px;
+                        width: 100%;
+                        left: 0px;
+                      }
+                    }
+                    .astro-section{
+                      float: left;
+                      width: 100%;
+                      padding: 10px;
+                      box-sizing: border-box;
+                      h5{
+                        float: left;
+                        text-align: left;
+                        width: 100%;
+                        font-size: $title_size_22px;
+                        line-height: 25px;
+                        font-family: "Roboto Mono", monospace;
+                        font-weight: $font-weight_600;
+                        letter-spacing: 1.5px;
+                        color: $talkchat_text_color;
+                        position: relative;
+                        &:after{
+                          content: '';
+                          width: 20px;
+                          height: 20px;
+                          background: url(/../assets/images/verified-sign.png);
+                          background-repeat: no-repeat;
+                          position: absolute;
+                          margin-left: 8px;
+                          margin-top: 4px;
+                          background-size: cover;
+                          background-position: center;
+                        }
+                      }
+                      p{
+                        float: left;
+                        width: 100%;
+                        font-size: $title_size_14px;
+                        line-height: 20px;
+                        font-family: "Roboto Mono", monospace;
+                        font-weight: $font-weight_500;
+                        text-align: left;
+                        letter-spacing: 1px;
+                        color: $talkchat_text_gray_color;
+                        margin-bottom: 10px;
+                      }
+                      .ratting{
+                        float: left;
+                        width: 75%;
+                        .price{
+                          font-size: $title_size_16px;
+                          text-align: left;
+                          color: $talkchat_text_color;
+                          font-family: "Roboto Mono", monospace;
+                          float: left;
+                          font-weight: $font-weight_600;
+                          margin-top: 15px;
+                          .discount_price {
+                            display: inline;
+                            margin-left: 5px;
+                            text-decoration-line: line-through;
+                          }
+                        }
+                        .language-astrologer{
+                          float: left;
+                          width: 100%;
+                          font-size: $title_size_12px;
+                          text-align: left;
+                          color: $talkchat_text_color;
+                          font-family: "Roboto Mono", monospace;
+                          font-weight: $font-weight_500;
+                          span{
+                            font-size: $title_size_12px;
+                            letter-spacing: 0.2px;
+                            color: $talkchat_text_color;
+                            font-family: "Roboto Mono", monospace;
+                            font-weight: $font-weight_400;
+                            margin: 0 3px;
+                          }
+                        }
+                        .skills-astrologer{
+                          float: left;
+                          width: 100%;
+                          font-size: $title_size_12px;
+                          text-align: left;
+                          color: $talkchat_text_color;
+                          font-family: "Roboto Mono", monospace;
+                          font-weight: $font-weight_500;
+                          span{
+                            font-size: $title_size_12px;
+                            letter-spacing: 0.2px;
+                            color: $talkchat_text_color;
+                            font-family: "Roboto Mono", monospace;
+                            font-weight: $font-weight_400;
+                            margin: 0 3px;
+                          }
+                        }
+                      }
+                    }
+                    .call-status-astrolger{
+                      float: right;
+                      position: absolute;
+                      right: 0;
+                      bottom: 2px;
+                      a{
+                        text-decoration: none;
+                        color: #fff;
+                        .sprite-chat-astrologer{
+                          background-position: -71px -14px!important;
+                          width: 40px;
+                          height: 43px;
+                          display: inline-block;
+                          background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+                        }
+                        .sprite-call-astrologer{
+                          background-position: -134px -14px!important;
+                          width: 40px;
+                          height: 43px;
+                          display: inline-block;
+                          background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+                        }
+                      }
+                    }
+                    .status-section{
+                      position: absolute;
+                      right: 0;
+                      top: 55%;
+                      z-index: 99;
+                      font-family: "Roboto Mono", monospace;
+                      font-weight: 600;
+                      letter-spacing: 2px;
+                      color: #fff;
+                      span{
+                        i{
+                          font-size: 20px;
+                          color: #fff;
+                          float: left;
+                          margin-right: 3px;
+                          margin-top: 1px;
+                        }
+                      }
+                    }
+                    .switch{
+                      position: absolute;
+                      top: 1px;
+                      right: 0px;
+                      height: 18px;
+                      width: 50px;
+                      transform: rotate(-90deg);
+                      background: linear-gradient(to right, #fafafa, #fafafa, #fafafa, rgb(255 178 95 / 82%), rgb(23 22 20 / 85%));
+                      border-bottom-left-radius: 20px;
+                      border-top-left-radius: 20px;
+                      box-shadow: 1px 1px 3px 2px #999;
+                      &::after{
+                        content: '';
+                        width: 15px;
+                        height: 15px;
+                        background: #000;
+                      }
+                      .online{
+                        width: 15px;
+                        height: 15px;
+                        background-color: green;
+                        border-radius: 50%;
+                        display: inline-block;
+                        margin-right: 4px;
+                        margin-top: 2px;
+                      }
+                      .offline{
+                        width: 15px;
+                        margin-right: 4px;
+                        height: 15px;
+                        background-color: red;
+                        border-radius: 50%;
+                        display: inline-block;
+                      }
+                    }
+                    .star-ratings{
+                      position: absolute;
+                      top: 52%;
+                      left: 0;
+                      box-shadow: 0px -1px 5px 3px #fafafa;
+                      font-family: "Roboto Mono", monospace;
+                      font-weight: 600;
+                      z-index: 99;
+                      padding: 2px 5px;
+                      border-top-right-radius: 5px;
+                      border-bottom-right-radius: 5px;
+                      span{
+                        margin-right: 5px;
+                        i{
+                          font-size: 20px;
+                          color: #E6B91E;
+                        }
+                      }
+                      .count-rating{
+                        letter-spacing: 1px;
+                        font-size: 16px;
+                        color: #fff;
+                        display: inline-block;
+                        line-height: 16px; 
+                        &.newlyaddedastro{
+                          display: none;
+                        }
+                      }
+                    }
+                    .follow-section{
+                      position: absolute;
+                      top: 10px;
+                      left: 5px;
+                      cursor: pointer;
+                      z-index: 999;
+                      span{
+                        font-size: $title_size_14px;
+                        font-weight: $font-weight_500;
+                        padding: 5px 10px;
+                        border-radius: 20px;
+                      }
+                      .unfollow-style{
+                        color: $title_white_color;
+                        box-shadow: $box_shadow_unfollow_tag;
+                        background: $background_unfollow_bg_color;
+                      }
+                      .follow-style{
+                        display: none;
+                        color: $title_color;
+                        background: $follow_bg_color;
+                      }
+                    }
+                }
+            }
+        }
+    }
+}

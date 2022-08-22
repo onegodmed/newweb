@@ -1,5 +1,5 @@
 
-        <div class="modal-dialog">
+        <div class="modal-dialog" id="model">
             <!-- Modal content-->
             <div class="modal-content">
                 <div *ngIf="showcallmodal" class="astro-call-card-modal-body">
@@ -421,7 +421,7 @@
                                     <!-- <button>Try Again</button> -->
                                 </div>
                             </div>
-                            <div *ngIf="hide" class="closed-chat-astro-popup">
+                            <div *ngIf="showendchatmodal" class="closed-chat-astro-popup">
                                 <div class="closed-text">
                                     <h1 class="animate-charcter">Are you sure?</h1>
                                     You really want to end this Chat

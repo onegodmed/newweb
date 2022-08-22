@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AstrologerlistService } from "../../services/astrologerlist.service";
 import { FollounfollowService } from "../../services/follounfollow.service";
 import { RatingsService } from "../../services/ratings.service";
+import { MatDialog } from '@angular/material/dialog';
+import { AstrologerCallPopupComponent } from 'src/app/shared/astrologer-call-popup/astrologer-call-popup.component';
 
 @Component({
   selector: 'app-astrologers-profile-page',
@@ -26,7 +28,7 @@ export class AstrologersProfilePageComponent implements OnInit {
   isShown: boolean = false;
   isSussessfully: boolean = false;
 
-  constructor(private router: Router, public astrologerlistService: AstrologerlistService, public followunfollowlistService: FollounfollowService, public ratingsService: RatingsService) { }
+  constructor(private router: Router, public astrologerlistService: AstrologerlistService, public dialog: MatDialog, public followunfollowlistService: FollounfollowService, public ratingsService: RatingsService) { }
 
 
   ngOnInit(): void {
@@ -89,6 +91,12 @@ export class AstrologersProfilePageComponent implements OnInit {
 
   toggleShow() {
     this.isShown = !this.isShown;
+  }
+
+  openDialog(astroIdforcall: any) {
+    this.dialog.open(AstrologerCallPopupComponent, {
+      data: { astroIdforcall }
+    });
   }
 
 

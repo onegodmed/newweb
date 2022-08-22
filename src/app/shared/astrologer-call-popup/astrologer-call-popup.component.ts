@@ -24,6 +24,7 @@ export class AstrologerCallPopupComponent implements OnInit {
   show: boolean = true;
   hide: boolean = false;
   showchatmodal: boolean = false;
+  showendchatmodal: boolean = false;
   showcallmodal: boolean = false;
   walletbalancepopup: boolean = false;
   chatsectionpopup: boolean = false;
@@ -34,22 +35,26 @@ export class AstrologerCallPopupComponent implements OnInit {
   chatform: any = [];
   getcities: any = [];
   callApiresponse: any = [];
+  chatApiresponse: any = [];
   selectedcityname: any;
   forchat: any;
   forcall: any;
   usermobilenumber: any;
-  timeLeft: number = 10;
+  timeLeft: number = 60;
   interval: any;
   errormessageforfullname: any = '';
   errormessageforbirthplace: any = '';
   userId: any;
+  forendchat: any;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any, private router: Router, public astrologerlistService: AstrologerlistService, public userService: UserService) { }
 
   ngOnInit(): void {
 
-    this.forcall = this.data.astroIdforcall; //astrologer Id for call
-    this.forchat = this.data.astroIdforchat; //astrologer Id for chat
+    this.forcall    = this.data.astroIdforcall; //astrologer Id for call
+    this.forchat    = this.data.astroIdforchat; //astrologer Id for chat
+    this.forendchat = this.data.order_id; //order Id for EndChat
+    //  alert(this.forchat);
 
     if (localStorage.getItem('token') != null) {
       this.userService.userWalletdetails().subscribe((data: any) => {
@@ -70,7 +75,6 @@ export class AstrologerCallPopupComponent implements OnInit {
       this.showcallmodal = true;
       this.astrologerlistService.astrodetailspopup(this.data.astroIdforcall).subscribe((data: any) => {
         this.astrodetails = data;
-        console.log(this.astrodetails);
       });
 
       this.userService.checkuserbalance(this.data.astroIdforcall).subscribe((data: any) => {
@@ -86,10 +90,10 @@ export class AstrologerCallPopupComponent implements OnInit {
     } else {
       this.showcallmodal = false;
     }
-    /// END FOR CHAT ////
+    /// END FOR CALL ////
 
 
-    
+
     //START FOR CHAT///
     if (this.forchat != null) {
       this.showchatmodal = true;
@@ -99,7 +103,7 @@ export class AstrologerCallPopupComponent implements OnInit {
         this.astrodetails = data;
       });
 
-      this.userService.checkuserbalance(this.data.astroIdforchat).subscribe((data: any) => {
+      this.userService.checkuserbalance(this.forchat).subscribe((data: any) => {
         this.checkuserbalance = data;
         if (this.checkuserbalance.status === false) {
           this.walletbalancepopup = true;
@@ -112,6 +116,20 @@ export class AstrologerCallPopupComponent implements OnInit {
     } else {
       this.showchatmodal = false;
       this.walletbalancepopup = true;
+    }
+
+    if(this.forendchat != null){
+      this.showchatmodal = true;
+      this.walletbalancepopup = false;
+      this.showendchatmodal = true;
+
+      this.astrologerlistService.astrodetailspopup(this.data.astroId_endchat).subscribe((data: any) => {
+        this.astrodetails = data;
+      });
+
+    }else{
+      // this.showchatmodal = false;
+      this.showendchatmodal = false;
     }
     /// END FOR CHAT ////
   }
@@ -133,8 +151,8 @@ export class AstrologerCallPopupComponent implements OnInit {
   chatnow() {
     this.chatform = [
       {
-        fullname: (<HTMLInputElement>document.getElementById("fullname")).value,
-        gender: (<HTMLInputElement>document.getElementById("gender")).value,
+        // fullname: (<HTMLInputElement>document.getElementById("fullname")).value,
+        // gender: (<HTMLInputElement>document.getElementById("gender")).value,
         dob: (<HTMLInputElement>document.getElementById("day")).value + '/' + (<HTMLInputElement>document.getElementById("months")).value + '/' + (<HTMLInputElement>document.getElementById("Year")).value,
         birthtime: (<HTMLInputElement>document.getElementById("hour")).value + ':' + (<HTMLInputElement>document.getElementById("minute")).value + ' ' + (<HTMLInputElement>document.getElementById("am")).value,
         birthplace: (<HTMLInputElement>document.getElementById("searchcity")).value
@@ -147,17 +165,29 @@ export class AstrologerCallPopupComponent implements OnInit {
       this.errormessageforbirthplace = 'Birth Place is required!'
       this.flash();
     } else {
-      this.startTimerforchat();
-      this.chatsectionpopup = false;
-      this.chatwaitingscreenpopup = true;
+      this.userService.addChat(this.userId.data.user_id, this.forchat, this.chatform).subscribe((data: any) => {
+        this.chatApiresponse = data;
+        console.log(this.chatApiresponse);
+      });
+      // this.startTimerforchat();
+
+      // this.showchatmodal = false;
+      // this.chatsectionpopup = false;
+
+      // $('#model').css('display', 'none');
+      // $('#chatmodel').modal('hide');
+
+      // this.router.navigateByUrl('/chatscreen', {state:{astrologer_id:this.data.astroIdforchat, caller_id: 1234}});
+      
+      // this.chatwaitingscreenpopup = true;
     }
-    // console.log(this.chatform);
+    console.log(this.chatform);
 
   }
 
   callnow() {
     // alert(this.userId.data.user_id);
-    this.userService.addCall(this.userId.data.user_id,this.forcall).subscribe((data: any) => {
+    this.userService.addCall(this.userId.data.user_id, this.forcall).subscribe((data: any) => {
       this.callApiresponse = data;
       console.log(this.callApiresponse);
     });
@@ -217,11 +247,11 @@ export class AstrologerCallPopupComponent implements OnInit {
     this.oopsscreenpopup = true;
   }
 
-  flash(){
-    setTimeout(()=>{
+  flash() {
+    setTimeout(() => {
       this.errormessageforfullname = '';
       this.errormessageforbirthplace = '';
-    },3000);
+    }, 3000);
   }
 
 }

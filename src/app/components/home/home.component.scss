@@ -317,7 +317,106 @@
 
 @media only screen  and (max-width: 600px) {
     .slider-banner{ padding: 10px 0; height: auto;}
-    .heading h2{ font-size: 15px; margin: 10px; }
+    .heading h2{ font-size: 15px; margin: 0px; }
+
+    .new_banner{
+        .special_offer_Design{
+            .box_special_offer{
+                padding: 0px;
+                background: transparent;
+                height: 104px;
+                border-radius: 0;
+                .right_side_Details_offers{
+                    padding-bottom: 0;
+                    h1{
+                        line-height: normal;
+                        margin-bottom: 0;
+                        .po-title{
+                            font-size: 16px;
+                            margin-bottom: 0;
+                        }
+                        .po-subtitle{
+                            display: initial;
+                            margin: 5px 0;
+                            line-height: 20px;
+                            font-size: 22px;
+                            text-align: left;
+                            &:after{
+                                padding-left: 0;
+                            }
+                        }
+                    }
+                    .talk_now_button{
+                        line-height: initial;
+                        height: auto;
+                        font-size: 13px;
+                        display: none;
+                    }
+                }
+                .left_side_offer_icon{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .choose-us{
+        .full-contain-section{
+            margin: 0;
+            text-align: center;        
+            ul{
+                li{
+                    width: 46%;
+                    padding: 6% 0px 5px;
+                    min-height: 100px;
+                    float: none;
+                    margin: 5px;
+                    display: inline-block;
+                    vertical-align: top;
+                    span{
+                        i{
+                            font-size: 18px;
+                        }
+                    }
+                    p{
+                        font-size: 10px;
+                        line-height: 15px;
+                    }
+                }
+            }
+        }
+    }
+
+    .now-we-have{
+        h2{
+            font-size: 12px;
+            line-height: 15px;
+        }
+        .full-wehave-section{
+            margin: 0;
+            text-align: center;      
+            ul{
+                li{
+                    width: 46%;
+                    padding: 6% 0px 5px;
+                    min-height: 100px;
+                    float: none;
+                    margin: 5px;
+                    display: inline-block;
+                    vertical-align: top;
+                    span{
+                        i{
+                            font-size: 30px;
+                            margin-bottom: 5px;
+                        }
+                    }
+                    p{
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
 
 }
 

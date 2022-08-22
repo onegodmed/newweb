@@ -123,7 +123,7 @@
           padding: 10px 15px;
           border-top-left-radius: 10px;
           border-bottom-left-radius: 10px;
-          background: #fff;
+          background: $astrolger_gallery_white_bg_color;
           font-family: "Roboto Mono", monospace;
           text-align: center;
           border: 0.3px solid #ccc;
@@ -220,7 +220,7 @@
           background: rgb(239 144 16 / 5%);
           margin: 5px;
           border-radius: 20px;
-          color: #212529;
+          color: $astrolger_profile_black_light_color;
           font-size: 13px;
           border: 0.4px solid #6666661c;
           font-weight: 600;
@@ -274,7 +274,7 @@
           &:hover{
             transition: transform 0.5s;
             transform: scale(1.03);
-            background: #fff;
+            background: $astrolger_gallery_white_bg_color;
           }
           .icon-call{
             background-position: -134px -14px !important;
@@ -354,7 +354,7 @@
         font-weight: 600;
         font-family: "Roboto Mono", monospace;
         box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
-        color: #212529;
+        color: $astrolger_profile_black_light_color;
         padding: 18px;
         margin-bottom: 20px;
         max-width: 230px;
@@ -380,7 +380,7 @@
           font-weight: 600;
           font-family: "Roboto Mono", monospace;
           box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
-          color: #212529;
+          color: $astrolger_profile_black_light_color;
         }
       }
       .side_right_four{
@@ -404,7 +404,7 @@
           font-weight: 600;
           font-family: "Roboto Mono", monospace;
           box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
-          color: #212529;
+          color: $astrolger_profile_black_light_color;
         }
       }
       .side_right_three{
@@ -428,7 +428,7 @@
           font-weight: 600;
           font-family: "Roboto Mono", monospace;
           box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
-          color: #212529;
+          color: $astrolger_profile_black_light_color;
         }
       }
       .side_right_two{
@@ -452,7 +452,7 @@
           font-weight: 600;
           font-family: "Roboto Mono", monospace;
           box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
-          color: #212529;
+          color: $astrolger_profile_black_light_color;
         }
       }
       .side_right_one{
@@ -476,7 +476,7 @@
           font-weight: 600;
           font-family: "Roboto Mono", monospace;
           box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
-          color: #212529;
+          color: $astrolger_profile_black_light_color;
         }
       }
       .user_comment_img {
@@ -511,7 +511,7 @@
           .text-cover_styles{
             width: 100%;
             float: left;
-            box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+            box-shadow: $box_shadow_astrolger_gallery_left_section;
             border: 1px solid #e4e4e4;
             border-radius: 5px;
             margin-bottom: 20px;
@@ -536,7 +536,7 @@
               color: #333333;
               text-align: justify;
               border-radius: 5px;
-              background: #fff;
+              background: $astrolger_gallery_white_bg_color;
               width: 100%;
               b, optgroup, strong{
                 font-weight: 700;
@@ -575,12 +575,46 @@
               }
             }
           }
+          .gallery_astrologer_section{
+            width: 100%;
+            float: left;
+            box-shadow: $box_shadow_astrolger_gallery_left_section;
+            border: 1px solid #e4e4e4;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            ul{
+              list-style: none;
+              float: left;
+              width: 100%;
+              padding: 10px;
+              margin: 0;
+              text-align: left;
+              li{
+                width: 23.4%;
+                float: none;
+                margin-right: 2%;
+                margin-bottom: 3%;
+                display: inline-block;
+                &:nth-child(4n){
+                  margin-right: 0;
+                }
+                img{
+                  width: 100%;
+                  max-width: 150px;
+                  min-height: 150px;
+                  border-radius: 5px;
+                  margin: 0 auto;
+                  box-shadow: $box_shadow_astrolger_gallery;
+                }
+              }
+            }
+          }
           .guarantee_box_section{
             padding: 10px;
             border: 1px solid rgb(252, 205, 202);
-            background: #fff;
+            background: $astrolger_gallery_white_bg_color;
             border-radius: 5px;
-            box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+            box-shadow: $box_shadow_astrolger_gallery_left_section;
             display: flex;
             .secure_section {
               display: inline-grid;
@@ -612,7 +646,7 @@
         .sectionright_side{
           float: right;
           width: 48%;
-          box-shadow: rgba(0, 0, 0, 0.1) 0px 11px 20px 0px;
+          box-shadow: $box_shadow_astrolger_gallery_right_section;
           border: 1px solid #e4e4e4;
           margin-bottom: 20px;
           .back_color{
@@ -627,7 +661,7 @@
             overflow-y: scroll;
             height: 500px;
             .profile-rates{
-              background: #fff;
+              background: $astrolger_gallery_white_bg_color;
               padding: 15px 10px;
               box-shadow: rgba(0, 0, 0, 0.1) 0px 11px 20px 0px;
               border: 1px solid #e4e4e4;
@@ -652,7 +686,7 @@
                     font-weight: bold;
                     font-family: "Roboto Mono", monospace;
                     letter-spacing: 0.3px;
-                    color: #fff;
+                    color: $astrolger_gallery_white_bg_color;
                     border-radius: 50px;
                     margin-right: 10px;
                     text-align: center;
@@ -777,7 +811,7 @@
               transition: transform 0.5s;
               cursor: pointer;
               &:hover{
-                background: #fff;
+                background: $astrolger_gallery_white_bg_color;
                 transition: transform 0.5s;
               }
             }
@@ -806,12 +840,12 @@
             width: 97%;
             float: left;
             position: relative;
-            background: #fff;
+            background: $astrolger_gallery_white_bg_color;
             padding: 10px;
             box-sizing: border-box;
             margin: 30px 10px 10px;
             border-radius: 8px;
-            box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+            box-shadow: $box_shadow_astrolger_gallery_weekly_status;
             border: 1px solid #e4e4e4;
             .btnclass{
               margin-top: 20px;
@@ -823,7 +857,7 @@
               font-weight: 600;
               font-family: "Roboto Mono", monospace;
               box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
-              color: #212529;
+              color: $astrolger_profile_black_light_color;
               padding: 18px;
               margin-bottom: 20px;
               text-align: center;
@@ -860,8 +894,8 @@
                     font-weight: 600;
                     padding: 5px;
                     border-radius: 8px;
-                    background: linear-gradient(90.53deg, rgba(188, 174, 152, 0.34) 0%, rgba(221, 186, 15, 0.13) 50%, rgba(238, 148, 12, 0.2509803922) 100%);
-                    color: #212529;
+                    background: $background_gradient_profile_bg;
+                    color: $astrolger_profile_black_light_color;
                     text-decoration: none;
                     margin: 10px 2px;
                     display: inline-block;
@@ -902,12 +936,12 @@ button {
   top: calc(50% - 2em);
   height: 4em;
   width: 7em;
-  background: #444;
-  background: linear-gradient(top, #555, #333);
+  background: $astrolger_gallery_black_light_bg_color;
+  background: $background_gradient_profile_gallery_bg;
   border: none;
   border-top: 3px solid orange;
   border-radius: 0 0 0.2em 0.2em;
-  color: #fff;
+  color: $astrolger_gallery_white_bg_color;
   font-family: Helvetica, Arial, Sans-serif;
   font-size: 1em;
   transform-origin: 50% 5em;

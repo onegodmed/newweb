@@ -89,8 +89,8 @@ export class HeaderComponent implements OnInit {
         localStorage.removeItem('UserName');
         this.isLoggedOut = true;
         this.isLoggedIn = false;
-        // window.location.reload();
         this.router.navigate(['']);
+        window.location.reload();
       }
     });
   }

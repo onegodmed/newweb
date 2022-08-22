@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HomeastrologerlistService } from "../../services/homeastrologerlist.service";
+import { MatDialog } from '@angular/material/dialog';
+import { AstrologerCallPopupComponent } from 'src/app/shared/astrologer-call-popup/astrologer-call-popup.component';
+import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup.component';
 
 
 @Component({
@@ -9,10 +12,17 @@ import { HomeastrologerlistService } from "../../services/homeastrologerlist.ser
   styleUrls: ['./tabs-online-astrologers.component.scss']
 })
 export class TabsOnlineAstrologersComponent implements OnInit {
+  IsLoggedIn: boolean = false;
 
-  constructor(private router: Router, public astrologerlistService: HomeastrologerlistService) { }
+  constructor(private router: Router, public astrologerlistService: HomeastrologerlistService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
+    if(localStorage.getItem('token') != null){
+      this.IsLoggedIn = true;
+    }else{
+      this.IsLoggedIn = false;
+    }
+    
     this.astrologerlistService.homeastrolist();
   }
 
@@ -27,6 +37,18 @@ export class TabsOnlineAstrologersComponent implements OnInit {
     } else {
       alert('Astrologer Id Required');
     }
+  }
+
+  openDialog(astroIdforcall: any) {
+    this.dialog.open(AstrologerCallPopupComponent, {
+      data: { astroIdforcall }
+    });
+  }
+
+  logindialogopen(astroIdforcall: any) {
+    this.dialog.open(SingUpPopupComponent, {
+      data: { astroIdforcall }
+    });
   }
   
 

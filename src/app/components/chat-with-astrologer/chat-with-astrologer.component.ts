@@ -56,18 +56,43 @@ export class ChatWithAstrologerComponent implements OnInit {
 
   changefilter(value: any) {
     this.categoryfilter = value;
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+    this.alluserlist();
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+  }
+
+  sortingchangefilter(value: any) {
+    if (value === 'Price: High To Low') {
+      this.sortingfilter = { field: 'price', sortby: 'ASC' }
+    } else {
+      this.sortingfilter = { field: 'price', sortby: 'DESC' }
+    }
+
+    if (value === 'Rating: High To Low') {
+      this.sortingfilter = { field: 'rating', sortby: 'ASC' }
+    } else {
+      this.sortingfilter = { field: 'rating', sortby: 'DESC' }
+    }
+
+    if (value === 'Exp: High To Low') {
+      this.sortingfilter = { field: 'experience', sortby: 'ASC' }
+    } else {
+      this.sortingfilter = { field: 'experience', sortby: 'DESC' }
+    }
+    this.alluserlist();
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
   }
 
   categorywiselist(category: any) {
     this.categoryfilter = [category];
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+    this.alluserlist();
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
     window.scroll(0, 0);
   }
 
   seachastrobyname() {
     this.searchbyname = (<HTMLInputElement>document.getElementById("searchname")).value;
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
+    this.alluserlist();
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
     // window.scroll(0, 0);
   }
 

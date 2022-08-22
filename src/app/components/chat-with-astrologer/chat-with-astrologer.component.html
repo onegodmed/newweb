@@ -68,7 +68,7 @@
         <div class="sort-price">
           <mat-form-field>
             <mat-label>Sort Price</mat-label>
-            <mat-select multiple (selectionChange)="changefilter($event.value)">
+            <mat-select multiple (selectionChange)="sortingchangefilter($event.value)">
               <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option>
             </mat-select>
           </mat-form-field>

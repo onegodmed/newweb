@@ -9,8 +9,8 @@
                     <div class="astrolger-section heading">
                         <h2>Most Popular</h2>
                         <div class="row">
-                            <div *ngFor="let list of astrologerlistService?.response.data" (click)="astrodetailspage(list.astrologer_id)" class="card-box">
-                                <div class="astro-img">
+                            <div *ngFor="let list of astrologerlistService?.response.data" class="card-box">
+                                <div class="astro-img" (click)="astrodetailspage(list.astrologer_id)">
                                     <img src='{{ list.photo_url }}'
                                         alt="kundali">
                                     <div class="light-shad"></div>
@@ -30,10 +30,13 @@
                                     <div class="count-rating newlyaddedastro">New</div>
                                 </div>
                                 <div class="call-status-astrolger">
-                                    <a *ngIf="list.current_status === 'Online'">
+                                    <a *ngIf="list.current_status === 'Online' && IsLoggedIn" (click)="openDialog(list.astrologer_id)">
                                         <span class="icon-call"></span>
                                     </a>
-                                    <a *ngIf="list.current_status === 'Offline'">
+                                    <a *ngIf="!IsLoggedIn" (click)="logindialogopen(list.astrologer_id)">
+                                        <span class="icon-call"></span>
+                                    </a>
+                                    <a *ngIf="list.current_status === 'Offline' && IsLoggedIn">
                                         <span class="icon-call-bussy"></span>
                                     </a>
                                     <a *ngIf="list.current_status === 'Busy'">
@@ -59,7 +62,7 @@
                                         </div>
                                         <div class="price">
                                             <span><i class="fa fa-inr" aria-hidden="true"></i>
-                                            80<span>/Min</span>
+                                            {{ list.service_price }}<span>/Min</span>
                                             </span>
                                             <div class="discount_price">30<span>/Min</span></div>
                                         </div>

@@ -4,9 +4,10 @@ import { Router } from '@angular/router';
 import { AstrologerlistService } from "../../services/astrologerlist.service";
 import { FollounfollowService } from "../../services/follounfollow.service";
 import { MatDialog } from '@angular/material/dialog';
-import { ProcessPayPopupComponent } from 'src/app/shared/process-pay-popup/process-pay-popup.component';
+// import { ProcessPayPopupComponent } from 'src/app/shared/process-pay-popup/process-pay-popup.component';
 import { AstrologerCallPopupComponent } from 'src/app/shared/astrologer-call-popup/astrologer-call-popup.component';
 import { UserService } from 'src/app/services/user.service';
+import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup.component';
 
 
 
@@ -17,6 +18,7 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class TalkToAstrologerComponent implements OnInit {
 
+  IsLoggedIn: boolean = false;
   username: any = '';
   usercurrentbalance: any = [];
   astrolist: any = [];
@@ -41,15 +43,17 @@ export class TalkToAstrologerComponent implements OnInit {
   ngOnInit(): void {
 
     if (localStorage.getItem('token') != null) {
+      this.IsLoggedIn = true;
       this.username = localStorage.getItem('UserName');
       this.userService.userWalletdetails().subscribe((data: any) => {
         this.usercurrentbalance = data;
       });
     } else {
+      this.IsLoggedIn = false;
       this.username = '';
       this.usercurrentbalance = '';
     }
-  
+
     this.alluserlist();
     // this.followunfollowlistService.getfollowlist();
     this.followunfollowlistService.getfollowlist().subscribe((data) => {
@@ -64,7 +68,13 @@ export class TalkToAstrologerComponent implements OnInit {
     });
   }
 
-  alluserlist() { 
+  logindialogopen(astroIdforcall: any) {
+    this.dialog.open(SingUpPopupComponent, {
+      data: { astroIdforcall }
+    });
+  }
+
+  alluserlist() {
     this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data) => {
       this.astrolist = data;
     });
