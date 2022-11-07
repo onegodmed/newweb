@@ -1,0 +1,203 @@
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+
+
+.articles{
+    float: left;
+    width: 100%;
+    padding-top: 35px;
+    padding-bottom: 40px;
+    height: 600px;
+    background: $background_gradient_articles;
+    .articles-inner-section{
+        float: left;
+        width: 100%;
+        margin: 20px 0;
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li{
+                float: left;
+                border-radius: 8px;
+                width: 24%;
+                position: relative;
+                border: 0.5px solid $border_why_choose_us_color;
+                margin-right: 15px;
+                margin-bottom: 15px;
+                border-radius: 5px;          
+                vertical-align: top; 
+                cursor: pointer;
+                &:nth-child(4n){
+                    margin-right: 0;
+                }
+                span{
+                    width: 100%;
+                    float: left;
+                    border-radius: 8px;
+                    img{
+                        width: 100%;
+                        margin: 0 auto;
+                        min-height: 250px;
+                        border-radius: 8px;
+                    }
+                }
+                .view-post-section {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    background-color: $background_articles_color;
+                    box-shadow: 0px 2px 10px 5px $border_shadow_astrolger_color;
+                    border-bottom-left-radius: 30px;
+                    padding: 4px 6px;
+                    display: flex;
+                    cursor: pointer;
+                    i{
+                        font-size: $title_size_16px;
+                        margin-top: 1px;
+                        margin-left: 10px;
+                    }
+                    span{
+                        font-size: $title_size_12px;
+                        margin-left: 5px;
+                        font-weight: $font-weight_400;
+                    }
+                }
+                .articles-text-box{
+                    background-color: $background_articles_color;
+                    box-shadow: 0px 2px 10px 5px $border_shadow_astrolger_color;
+                    float: left;
+                    width: 90%;
+                    text-align: left;
+                    padding: 10px 20px;
+                    box-sizing: border-box;
+                    margin-bottom: 0;
+                    position: absolute;
+                    bottom: -50px;
+                    border-radius: 8px;
+                    left: 50%;
+                    transform: translate(-50%, 0);
+                    h4{
+                        font-size: $title_size_15px;
+                        line-height: 20px;
+                        font-family: "Roboto Mono", monospace;
+                        font-weight: $font-weight_600;
+                    }
+                    .articles-details-section {
+                        float: left;
+                        width: 100%;
+                        h6{
+                            font-size: $title_size_13px;
+                            font-family: "Roboto Mono", monospace;
+                            font-weight: $font-weight_500;
+                            margin-bottom: 0;
+                            color: $articles_title_color;
+                            display: inline-block;
+                        }
+                        .post-articles-date{
+                            text-align: right;
+                            float: right;
+                            font-size: $title_size_12px;
+                            font-family: "Roboto Mono", monospace;
+                            font-weight: $font-weight_400;
+                            span{
+                                display: contents;
+                            }
+                        }
+                    }
+                }         
+            }
+        }
+    }
+}
+
+
+
+
+.heading h2 {
+    font-size: $title_size_30px;
+    display: inline-block;
+    margin: 25px 10px;
+    line-height: 45px;
+    font-family: "Roboto Mono", monospace;
+    font-weight: $font-weight_600;
+    letter-spacing: 1.5px;
+    color: $title_color;
+}
+
+.heading button {
+    float: right;
+    margin-top: 30px;
+    outline: none;
+    border: none;
+    background: transparent;
+    text-decoration: underline;
+    font-size: $title_size_18px;
+    font-weight: $font-weight_600;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
+
+@media only screen  and (max-width: 600px) {
+.slider-banner{ padding: 10px 0; height: auto;}
+.heading h2{ font-size: 15px; margin: 0px; }
+.heading button{  margin-top: 0px; font-size: 15px; }
+.articles{
+    height: auto;
+    padding: 10px 0;
+    .articles-inner-section{
+        margin: 5px 0;
+        ul{
+            li{
+                width: 100%;
+                margin-right: 0;
+                border: none;
+                span{
+                    img{
+                        height: 125px;
+                        width: auto;
+                        min-height: auto;
+                    }
+                }
+                .view-post-section{
+                    left: 0;
+                    right: auto;
+                    border-bottom-left-radius: 0;
+                    padding: 1px 2px;
+                    i{
+                        font-size: 12px;
+                        margin-top: 4px;
+                        margin-left: 0;
+                    }
+                }
+                .articles-text-box{
+                    top: 50%;
+                    height: fit-content;
+                    width: 70%;
+                    left: 65%;
+                    transform: translate(-50%,-50%);
+                    padding: 10px;
+                    h4{
+                        font-size: 12px;
+                        line-height: 16px;
+                        margin: 0 0 5px;
+                    }
+                    .articles-details-section{
+                        h6{
+                            font-size: 11px;
+                        }
+                        .post-articles-date{
+                            font-size: 11px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+}

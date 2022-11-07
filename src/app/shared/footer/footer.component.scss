@@ -1,0 +1,316 @@
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+
+.footer-section{
+    width: 100%;
+    float: left;
+    padding: 50px 0;
+    box-sizing: border-box;
+    background: $background_gradient_slider;
+    .footer_info{
+        width: 100%;
+        float: left;
+        .footer_newsletter{
+            float: left;
+            width: 100%;
+            text-align: justify;
+            margin-bottom: 40px;
+            margin-top: 22px;
+            .newsletter{
+                float: left;
+                width: 100%;
+                .newsletter_box{
+                    float: left;
+                    width: 100%;
+                    input {
+                        float: left;
+                        width: calc(100% - 65px);
+                        height: 45px;
+                        padding: 0 15px;
+                        border-right: 0;
+                        color: $footer_text_black_color;
+                        border-radius: 3px 0 0 3px;
+                        background-color:transparent;
+                        -webkit-transition: all .5s;
+                        -moz-transition: all .5s;
+                        -ms-transition: all .5s;
+                        -o-transition: all .5s;
+                        transition: all .5s;
+                        font-family: "Roboto Mono", monospace;
+                        border-color: $footer_black_border_color;
+                        outline: none;
+                    }
+                    button {
+                        float: right;
+                        font-family: "Roboto Mono", monospace;
+                        width: 65px;
+                        height: 45px;
+                        line-height: 45px;
+                        text-align: center;
+                        color: $footer_text_black_color;
+                        border: 2px solid $footer_black_border_color;
+                        border-radius: 0 3px 3px 0;
+                        padding: 0;
+                        background-color: transparent;
+                        -webkit-transition: all .5s;
+                        -moz-transition: all .5s;
+                        -ms-transition: all .5s;
+                        -o-transition: all .5s;
+                        transition: all .5s;
+                        i {
+                            margin-right: 10px;
+                            font-size: $title_size_20px;
+                        }
+                    }
+                }            
+            }
+        }
+        p {
+            float: left;
+            width: 100%;
+            color: $footer_text_black_color;
+            font-size: $title_size_14px;
+            line-height: 25px;
+            font-family: "Roboto Mono", monospace;
+            font-weight: $font-weight_400;
+            letter-spacing: 1.5px;
+            margin-bottom: 20px;
+        }
+        .download_box{
+            float: left;
+            width: auto;
+            padding-top: 30px;
+            ul {
+                float: left;
+                width: 100%;
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                li {
+                    display: inline-block;
+                    width: auto;
+                    list-style: none;
+                    margin-right: 10px;
+                    img {
+                        width: 140px;
+                        height: 50px;
+                    }
+                }
+            }
+        }
+    }
+    .text-widget {
+        float: left;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .widget-title {
+        float: left;
+        width: 100%;
+        margin-top: 0;
+        margin-bottom: 25px;
+        color: $footer_text_black_color;
+        text-transform: capitalize;
+        position: relative;
+        padding-bottom: 15px;
+        font-size: $title_size_22px;
+        line-height: 20px;
+        font-family: "Roboto Mono", monospace;
+        font-weight: $font-weight_600;
+    }
+    .service-consulting {
+        float: left;
+        width: 100%;
+        margin-bottom: 40px;
+        ul {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            li {
+                float: left;
+                width: 48%;
+                list-style: none;
+                padding-right: 25px;
+                &:last-child{
+                    a{
+                        border-bottom: none;
+                    }
+                }
+                a {
+                    float: left;
+                    width: 100%;
+                    color: $footer_text_black_color;
+                    text-transform: capitalize;
+                    letter-spacing: 0.5px;
+                    padding: 15px 0 7px 0;
+                    border-bottom: .3px solid $footer_light_border_color;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    -ms-transition: all .5s;
+                    -o-transition: all .5s;
+                    transition: all .5s;
+                    text-decoration: none;
+                    font-size: $title_size_14px;
+                    line-height: 25px;
+                    font-family: "Roboto Mono", monospace;
+                    font-weight: $font-weight_400;
+                }
+            }
+        }
+    }
+    .Contact-section{
+        float: left;
+        width: 100%;
+        margin: 30px 0;
+        ul {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            li {
+                float: left;
+                width: 100%;
+                list-style: none;
+                margin-bottom: 15px;
+                i {
+                    float: left;
+                    width: 30px;
+                    color: $footer_text_black_color;
+                    font-size: $title_size_20px;
+                    padding-top: 3px;
+                }
+                a {
+                    float: left;
+                    letter-spacing: 1px;
+                    width: calc(60% - 30px);
+                    color: $footer_text_black_color;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    -ms-transition: all .5s;
+                    -o-transition: all .5s;
+                    transition: all .5s;
+                    font-size: $title_size_14px;
+                    line-height: 20px;
+                    font-family: "Roboto Mono", monospace;
+                    font-weight: $font-weight_400;
+                    p{
+                        font-family: 'Eagle Lake', cursive;
+                        font-weight: $font-weight_400;
+                    }
+                }
+            }
+        }
+    }
+    .payment-process{
+        float: left;
+        width: 100%;
+        margin: 20px 0;
+        ul {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            li {
+                display: inline-block;
+                list-style: none;
+                margin: 0 5px;
+                &:first-child{
+                    a{
+                        border: 2px solid $footer_black_border_color;
+                        border-radius: 5px;
+                        height: 35px;
+                        line-height: 30px;
+                        padding: 0 5px;
+                    }
+                }
+                a {
+                    float: left;
+                    text-decoration: none;
+                    color: $footer_text_black_color;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    -ms-transition: all .5s;
+                    -o-transition: all .5s;
+                    transition: all .5s;
+                    img{
+                        width: 60px;
+                    }
+                }
+            }
+        }
+    }
+    .social-media{
+        float: left;
+        width: 100%;
+        margin-top: 10px;
+        ul {
+            float: left;
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            li {
+                display: inline-block;
+                width: auto;
+                list-style: none;
+                a {
+                    float: left;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    border-radius: 8px;
+                    text-align: center;
+                    background-color: $footer_background_color;
+                    margin: 5px;
+                    color: $footer_text_white_color;
+                    -webkit-transition: all .5s;
+                    -moz-transition: all .5s;
+                    -ms-transition: all .5s;
+                    -o-transition: all .5s;
+                    transition: all .5s;
+                    &.facebook-back{
+                        background: #45629f;
+                    }
+                    &.insta-back{
+                        background: #ff4800;
+                    }
+                    &.youtube-back{
+                        background: #c61d23;
+                    }
+                    &.twitter-back{
+                        background: #5eb2ef;
+                    }
+                    &.linkedin-back{
+                        background: #0083bb;
+                    }
+                    i {       
+                    font-size: $title_size_25px;
+                    margin-top: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .copyright_wrapper {
+        float: left;
+        width: 100%;
+        text-align: center;
+        border-top: 1px dotted $footer_gray_border_color;
+        padding-top: 20px;
+        font-family: "Roboto Mono", monospace;
+        p {
+            float: left;
+            width: 100%;
+            letter-spacing: 1px;
+            margin-bottom: 0;
+            text-transform: capitalize;
+            color: $footer_text_black_color;
+            a {
+                font-weight: $font-weight_700;
+                color: $footer_text_black_color;
+            }
+        }
+    }
+}

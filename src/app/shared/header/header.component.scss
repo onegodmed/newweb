@@ -1,0 +1,236 @@
+
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+.header-section{
+    width: 100%;
+    float: left;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    background: $background_gradient;
+    .logo{
+        float: left;
+        width: 18%;
+        margin-top: 25px;
+        img{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .menu-section{
+        width: 82%;
+        float: left;
+        .left-section{
+            float: right;
+            width: 100%;
+            padding: 0px 14px;
+            text-align: right;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            .withoutloginsection {
+                display: inline-block;
+                // animation: float 8s ease-in-out infinite;
+                font-size: 16px;
+                font-weight: 600;
+                color: #fff;
+                border: 3px solid;
+                padding: 7px 15px;
+                cursor: pointer;
+                letter-spacing: 0.3px;
+                transition: $transition_out_5s;
+                border-color: rgb(224 181 178);
+                border-radius: 20px;
+                background: linear-gradient(90.53deg, rgb(188 174 152 / 34%) 0%, rgba(221, 186, 15, 0.13) 50%, #ee940c40 100%);
+                font-family: "Roboto Mono", monospace;
+                box-shadow: inset 0px -2px 1px #f44336;
+                &:hover{
+                    transition: $transition_out_5s;
+                    border-color: $border_light_pink_color;
+                    border-radius: 20px;   
+                    background: $background_menu_color;
+                }
+            }
+            .withinloginsection{    
+                float: right;
+                display: flex;
+                padding: 1px 0px 3px 10px;
+                font-family: 'Roboto Mono', monospace;
+                .wallet-amounts{
+                    float: right;
+                    margin-right: 5px;
+                    padding-top: 5px;
+                    cursor: pointer;
+                    display: flex;
+                    align-items: center;
+                    img{
+                        width: 25px;
+                        height: 25px;
+                        display: inline-block;
+                        margin-top: -10px;
+                    }
+                    span{
+                        font-size: $title_size_15px;
+                        font-weight: $font-weight_500;
+                        color: $wallet_amounts_color;
+                        letter-spacing: 1px;
+                        display: inline-block;
+                        padding: 0px 5px;
+                        margin-top: -6px;
+                        i{       
+                            float: left;
+                            font-size: 18px;
+                            margin-top: 2px;
+                        }
+                    }
+                }
+                .user-section_onlogin{
+                    display: flex;
+                    margin-right: 5px;
+                    border-radius: 20px;
+                    padding: 2px 0 0 1px;
+                    border: 1px solid $border_light_pink_color;
+                    background: $background_menu_color;
+                    .user-avatar{
+                        width: 28px;
+                        height: 28px;
+                        margin: 1px 0px 0px 1px;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        margin-top: 1px;
+                        img{
+                            width: 28px;
+                            height: 28px;
+                            border: 1px solid $avatar_border_color;
+                            border-radius: 50%;
+                            padding: 1px;
+                        }
+                    }
+                    .user_name{
+                        float: left;
+                        padding: 0 5px;
+                        h3{
+                            font-size: $title_size_14px;
+                            font-weight: $font-weight_500;
+                            letter-spacing: 0.1px;
+                            font-family: 'Roboto Mono', monospace;
+                            margin: 0;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            width: 50px;
+                            text-align: left;
+                        }
+                    }
+                }
+                button{
+                    background: transparent;
+                    border: none;
+                    font-size: 20px;
+                    display: inline-block;
+                }
+            }
+            .enquiry-box {
+                display: inline-block;
+                cursor: pointer;
+                margin-right: 20px;
+                position: relative;
+                .fa{
+                    font-size: $title_size_25px;
+                    color: $title_color;
+                    float: left;
+                    position: absolute;
+                    z-index: 998;
+                    left: -32px;
+                    top: 5px;
+                }
+                a{
+                    color: $enquiry_number_color;
+                    font-family: 'Eagle Lake', cursive;
+                    font-size: $title_size_20px;
+                    font-weight: $font-weight_500;
+                    letter-spacing: 0.2px;
+                    padding: 5px 3px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    display: block;
+                    outline: none;
+                }
+            }
+        }
+        ul{
+            list-style: none;
+            float: right;
+            padding: 0;
+            li{
+                margin-right: 30px;
+                float: left;
+                span{
+                    color: $title_color;
+                    font-family: 'Roboto Mono', monospace;
+                    font-size: $title_size_17px;
+                    font-weight: $font-weight_500;
+                    letter-spacing: 0.2px;
+                    padding: 12px 15px;
+                    cursor: pointer;
+                    border: 1px solid transparent;
+                    &:hover{
+                        transition: $transition_out_5s;
+                        transform: $transform_hover_3d_deg_item;
+                        border-color: $border_light_pink_color;
+                        border-radius: 20px;   
+                        background: $background_menu_color;
+                    }
+                }
+                &:last-child{
+                    margin-right: 0;
+                }
+            }
+        }
+    }
+
+}
+
+.fixed-header {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.9);
+    text-shadow: none;
+    padding-bottom: 0;
+    top: 0;
+    z-index: 5;
+    transition: all 0.5s ease-in-out;
+}
+
+@keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+  @-moz-keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }
+  @-webkit-keyframes float {
+    0% {
+      transform: translatey(0px);
+    }
+    50% {
+      transform: translatey(7px);
+    }
+    100% {
+      transform: translatey(0px);
+    }
+  }

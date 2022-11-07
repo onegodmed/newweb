@@ -1,0 +1,75 @@
+
+<section class="articles">
+    <div class="container heading">
+        <h2>Our Articles</h2>
+        <button class="articles-btn">See All</button>
+        <div class="articles-inner-section">
+            <ul>
+                <li *ngFor="let list of bloglistService?.response.data">
+                    <span>
+                        <img src='{{ list.photoURL }}' alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>{{ list.view }}</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>{{ list.heading }}</h4>
+                        <div class="articles-details-section">
+                            <h6>ONEGODMED</h6>
+                            <div class="post-articles-date"><span>{{ list.date }}</span></div>
+                        </div>
+                    </div>
+                </li>
+                <!-- <li>
+                    <span>
+                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628285088526x842936453940826900%2F52E040EF-111A-4BB1-8E96-8A4A745AF622.jpeg?w=384&h=387&auto=compress&fit=crop&dpr=1.25" alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>1354</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>Know the Personality traits, characteristics, and temperament of “Taurus”</h4>
+                        <div class="articles-details-section">
+                            <h6>Ram Singh</h6>
+                            <div class="post-articles-date"><span>Jun</span> 26 ,2022</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span>
+                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628285088526x842936453940826900%2F52E040EF-111A-4BB1-8E96-8A4A745AF622.jpeg?w=384&h=387&auto=compress&fit=crop&dpr=1.25" alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>1013</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>शुक्र ग्रह 18 जून को करेंगे वृषभ राशि में गोचर</h4>
+                        <div class="articles-details-section">
+                            <h6>R.k</h6>
+                            <div class="post-articles-date"><span>Feb</span> 03 ,2021</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span>
+                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628285088526x842936453940826900%2F52E040EF-111A-4BB1-8E96-8A4A745AF622.jpeg?w=384&h=387&auto=compress&fit=crop&dpr=1.25" alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>158</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>Characteristics, Temperament, and Personality Traits of Aries</h4>
+                        <div class="articles-details-section">
+                            <h6>S.K.R Natha</h6>
+                            <div class="post-articles-date"><span>May</span> 27 ,2022</div>
+                        </div>
+                    </div>
+                </li> -->
+            </ul>
+        </div>
+    </div>    
+</section>

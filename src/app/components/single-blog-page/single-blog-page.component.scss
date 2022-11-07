@@ -1,0 +1,251 @@
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+.post-data{
+    width: 100%;
+    float: left;
+    margin: 10px 0;
+    p{
+        font-family: "Roboto Mono", monospace;
+        letter-spacing: 0.5px;
+        font-size: $title_size_16px;
+        font-weight: $font-weight_400;
+        line-height: 30px;
+        color: $title_dark_gray_color;
+        width: 100%; 
+        float: left;
+        margin: 10px 0;
+        padding: 10px;
+        a{
+            text-decoration: none;
+            font-weight: $font-weight_400;
+            display: inline-block;
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.adds-banner{
+    width: 100%;
+    float: left;
+    margin: 40px 0 50px;
+    a{
+        text-decoration: none;
+        img{
+            width: 100%;
+            border-radius: 8px;
+        }
+    }
+}
+
+.blog_inner_page{
+    width: 73%;
+    margin-top: 50px;
+    float: left;
+    box-sizing: border-box;
+    background: $background_blog_inner_page;
+
+    .inner-blogbanner{
+        width: 100%;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        box-shadow: $box_shadow_blog_single_section;
+        .image-banner-section{
+            width: 100%;
+            float: left;
+            position: relative;
+            border-radius: 8px;
+            img{
+                width: 100%;
+                height: 400px;
+                border-radius: 8px;
+            }
+            .black_shadow{
+                position: absolute;
+                box-sizing: border-box;
+                z-index: 4;
+                height: 100%;
+                top: 0px;
+                background: $background_blog_inner_shadow;
+                border-radius: 8px 8px 0px 0px;
+                width: 100%;
+                left: 0px;
+            }
+            .inner-details-section{
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                background: $background_blog_card_section;
+                font-size: $title_size_15px;
+                z-index: 9;
+                border-bottom-left-radius: 0px;
+                border-top-left-radius: 20px;
+                padding: 10px 20px;
+                line-height: 35px;
+                background-color: $title_white_color;
+                font-family: "Roboto Mono", monospace;
+                font-weight: $font-weight_500;
+                letter-spacing: 1px;
+                h6{
+                    font-size: $title_size_15px;
+                    font-weight: $font-weight_500;
+                    letter-spacing: 1px;
+                    margin: 0;
+                    padding: 8px;
+                }
+            }
+        }
+        .inner-text-box{
+            float: left;
+            width: 100%;
+            padding: 15px;
+            box-sizing: border-box;
+            background-color: $blog_single_bg_color;
+            border-bottom-left-radius: 8px;
+            border-bottom-right-radius: 8px;
+            .categories-tag{
+                float: left;
+                margin: 10px 0;
+                width: 100%;
+                a{
+                    cursor: pointer;
+                    text-decoration: none;
+                    display: inline-block;
+                    padding: 4px 10px;
+                    background: $background_blog_card_section;
+                    margin: 5px;
+                    border-radius: 3px;
+                    color: $title_color;
+                    font-size: $title_size_16px;
+                    font-weight: $font-weight_600;
+                    letter-spacing: 2px;
+                }
+            }
+            h4{
+                float: left;
+                font-family: "Roboto Mono", monospace;
+                letter-spacing: 0.5px;
+                font-size: $title_size_35px;
+                font-weight: $font-weight_600;
+                line-height: 50px;
+                color: $title_dark_gray_color;
+                width: 100%;
+            }
+            p{
+                float: left;
+                font-family: "Roboto Mono", monospace;
+                letter-spacing: 0.5px;
+                font-size: $title_size_18px;
+                font-weight: $font-weight_400;
+                line-height: 30px;
+                color: $title_dark_gray_color;
+                width: 100%;
+            }
+        }
+    }
+
+
+    .related-inner-section{
+        float: left;
+        margin-bottom: 10px;
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            width: 100%;
+            float: left;
+            li{
+                display: inline-block;
+                width: 31%;
+                vertical-align: top;
+                margin-bottom: 40px;
+                margin-right: 3%;   
+                box-shadow: $box_shadow_blog_page;
+                border-radius: 8px;
+                min-height: 350px;
+                position: relative;
+                transition: $transition_out_5s;
+                cursor: pointer;
+                &:hover{
+                    -webkit-transform: $transform_hover_blog_card_section;
+                    transform: $transform_hover_blog_card_section;
+                }
+                &:nth-child(3n){
+                    margin-right: 0;
+                }     
+                span{
+                    float: left;
+                    img{
+                        width: 100%;
+                        border-radius: 8px;
+                        min-height: 150px;
+                        border-bottom-right-radius: 0;
+                        border-bottom-left-radius: 0;
+                    }
+                }
+                .view-post-section {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background: $background_blog_view_count_section;
+                    padding: 4px;
+                    display: flex;
+                    color: $title_white_color;
+                    border-bottom-right-radius: 8px;
+                    border-top-left-radius: 8px;
+                    font-size: $title_size_12px;
+                    font-family: "Roboto Mono", monospace;
+                    i{
+                        margin-top: 3px;
+                        margin-right: 3px;
+                    }
+                }
+                .articles-text-box{
+                    float: left;
+                    width: 100%;
+                    padding: 15px;
+                    box-sizing: border-box;
+                    h4{
+                        float: left;
+                        font-size: $title_size_16px;
+                        font-weight: $font-weight_600;
+                        font-family: "Roboto Mono", monospace;
+                        letter-spacing: 0.5px;
+                        line-height: 30px;
+                        color: $title_dark_gray_color;
+                        width: 100%;
+                    }
+                    .articles-details-section{
+                        float: left;
+                        width: 100%;
+                        font-size: $title_size_16px;
+                        font-weight: $font-weight_400;
+                        font-family: "Roboto Mono", monospace;
+                        letter-spacing: 0.5px;
+                        line-height: 25px;
+                        h6{
+                            color: $title_dark_gray_color;
+                            font-size: $title_size_14px;
+                            font-weight: $font-weight_500;
+                            line-height: 10px;
+                            margin-bottom: 10px;
+                            letter-spacing: 1px;
+                            float: left;
+                        }
+                        .post-articles-date {
+                            font-size: $title_size_14px;
+                            font-weight: $font-weight_600;
+                            float: right;
+                            margin-top: -10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

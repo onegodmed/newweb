@@ -1,0 +1,119 @@
+ <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content process_pay">
+        <tbody id="calulationpopup" *ngIf="calculationpopup" >
+            <table style="width:80%; margin: 3% 0 1% 2%;">
+                <tr>
+                    <td>Amounts</td>
+                    <td>Rs.
+                        <span>{{ packagecalculation.data.packageAmount }}</span>
+                        <input type="number" id="packageamount" value='{{packagecalculation.data.packageAmount}}' hidden>
+                    </td>
+                </tr>
+                <tr>
+                    <td>GST @ 18.00%</td>
+                    <td>Rs.
+                        <span>{{ packagecalculation.data.gstAmount }}</span>
+                        <input type="number" id="gst" value='{{packagecalculation.data.gstAmount}}' hidden>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Talktime Value</td>
+                    <td>Rs.
+                        <span>{{ packagecalculation.data.talktimevalue }}</span>
+                        <input type="number" id="talktime" value='{{packagecalculation.data.talktimevalue}}' hidden>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Net Amounts Payable (Rs.)</td>
+                    <td>Rs.
+                        <span>{{ packagecalculation.data.totalAmount }}</span>
+                        <input type="number" id="totalamount" value='{{packagecalculation.data.totalAmount}}' hidden>
+                    </td>
+                </tr>
+                <tr>
+                    <p *ngIf="messageSuccess">Cash Back will be added to Your Wallet After Recharge. </p>
+                    <p *ngIf="errorMessage" style="color:red;">{{errorText}} </p>
+                </tr>
+                <tr>
+                    
+                    <td>
+                        <div class="coupon_section">
+                            <a (click)="toggleBtnshow()">Do you have coupon code ?  <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
+                            <!-- <input *ngIf="isBtnshow" [(ngModel)]="couponCode"  placeholder="Enter your coupon code..." > -->
+                            <!-- <input placeholder="Enter coupon code" [(ngModel)]="coupenCode"> -->
+                            <!-- <input [(ngModel)]="coupenCode" type="text" /> -->
+                             <input type="text" *ngIf="isBtnshow" id="couponCode" value=""  placeholder="Enter your coupon code..." >
+                        </div>
+
+                       
+
+                    </td>
+                    <td>
+                        <div class="apply_coupon_btn">
+                            <button *ngIf="isBtnshow" (click)="applyCoupon()">Apply</button>
+                        </div>
+                    </td>
+                </tr>
+                <span class="error_coupon">Please Enter valid code</span>
+                <div class="back_popup_img">
+                    <img src="../../assets/images/IMAGE1.png">
+                </div>
+                <div class="continus_pay">
+                    <button (click)="pay()">
+                        <i class="fa fa-lock" aria-hidden="true"></i>
+                        Continue to Secure Pay
+                        <i class="fa fa-external-link-square" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </table>
+            <div class="payment-process">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img src="../../assets/images/verify-img.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="../../assets/images/upi.png">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636130408980x837599417836378900%2FProperty%25201%253DMastercard%2520%25281%2529.png?w=48&h=29&auto=compress&fit=crop&dpr=1.25">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1636131379085x235214909677108360%2FProperty%25201%253DVisa.png?w=48&h=29&auto=compress&fit=crop&dpr=1.25">
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </tbody>
+        <div id="success" class="successful_payment_popup">
+            <div class="success_pyment_section">
+                <div class="screen_section">
+                    <div class="success_icon_section">
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                  <p color="secondary">Successfully</p>
+                  <p class="light-weight-text">Your request successfully.<span id="paymentId"></span></p>
+                </div>
+            </div>
+        </div>
+        <div id="failed" class="failed_payment_popup">
+            <div class="failure_pyment_section">
+                <div class="screen_section">
+                    <div class="faild_icon_section">
+                        <i class="fa fa-times" aria-hidden="true"></i>
+                    </div>
+                  <p color="danger">Request Failed</p>
+                  <p class="light-weight-text">Your request for pyment could not be processed at this time.</p>
+                  <button>Try Again</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

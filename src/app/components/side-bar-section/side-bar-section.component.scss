@@ -1,0 +1,128 @@
+@import '~src/assets/scss/theme-color.scss';
+@import '~src/assets/scss/font-size.scss';
+
+.side_bar{
+    float: right;
+    width: 25%;
+    margin-top: 50px;
+    padding: 0 20px 0 30px;
+    border-left: 1px solid $blog_side_bar_border_color;
+    h4{
+        font-size: $title_size_20px;
+        font-weight: $font-weight_600;
+        margin: 20px 0;
+        line-height: 25px;
+        font-family: "Roboto Mono", monospace;
+        letter-spacing: 1.5px;
+        color: $blog_side_bar_black_color;
+        background: $background_blog_Side_bar;
+        display: inline-block;
+        width: 100%;
+        padding: 10px 10px;
+        border-radius: 3px;
+    }
+    .tranding-post, .update-post{
+        float: left;
+        width: 100%;
+        margin: 0 0 20px;  
+        padding: 15px 0;
+        border-top: 0.5px solid $blog_side_bar_border_color;
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li{
+                float: left;
+                margin: 0 10px 10px;
+                border-bottom: 0.2px solid $blog_side_bar_border_color;
+                padding-bottom: 10px;
+                width: 100%;
+                &:last-child{
+                    margin-bottom: 0;
+                }
+                a{
+                    color: $blog_side_bar_light_gray_color;
+                    font-family: "Roboto Mono", monospace;
+                    font-size: $title_size_14px;
+                    font-weight: $font-weight_500;
+                    letter-spacing: 1px;
+                    padding: 8px 0;
+                    box-sizing: border-box;
+                    text-decoration: none;
+                    line-height: 20px;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .astrolger_services{
+        float: left;
+        width: 100%;
+        .side_bar_section {
+            width: 50%;
+            display: inline-table;
+            .box_item{
+                background-color: $blog_side_bar_white_color;
+                text-align: center;
+                border-radius: 8px;
+                box-shadow: $box_shadow_blog_side_bar;
+                padding: 15px 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 20px;
+                text-decoration: none;
+                transition: $transition_out_5s;
+                &:hover{
+                    transition: $transition_out_3s;
+                    -webkit-transition: $transition_out_3s;
+                    border-color: $blog_side_bar_white_color;
+                    border-radius: 10px;
+                    background: $background_blog_side_bar_hover;
+                    position: relative;
+                    bottom: 2px;
+                }
+                .icon{
+                    width: 30px;
+                    border-radius: 100%;
+                    transition: $transition_out_3s;
+                    -webkit-transition: $transition_out_3s;
+                    height: 30px;
+                    margin: 0 auto 25px;
+                    img{
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+                .text{
+                    margin-top: 10px;
+                    color: $blog_side_bar_black_color ;
+                    height: auto;
+                    font-family: "Roboto Mono", monospace;
+                    font-size: $title_size_14px;
+                    font-weight: $font-weight_500;
+                }
+            }
+        }
+    }
+    .adds_sidebar_banner{
+        width: 100%;
+        float: left;
+        margin: 30px 0;
+        a{
+            text-decoration: none;
+            height: 160px;
+            width: 100%;
+            display: flex;
+            border-radius: 8px;
+            box-shadow: $box_shadow_blog_side_bar_inner;
+            align-items: center;
+            padding: 15px;
+            img{
+                width: 100%;
+                border-radius: 8px;
+            }
+        }
+    }
+}

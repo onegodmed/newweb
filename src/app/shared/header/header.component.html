@@ -1,0 +1,50 @@
+<div class="header-section"  id="navbar">
+    <div class="container">
+        <div class="logo">
+            <!-- <img src="../../assets/images/logo.png"> -->
+            <a href=" "><img src="https://www.onegodmed.com/front-assets/images/header/logo-dark.png"></a>
+        </div>
+        <div class="menu-section">
+            <div class="left-section">
+                <div class="enquiry-box">
+                    <i class="fa fa-headphones" aria-hidden="true"></i>
+                    <a href="tel:+91 9169-305-305">+91 9169-305-305</a>
+                </div>
+                <div *ngIf="isLoggedOut" class="withoutloginsection" (click)="openDialog()">Login/Signup</div>
+                <div *ngIf="isLoggedIn"  class="withinloginsection">
+                    <div  class="wallet-amounts"  (click)="walletPage()">
+                        <img src="../../assets/images/walletimage.png">
+                        <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i> {{ CurrentBalance }} </span>
+                    </div>
+                    <div  class="user-section_onlogin">
+                        <div class="user-avatar">
+                            <img src="../../assets/images/avatar-icon.png" alt="avatar">
+                        </div>
+                        <div class="user_name">
+                            <h3>{{ showusername }}</h3>
+                        </div>
+                    </div>
+                    <button  mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="openProfileedite()">My Account</button>
+                        <button mat-menu-item (click)="follow()">My Astrologers</button>
+                        <button mat-menu-item (click)="walletPage()">Wallet Recharge</button>
+                        <button mat-menu-item (click)="loggedout()">Logout</button>
+                    </mat-menu>
+                </div>
+            </div>
+            <ul>
+                <li><span (click)="route1()">Talk to astrologer</span></li>
+                <li><span (click)="route2()">Chat with astrologer</span></li>
+                <li><span (click)="route3()">Blog</span></li>
+                <li><span (click)="route5()">Astrology</span></li>
+                <li><span (click)="route6()">Premium Report</span></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+

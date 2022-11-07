@@ -1,0 +1,273 @@
+<section class="astrologer_profile">
+        <div class="profile_top_section">
+            <div class="container">
+                <div class="astrologer_breadcrumbs">
+                    <ul>
+                        <li><a href="/">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/talktoastro">Astrologer Listing</a>
+                        </li>
+                        <li>
+                            <a class="current active text-capitalize">Astrologer Profile</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                        <div class="astro_profile_img">
+                            <img src='{{ astrodetails.data.photo_url }}'>
+                        </div>
+                        <div class="following_section">
+                            <ul>
+                                <li>
+                                    <span>{{ totalfollowers }}</span>
+                                    <a href="#">Followers</a>
+                                </li>
+                                <li *ngIf="!isfollow">
+                                    <i class="fa fa-plus" aria-hidden="true"></i>
+                                    <a (click)="follow(astrodetails.data.astrologer_id)">Follow</a>
+                                </li>
+                                <li *ngIf="isfollow">
+                                    <a (click)="unfollow(astrodetails.data.astrologer_id)">Unfollow</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                        <div class="astro_details_section">
+                            <h1>{{ astrodetails.data.first_name }}</h1>
+                            <div class="astro-professional">
+                                <span>{{ astrodetails.data.expertise }}</span>
+                            </div>
+                            <div class="language">
+                                <span>{{ astrodetails.data.langknown }}</span>  
+                            </div>
+                            <div class="exprinces">
+                                <span>{{ astrodetails.data.experience }}</span>
+                                Year
+                            </div>
+                            <div class="categories-tag">
+                                <span>Business</span>
+                                <span>Love</span>
+                                <span>Marrige</span>
+                            </div>
+                            <div class="callchat-btn">
+                                <button *ngIf="IsLoggedIn" class="btn-call" (click)="openDialogforcall(astrodetails.data.astrologer_id)">
+                                    <div class="icon-call"></div>
+                                    <span class="call-section">Start Call</span>
+                                    <div class="price">
+                                        <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                            {{ astrodetails.data.service_price }}<span>/Min</span>
+                                        </span>
+                                        <div class="discount_price">15<span>/Min</span></div>
+                                    </div>
+                                </button>
+                                <button *ngIf="!IsLoggedIn" class="btn-call" (click)="logindialogopen(astrodetails.data.astrologer_id)">
+                                    <div class="icon-call"></div>
+                                    <span class="call-section">Start Call</span>
+                                    <div class="price">
+                                        <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                            {{ astrodetails.data.service_price }}<span>/Min</span>
+                                        </span>
+                                        <div class="discount_price">15<span>/Min</span></div>
+                                    </div>
+                                </button>
+                                <button *ngIf="IsLoggedIn" class="btn-call" (click)="openDialogforchat(astrodetails.data.astrologer_id)">
+                                    <div class="icon-chat"></div>
+                                    <span class="call-section">Start Chat</span>
+                                    <div class="price">
+                                        <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                            {{ astrodetails.data.service_price }}<span>/Min</span>
+                                        </span>
+                                        <div class="discount_price">23<span>/Min</span></div>
+                                    </div>
+                                </button>
+                                <button *ngIf="!IsLoggedIn" class="btn-call" (click)="logindialogopen(astrodetails.data.astrologer_id)">
+                                    <div class="icon-chat"></div>
+                                    <span class="call-section">Start Chat</span>
+                                    <div class="price">
+                                        <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                            {{ astrodetails.data.service_price }}<span>/Min</span>
+                                        </span>
+                                        <div class="discount_price">23<span>/Min</span></div>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                        <div class="starrating">
+                            <div class="total_rating">Ratings: <span class="fa fa-star"></span><span>{{ astroratingsall.Average[0].rating | number:'1.0-0' }}</span> / <span>{{ astroratingsall.total }}</span></div>
+                            <div class="side_right_five">
+                                <div class="total_count">{{ astroratingsall.fiverating }}</div>
+                            </div>
+                            <div class="side_right_four">
+                                <div class="total_count">{{ astroratingsall.fourrating }}</div>
+                            </div>
+                            <div class="side_right_three">
+                                <div class="total_count">{{ astroratingsall.threerating }}</div>
+                            </div>
+                            <div class="side_right_two">
+                                <div class="total_count">{{ astroratingsall.tworating }}</div>
+                            </div>
+                            <div class="side_right_one">
+                                <div class="total_count">{{ astroratingsall.onerating }}</div>
+                            </div>
+                            <div class="user_comment_img">
+                                <img src="../../../assets/images/offira-rating1.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="profile_bottom_section">
+            <div class="profile-tabs-astrolgers">
+                <div class="container">
+                    <div class="profile_details heading">
+                        <div class="aboutus_section">
+                            <div class="text-cover_styles">
+                                <div class="back_color">
+                                    <h2>About Me</h2>
+                                </div>
+                                <p [innerHTML]='astrodetails.data.about_us'></p>
+                            </div>
+                            <div class="text-cover_styles">
+                                <p>
+                                    <span class="bg-clr">His area of expertise includes Vedic Astrology, Gemology and subcategories are as follows.</span>
+                                    <span class="order-listing-about">
+                                        <ol>
+                                            <li>Business Astrology</li>
+                                            <li>Career & Education Astrology</li>
+                                            <li>Marriage Prediction</li>
+                                            <li>Family Consultation</li>
+                                            <li>Marriage</li>
+                                        </ol>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="gallery_astrologer_section">
+                                <ul>
+                                    <li>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
+                                    </li>
+                                    <li>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
+                                    </li>
+                                    <li>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
+                                    </li>
+                                    <li>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
+                                    </li>
+                                    <li>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
+                                    </li>
+                                    <li>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
+                                    </li>
+                                    <li>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="guarantee_box_section">
+                                <div class="secure_section">
+                                <span class="sprite_icons money_back_guarantee"></span>Money Back <br>
+                                Guarantee
+                                <div class="clearfix"></div>
+                                </div>
+                                <div class="secure_section">
+                                <span class="sprite_icons astro_verified"></span>Verified Expert<br>
+                                Astrologers
+                                <div class="clearfix"></div>
+                                </div>
+                                <div class="secure_section"> <span class="sprite_icons astro_secure"></span> 100% Secure<br>
+                                Payments
+                                <div class="clearfix"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sectionright_side">
+                            <div class="back_color">
+                                <h3>Verified Reviews</h3>
+                            </div>
+                            <div class="scroll-fixed">
+                                <div class="profile-rates" *ngFor="let list of astrodetails.review">
+                                    <div class="rating_h4">
+                                        <div class="section-left">
+                                            <span class="rating_blue diff_color1">{{ list.name[0] | uppercase }}</span>
+                                        </div>
+                                        <div class="section-right"><i>{{ list.date | date:'fullDate' }}</i></div>
+                                        <div class="clearfix"></div>
+                                    </div>
+                                    <div class="rating_comment">{{ list.reviews }} </div>
+                                    <!-- <div class="astro-comment-section">
+                                        <span>Mang Astro</span>
+                                        <div class="astro-date"><i>Tue, 10 JuN,2021</i></div>
+                                        <div class="ratingastro_comment">Thanks a Lot ! so good at what you do</div>
+                                    </div> -->
+                                </div>
+                            </div>
+                            <div *ngIf="token != null" class="input-comment-section">
+                                <div class="star_ratinguser">
+                                    <h4>Your Ratings:</h4>
+                                    <div class="star-icon">
+                                        <span class="fa fa-star checked" (click)="addratingsonly(1)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(2)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(3)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(4)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(5)"></span>
+                                    </div>
+                                </div>
+                                <textarea  rows="4" cols="50" placeholder="Please Enter you Comments" id="addreviewsonly"></textarea>
+                                <span class="sendbtn" (click)="addratingsreviews()">Comments</span>
+                                <div *ngIf="isSussessfully" class="success_message">
+                                    <!-- <p>Your Ratings Successfully, We hope to see you again soon. Thanks!</p> -->
+                                    <p>{{ ratingreviewmsg }}</p>
+                                </div>
+                            </div>
+                            <div class="astrologer_weekly_status">
+                                <div class="btnclass" (click)="toggleShow()">Check Weekly Availability</div>
+                                <div class="week" *ngIf="isShown">
+                                        <ul>
+                                            <li>
+                                                <div class="days-name">Sun: </div> 
+                                                <a *ngFor="let list of sunday"><span>{{ list }}</span></a>
+                                            </li>
+                                            <li>
+                                                <div class="days-name">Mou: </div>
+                                                <a *ngFor="let list of monday"><span>{{ list }}</span></a>
+                                            </li>
+                                            <li>
+                                                <div class="days-name">Tue: </div> 
+                                                <a *ngFor="let list of tuesday"><span>{{ list }}</span></a>
+                                            </li>
+                                            <li>
+                                                <div class="days-name">Wed: </div>
+                                                <a *ngFor="let list of wednesday"><span>{{ list }}</span></a>
+                                            </li>
+                                            <li>
+                                                <div class="days-name">Thu: </div>
+                                                <a *ngFor="let list of thursday"><span>{{ list }}</span></a>
+                                            </li>
+                                            <li>
+                                                <div class="days-name">Fri: </div>
+                                                <a *ngFor="let list of friday"><span>{{ list }}</span></a>
+                                            </li>
+                                            <li>
+                                                <div class="days-name">Sat: </div>
+                                                <a *ngFor="let list of saturday"><span>{{ list }}</span></a>
+                                            </li>
+                                        </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
