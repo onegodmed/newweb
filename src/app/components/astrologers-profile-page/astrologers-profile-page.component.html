@@ -23,12 +23,15 @@
                         <div class="following_section">
                             <ul>
                                 <li>
-                                    <span>440</span>
+                                    <span>{{ totalfollowers }}</span>
                                     <a href="#">Followers</a>
                                 </li>
-                                <li>
+                                <li *ngIf="!isfollow">
                                     <i class="fa fa-plus" aria-hidden="true"></i>
-                                    <a href="#">Follow</a>
+                                    <a (click)="follow(astrodetails.data.astrologer_id)">Follow</a>
+                                </li>
+                                <li *ngIf="isfollow">
+                                    <a (click)="unfollow(astrodetails.data.astrologer_id)">Unfollow</a>
                                 </li>
                             </ul>
                         </div>
@@ -47,29 +50,48 @@
                                 Year
                             </div>
                             <div class="categories-tag">
-                                <span>Business</span>
-                                <span>Love</span>
-                                <span>Marrige</span>
+                                <span>{{ astrodetails.data.skills }}</span>
+                               
                             </div>
                             <div class="callchat-btn">
-                                <button class="btn-call" (click)="openDialog(astrodetails.data.astrologer_id)">
+                                <button *ngIf="IsLoggedIn" class="btn-call" (click)="openDialogforcall(astrodetails.data.astrologer_id)">
                                     <div class="icon-call"></div>
                                     <span class="call-section">Start Call</span>
                                     <div class="price">
                                         <span><i class="fa fa-inr" aria-hidden="true"></i>
                                             {{ astrodetails.data.service_price }}<span>/Min</span>
                                         </span>
-                                        <div class="discount_price">15<span>/Min</span></div>
+                                        <div class="discount_price">{{ astrodetails.data.old_price }}<span>/Min</span></div>
                                     </div>
                                 </button>
-                                <button class="btn-call">
+                                <button *ngIf="!IsLoggedIn" class="btn-call" (click)="logindialogopen(astrodetails.data.astrologer_id)">
+                                    <div class="icon-call"></div>
+                                    <span class="call-section">Start Call</span>
+                                    <div class="price">
+                                        <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                            {{ astrodetails.data.service_price }}<span>/Min</span>
+                                        </span>
+                                        <div class="discount_price">{{ astrodetails.data.old_price }}<span>/Min</span></div>
+                                    </div>
+                                </button>
+                                <button *ngIf="IsLoggedIn" class="btn-call" (click)="openDialogforchat(astrodetails.data.astrologer_id)">
                                     <div class="icon-chat"></div>
                                     <span class="call-section">Start Chat</span>
                                     <div class="price">
                                         <span><i class="fa fa-inr" aria-hidden="true"></i>
                                             {{ astrodetails.data.service_price }}<span>/Min</span>
                                         </span>
-                                        <div class="discount_price">23<span>/Min</span></div>
+                                        <div class="discount_price">{{ astrodetails.data.old_price }}<span>/Min</span></div>
+                                    </div>
+                                </button>
+                                <button *ngIf="!IsLoggedIn" class="btn-call" (click)="logindialogopen(astrodetails.data.astrologer_id)">
+                                    <div class="icon-chat"></div>
+                                    <span class="call-section">Start Chat</span>
+                                    <div class="price">
+                                        <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                            {{ astrodetails.data.service_price }}<span>/Min</span>
+                                        </span>
+                                        <div class="discount_price">{{ astrodetails.data.old_price }}<span>/Min</span></div>
                                     </div>
                                 </button>
                             </div>
@@ -173,7 +195,9 @@
                                 <h3>Verified Reviews</h3>
                             </div>
                             <div class="scroll-fixed">
+                                
                                 <div class="profile-rates" *ngFor="let list of astrodetails.review">
+                                    
                                     <div class="rating_h4">
                                         <div class="section-left">
                                             <span class="rating_blue diff_color1">{{ list.name[0] | uppercase }}</span>
@@ -181,29 +205,33 @@
                                         <div class="section-right"><i>{{ list.date | date:'fullDate' }}</i></div>
                                         <div class="clearfix"></div>
                                     </div>
+                                   
                                     <div class="rating_comment">{{ list.reviews }} </div>
+                             
                                     <!-- <div class="astro-comment-section">
                                         <span>Mang Astro</span>
                                         <div class="astro-date"><i>Tue, 10 JuN,2021</i></div>
                                         <div class="ratingastro_comment">Thanks a Lot ! so good at what you do</div>
-                                    </div> -->
+                              
                                 </div>
+                           
                             </div>
                             <div *ngIf="token != null" class="input-comment-section">
                                 <div class="star_ratinguser">
                                     <h4>Your Ratings:</h4>
                                     <div class="star-icon">
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
-                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(1)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(2)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(3)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(4)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(5)"></span>
                                     </div>
                                 </div>
-                                <textarea  rows="4" cols="50" placeholder="Please Enter you Comments"></textarea>
-                                <span class="sendbtn" (click)="submitBtn()">Comments</span>
+                                <textarea  rows="4" cols="50" placeholder="Please Enter you Comments" id="addreviewsonly"></textarea>
+                                <span class="sendbtn" (click)="addratingsreviews()">Comments</span>
                                 <div *ngIf="isSussessfully" class="success_message">
-                                    <p>Your Ratings Successfully, We hope to see you again soon. Thanks!</p>
+                                    <!-- <p>Your Ratings Successfully, We hope to see you again soon. Thanks!</p> -->
+                                    <p>{{ ratingreviewmsg }}</p>
                                 </div>
                             </div>
                             <div class="astrologer_weekly_status">

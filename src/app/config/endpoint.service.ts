@@ -20,6 +20,8 @@ export class EndpointService {
   GET_CITY = 'Astrologer/searchCity';
   ADD_CALL = 'Astrologer/addCall';
   ADD_CHAT = 'Astrologer/addChat';
+  CANCEL_CHAT_URL = 'Astrologer/cancelOrder';
+  END_CHAT_URL    = 'Astrologer/endChat';
 
   ///Blog.php////
   BLOG_LIST_HOME = 'Blog/blogList';
@@ -34,6 +36,7 @@ export class EndpointService {
   USER_CURRENT_BALANCE = 'User/userWalletdetails';
   USER_PROFILE_DETAILS = 'User/userprofiledetails';
   UPDATE_USER_PROFILE = 'User/updateprofile';
+  ADD_RATING_REVIEWS = 'User/addreviewRating';
 
   ///Package.php///
   PACKAGE_LIST = 'Package/offerPackage';
@@ -54,6 +57,8 @@ export class EndpointService {
   ///Order.php///
   MY_BOOKING = 'Order/orderList';
   ORDER_INFO_URL = 'Order/orderDetail';
+  CHECK_CALL_STATUS = 'Order/checkCallstatus';
+  CALL_MISSED = 'Order/updatemissedCallstatus';
 
 
   constructor() { }

@@ -50,7 +50,7 @@ export class ProfileInfoUpdateComponent implements OnInit {
 
       this.orderService.mybooking().subscribe((data: any) => {
         this.mybooking = data;
-        // console.log(this.mybooking);
+        console.log(this.mybooking);
       });
 
       this.transactionService.transactionlist().subscribe((data: any) => {

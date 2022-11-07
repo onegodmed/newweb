@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { data } from 'jquery';
 import { BaseurlService } from '../config/baseurl.service'
 import { EndpointService } from '../config/endpoint.service'
 const headers = new HttpHeaders()
@@ -10,30 +8,38 @@ const headers = new HttpHeaders()
   .set('content-type', 'application/json')
   .set('content-type', 'application/x-www-form-urlencoded');
 
+
 @Injectable({
   providedIn: 'root'
 })
-export class RatingsService {
-
-  response: any = [];
+export class CscService {
 
   constructor(private http: HttpClient, public baserurl: BaseurlService, public endpoint: EndpointService) {
-    console.log("connected ratings api connected");
+    console.log("connected csc service");
   }
 
-  astroratings() {
-    return this.http.post(this.baserurl.BASE_URL + this.endpoint.RATINGS_ALL, { 'headers': headers, "astro_id": localStorage.getItem('astrologer_id') }).pipe(
+  getcountry() {
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.GETCOUNTRY, { 'headers': headers }).pipe(
       map(data => {
         return data;
       })
     );
   }
 
-  addreviewRating(review: any, rating: any) {
-    return this.http.post(this.baserurl.BASE_URL + this.endpoint.ADD_RATING_REVIEWS, { 'headers': headers, "token": localStorage.getItem('token'), "astro_id": localStorage.getItem('astrologer_id'), "rating": rating, "review": review }).pipe(
+  getstateby_countryid(country_id: number) {
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.GETSTATE, { 'headers': headers, 'country_id': country_id}).pipe(
       map(data => {
         return data;
       })
     );
   }
+
+  getcityby_stateid(state_id: number) {
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.GETCITY, { 'headers': headers, 'state_id': state_id}).pipe(
+      map(data => {
+        return data;
+      })
+    );
+  }
+
 }

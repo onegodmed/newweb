@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BloglistService } from "../../services/bloglist.service";
+import { BloglistService } from "src/app/services/bloglist.service";
 
 
 @Component({

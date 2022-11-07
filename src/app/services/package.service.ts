@@ -33,4 +33,17 @@ export class PackageService {
       })
     );
   }
+
+
+  checkCoupon(data:any) {
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.PACKAGE_CALCULATION, { 'headers': headers, 'package_id': data.packageId }).pipe(
+      map(data => {
+        return data;
+      })
+    );
+  }
+
+
+
+
 }

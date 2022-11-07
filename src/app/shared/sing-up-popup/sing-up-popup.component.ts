@@ -19,7 +19,7 @@ export class SingUpPopupComponent implements OnInit {
   username: string = '';
   useremail: string = '';
   astrodetails: any = [];
-  forcall: any;
+  forcallchat: any;
   users: any;
   otpsent = false;
   verfyotp = false;
@@ -30,7 +30,7 @@ export class SingUpPopupComponent implements OnInit {
   sendotp: any = {};
   verifyotp: any = {};
   errormsg: any;
-  showmobilenumber: any;
+  showmobilenumber: any = '';
   timeLeft: number = 60;
   interval: any;
   otperror: boolean = false;
@@ -42,8 +42,8 @@ export class SingUpPopupComponent implements OnInit {
     this.verfyotp = false;
     this.register = false;
 
-    this.forcall = this.data.astroIdforcall; //astrologer Id for call
-    if (this.forcall != null) {
+    this.forcallchat = this.data.astroIdforcall; //astrologer Id for call
+    if (this.forcallchat != null) {
       this.astrocard_otpsent = true;
       this.otpsent = false;
       this.verfyotp = false;
@@ -64,7 +64,7 @@ export class SingUpPopupComponent implements OnInit {
     if (mobilenumber == '') {
       this.errormsg = "Mobile Number is required";
     } else {
-      this.loginService.sendotp(mobilenumber).subscribe((data) => {
+      this.loginService.sendotp(mobilenumber).subscribe((data: any) => {
         this.sendotp = data;
         localStorage.setItem('mobilenumber', mobilenumber);
         this.showmobilenumber = localStorage.getItem("mobilenumber");
@@ -96,11 +96,11 @@ export class SingUpPopupComponent implements OnInit {
 
   onVerifyOtp(otp: any) {
     if (otp.length === 4) {
-      this.loginService.verifyotp(otp).subscribe((data) => {
+      this.loginService.verifyotp(otp).subscribe((data: any) => {
         this.verifyotp = data;
         if (this.verifyotp.status === true) {
           if (this.verifyotp.data.token.token != '') {
-            localStorage.setItem('token', this.verifyotp.data.token.token);
+            localStorage.setItem('token', this.verifyotp.data.token);
             localStorage.setItem('UserName', this.verifyotp.data.full_name);
             // localStorage.setItem('CurrentBalance', this.verifyotp.wallet_balance[0].balance);
             // this.router.navigate([]);
@@ -128,12 +128,12 @@ export class SingUpPopupComponent implements OnInit {
     this.username = (<HTMLInputElement>document.getElementById("username")).value;
     this.useremail = (<HTMLInputElement>document.getElementById("email")).value;
     if (otp.length === 4) {
-      this.loginService.signup(otp, this.username, this.useremail).subscribe((data) => {
+      this.loginService.signup(otp, this.username, this.useremail).subscribe((data: any) => {
         this.verifyotp = data;
         if (this.verifyotp.status === true) {
-          if (this.verifyotp.data.token.token != '') {
-            localStorage.setItem('token', this.verifyotp.data.token.token);
-            localStorage.setItem('UserName', this.verifyotp.data.full_name);
+          if (this.verifyotp.data[0].token != '') {
+            localStorage.setItem('token', this.verifyotp.data[0].token);
+            localStorage.setItem('UserName', this.verifyotp.data[0].full_name);
             // this.router.navigate([]);
             window.location.reload();
           } else {
@@ -158,6 +158,11 @@ export class SingUpPopupComponent implements OnInit {
   editnumber() {
     this.verfyotp = false;
     this.otpsent = true;
+  }
+
+  astrocard_editnumber() {
+    this.astrocard_verfyotp = false;
+    this.astrocard_otpsent = true;
   }
 
   resendotp() {
@@ -190,7 +195,7 @@ export class SingUpPopupComponent implements OnInit {
     if (mobilenumber == '') {
       this.errormsg = "Mobile Number is required";
     } else {
-      this.loginService.sendotp(mobilenumber).subscribe((data) => {
+      this.loginService.sendotp(mobilenumber).subscribe((data: any) => {
         this.sendotp = data;
         localStorage.setItem('mobilenumber', mobilenumber);
         this.showmobilenumber = localStorage.getItem("mobilenumber");
@@ -223,7 +228,7 @@ export class SingUpPopupComponent implements OnInit {
 
   astrocard_onVerifyOtp(otp: any) {
     if (otp.length === 4) {
-      this.loginService.verifyotp(otp).subscribe((data) => {
+      this.loginService.verifyotp(otp).subscribe((data: any) => {
         this.verifyotp = data;
         if (this.verifyotp.status === true) {
           if (this.verifyotp.data.token.token != '') {
@@ -282,12 +287,12 @@ export class SingUpPopupComponent implements OnInit {
     this.username = (<HTMLInputElement>document.getElementById("astrocard_username")).value;
     this.useremail = (<HTMLInputElement>document.getElementById("astrocard_email")).value;
     if (otp.length === 4) {
-      this.loginService.signup(otp, this.username, this.useremail).subscribe((data) => {
+      this.loginService.signup(otp, this.username, this.useremail).subscribe((data: any) => {
         this.verifyotp = data;
         if (this.verifyotp.status === true) {
-          if (this.verifyotp.data.token.token != '') {
-            localStorage.setItem('token', this.verifyotp.data.token.token);
-            localStorage.setItem('UserName', this.verifyotp.data.full_name);
+          if (this.verifyotp.data[0].token != '') {
+            localStorage.setItem('token', this.verifyotp.data[0].token);
+            localStorage.setItem('UserName', this.verifyotp.data[0].full_name);
             // this.router.navigate([]);
             window.location.reload();
           } else {
@@ -308,6 +313,20 @@ export class SingUpPopupComponent implements OnInit {
     }
   }
 
+  onDigitInput(event: any){
+
+    let element;
+    if (event.code !== 'Backspace')
+         element = event.srcElement.nextElementSibling;
+ 
+     if (event.code === 'Backspace')
+         element = event.srcElement.previousElementSibling;
+ 
+     if(element == null)
+         return;
+     else
+         element.focus();
+ }
 
 }
 

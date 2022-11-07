@@ -108,7 +108,7 @@ const routes: Routes = [
     component: WalletPageComponent,
   },
   {
-    path: 'chatscreen',
+    path: 'chatscreen/:id',
     component: ChatScreenComponent,
   },
   {

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { HomeastrologerlistService } from "../../services/homeastrologerlist.service";
+import { HomeastrologerlistService } from "src/app/services/homeastrologerlist.service";
 import { MatDialog } from '@angular/material/dialog';
 import { AstrologerCallPopupComponent } from 'src/app/shared/astrologer-call-popup/astrologer-call-popup.component';
 import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup.component';
+import { ExpressionType } from '@angular/compiler';
+
 
 
 @Component({
@@ -12,9 +14,12 @@ import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup
   styleUrls: ['./tabs-online-astrologers.component.scss']
 })
 export class TabsOnlineAstrologersComponent implements OnInit {
+  // toppingList: string[] = ['New', 'Astrology', '5', '26', '10'];
+  categoryfilter: string = "default";
   IsLoggedIn: boolean = false;
+  datawithfilter:any;
 
-  constructor(private router: Router, public astrologerlistService: HomeastrologerlistService, public dialog: MatDialog) { }
+  constructor(private router: Router, public HomeastrologerlistService: HomeastrologerlistService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     if(localStorage.getItem('token') != null){
@@ -22,8 +27,16 @@ export class TabsOnlineAstrologersComponent implements OnInit {
     }else{
       this.IsLoggedIn = false;
     }
+
+  
     
-    this.astrologerlistService.homeastrolist();
+    this.HomeastrologerlistService.homeastrolist();  
+  }
+
+  changecategory(value: string) {
+    this.categoryfilter = value;
+    this.datawithfilter = this.HomeastrologerlistService.homeastrolistwithfilter(this.categoryfilter);
+   
   }
 
   astrodetailspage(id: any) {
@@ -39,6 +52,9 @@ export class TabsOnlineAstrologersComponent implements OnInit {
     }
   }
 
+
+
+
   openDialog(astroIdforcall: any) {
     this.dialog.open(AstrologerCallPopupComponent, {
       data: { astroIdforcall }
@@ -47,8 +63,13 @@ export class TabsOnlineAstrologersComponent implements OnInit {
 
   logindialogopen(astroIdforcall: any) {
     this.dialog.open(SingUpPopupComponent, {
-      data: { astroIdforcall }
+      data: { astroIdforcall   }
     });
+  }
+  
+  
+  seeall(){
+    window.location.href = 'talktoastro';
   }
   
 

@@ -1,3 +1,8 @@
+// export const environment = {
+//   production: true
+// };
+
 export const environment = {
-  production: true
+  production: true,
+  socketUrl: 'https://onegodmed.com:3000'
 };

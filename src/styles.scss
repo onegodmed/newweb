@@ -4718,6 +4718,118 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                 }
               }
             }
+            .review-astro-popup{
+              // display: none;
+              width: 420px;
+              height: 502px;
+              float: left;
+              margin-left: -20px;
+              background-color: rgba(128, 128, 128, 0.568627451);
+              padding-top: 12%;
+              .ratingreview_screen_section{
+                padding: 10px 4%;
+                text-align: left;
+                float: none;
+                margin: 0 auto;
+                width: 85%;
+                border: 1px solid #eee;
+                border-radius: 5px;
+                background: #eee;
+                .user_name{
+                    font-size: 20px;
+                    line-height: 20px;
+                    font-family: "Roboto Mono", monospace;
+                    text-align: center;
+                    width: 100%;
+                    float: left;
+                    color: #000;
+                    font-weight: 400;
+                    margin: 0px 0 10px;
+                    span{
+                        font-weight: 600;
+                    }
+                }
+                .astrology_section{
+                    width: 100%;
+                    float: left;
+                    margin-top: 15px;
+                    .user_icon{
+                        float: left;
+                        margin-right: 10px;
+                        img{
+                          width: 70px;
+                          border-radius: 4px;
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-family: "Roboto Mono", monospace;
+                        text-align: left;
+                        float: left;
+                        color: #000;
+                        font-weight: 500;
+                        margin: 5px auto;
+                    }
+                    .light-weight-text{
+                        font-weight: 400;
+                        font-family: "Roboto Mono", monospace;
+                        font-size: 15px;
+                        line-height: 20px;
+                        margin-bottom: 15px;
+                        span{
+                            font-weight: 600;
+                            display: block;
+                            margin: 10px auto;
+                        }
+                    }
+                }
+                textarea{
+                  outline: none;
+                  width: 100%;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    padding: 3px 5px;
+                    margin: 10px auto 15px;
+                    display: inline-block;
+                    font-family: "Roboto Mono", monospace;
+                }
+                .stars {
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    text-align: center;
+                    cursor: pointer;
+                    .fa.fa-star.checked{
+                      color: #ffc107;
+                      font-size: 25px;
+                      margin: 0 2px;
+                    }
+                    .fa.fa-star{
+                      color: #333;
+                      font-size: 25px;
+                      margin: 0 2px;
+                    }
+                }
+                .btn-section{
+                  margin: 0 auto;
+                  width: 100%;
+                  button{
+                    background: #ffffff;
+                    outline: none;
+                    border: none;
+                    height: 40px;
+                    border-radius: 40px;
+                    box-shadow: #fd7c0d -1px 2px 14px 0px;
+                    font-weight: 600;
+                    margin: 0px 10px;
+                    font-size: 14px;
+                    padding: 10px 50px;
+                    letter-spacing: 1px;
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -4876,7 +4988,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .chat-section-popup{
               width: 100%;
               display: inline-block;
-              // display: none;
+              // display: block;
               position: absolute;
               left: 48%;
               top: 8%;
@@ -5675,6 +5787,118 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                   font-size: 14px;
                   padding: 10px 20px;
                   letter-spacing: 1px;
+                }
+              }
+            }
+            .review-astro-popup{
+              // display: none;
+              width: 420px;
+              height: 502px;
+              float: left;
+              margin-left: -20px;
+              background-color: rgba(128, 128, 128, 0.568627451);
+              padding-top: 12%;
+              .ratingreview_screen_section{
+                padding: 10px 4%;
+                text-align: left;
+                float: none;
+                margin: 0 auto;
+                width: 85%;
+                border: 1px solid #eee;
+                border-radius: 5px;
+                background: #eee;
+                .user_name{
+                    font-size: 20px;
+                    line-height: 20px;
+                    font-family: "Roboto Mono", monospace;
+                    text-align: center;
+                    width: 100%;
+                    float: left;
+                    color: #000;
+                    font-weight: 400;
+                    margin: 0px 0 10px;
+                    span{
+                        font-weight: 600;
+                    }
+                }
+                .astrology_section{
+                    width: 100%;
+                    float: left;
+                    margin-top: 15px;
+                    .user_icon{
+                        float: left;
+                        margin-right: 10px;
+                        img{
+                          width: 70px;
+                          border-radius: 4px;
+                        }
+                    }
+                    p{
+                        font-size: 18px;
+                        line-height: 26px;
+                        font-family: "Roboto Mono", monospace;
+                        text-align: left;
+                        float: left;
+                        color: #000;
+                        font-weight: 500;
+                        margin: 5px auto;
+                    }
+                    .light-weight-text{
+                        font-weight: 400;
+                        font-family: "Roboto Mono", monospace;
+                        font-size: 15px;
+                        line-height: 20px;
+                        margin-bottom: 15px;
+                        span{
+                            font-weight: 600;
+                            display: block;
+                            margin: 10px auto;
+                        }
+                    }
+                }
+                textarea{
+                  outline: none;
+                  width: 100%;
+                    border: 1px solid #ccc;
+                    border-radius: 5px;
+                    padding: 3px 5px;
+                    margin: 10px auto 15px;
+                    display: inline-block;
+                    font-family: "Roboto Mono", monospace;
+                }
+                .stars {
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 10px;
+                    text-align: center;
+                    cursor: pointer;
+                    .fa.fa-star.checked{
+                      color: #ffc107;
+                      font-size: 25px;
+                      margin: 0 2px;
+                    }
+                    .fa.fa-star{
+                      color: #333;
+                      font-size: 25px;
+                      margin: 0 2px;
+                    }
+                }
+                .btn-section{
+                  margin: 0 auto;
+                  width: 100%;
+                  button{
+                    background: #ffffff;
+                    outline: none;
+                    border: none;
+                    height: 40px;
+                    border-radius: 40px;
+                    box-shadow: #fd7c0d -1px 2px 14px 0px;
+                    font-weight: 600;
+                    margin: 0px 10px;
+                    font-size: 14px;
+                    padding: 10px 50px;
+                    letter-spacing: 1px;
+                  }
                 }
               }
             }

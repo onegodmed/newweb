@@ -33,17 +33,25 @@
                 </tr>
                 <tr>
                     <p *ngIf="messageSuccess">Cash Back will be added to Your Wallet After Recharge. </p>
+                    <p *ngIf="errorMessage">Invalid coupon </p>
                 </tr>
                 <tr>
+                    
                     <td>
                         <div class="coupon_section">
                             <a (click)="toggleBtnshow()">Do you have coupon code ?  <i class="fa fa-angle-double-down" aria-hidden="true"></i></a>
-                            <input type="text" *ngIf="isBtnshow" placeholder="Enter your coupan code...">
+                            <!-- <input *ngIf="isBtnshow" [(ngModel)]="couponCode"  placeholder="Enter your coupon code..." > -->
+                            <!-- <input placeholder="Enter coupon code" [(ngModel)]="coupenCode"> -->
+                            <!-- <input [(ngModel)]="coupenCode" type="text" /> -->
+                             <input type="text" *ngIf="isBtnshow" id="couponCode" value=""  placeholder="Enter your coupon code..." >
                         </div>
+
+                       
+
                     </td>
                     <td>
                         <div class="apply_coupon_btn">
-                            <button *ngIf="isBtnshow">Apply</button>
+                            <button *ngIf="isBtnshow" (click)="applyCoupon()">Apply</button>
                         </div>
                     </td>
                 </tr>
@@ -91,7 +99,7 @@
                         <i class="fa fa-check" aria-hidden="true"></i>
                     </div>
                   <p color="secondary">Successfully</p>
-                  <p class="light-weight-text">Your request successfully.<span>ID: 29393192230</span></p>
+                  <p class="light-weight-text">Your request successfully.<span id="paymentId"></span></p>
                 </div>
             </div>
         </div>

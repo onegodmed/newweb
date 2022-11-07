@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AstrologerlistService } from "../../services/astrologerlist.service";
-import { FollounfollowService } from "../../services/follounfollow.service";
+import { AstrologerlistService } from "src/app/services/astrologerlist.service";
+import { FollounfollowService } from "src/app/services/follounfollow.service";
 import { MatDialog } from '@angular/material/dialog';
 // import { ProcessPayPopupComponent } from 'src/app/shared/process-pay-popup/process-pay-popup.component';
 import { AstrologerCallPopupComponent } from 'src/app/shared/astrologer-call-popup/astrologer-call-popup.component';
@@ -22,7 +22,8 @@ export class TalkToAstrologerComponent implements OnInit {
   username: any = '';
   usercurrentbalance: any = [];
   astrolist: any = [];
-  page: number = 10;
+  totalcount: any = [];
+  page: number = 0;
   astro_id: any = '';
   followresponse: any = {};
   followerlist: any = {};
@@ -32,12 +33,18 @@ export class TalkToAstrologerComponent implements OnInit {
   isfollow: any;
   isunfollow: boolean = true;
   toppings = new FormControl('');
-  toppingList: string[] = ['Numerology', 'Vastu Shastra', 'Tarot Cards', 'Palmistry', 'Reiki Healing'];
+  toppingList: string[] = ['Vedic','Numerology', 'Vastru', 'Tarot', 'Palmistry','Western', 'Reiki Healing','Gemologiest','Lal Kitab','KP','Nadi','Horari','Face Reading','Prashna Kundali','Feng Shui'];
 
   sortings = new FormControl('');
-  sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: High To Low'];
+  sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: Low To High'];
 
-  constructor(private router: Router, public astrologerlistService: AstrologerlistService, public followunfollowlistService: FollounfollowService, public dialog: MatDialog, public userService: UserService) {
+  constructor(
+    private router: Router,
+    public astrologerlistService: AstrologerlistService,
+    public followunfollowlistService: FollounfollowService,
+    public dialog: MatDialog,
+    public userService: UserService
+  ) {
   }
 
   ngOnInit(): void {
@@ -54,18 +61,42 @@ export class TalkToAstrologerComponent implements OnInit {
       this.usercurrentbalance = '';
     }
 
+    this.followunfollowlistService.getfollowlist().subscribe((data: any) => {
+      this.followerlist = data;
+      // console.log('hi sam', this.followerlist);
+    });
+
+    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
+      this.totalcount = data;
+    })
+
     this.alluserlist();
     // this.followunfollowlistService.getfollowlist();
-    this.followunfollowlistService.getfollowlist().subscribe((data) => {
-      this.followerlist = data;
-      // console.log('hi sam', this.followerlist.data[0].astro_id);
-    });
+
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
+    //  this.astrolist.data = data.data;
+    //   console.log('====>',this.astrolist.data);
+    // })
+
+
   }
 
   openDialog(astroIdforcall: any) {
     this.dialog.open(AstrologerCallPopupComponent, {
       data: { astroIdforcall }
     });
+  }
+
+  openDialogforchat(astroIdforchat: any) {
+    this.dialog.open(AstrologerCallPopupComponent, {
+      data: { astroIdforchat }
+    });
+  }
+  openlogin() {
+    this.dialog.open(SingUpPopupComponent);
+  }
+  walletPage() {
+    this.router.navigateByUrl("/wallet");
   }
 
   logindialogopen(astroIdforcall: any) {
@@ -75,49 +106,89 @@ export class TalkToAstrologerComponent implements OnInit {
   }
 
   alluserlist() {
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data) => {
-      this.astrolist = data;
+    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
+      if (this.followerlist.status) {
+        var tempArray: any = []
+        for (let index = 0; index < data.data.length; index++) {
+          var element = data.data[index];
+          if (this.followerlist.data.includes(element.astrologer_id)) {
+            element.followed = true
+          } else {
+            element.followed = false
+          }
+
+          tempArray.push(element)
+
+        }
+
+        this.astrolist.data = tempArray;
+      } else {
+        this.astrolist.data = data.data
+      }
     });
+
   }
 
-  follow() {
-    this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
+  trackByFn(index: any, item: any) {
+    // if (item.followed == true) {
+    //   item.followed = true;
+    // }else{
+    //   item.followed = false;
+    // }
+    return item;
+  }
+  
+  follow(id: any) {
+    // this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
+    this.astro_id = id;
+    console.log(this.astro_id);
+    
     if (this.astro_id != null && localStorage.getItem("token") != null) {
-      this.followunfollowlistService.follow(this.astro_id).subscribe((data) => {
+      this.followunfollowlistService.follow(this.astro_id).subscribe((data: any) => {
         this.followresponse = data;
-        console.log(this.followresponse.status);
+        console.log(this.followresponse);
         if (this.followresponse.status === true) {
           this.isfollow = true;
           this.isunfollow = false;
+          window.location.href = 'talktoastro';
         } else {
-          this.isfollow = true;
+          this.isfollow = false;
           this.isunfollow = false;
+          
         }
       });
     } else {
       this.isfollow = true;
       this.isunfollow = true;
+      this.alluserlist();
     }
+   
   }
 
-  unfollow() {
-    this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
+  unfollow(id: any) {
+    this.astro_id = id;
+    console.log(this.astro_id);
     if (this.astro_id != null && localStorage.getItem("token") != null) {
-      this.followunfollowlistService.unfollow(this.astro_id).subscribe((data) => {
+      this.followunfollowlistService.unfollow(this.astro_id).subscribe((data: any) => {
         this.followresponse = data;
-        console.log(this.followresponse.status);
+        
+        console.log(this.followresponse);
         if (this.followresponse.status === true) {
           this.isfollow = false;
           this.isunfollow = true;
+          window.location.href = 'talktoastro';
         } else {
           this.isfollow = false;
           this.isunfollow = true;
+         
         }
       });
     } else {
       this.isfollow = true;
       this.isunfollow = true;
+      this.alluserlist();
     }
+   
   }
 
   changefilter(value: any) {
@@ -128,9 +199,9 @@ export class TalkToAstrologerComponent implements OnInit {
 
   sortingchangefilter(value: any) {
     if (value === 'Price: High To Low') {
-      this.sortingfilter = { field: 'price', sortby: 'ASC' }
-    } else {
       this.sortingfilter = { field: 'price', sortby: 'DESC' }
+    } else {
+      this.sortingfilter = { field: 'price', sortby: 'ASC' }
     }
 
     if (value === 'Rating: High To Low') {
@@ -140,9 +211,9 @@ export class TalkToAstrologerComponent implements OnInit {
     }
 
     if (value === 'Exp: High To Low') {
-      this.sortingfilter = { field: 'experience', sortby: 'ASC' }
-    } else {
       this.sortingfilter = { field: 'experience', sortby: 'DESC' }
+    } else {
+      this.sortingfilter = { field: 'experience', sortby: 'ASC' }
     }
     this.alluserlist();
     // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
@@ -176,11 +247,17 @@ export class TalkToAstrologerComponent implements OnInit {
 
   onScroll() {
     console.log("scrolled down!!");
-    if (this.astrolist.totalCount >= this.page) {
-      this.page = this.page + 10;
-      console.log(this.page);
-      this.alluserlist();
-    }
-  }
+    // if (this.totalcount.totalCount >= this.astrolist.length) {
+    this.page += 1;
+    // this.alluserlist();
+    // }
+    console.log('=====>', this.page);
 
+
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
+    //  this.astrolist.data = data.data.concat(this.astrolist.data);
+    //   console.log('====>',this.astrolist.data);
+    // })
+
+  }
 }

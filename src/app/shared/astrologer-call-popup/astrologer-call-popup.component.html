@@ -49,7 +49,7 @@
                                         <div class="spinner spinner__1"></div>
                                     </div>
                                     <div class="count-dwn-time">
-                                        Please wait, will accept your request in<span>00:{{timeLeft}} Sec</span>
+                                        Please wait, will accept your request in<span>{{ display }}</span>
                                     </div>
                                 <!-- </div> -->
                                 <!-- <div *ngIf="showerrormessage" class="waiting-text">
@@ -65,11 +65,12 @@
                                     <img src="/../assets/images/oops-img.png">
                                 </div>
                                 <div class="oops-text">
-                                    Please wait for a while <span> Astro Praveen </span> will accept your call shortly.... 
+                                    <!-- Please wait for a while <span style="color:brown"> {{ astrodetails.data.first_name }} </span> will accept your call shortly....  -->
+                                    {{ statusMessage }}
                                 </div>
                                 <div class="btn-section">
-                                    <button>Select Astrologyer</button>
-                                    <button>Try Again</button>
+                                    <button (click)="backtoAstro()">Select Astrologyer</button>
+                                    <button *ngIf="!busy" (click)="retryCall()">Try Again</button>
                                 </div>
                             </div>
                             <div *ngIf="walletbalancepopup" class="wallat-balance-popup">
@@ -87,21 +88,47 @@
                             </div>
                             <div *ngIf="hide" class="tryagain-connect-astro-popup">
                                 <div class="connect-text">
-                                    <span>Astro Mang</span> One moment please while i see if he's available..
+                                    {{ statusMessage }}
                                 </div>
-                                <div class="btn-section">
+                                <!-- <div class="btn-section">
                                     <button>Try Again</button>
-                                </div>
+                                </div> -->
                             </div>
-                            <div *ngIf="hide" class="connect-call-astro-popup">
+                            <div *ngIf="showStatuswindow" class="connect-call-astro-popup">
                                 <div class="connect-img">
                                     <img src="/../assets/images/connecting-call.png">
                                 </div>
                                 <div class="connect-text">
-                                    You are successfully connected to astrologer, Thanks !
+                                    {{ statusMessage }}
                                 </div>
                                 <div class="btn-section">
                                     <!-- <button>Try Again</button> -->
+                                </div>
+                            </div>
+                            <div *ngIf="showratingreviewmodalcall" class="review-astro-popup">
+                                <div class="ratingreview_screen_section">
+                                    <div class="user_name">
+                                      Rate: <span>Raj Kumar</span>
+                                    </div>
+                                    <div class="astrology_section">
+                                      <div class="user_icon">
+                                        <img src='{{ astrodetails.data.photo_url }}'>
+                                      </div>
+                                      <p color="danger">{{ astrodetails.data.first_name }}</p>
+                                      <p class="light-weight-text">Review are public if you are not anonymous.</p>
+                                    </div>
+                                    <div class="stars">
+                                        <span class="fa fa-star checked" (click)="addratingsonly(1)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(2)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(3)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(4)"></span>
+                                        <span class="fa fa-star" (click)="addratingsonly(5)"></span>
+                                    </div>
+                                    <textarea rows="3" cols="20" placeholder="Enter Comment here..." id="addreviewsonly"></textarea>
+                                    <p>{{ ratingreviewmsg }}</p>
+                                    <div class="btn-section">
+                                        <button (click)="addratingsreviews()">Submit</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -427,8 +454,34 @@
                                     You really want to end this Chat
                                 </div>
                                 <div class="btn-section">
-                                    <button>Complete</button>
-                                    <button>Resume</button>
+                                    <button (click)="endChat()">Complete</button>
+                                    <button (click)="resumechat()">Resume</button>
+                                </div>
+                            </div>
+                            <div *ngIf="showratingreviewmodalchat" class="review-astro-popup">
+                                <div class="ratingreview_screen_section">
+                                    <div class="user_name">
+                                      Rate: <span>Raj Kumar</span>
+                                    </div>
+                                    <div class="astrology_section">
+                                      <div class="user_icon">
+                                        <img src='{{ astrodetails.data.photo_url }}'>
+                                      </div>
+                                      <p color="danger">{{ astrodetails.data.first_name }}</p>
+                                      <p class="light-weight-text">Review are public if you are not anonymous.</p>
+                                    </div>
+                                    <div class="stars">
+                                        <span class="fa fa-star checked" (click)="addratingsonly(1)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(2)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(3)"></span>
+                                        <span class="fa fa-star checked" (click)="addratingsonly(4)"></span>
+                                        <span class="fa fa-star" (click)="addratingsonly(5)"></span>
+                                    </div>
+                                    <textarea rows="3" cols="20" placeholder="Enter Comment here..." id="addreviewsonly"></textarea>
+                                    <p>{{ ratingreviewmsg }}</p>
+                                    <div class="btn-section">
+                                        <button (click)="addratingsreviews()">Submit</button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

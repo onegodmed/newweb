@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
+
+
 import { Inject } from '@angular/core';
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { PackageService } from '../../services/package.service';
-import { RazorpayService } from '../../services/razorpay.service';
+import { PackageService } from 'src/app/services/package.service';
+import { RazorpayService } from 'src/app/services/razorpay.service';
+
+import { FormsModule } from '@angular/forms';
 
 declare var Razorpay: any;
 
@@ -19,10 +23,12 @@ export class ProcessPayPopupComponent implements OnInit {
   showsuccess = false;
   calculationpopup = true;
   packagecalculation: any = [];
-  paymentId: any;
+  paymentId: any = '';
   createorder: any = [];
   ordercreated: any = [];
   transactionId: any;
+  coupenCode:any='';
+  errorMessage:boolean = false;
 
   constructor(@Inject(MAT_DIALOG_DATA) public data: any,private router: Router, public packagelistService: PackageService, public razorpayService: RazorpayService) { }
 
@@ -38,8 +44,8 @@ export class ProcessPayPopupComponent implements OnInit {
   }
 
   options = {
-    "key": "rzp_live_tQVtoSnbH9idrB",
-    "amount": "",
+    "key": "rzp_test_fFpNRANlmYYKaj",
+    "amount": '',
     "currency": "INR",
     "name": "ONEGODMED",
     "description": "Test Transaction",
@@ -52,6 +58,8 @@ export class ProcessPayPopupComponent implements OnInit {
       "package_name": "SAM",
       "gst": "",
       "package_talktime": ""
+      // "email":"sam@gmail.com",
+      // "contact":"1234567890"
     }
   };
 
@@ -68,7 +76,8 @@ export class ProcessPayPopupComponent implements OnInit {
     this.razorpayService.createorder(this.createorder).subscribe((data: any) => {
       this.ordercreated = data;
       if (this.ordercreated.Transaction_id != null) {
-        this.options.amount = '100';//(<HTMLInputElement>document.getElementById("totalamount")).value;
+        var amount = Number((<HTMLInputElement>document.getElementById("totalamount")).value) * 100;
+        this.options.amount = amount.toString();
         this.options.prefill.package_amount = (<HTMLInputElement>document.getElementById("packageamount")).value;
         this.options.prefill.package_talktime = (<HTMLInputElement>document.getElementById("talktime")).value;
         this.options.prefill.gst = (<HTMLInputElement>document.getElementById("gst")).value;
@@ -86,11 +95,12 @@ export class ProcessPayPopupComponent implements OnInit {
   }
 
   success(paymentId: any) {
-    alert('success');
     this.razorpayService.paymentsuccess(this.transactionId, paymentId, 'Success').subscribe((data: any) => {
       $('#calulationpopup').css('display', 'none');
       $('#success').css('display', 'block');
+      (<HTMLInputElement>document.getElementById("paymentId")).innerHTML = 'ID: '+paymentId
     });
+    this.paymentId = paymentId;
   }
 
   failed(paymentId: any) {
@@ -103,6 +113,34 @@ export class ProcessPayPopupComponent implements OnInit {
 
   toggleBtnshow() {
     this.isBtnshow = !this.isBtnshow;
+  }
+
+  applyCoupon(){
+   var couponCode = (<HTMLInputElement>document.getElementById("couponCode")).value;
+   //alert(couponCode);
+
+
+   
+
+
+    this.packagelistService.checkCoupon({'token': localStorage.getItem('token'), 'coupon_code':couponCode, 'package_value':this.packagecalculation.data.packageAmount }).subscribe((data: any) => {
+    if(data.status){
+      this.packagecalculation = data;
+    }else{
+     this.errorMessage = true;
+    }
+
+   });
+
+  //  this.packagelistService.packagecalculation(this.data.packageId).subscribe((data: any) => {
+  //   if(data.status){
+  //     this.packagecalculation = data;
+  //   }else{
+  //    this.errorMessage = true;
+  //   }
+
+  //  });
+    
   }
 
 }

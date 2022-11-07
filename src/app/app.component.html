@@ -1,10 +1,7 @@
 <ng-container>
-    <app-header></app-header>
+    <app-header *ngIf="urlflag"></app-header>
     <div class="min-height">
         <router-outlet></router-outlet>
     </div>
-    <app-footer></app-footer>
+    <app-footer *ngIf="urlflag"></app-footer>
 </ng-container>
-<!-- <ng-container *ngIf="hasRoute('chatscreen')">
-    <app-chat-screen></app-chat-screen>
-</ng-container> -->

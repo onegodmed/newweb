@@ -17,19 +17,21 @@ const searchfilter: any = '';
 })
 export class HomeastrologerlistService {
   response: any = [];
+ 
 
   constructor(private http: HttpClient, public baserurl: BaseurlService, public endpoint: EndpointService) {
     console.log("connected HomeastrologerlistService");
   }
 
   homeastrolist() {
-    // return this.http.get(this.baserurl.BASE_URL + this.endpoint.HOME_ASTROL_IST, { 'headers': headers?'searchFilter': searchfilter }).pipe(
-    //   map(data => {
-    //     return data;
-    //   })
-    // );
-
-    return this.http.get(this.baserurl.BASE_URL + this.endpoint.HOME_ASTROL_IST, { 'headers': headers?'searchFilter': searchfilter }).subscribe(data => {
+   
+    return this.http.get(this.baserurl.BASE_URL + this.endpoint.HOME_ASTROL_IST, { 'headers': headers?'searchFilter': searchfilter}).subscribe(data => {
+      this.response = data; 
+    }); 
+  }
+  homeastrolistwithfilter(searchfilter:string) {
+   
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.HOME_ASTROL_IST, { 'headers': headers,'searchFilter': searchfilter}).subscribe(data => {
       this.response = data; 
     }); 
   }

@@ -55,7 +55,8 @@
 
       <div class="multiple-action">
         <div class="recharge-btn">
-          <button type="button">Recharge</button>
+          <button type="button" *ngIf="!IsLoggedIn" (click)="openlogin()">Recharge</button>
+          <button type="button" *ngIf="IsLoggedIn" (click)="walletPage()">Recharge</button>
         </div>
         <div class="filter-section">
           <mat-form-field>
@@ -68,7 +69,7 @@
         <div class="sort-price">
           <mat-form-field>
             <mat-label>Sort Price</mat-label>
-            <mat-select multiple (selectionChange)="sortingchangefilter($event.value)">
+            <mat-select  (selectionChange)="sortingchangefilter($event.value)">
               <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -83,8 +84,8 @@
 
     </section>
 
-    <section class="chat_card">
-      <div class="search-results" infinite-scroll (scrolled)="onScroll()" style="overflow-y:scroll">
+    <section class="chat_card" infinite-scroll (scrolled)="onScroll()" [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000">
+      <!-- <div class="search-results" infinite-scroll (scrolled)="onScroll()" style="overflow-y:scroll"> -->
         <ul>
           <li *ngFor="let list of astrolist.data">
             <div class="card_astro">
@@ -104,7 +105,10 @@
                 <div class="count-rating newlyaddedastro">New</div>
               </div>
               <div class="call-status-astrolger">
-                <a (click)="openDialog(list.astrologer_id)">
+                <a *ngIf="IsLoggedIn" (click)="openDialog(list.astrologer_id)">
+                  <span class="sprite-chat-astrologer"></span>
+                </a>
+                <a *ngIf="!IsLoggedIn" (click)="logindialogopen(list.astrologer_id)">
                   <span class="sprite-chat-astrologer"></span>
                 </a>
                 <!-- <a href="#">
@@ -135,19 +139,19 @@
                       {{ list.service_price }}
                       <span>/Min</span>
                     </span>
-                    <div class="discount_price">30<span>/Min</span></div>
+                    <div class="discount_price">{{ list.old_price }}<span>/Min</span></div>
                   </div>
                 </div>
               </div>
               <div class="follow-section">
-                <span class="follow-style">Follow</span>
-                <span class="unfollow-style">Unfollow</span>
+                <span *ngIf="!list.followed" id="btn-{{list.astrologer_id}}" (click)="follow(list.astrologer_id)" class="follow-style">Follow</span> 
+                <span *ngIf="list.followed" class="unfollow-style">Following</span>
               </div>
             </div>
           </li>
           <li>
         </ul>
-      </div>
+      <!-- </div> -->
     </section>
 
   </div>

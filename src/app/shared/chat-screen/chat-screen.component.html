@@ -32,7 +32,7 @@
                 <button (click)="openDialogclosed()">End Chat</button>
             </div>
           </div>
-          <div class="chat-area-main">
+          <div class="chat-area-main" style="overflow-y: scroll;" #scrollMe [scrollTop]="scrollMe.scrollHeight">
 
             <ul class="chat-thread" *ngFor="let message of messageList index as i">
                 <div class="astro-chat" *ngIf="message.userId==astrologerId">
@@ -97,7 +97,7 @@
               </div>
             <div class="chat-text">
               <p>Please wait, <span class="astro_name"> Astro Mang </span> will accept your Chat request in <br>
-                <span class="time" val="00:22">00:22</span> minutes. <br> If does not accept , Please choose another astrologer to chat.
+                <span class="time" val="00:22">{{ waitdisplay }}</span> minutes. <br> If does not accept , Please choose another astrologer to chat.
               </p>
             </div>  
         </div>

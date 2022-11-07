@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationStart, Router, ActivatedRoute  } from '@angular/router';
 
 
 @Component({
@@ -9,8 +9,18 @@ import { NavigationStart, Router } from '@angular/router';
 })
 export class AppComponent {
   title = 'onegodmed-apps';
+  router: any;
+  urlflag: boolean = true;
 
-   constructor(private router: Router) {}
+   constructor(private _router: Router, private activatedRoute: ActivatedRoute) {
+    this.router = window.location;
+    var url = this.router.pathname.split('/');
+    if(url.includes('chatscreen')){
+      this.urlflag = false;
+    }else{
+      this.urlflag = true;
+    }
+   }
 
   ngOnInit() {
   //   this.router.events.subscribe(event =>{
@@ -31,6 +41,7 @@ export class AppComponent {
   // hasRoute(route: string) {
   //   return this.router.url.includes(route);
   // }
+  
 
 
 

@@ -18,7 +18,7 @@ export class FollounfollowService {
   followresponse: any = [];
 
   constructor(private http: HttpClient, public baserurl: BaseurlService, public endpoint: EndpointService) {
-    console.log("connected Follow Unfollow ");
+    // console.log("connected Follow Unfollow ");
   }
 
   follow(astro_id: any) {

@@ -27,7 +27,8 @@ export class HeaderComponent implements OnInit {
   isLoggedIn: any;
   isLoggedOut: any;
   showusername: any = '';
-  CurrentBalance: any = [];
+  // CurrentBalance: any = [];
+  CurrentBalance:any='';
   logoutresponse: any;
   redirectUrl: any;
 
@@ -37,41 +38,52 @@ export class HeaderComponent implements OnInit {
     if (localStorage.getItem("token") != null) {
       this.isLoggedIn = true;
       this.isLoggedOut = false;
+      this.showusername = localStorage.getItem("UserName");
     } else {
       this.isLoggedOut = true;
       this.isLoggedIn = false;
-    }
-
-    if (localStorage.getItem("UserName") != null) {
-      this.showusername = localStorage.getItem("UserName");
-    } else {
       this.showusername = '';
     }
 
+    // if (localStorage.getItem("UserName") != null) {
+    //   this.showusername = localStorage.getItem("UserName");
+    // } else {
+    //   this.showusername = '';
+    // }
+
     this.userService.userWalletdetails().subscribe((data: any) => {
-      this.CurrentBalance = data;
+
+    
+
+
+
+
+      if(data.status){
+       this.CurrentBalance = data.data.balance;
+       
+      }
     });
 
-    $(document).ready(() => {
-      $(window).scroll(() => {
-        if ($(this).scrollTop() > 10) {
-          $('.header-section').removeClass('header-section');
-        }
-        else {
-          $('.header-section').addClass('is--large');
-        }
-      });
+    // $(document).ready(() => {
+    //   $(window).scroll(() => {
+    //     if ($(this).scrollTop() > 10) {
+    //       $('.header-section').removeClass('header-section');
+    //     }
+    //     else {
+    //       $('.header-section').addClass('is--large');
+    //     }
+    //   });
 
-      $(window).scroll(function () {
+    //   $(window).scroll(function () {
 
-        if ($(window).scrollTop() >= 100) {
-          $('.header-section').addClass('fixed-header');
-        } else {
-          $('.header-section').removeClass('fixed-header');
-        }
-      });
+    //     if ($(window).scrollTop() >= 100) {
+    //       $('.header-section').addClass('fixed-header');
+    //     } else {
+    //       $('.header-section').removeClass('fixed-header');
+    //     }
+    //   });
 
-    });
+    // });
   }
   
 

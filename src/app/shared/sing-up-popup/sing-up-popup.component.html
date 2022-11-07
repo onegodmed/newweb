@@ -16,7 +16,7 @@
             <div class="country-code-section">
               <span>+91 | IN</span>
               <input type="tel" maxlength="10" autocomplete="off" name="mobilenumber" #mobilenumber
-                placeholder="Mobile Number" required="">
+                placeholder="Mobile Number" required="" [value]="showmobilenumber">
               <div class="error-text">{{ errormsg }}</div>
             </div>
             <button type="button" id="onsendotp" (click)="onSendOtp(mobilenumber.value)">Request OTP</button>
@@ -42,10 +42,14 @@
             <h4>OTP Verification</h4>
             <div class="error-text">{{ errormsg }}</div>
             <div class="otp-input-section">
-              <input type="tel" maxlength="1" id="otpusername" #otp1 table-index="1" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="otpusername" #otp2 table-index="2" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="otpusername" #otp3 table-index="3" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="otpusername" #otp4 table-index="4" autocomplete="off" required="">
+              <input type="tel" maxlength="1" id="otpusername" #otp1 table-index="1" autocomplete="off"
+                (keyup)="onDigitInput($event)" required="">
+              <input type="tel" maxlength="1" id="otpusername" #otp2 table-index="2" autocomplete="off"
+                (keyup)="onDigitInput($event)" required="">
+              <input type="tel" maxlength="1" id="otpusername" #otp3 table-index="3" autocomplete="off"
+                (keyup)="onDigitInput($event)" required="">
+              <input type="tel" maxlength="1" id="otpusername" #otp4 table-index="4" autocomplete="off"
+                (keyup)="onDigitInput($event)" required="">
             </div>
             <div class="massage-otp-recived">Enter OTP Code sent to <span>{{ showmobilenumber }}</span>
               <a (click)="editnumber()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
@@ -64,15 +68,19 @@
       <div class="body-section">
         <div class="right-side-cover">
           <div class="from-section">
-            <input type="text" placeholder="Full Name">
-            <input type="text" placeholder="Mobile Number">
+            <input type="text" placeholder="Full Name" id="username">
+            <input type="email" placeholder="example@gmail.com" id="email">
             <h4>OTP Verification</h4>
             <div class="error-text">{{ errormsg }}</div>
             <div class="otp-input-section">
-              <input type="tel" maxlength="1" id="otpusername" #otp1 table-index="1" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="otpusername" #otp2 table-index="2" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="otpusername" #otp3 table-index="3" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="otpusername" #otp4 table-index="4" autocomplete="off" required="">
+              <input type="tel" maxlength="1" id="otpusername" #otp1 table-index="1" autocomplete="off"
+                (keyup)="onDigitInput($event)" required="">
+              <input type="tel" maxlength="1" id="otpusername" #otp2 table-index="2" autocomplete="off"
+                (keyup)="onDigitInput($event)" required="">
+              <input type="tel" maxlength="1" id="otpusername" #otp3 table-index="3" autocomplete="off"
+                (keyup)="onDigitInput($event)" required="">
+              <input type="tel" maxlength="1" id="otpusername" #otp4 table-index="4" autocomplete="off"
+                (keyup)="onDigitInput($event)" required="">
             </div>
             <div class="massage-otp-recived">Enter OTP Code sent to <span>{{ showmobilenumber }}</span>
               <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
@@ -132,7 +140,7 @@
             <div class="country-code-section">
               <span>+91 | IN</span>
               <input type="tel" maxlength="10" autocomplete="off" name="astrocard_mobilenumber" #astrocard_mobilenumber
-                placeholder="Mobile Number" required="">
+                placeholder="Mobile Number" required="" [value]="showmobilenumber">
               <div class="error-text">{{ errormsg }}</div>
             </div>
             <button type="button" id="astrocard_onsendotp"
@@ -189,17 +197,17 @@
             <h4>OTP Verification</h4>
             <div class="error-text">{{ errormsg }}</div>
             <div class="otp-input-section">
-              <input type="tel" maxlength="1" id="astrocard_otpusername" #astrocard_otp1 table-index="1"
-                autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="astrocard_otpusername" #astrocard_otp2 table-index="2"
-                autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="astrocard_otpusername" #astrocard_otp3 table-index="3"
-                autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="astrocard_otpusername" #astrocard_otp4 table-index="4"
-                autocomplete="off" required="">
+              <input type="tel" maxlength="1" (keyup)="onDigitInput($event)" id="astrocard_otpusername" #astrocard_otp1
+                table-index="1" autocomplete="off" required="">
+              <input type="tel" maxlength="1" (keyup)="onDigitInput($event)" id="astrocard_otpusername" #astrocard_otp2
+                table-index="2" autocomplete="off" required="">
+              <input type="tel" maxlength="1" (keyup)="onDigitInput($event)" id="astrocard_otpusername" #astrocard_otp3
+                table-index="3" autocomplete="off" required="">
+              <input type="tel" maxlength="1" (keyup)="onDigitInput($event)" id="astrocard_otpusername" #astrocard_otp4
+                table-index="4" autocomplete="off" required="">
             </div>
             <div class="massage-otp-recived">Enter OTP Code sent to <span>{{ showmobilenumber }}</span>
-              <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
+              <a (click)="astrocard_editnumber()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
             <p><button class="loginresend_otp"
                 (click)="astrocard_onVerifyOtp(astrocard_otp1.value+astrocard_otp2.value+astrocard_otp3.value+astrocard_otp4.value)">Submit</button>
               <br>
@@ -221,15 +229,19 @@
             <h4>OTP Verification</h4>
             <div class="error-text">{{ errormsg }}</div>
             <div class="otp-input-section">
-              <input type="tel" maxlength="1" id="astrocard_otpusername" #astrocard_otp1 table-index="1" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="astrocard_otpusername" #astrocard_otp2 table-index="2" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="astrocard_otpusername" #astrocard_otp3 table-index="3" autocomplete="off" required="">
-              <input type="tel" maxlength="1" id="astrocard_otpusername" #astrocard_otp4 table-index="4" autocomplete="off" required="">
+              <input type="tel" maxlength="1" (keyup)="onDigitInput($event)" id="astrocard_otpusername" #astrocard_otp1
+                table-index="1" autocomplete="off" required="">
+              <input type="tel" maxlength="1" (keyup)="onDigitInput($event)" id="astrocard_otpusername" #astrocard_otp2
+                table-index="2" autocomplete="off" required="">
+              <input type="tel" maxlength="1" (keyup)="onDigitInput($event)" id="astrocard_otpusername" #astrocard_otp3
+                table-index="3" autocomplete="off" required="">
+              <input type="tel" maxlength="1" (keyup)="onDigitInput($event)" id="astrocard_otpusername" #astrocard_otp4
+                table-index="4" autocomplete="off" required="">
             </div>
             <div class="massage-otp-recived">Enter OTP Code sent to <span>{{ showmobilenumber }}</span>
-                <a href=""><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
-              <p><button class="loginresend_otp"
-                  (click)="astrocard_signupwithotp(astrocard_otp1.value+astrocard_otp2.value+astrocard_otp3.value+astrocard_otp4.value)">Submit</button>
+              <a (click)="astrocard_editnumber()"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></div>
+            <p><button class="loginresend_otp"
+                (click)="astrocard_signupwithotp(astrocard_otp1.value+astrocard_otp2.value+astrocard_otp3.value+astrocard_otp4.value)">Submit</button>
               <br>
               Didn't Get OTP ? <a class="rsendotp" href="">Rsend OTP</a>
             </p>

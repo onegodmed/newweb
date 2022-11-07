@@ -21,11 +21,11 @@ export class AstrologerlistService {
   loadmore: any = [];
 
   constructor(private http: HttpClient, public baserurl: BaseurlService, public endpoint: EndpointService) {
-    console.log("connected astrologerlistService");
+    // console.log("connected astrologerlistService");
   }
 
   astrolist(page: number, category: any, sorting: any, searchbyname: any) {
-    return this.http.post(this.baserurl.BASE_URL + this.endpoint.ALL_ASTROL_IST, { 'headers': headers, 'categories': category, 'sorting': sorting, 'searchbyname': searchbyname, 'limit': page }).pipe(
+    return this.http.post(this.baserurl.BASE_URL + this.endpoint.ALL_ASTROL_IST, { 'headers': headers, 'categories': category, 'sorting': sorting, 'searchbyname': searchbyname, 'pageNo': page }).pipe(
       map(data => {
         return data;
       })

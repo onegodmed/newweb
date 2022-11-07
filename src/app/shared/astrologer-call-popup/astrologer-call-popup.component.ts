@@ -6,6 +6,8 @@ import { AstrologerlistService } from "../../services/astrologerlist.service";
 import { UserService } from "../../services/user.service";
 import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { RatingsService } from 'src/app/services/ratings.service';
+import { OrderService } from 'src/app/services/order.service';
 
 @Component({
   selector: 'app-astrologer-call-popup',
@@ -16,15 +18,14 @@ export class AstrologerCallPopupComponent implements OnInit {
 
   selected = 'Gender';
   astrodetails: any = [];
+  reviewratingdata: any = [];
   checkuserbalance: any = [];
-  time = { hour: 13, minute: 30, second: 0 };
-  hourStep = 1;
-  minuteStep = 15;
-  secondStep = 30;
-  show: boolean = true;
   hide: boolean = false;
+  busy: boolean = false;
   showchatmodal: boolean = false;
   showendchatmodal: boolean = false;
+  showratingreviewmodalchat: boolean = false;
+  showratingreviewmodalcall: boolean = false;
   showcallmodal: boolean = false;
   walletbalancepopup: boolean = false;
   chatsectionpopup: boolean = false;
@@ -40,21 +41,39 @@ export class AstrologerCallPopupComponent implements OnInit {
   forchat: any;
   forcall: any;
   usermobilenumber: any;
-  timeLeft: number = 60;
+  timeLeft: number = 0;
   interval: any;
   errormessageforfullname: any = '';
   errormessageforbirthplace: any = '';
   userId: any;
   forendchat: any;
+  forratingreview: any;
+  ratingsonly: any;
+  reviewsonly: any;
+  ratingreviewmsg: any;
+  display: any;
+  callId: any;
+  statusMessage: any = 'Ringing';
+  callMissed = false
+  showStatuswindow = false
 
-  constructor(@Inject(MAT_DIALOG_DATA) public data: any, private router: Router, public astrologerlistService: AstrologerlistService, public userService: UserService) { }
+
+
+
+  constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
+    private router: Router,
+    public astrologerlistService: AstrologerlistService,
+    public userService: UserService,
+    public ratingsService: RatingsService,
+    public orderService: OrderService) { }
 
   ngOnInit(): void {
 
-    this.forcall    = this.data.astroIdforcall; //astrologer Id for call
-    this.forchat    = this.data.astroIdforchat; //astrologer Id for chat
+    this.forcall = this.data.astroIdforcall; //astrologer Id for call
+    this.forchat = this.data.astroIdforchat; //astrologer Id for chat
     this.forendchat = this.data.order_id; //order Id for EndChat
-    //  alert(this.forchat);
+    this.forratingreview = this.data.astrologerId_forratingreview; //order Id for Rating and Review
 
     if (localStorage.getItem('token') != null) {
       this.userService.userWalletdetails().subscribe((data: any) => {
@@ -79,6 +98,7 @@ export class AstrologerCallPopupComponent implements OnInit {
 
       this.userService.checkuserbalance(this.data.astroIdforcall).subscribe((data: any) => {
         this.checkuserbalance = data;
+        console.log(this.checkuserbalance);
         if (this.checkuserbalance.status === false) {
           this.walletbalancepopup = true;
         } else {
@@ -118,7 +138,7 @@ export class AstrologerCallPopupComponent implements OnInit {
       this.walletbalancepopup = true;
     }
 
-    if(this.forendchat != null){
+    if (this.forendchat != null) {
       this.showchatmodal = true;
       this.walletbalancepopup = false;
       this.showendchatmodal = true;
@@ -127,22 +147,26 @@ export class AstrologerCallPopupComponent implements OnInit {
         this.astrodetails = data;
       });
 
-    }else{
+    } else {
       // this.showchatmodal = false;
       this.showendchatmodal = false;
     }
+
+    if (this.forratingreview != null) {
+      this.showchatmodal = true;
+      this.walletbalancepopup = false;
+      this.showratingreviewmodalchat = true;
+
+      this.astrologerlistService.astrodetailspopup(this.data.astrologerId_forratingreview).subscribe((data: any) => {
+        this.astrodetails = data;
+      });
+
+    } else {
+      // this.showchatmodal = false;
+      this.showratingreviewmodalchat = false;
+    }
     /// END FOR CHAT ////
   }
-
-  // proceedtochat() {
-  //   this.walletbalancepopup = false;
-  //   this.chatsectionpopup = true;
-  // }
-
-  // proceedtocall() {
-  //   this.callsectionpopup = false;
-  //   this.callwaitingscreenpopup = true;
-  // }
 
   proceedtorecharge() {
     window.location.href = 'wallet';
@@ -151,8 +175,6 @@ export class AstrologerCallPopupComponent implements OnInit {
   chatnow() {
     this.chatform = [
       {
-        // fullname: (<HTMLInputElement>document.getElementById("fullname")).value,
-        // gender: (<HTMLInputElement>document.getElementById("gender")).value,
         dob: (<HTMLInputElement>document.getElementById("day")).value + '/' + (<HTMLInputElement>document.getElementById("months")).value + '/' + (<HTMLInputElement>document.getElementById("Year")).value,
         birthtime: (<HTMLInputElement>document.getElementById("hour")).value + ':' + (<HTMLInputElement>document.getElementById("minute")).value + ' ' + (<HTMLInputElement>document.getElementById("am")).value,
         birthplace: (<HTMLInputElement>document.getElementById("searchcity")).value
@@ -167,33 +189,37 @@ export class AstrologerCallPopupComponent implements OnInit {
     } else {
       this.userService.addChat(this.userId.data.user_id, this.forchat, this.chatform).subscribe((data: any) => {
         this.chatApiresponse = data;
-        console.log(this.chatApiresponse);
+
+        this.showchatmodal = false;
+        this.chatsectionpopup = false;
+        // this.router.navigateByUrl('/chatscreen', { state: { astrologer_id: this.data.astroIdforchat, caller_id: this.chatApiresponse.caller_id } });
+        // this.router.navigateByUrl(`/chatscreen/${this.chatApiresponse.caller_id}`);
+        window.location.href = '/chatscreen/'+this.chatApiresponse.caller_id;
+
       });
-      // this.startTimerforchat();
-
-      // this.showchatmodal = false;
-      // this.chatsectionpopup = false;
-
-      // $('#model').css('display', 'none');
-      // $('#chatmodel').modal('hide');
-
-      // this.router.navigateByUrl('/chatscreen', {state:{astrologer_id:this.data.astroIdforchat, caller_id: 1234}});
-      
-      // this.chatwaitingscreenpopup = true;
     }
-    console.log(this.chatform);
-
   }
 
   callnow() {
-    // alert(this.userId.data.user_id);
     this.userService.addCall(this.userId.data.user_id, this.forcall).subscribe((data: any) => {
       this.callApiresponse = data;
-      console.log(this.callApiresponse);
+      if (this.callApiresponse.status) {
+        this.callId = this.callApiresponse.callId;
+        this.timeLeft = 60;
+        this.startTimer();
+        this.callsectionpopup = false;
+        this.callwaitingscreenpopup = true;
+      } else {
+        this.busy = true;
+        this.statusMessage = "Astrologer currenctly busy";
+        this.callsectionpopup = false;
+        this.oopsscreenpopup = true;
+      }
+
     });
-    this.startTimerforcall();
-    this.callsectionpopup = false;
-    this.callwaitingscreenpopup = true;
+    // this.startcallTimer();
+    // this.callsectionpopup = false;
+    // this.callwaitingscreenpopup = true;
     // this.callwaitingscreenpopup = true;
   }
 
@@ -213,26 +239,97 @@ export class AstrologerCallPopupComponent implements OnInit {
     }
   }
 
-  startTimerforcall() {
+  startTimer() {
     this.interval = setInterval(() => {
-      if (this.timeLeft > 0) {
-        this.timeLeft--;
+      if (this.callId != '') {
+        this.orderService.getcallingStatus(this.callId).subscribe((data: any) => {
+          console.log('first step',data);
+          if (data.status) {
+            if (data.data == 'CustomerUp') {
+              clearInterval(this.interval);
+              var connectedTime = 5;
+              this.interval = setInterval(() => {
+                connectedTime--;
+                if (connectedTime == 0) {
+                  this.statusMessage = 'You are successfully connected to astrologer, Thanks ! ';
+                  this.connectedCall();
+
+                }
+                this.display = this.transform(this.timeLeft)
+              }, 1000);
+            }
+            if (data.data == 'missed' || data.data == 'CustomerHangup' || data.data == 'AgentHangup') {
+              this.statusMessage = 'Call Cancelled!';
+              clearInterval(this.interval);
+              this.calcelledCall()
+            }
+          }
+        })
       } else {
-        this.timeLeft = 60;
-        this.pauseTimerforcall();
+        this.statusMessage = "caller Id required";
+        this.callsectionpopup = false;
+        this.hide = true;
       }
-    }, 1000)
+
+      this.timeLeft--;
+      if (this.timeLeft == 0) {
+        clearInterval(this.interval);
+        this.calcelledCall();
+      }
+      this.display = this.transform(this.timeLeft)
+    }, 1000);
   }
 
-  startTimerforchat() {
+  transform(value: number): string {
+    var sec_num = value;
+    var hours = Math.floor(sec_num / 3600);
+    var minutes = Math.floor((sec_num - (hours * 3600)) / 60);
+    var seconds = sec_num - (hours * 3600) - (minutes * 60);
+
+    return ("0" + hours).slice(-2) + ':' + ("0" + minutes).slice(-2) + ':' + ("0" + seconds).slice(-2);
+
+  }
+
+  connectedCall() {
+    this.callwaitingscreenpopup = false;
+    this.oopsscreenpopup = false;
+    this.showStatuswindow = true;
+    this.startcallTimer()
+  }
+
+  startcallTimer() {
+    var calltime = this.checkuserbalance.data.talktimeSeconds;
+    console.log("=====>");
     this.interval = setInterval(() => {
-      if (this.timeLeft > 0) {
-        this.timeLeft--;
-      } else {
-        this.timeLeft = 60;
-        this.pauseTimerforchat();
+      calltime--;
+
+      //check calling status
+      this.orderService.getcallingStatus(this.callId).subscribe((data: any) => {
+        console.log('up',data);
+        if (data.status) {
+          if (data.data == 'answered' || data.data == 'CustomerHangup') {
+            clearInterval(this.interval);
+            this.statusMessage = 'Call completed';
+            this.showStatuswindow = false;
+            this.showratingreviewmodalcall = true;
+          }
+        }
+      })
+
+      if (calltime == 0) {
+        clearInterval(this.interval);
       }
-    }, 1000)
+      this.display = this.transform(this.timeLeft)
+    }, 1000);
+  }
+
+  calcelledCall() {
+    clearInterval(this.interval);
+    this.callwaitingscreenpopup = false;
+    this.oopsscreenpopup = true;
+    this.orderService.callMissed(this.callId).subscribe((data: any) => {
+      console.log('missed update data===>>>', data)
+    })
   }
 
   pauseTimerforcall() {
@@ -241,17 +338,73 @@ export class AstrologerCallPopupComponent implements OnInit {
     this.oopsscreenpopup = true;
   }
 
-  pauseTimerforchat() {
-    clearInterval(this.interval);
-    this.chatwaitingscreenpopup = false;
-    this.oopsscreenpopup = true;
-  }
-
   flash() {
     setTimeout(() => {
       this.errormessageforfullname = '';
       this.errormessageforbirthplace = '';
     }, 3000);
+  }
+
+  endChat() {
+    this.userService.userEndchat(this.data.order_id).subscribe((data: any) => {
+      if (data.status) {
+        localStorage.setItem('timecountDown', '0');
+        clearInterval(this.interval);
+        this.router.navigate(['/chatwithastro']);
+        this.showchatmodal = true;
+        this.walletbalancepopup = false;
+        this.showendchatmodal = false;
+        this.showratingreviewmodalchat = true;
+      } else {
+        this.showratingreviewmodalchat = false;
+        alert('Network issue')
+      }
+
+    })
+  }
+
+  resumechat() {
+    this.showchatmodal = false;
+    this.showendchatmodal = false;
+  }
+
+  addratingsreviews() {
+    this.reviewsonly = (<HTMLInputElement>document.getElementById("addreviewsonly")).value;
+    if (this.ratingsonly != null) {
+      this.ratingsService.addreviewRating(this.reviewsonly, this.ratingsonly).subscribe((data: any) => {
+        this.reviewratingdata = data;
+        if (this.reviewratingdata.status == true) {
+          this.ratingreviewmsg = this.reviewratingdata.message;
+          (<HTMLInputElement>document.getElementById("addreviewsonly")).value = '';
+          window.location.href = '/';
+        } else {
+          this.ratingreviewmsg = "something wrong with network";
+        }
+      });
+    } else {
+      this.ratingreviewmsg = "Ratings required";
+    }
+  }
+
+  addratingsonly(ratings: any) {
+    if (ratings != '') {
+      this.ratingsonly = ratings;
+    } else {
+      this.ratingsonly = '';
+    }
+  }
+
+  backtoAstro() {
+    this.router.navigate(['/talktoastro']);
+    window.location.reload();
+  }
+
+  retryCall() {
+    this.callsectionpopup = true;
+    this.callwaitingscreenpopup = false;
+    this.oopsscreenpopup = false;
+    this.showStatuswindow = false;
+    this.callnow();
   }
 
 }
