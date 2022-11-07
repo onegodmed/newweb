@@ -68,6 +68,9 @@ export class AstrologyComponent implements OnInit {
 
     });
   }
+  route1() {
+    this.router.navigateByUrl("/talktoastro");
+  }
 
 
 

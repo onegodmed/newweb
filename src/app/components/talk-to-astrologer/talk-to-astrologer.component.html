@@ -58,10 +58,12 @@
 
       <div class="multiple-action">
         <div class="recharge-btn">
-          <button type="button">Recharge</button>
+          <button type="button" *ngIf="!IsLoggedIn" (click)="openlogin()">Recharge</button>
+          <button type="button" *ngIf="IsLoggedIn" (click)="walletPage()">Recharge</button>
+
         </div>
         <div class="filter-section">
-          <mat-form-field>
+          <mat-form-field>   
             <mat-label>Filter</mat-label>
             <mat-select multiple (selectionChange)="changefilter($event.value)">
               <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
@@ -103,8 +105,8 @@
               </div>
               <div class="star-ratings">
                 <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                <div *ngIf="list.rating" class="count-rating">{{ list.rating | number:'1.0-0' }}</div>
-                <div *ngIf="!list.rating" class="count-rating">N/A</div>
+                <div *ngIf="list.rating" class="count-rating">{{ list.rating }}</div>
+                <div *ngIf="!list.rating" class="count-rating">New</div>
                 <div class="count-rating newlyaddedastro">New</div>
               </div>
               <div class="call-status-astrolger">
@@ -144,13 +146,13 @@
                     <span><i class="fa fa-inr" aria-hidden="true"></i>
                       {{ list.service_price }}<span>/Min</span>
                     </span>
-                    <div class="discount_price">30<span>/Min</span></div>
+                    <div class="discount_price">{{ list.old_price }}<span>/Min</span></div>
                   </div>
-                </div>
+                </div>   
               </div>
               <div class="follow-section">
                 <span *ngIf="!list.followed" id="btn-{{list.astrologer_id}}" (click)="follow(list.astrologer_id)" class="follow-style">Follow</span> 
-                <span *ngIf="list.followed" class="unfollow-style">Following</span> 
+                <span *ngIf="list.followed" class="unfollow-style" id="btn-{{list.astrologer_id}}"  (click)="unfollow(list.astrologer_id)">Following</span> 
                 <!-- <span  (click)="follow()" class="follow-style">{{ list.astrologer_id }}</span> -->
                 <!-- <span *ngIf="list.followed" (click)="unfollow()" class="unfollow-style">Unfollow</span> -->
                 <!-- <span  (click)="unfollow()" class="unfollow-style">{{ followunfollow.astro_id }}</span> -->

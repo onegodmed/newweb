@@ -50,9 +50,8 @@
                                 Year
                             </div>
                             <div class="categories-tag">
-                                <span>Business</span>
-                                <span>Love</span>
-                                <span>Marrige</span>
+                                <span>{{ astrodetails.data.skills }}</span>
+                               
                             </div>
                             <div class="callchat-btn">
                                 <button *ngIf="IsLoggedIn" class="btn-call" (click)="openDialogforcall(astrodetails.data.astrologer_id)">
@@ -72,7 +71,7 @@
                                         <span><i class="fa fa-inr" aria-hidden="true"></i>
                                             {{ astrodetails.data.service_price }}<span>/Min</span>
                                         </span>
-                                        <div class="discount_price">15<span>/Min</span></div>
+                                        <div class="discount_price">{{ astrodetails.data.old_price }}<span>/Min</span></div>
                                     </div>
                                 </button>
                                 <button *ngIf="IsLoggedIn" class="btn-call" (click)="openDialogforchat(astrodetails.data.astrologer_id)">
@@ -92,7 +91,7 @@
                                         <span><i class="fa fa-inr" aria-hidden="true"></i>
                                             {{ astrodetails.data.service_price }}<span>/Min</span>
                                         </span>
-                                        <div class="discount_price">23<span>/Min</span></div>
+                                        <div class="discount_price">{{ astrodetails.data.old_price }}<span>/Min</span></div>
                                     </div>
                                 </button>
                             </div>
@@ -196,7 +195,9 @@
                                 <h3>Verified Reviews</h3>
                             </div>
                             <div class="scroll-fixed">
+                                
                                 <div class="profile-rates" *ngFor="let list of astrodetails.review">
+                                    
                                     <div class="rating_h4">
                                         <div class="section-left">
                                             <span class="rating_blue diff_color1">{{ list.name[0] | uppercase }}</span>
@@ -204,13 +205,16 @@
                                         <div class="section-right"><i>{{ list.date | date:'fullDate' }}</i></div>
                                         <div class="clearfix"></div>
                                     </div>
+                                   
                                     <div class="rating_comment">{{ list.reviews }} </div>
-                                    <!-- <div class="astro-comment-section">
+                             
+                                    <div class="astro-comment-section">
                                         <span>Mang Astro</span>
                                         <div class="astro-date"><i>Tue, 10 JuN,2021</i></div>
                                         <div class="ratingastro_comment">Thanks a Lot ! so good at what you do</div>
-                                    </div> -->
+                              
                                 </div>
+                           
                             </div>
                             <div *ngIf="token != null" class="input-comment-section">
                                 <div class="star_ratinguser">

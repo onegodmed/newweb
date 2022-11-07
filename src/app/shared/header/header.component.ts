@@ -51,6 +51,12 @@ export class HeaderComponent implements OnInit {
     //   this.showusername = '';
     // }
 
+    // if (localStorage.getItem("UserName") != null) {
+    //   this.showusername = localStorage.getItem("UserName");
+    // } else {
+    //   this.showusername = '';
+    // }
+
     this.userService.userWalletdetails().subscribe((data: any) => {
 
       // console.log('wallet bal',data);

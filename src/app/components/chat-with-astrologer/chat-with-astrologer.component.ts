@@ -28,10 +28,10 @@ export class ChatWithAstrologerComponent implements OnInit {
   sortingfilter: any;
   searchbyname: any
   toppings = new FormControl('');
-  toppingList: string[] = ['Numerology', 'Vastu Shastra', 'Tarot Cards', 'Palmistry', 'Reiki Healing'];
+  toppingList: string[] = ['Vedic','Numerology', 'Vastru', 'Tarot', 'Palmistry','Western', 'Reiki Healing','Gemologiest','Lal Kitab','KP','Nadi','Horari','Face Reading','Prashna Kundali','Feng Shui'];
 
   sortings = new FormControl('');
-  sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: High To Low'];
+  sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: Low To High'];
 
   constructor(private router: Router,public followunfollowlistService: FollounfollowService, public astrologerlistService: AstrologerlistService,public dialog: MatDialog, public userService: UserService) { }
 
@@ -119,9 +119,9 @@ export class ChatWithAstrologerComponent implements OnInit {
 
   sortingchangefilter(value: any) {
     if (value === 'Price: High To Low') {
-      this.sortingfilter = { field: 'price', sortby: 'ASC' }
-    } else {
       this.sortingfilter = { field: 'price', sortby: 'DESC' }
+    } else {
+      this.sortingfilter = { field: 'price', sortby: 'ASC' }
     }
 
     if (value === 'Rating: High To Low') {
@@ -131,9 +131,9 @@ export class ChatWithAstrologerComponent implements OnInit {
     }
 
     if (value === 'Exp: High To Low') {
-      this.sortingfilter = { field: 'experience', sortby: 'ASC' }
-    } else {
       this.sortingfilter = { field: 'experience', sortby: 'DESC' }
+    } else {
+      this.sortingfilter = { field: 'experience', sortby: 'ASC' }
     }
     this.alluserlist();
     // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname);
@@ -179,6 +179,32 @@ export class ChatWithAstrologerComponent implements OnInit {
   openchatpage() {
     this.router.navigateByUrl("/chatscreen");
   }
+  openlogin() {
+    this.dialog.open(SingUpPopupComponent);
+  }
+  walletPage() {
+    this.router.navigateByUrl("/wallet");
+  }
+
+  // onScroll() {
+  //   console.log("scrolled down!!");
+  //   if (this.astrolist.totalCount >= this.page) {
+  //     this.page = this.page + 10;
+  //     console.log(this.page);
+  //     this.alluserlist();
+  //   }
+  //   // alert(this.page); 
+  // }
+
+  // onScroll() {
+  //   console.log("scrolled down!!");
+  //   if (this.astrolist.totalCount >= this.page) {
+  //     this.page = this.page + 10;
+  //     console.log(this.page);
+  //     this.alluserlist();
+  //   }
+  //   // alert(this.page); 
+  // }
 
   // onScroll() {
   //   console.log("scrolled down!!");
