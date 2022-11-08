@@ -257,7 +257,8 @@ export class AstrologerCallPopupComponent implements OnInit {
         this.chatsectionpopup = false;
         // this.router.navigateByUrl('/chatscreen', { state: { astrologer_id: this.data.astroIdforchat, caller_id: this.chatApiresponse.caller_id } });
         // this.router.navigateByUrl(`/chatscreen/${this.chatApiresponse.caller_id}`);
-        window.location.href = '/chatscreen/'+this.chatApiresponse.caller_id;
+        //window.location.href = '/chatscreen/'+this.chatApiresponse.caller_id;
+        this.router.navigate(['/chatscreen/'+this.chatApiresponse.caller_id])
 
       });
     }

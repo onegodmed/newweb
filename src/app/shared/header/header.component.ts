@@ -67,7 +67,7 @@ export class HeaderComponent implements OnInit {
 
       //this.CurrentBalance = data;
       if(data.status){
-        this.CurrentBalance = data.balance;
+        this.CurrentBalance = data.data.balance;
       }
     });
 
