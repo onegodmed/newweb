@@ -26,7 +26,7 @@
     "moment": "^2.29.4",
     "ngx-infinite-scroll": "^14.0.0",
     "ngx-slick-carousel": "^0.6.0",
-    "ngx-socket-io": "^3.4.0",
+    "ngx-socket-io": "^4.3.1",
     "razorpay": "^2.8.2",
     "rxjs": "~7.5.0",
     "slick-carousel": "^1.8.1",
