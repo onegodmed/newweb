@@ -99,8 +99,9 @@ export class ChatScreenComponent implements OnInit {
           this.waitingSuccess = false;
           clearInterval(this.interval);
           clearInterval(this.get_duration_interval);
-          //  this.router.navigate(['/chatscreen', this.orderId])
-
+         
+         
+          // this.router.navigate(['/chatscreen', this.orderId])
           // window.location.reload(); 
 
           this.orderservice.getorderInfo(decodedOrderid).subscribe((data: any) => {
