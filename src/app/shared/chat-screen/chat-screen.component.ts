@@ -99,6 +99,58 @@ export class ChatScreenComponent implements OnInit {
           this.waitingSuccess = false;
           clearInterval(this.interval);
           clearInterval(this.get_duration_interval);
+
+
+
+
+
+          // if (this.orderInfo.data.customer_id > parseInt(this.orderInfo.data.astrologerId)) {
+          //   this.roomId = this.orderInfo.data.astrologerId + this.orderInfo.data.customer_id;
+          // } else {
+          //   this.roomId = this.orderInfo.data.customer_id + this.orderInfo.data.astrologerId;
+          // }
+
+
+          // let textMessage ={
+          //   "text":'its test message idsfsvbjf ',
+          //   "user":{"_id":Number(this.orderInfo.data.customer_id ),"name":'Anita singh'},
+          //   "createdAt":new Date(),
+          //   "_id":"af1b9b23-a7fd-41a6-a367-6bf9cf8043ed",
+          //   "userId": Number(this.orderInfo.data.astrologerId),
+          //   "receiverId":Number(this.orderInfo.data.customer_id),     
+          //   "messageId":"af1b9b23-a7fd-41a6-a367-6bf9cf8043ed",     
+          //   "receiver":{"_id":Number(this.orderInfo.data.astrologerId),"name":"Pooja Katiya","avatar":"https://koli-media-stag.s3-ap-southeast-1.amazonaws.com/users/file-161961303737292071430-198e-4113-81d8-c06417cd644d.jpg"},
+          //   "messageType":"text","image":null
+          // };
+
+          // var sendData =  {
+          //             message : textMessage,
+          //             userId  : this.orderInfo.data.customer_id,
+          //             receiverId : this.orderInfo.data.astrologerId,
+          //           }        
+          //console.log('comming data from my node', sendData);
+
+          var messageText = localStorage.getItem('firstMsg');
+          localStorage.removeItem('firstMsg');
+          let textMessage = {
+            "text": messageText,
+            "user": { "_id": this.CurrentBalance.data.user_id, "name": localStorage.getItem('UserName') },
+            "createdAt": new Date(),
+            "userId": this.CurrentBalance.data.user_id,
+            "receiverId": this.astrologerId,
+          };
+          var sendData = {
+            message: textMessage,
+            userId: this.CurrentBalance.data.user_id,
+            receiverId: this.astrologerId,
+          }
+    
+          this.socketService.sendMessage(sendData, this.roomId);
+          //return;
+          //this.socketService.sendFirstMessage(sendData);
+         // this.socketService.sendMessage(sendData, roomId);
+
+
          
          
           // this.router.navigate(['/chatscreen', this.orderId])

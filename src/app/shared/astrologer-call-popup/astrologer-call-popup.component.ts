@@ -9,7 +9,7 @@ import { MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { RatingsService } from 'src/app/services/ratings.service';
 import { OrderService } from 'src/app/services/order.service';
-import { SocketService } from 'src/app/services/socket.service';
+//import { SocketService } from 'src/app/services/socket.service';
 
 
 @Component({
@@ -69,7 +69,7 @@ export class AstrologerCallPopupComponent implements OnInit {
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private router: Router,
-    private socketService: SocketService,
+   // private socketService: SocketService,
     public astrologerlistService: AstrologerlistService,
     public userService: UserService,
     public ratingsService: RatingsService,
@@ -229,29 +229,35 @@ export class AstrologerCallPopupComponent implements OnInit {
       this.userService.addChat(this.userId.data.user_id, this.forchat, this.chatform).subscribe((data: any) => {
         this.chatApiresponse = data;
 
-        if(data.status){
-          const messageStr  = "Name: "+this.chatform[0].fullname+" Gender: "+this.chatform[0].fullname+" DOB: "+this.chatform[0].dob+" Birth Place: "+this.chatform[0].birthplace+ " Birth Time: "+   moment(this.chatform[0].birthTime).format('hh:mm');
-          const  roomId   = this.astrodetails.astrologer_id + this.userId.data.user_id;
+                //  const messageStr  = "Name: "+this.chatform[0].fullname+" Gender: "+this.chatform[0].fullname+" DOB: "+this.chatform[0].dob+" Birth Place: "+this.chatform[0].birthplace+ " Birth Time: "+   moment(this.chatform[0].birthTime).format('hh:mm');
 
-          let textMessage ={
-                            "text":messageStr,
-                            "user":{"_id":Number(this.userId.data.user_id),"name":this.chatform[0].fullname},
-                            "createdAt":new Date(),
-                            "_id":"af1b9b23-a7fd-41a6-a367-6bf9cf8043ed",
-                            "userId": Number(this.astrodetails.astrologer_id),
-                            "receiverId":Number(this.userId.data.user_id),     
-                            "messageId":"af1b9b23-a7fd-41a6-a367-6bf9cf8043ed",     
-                            "receiver":{"_id":Number(this.astrodetails.astrologer_id),"name":"Pooja Katiya","avatar":"https://koli-media-stag.s3-ap-southeast-1.amazonaws.com/users/file-161961303737292071430-198e-4113-81d8-c06417cd644d.jpg"},
-                            "messageType":"text","image":null
-                          };
+
+        if(data.status){
+          const messageStr  = "Name: "+this.chatform[0].fullname+" Gender: "+this.chatform[0].gender+" DOB: "+this.chatform[0].dob+" Birth Place: "+this.chatform[0].birthplace+ " Birth Time: "+ this.chatform[0].birthtime;
+          localStorage.setItem('firstMsg',messageStr)
+          
+
+        //  const  roomId   = this.astrodetails.astrologer_id + this.userId.data.user_id;
+
+          // let textMessage ={
+          //                   "text":messageStr,
+          //                   "user":{"_id":Number(this.userId.data.user_id),"name":this.chatform[0].fullname},
+          //                   "createdAt":new Date(),
+          //                   "_id":"af1b9b23-a7fd-41a6-a367-6bf9cf8043ed",
+          //                   "userId": Number(this.astrodetails.astrologer_id),
+          //                   "receiverId":Number(this.userId.data.user_id),     
+          //                   "messageId":"af1b9b23-a7fd-41a6-a367-6bf9cf8043ed",     
+          //                   "receiver":{"_id":Number(this.astrodetails.astrologer_id),"name":"Pooja Katiya","avatar":"https://koli-media-stag.s3-ap-southeast-1.amazonaws.com/users/file-161961303737292071430-198e-4113-81d8-c06417cd644d.jpg"},
+          //                   "messageType":"text","image":null
+          //                 };
    
-          var sendData =  {
-                            message : textMessage,
-                            userId  : this.userId.data.user_id,
-                            receiverId : this.astrodetails.astrologer_id,
-                          }
-          //this.socketService.sendFirstMessage(sendData);
-          this.socketService.sendMessage(sendData, roomId);
+          // var sendData =  {
+          //                   message : textMessage,
+          //                   userId  : this.userId.data.user_id,
+          //                   receiverId : this.astrodetails.astrologer_id,
+          //                 }
+          // //this.socketService.sendFirstMessage(sendData);
+          // this.socketService.sendMessage(sendData, roomId);
 
           
         }
