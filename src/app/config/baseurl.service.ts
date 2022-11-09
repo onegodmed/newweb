@@ -8,6 +8,7 @@ import { Injectable } from '@angular/core';
 export class BaseurlService {
 
    BASE_URL = 'https://www.onegodmed.com/Web-api/';
+   //BASE_URL = 'https://www.onegodmed.com/testingserver/Web-api/';
   //BASE_URL = 'http://localhost/Webapi/Web-api/';
 
   constructor() { }
