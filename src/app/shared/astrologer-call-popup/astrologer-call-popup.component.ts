@@ -451,6 +451,8 @@ export class AstrologerCallPopupComponent implements OnInit {
           (<HTMLInputElement>document.getElementById("addreviewsonly")).value = '';
           //window.location.href = '/';
           this.router.navigate(['/talktoastro']);
+          window.location.reload();
+
         } else {
           this.ratingreviewmsg = "something wrong with network";
         }
