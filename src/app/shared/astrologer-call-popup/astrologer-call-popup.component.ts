@@ -264,6 +264,7 @@ export class AstrologerCallPopupComponent implements OnInit {
         this.router.navigate(['/chatscreen/'+this.chatApiresponse.caller_id]).then(
           window.location.reload
         )
+       // window.location.reload()
 
       });
     }

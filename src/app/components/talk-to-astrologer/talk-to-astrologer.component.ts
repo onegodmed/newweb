@@ -66,9 +66,9 @@ export class TalkToAstrologerComponent implements OnInit {
       // console.log('hi sam', this.followerlist);
     });
 
-    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
-      this.totalcount = data;
-    })
+    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
+    //   this.totalcount = data;
+    // })
 
     this.alluserlist();
     // this.followunfollowlistService.getfollowlist();
@@ -251,10 +251,10 @@ export class TalkToAstrologerComponent implements OnInit {
     console.log('=====>', this.page);
 
 
-    // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
-    //  this.astrolist.data = data.data.concat(this.astrolist.data);
-    //   console.log('====>',this.astrolist.data);
-    // })
+    this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
+     this.astrolist.data = data.data.concat(this.astrolist.data);
+      console.log('====>',this.astrolist.data);
+    })
 
   }
 }

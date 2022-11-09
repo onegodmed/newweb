@@ -47,7 +47,8 @@ export class ProcessPayPopupComponent implements OnInit {
   }
 
   options = {
-    "key": "rzp_test_fFpNRANlmYYKaj",
+   // "key": "rzp_test_fFpNRANlmYYKaj",
+    "key": "rzp_live_tQVtoSnbH9idrB",
     "amount": '',
     "currency": "INR",
     "name": "ONEGODMED",
@@ -58,7 +59,7 @@ export class ProcessPayPopupComponent implements OnInit {
     },
     "prefill": {
       "package_amount": "",
-      "package_name": "SAM",
+      "package_name": "package",
       "gst": "",
       "package_talktime": ""
       // "email":"sam@gmail.com",
