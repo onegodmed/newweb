@@ -151,8 +151,12 @@
                 </div>   
               </div>
               <div class="follow-section">
+
                 <span *ngIf="!list.followed" id="btn-{{list.astrologer_id}}" (click)="follow(list.astrologer_id)" class="follow-style">Follow</span> 
-                <span *ngIf="list.followed" class="unfollow-style" id="btn-{{list.astrologer_id}}"  (click)="unfollow(list.astrologer_id)">Following</span> 
+                <span *ngIf="list.followed" class="unfollow-style" id="btn-{{list.astrologer_id}}"  (click)="unfollow(list.astrologer_id)">Following</span>
+                
+                <!-- <span *ngIf="!list.followed" id="btn-{{list.astrologer_id}}" (click)="follow(list.astrologer_id)" class="follow-style">Follow</span> 
+                <span *ngIf="list.followed" class="unfollow-style" id="btn-{{list.astrologer_id}}"  (click)="unfollow(list.astrologer_id)">Following</span>  -->
                 <!-- <span  (click)="follow()" class="follow-style">{{ list.astrologer_id }}</span> -->
                 <!-- <span *ngIf="list.followed" (click)="unfollow()" class="unfollow-style">Unfollow</span> -->
                 <!-- <span  (click)="unfollow()" class="unfollow-style">{{ followunfollow.astro_id }}</span> -->

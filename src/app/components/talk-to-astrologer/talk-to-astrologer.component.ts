@@ -71,7 +71,7 @@ export class TalkToAstrologerComponent implements OnInit {
     // })
 
     this.alluserlist();
-    // this.followunfollowlistService.getfollowlist();
+     this.followunfollowlistService.getfollowlist();
 
     // this.astrologerlistService.astrolist(this.page, this.categoryfilter, this.sortingfilter, this.searchbyname).subscribe((data: any) => {
     //  this.astrolist.data = data.data;
@@ -138,8 +138,63 @@ export class TalkToAstrologerComponent implements OnInit {
     return item;
   }
 
+  // follow(id: any) {
+  //   this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
+  //   if (this.astro_id != null && localStorage.getItem("token") != null) {
+  //     this.followunfollowlistService.follow(this.astro_id).subscribe((data: any) => {
+  //       this.followresponse = data;
+  //       console.log(this.followresponse);
+  //       if (this.followresponse.status === true) {
+  //         this.isfollow = true;
+  //         this.isunfollow = false;
+  //         window.location.href = 'talktoastro';
+  //       } else {
+  //         this.isfollow = false;
+  //         this.isunfollow = false;
+          
+  //       }
+  //     });
+  //   } else {
+  //     this.isfollow = true;
+  //     this.isunfollow = true;
+  //     this.alluserlist();
+  //   }
+   
+  // }
+
+  // unfollow(id: any) {
+  //   this.astro_id = id;
+  //   console.log(this.astro_id);
+  //   if (this.astro_id != null && localStorage.getItem("token") != null) {
+  //     this.followunfollowlistService.unfollow(this.astro_id).subscribe((data: any) => {
+  //       this.followresponse = data;
+        
+  //       console.log(this.followresponse);
+  //       if (this.followresponse.status === true) {
+  //         this.isfollow = false;
+  //         this.isunfollow = true;
+  //         window.location.href = 'talktoastro';
+  //       } else {
+  //         this.isfollow = false;
+  //         this.isunfollow = true;
+         
+  //       }
+  //     });
+  //   } else {
+  //     this.isfollow = true;
+  //     this.isunfollow = true;
+  //     this.alluserlist();
+  //   }
+   
+  // }
+
+
+
   follow(id: any) {
-    this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
+    // this.astro_id = (<HTMLInputElement>document.getElementById("astro_id")).value;
+    this.astro_id = id;
+    console.log(this.astro_id);
+    
     if (this.astro_id != null && localStorage.getItem("token") != null) {
       this.followunfollowlistService.follow(this.astro_id).subscribe((data: any) => {
         this.followresponse = data;
