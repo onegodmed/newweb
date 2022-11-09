@@ -236,30 +236,6 @@ export class AstrologerCallPopupComponent implements OnInit {
           const messageStr  = "Name: "+this.chatform[0].fullname+" Gender: "+this.chatform[0].gender+" DOB: "+this.chatform[0].dob+" Birth Place: "+this.chatform[0].birthplace+ " Birth Time: "+ this.chatform[0].birthtime;
           localStorage.setItem('firstMsg',messageStr)
           
-
-        //  const  roomId   = this.astrodetails.astrologer_id + this.userId.data.user_id;
-
-          // let textMessage ={
-          //                   "text":messageStr,
-          //                   "user":{"_id":Number(this.userId.data.user_id),"name":this.chatform[0].fullname},
-          //                   "createdAt":new Date(),
-          //                   "_id":"af1b9b23-a7fd-41a6-a367-6bf9cf8043ed",
-          //                   "userId": Number(this.astrodetails.astrologer_id),
-          //                   "receiverId":Number(this.userId.data.user_id),     
-          //                   "messageId":"af1b9b23-a7fd-41a6-a367-6bf9cf8043ed",     
-          //                   "receiver":{"_id":Number(this.astrodetails.astrologer_id),"name":"Pooja Katiya","avatar":"https://koli-media-stag.s3-ap-southeast-1.amazonaws.com/users/file-161961303737292071430-198e-4113-81d8-c06417cd644d.jpg"},
-          //                   "messageType":"text","image":null
-          //                 };
-   
-          // var sendData =  {
-          //                   message : textMessage,
-          //                   userId  : this.userId.data.user_id,
-          //                   receiverId : this.astrodetails.astrologer_id,
-          //                 }
-          // //this.socketService.sendFirstMessage(sendData);
-          // this.socketService.sendMessage(sendData, roomId);
-
-          
         }
 
         this.showchatmodal = false;
