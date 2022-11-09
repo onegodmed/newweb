@@ -1,31 +1,50 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AstrologerlistService } from "src/app/services/astrologerlist.service";
+import { FollounfollowService } from "src/app/services/follounfollow.service";
 import { MatDialog } from '@angular/material/dialog';
+// import { ProcessPayPopupComponent } from 'src/app/shared/process-pay-popup/process-pay-popup.component';
 import { AstrologerCallPopupComponent } from 'src/app/shared/astrologer-call-popup/astrologer-call-popup.component';
-
+import { UserService } from 'src/app/services/user.service';
+import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup.component';
 @Component({
   selector: 'app-talk-to-astrologer',
   templateUrl: './talk-to-astrologer.component.html',
   styleUrls: ['./talk-to-astrologer.component.scss']
 })
 export class TalkToAstrologerComponent implements OnInit {
-  isOpenpopup: boolean = false;
 
+  IsLoggedIn: boolean = false;
+  username: any = '';
+  usercurrentbalance: any = [];
+  astrolist: any = [];
+  totalcount: any = [];
+  page: number = 0;
+  astro_id: any = '';
+  followresponse: any = {};
+  followerlist: any = {};
+  categoryfilter: any = [];
+  sortingfilter: any;
+  searchbyname: any;
+  isfollow: any;
+  isunfollow: boolean = true;
   toppings = new FormControl('');
-  toppingList: string[] = ['Numerology', 'Vastu Shastra', 'Tarot Cards', 'Palmistry', 'Reiki Healing'];
+  toppingList: string[] = ['Vedic','Numerology', 'Vastru', 'Tarot', 'Palmistry','Western', 'Reiki Healing','Gemologiest','Lal Kitab','KP','Nadi','Horari','Face Reading','Prashna Kundali','Feng Shui'];
 
   sortings = new FormControl('');
-  sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: High To Low'];
-  
-  states: string[] = [ 'Male', 'Female',];
-  language: string[] = [ 'Hindi', 'English', 'Marathi', 'Tamil', ];
+  sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: Low To High'];
 
-  
-  constructor(public dialog: MatDialog) { }
+  constructor(
+    private router: Router,
+    public astrologerlistService: AstrologerlistService,
+    public followunfollowlistService: FollounfollowService,
+    public dialog: MatDialog,
+    public userService: UserService
+  ) {
+  }
 
   ngOnInit(): void {
-<<<<<<< HEAD
-=======
 
     if (localStorage.getItem('token') != null) {
       this.IsLoggedIn = true;
@@ -57,19 +76,26 @@ export class TalkToAstrologerComponent implements OnInit {
     // })
 
 
->>>>>>> staging
   }
 
-  onclickOpenpopup(){
-    this.isOpenpopup = true;
+  openDialog(astroIdforcall: any) {
+    this.dialog.open(AstrologerCallPopupComponent, {
+      data: { astroIdforcall }
+    });
   }
 
-  openDialog() {
-    this.dialog.open(AstrologerCallPopupComponent);
+  openDialogforchat(astroIdforchat: any) {
+    this.dialog.open(AstrologerCallPopupComponent, {
+      data: { astroIdforchat }
+    });
+  }
+  openlogin() {
+    this.dialog.open(SingUpPopupComponent);
+  }
+  walletPage() {
+    this.router.navigateByUrl("/wallet");
   }
 
-<<<<<<< HEAD
-=======
   logindialogopen(astroIdforcall: any) {
     this.dialog.open(SingUpPopupComponent, {
       data: { astroIdforcall }
@@ -283,5 +309,4 @@ export class TalkToAstrologerComponent implements OnInit {
     })
 
   }
->>>>>>> staging
 }
