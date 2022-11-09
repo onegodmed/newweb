@@ -1,187 +1,179 @@
 
-        <div class="modal-dialog" id="model">
+        <div class="modal-dialog">
             <!-- Modal content-->
             <div class="modal-content">
-                <div *ngIf="showcallmodal" class="astro-call-card-modal-body">
+                <div class="astro-call-card-modal-body">
                     <div class="body-section">
                         <div class="left-side-img">
                             <div  class="astrologyer-call-card-box">
-                                <h3>{{ astrodetails.data.first_name }}</h3>
+                                <h3>Astro Mang</h3>
                                 <div class="astro-img">
                                     <div class="backimg-border">
-                                        <img src='{{ astrodetails.data.photo_url }}' alt="kundali">
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&amp;h=387&amp;auto=compress&amp;fit=crop&amp;dpr=1.25" alt="kundali">
                                     </div>
                                 </div>
                                 <div class="astro-section">
-                                    <p>{{ astrodetails.data.expertise }}</p>
+                                    <p>Psychic-Medium</p>
                                 </div>
                                 <div class="cover-section-rating-exp">
                                     <div  class="status-section">
                                         <span><i  aria-hidden="true" class="fa fa-briefcase"></i></span>
-                                        <span>{{ astrodetails.data.experience }}</span>Year
+                                        <span>24</span>Year
                                     </div>
                                     <div class="star-ratings">
                                         <span><i  aria-hidden="true" class="fa fa-star"></i></span>
-                                        <div class="count-rating">{{ astrodetails.data.rating | number:'1.0-0' }}</div>
+                                        <div class="count-rating">8.5</div>
                                         <div class="count-rating newlyaddedastro">New</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="right-side-cover">
-                            <div *ngIf="callsectionpopup" class="call-section-popup">
+                            <div class="call-section-popup">
                                 <h6>Service Type : <span>Audio</span></h6>
-                                <div class="charge-per-minute">Charge per minute: <span><i class="fa fa-inr" aria-hidden="true"></i> {{ astrodetails.data.service_price }}</span></div>
-                                <div class="available-balance">Available balance: <span><i class="fa fa-inr" aria-hidden="true"></i> {{ checkuserbalance.data.userWallet }}</span></div>
-                                <div class="maximum-call-duration">Call duration: <span>{{ checkuserbalance.data.talktimeHMS }}</span></div>
-                                <div class="getcallfrom">You will get a call from <span>(120-4474225)</span></div>
-                                <div class="getcallon">You will get a call on <span>(+91-{{ usermobilenumber }})</span></div>
-                                <button type="button" (click)="callnow()">Call Now</button>
+                                <div class="charge-per-minute">Charge per minute: <span><i class="fa fa-inr" aria-hidden="true"></i> 50</span></div>
+                                <div class="available-balance">Available balance: <span><i class="fa fa-inr" aria-hidden="true"></i> 90000</span></div>
+                                <div class="maximum-call-duration">Call duration: <span>1 Day 6 hours 1 min</span></div>
+                                <div class="getcallfrom">You will get a call from <span>(120-7808068)</span></div>
+                                <div class="getcallon">You will get a call on <span>(+91-9927808068)</span></div>
+                                <button type="button">Call Now</button>
                             </div>
-                            <div *ngIf="callwaitingscreenpopup" class="waiting-screen-popup">
-                                <!-- <div *ngIf="!showerrormessage"> -->
-                                    <div class="waiting-text">
-                                        Please wait a while <span style="color:brown"> {{ astrodetails.data.first_name }} </span>will accepet your call shortly... 
-                                    </div>
-                                    <div class="wait-img">
-                                        <div class="spinner spinner__1"></div>
-                                        <div class="spinner spinner__3"></div>
-                                        <div class="spinner spinner__1"></div>
-                                    </div>
-                                    <div class="count-dwn-time">
-                                        Please wait, will accept your request in<span>{{ display }}</span>
-                                    </div>
-                                <!-- </div> -->
-                                <!-- <div *ngIf="showerrormessage" class="waiting-text">
-                                    Please try to another Astrologer. If <span style="color:brown"> {{ astrodetails.data.first_name }} </span>not attend your call<br>
-                                    <br>
-                                    <br> 
-                                    <span style="color:red">Ignore if consultancy started.</span>
-                                </div> -->
+                            <div class="waiting-screen-popup">
+                                <div class="waiting-text">
+                                    Please wait a while <span> Praveen </span>will accepet your call shortly... 
+                                </div>
+                                <div class="wait-img">
+                                    <div class="spinner spinner__1"></div>
+                                    <div class="spinner spinner__3"></div>
+                                    <div class="spinner spinner__1"></div>
+                                </div>
+                                <div class="count-dwn-time">
+                                    Please wait, will accept your request in<span>00:00:05 Sec</span>
+                                </div>
                             </div>
-                            <div *ngIf="oopsscreenpopup" class="oops-screen-popup">
+                            <div class="oops-screen-popup">
                                 <div class="oops-img">
                                     <h1 class="animate-charcter">Oops!</h1>
                                     <img src="/../assets/images/oops-img.png">
                                 </div>
                                 <div class="oops-text">
-                                    <!-- Please wait for a while <span style="color:brown"> {{ astrodetails.data.first_name }} </span> will accept your call shortly....  -->
-                                    {{ statusMessage }}
+                                    Please wait for a while <span> Astro Praveen </span> will accept your call shortly.... 
                                 </div>
                                 <div class="btn-section">
-                                    <button (click)="backtoAstro()">Select Astrologyer</button>
-                                    <button *ngIf="!busy" (click)="retryCall()">Try Again</button>
-                                </div>
-                            </div>
-                            <div *ngIf="walletbalancepopup" class="wallat-balance-popup">
-                                <div class="wallat-text">
-                                    Your Wallet Balance is Rs.<span>{{ checkuserbalance.data.userWallet }}</span>
-                                </div>
-                                <!-- <p *ngIf="checkuserbalance.status === true" >You can chat with<span>Astro Mang</span> for  {{ checkuserbalance.data.talktimeMinute }} minutes.</p> -->
-                                <p>You have insufficient balance to make a call with astrologer, Please rechagre your wallet.</p>
-                                <!-- <div *ngIf="checkuserbalance.status === true" class="btn-section">
-                                    <button (click)="proceedtocall()">Proceed to Call</button>
-                                </div> -->
-                                <div class="btn-section">
-                                    <button (click)="proceedtorecharge()">Proceed to Recharge</button>
-                                </div>
-                            </div>
-                            <div *ngIf="hide" class="tryagain-connect-astro-popup">
-                                <div class="connect-text">
-                                    {{ statusMessage }}
-                                </div>
-                                <!-- <div class="btn-section">
+                                    <button>Select Astrologyer</button>
                                     <button>Try Again</button>
-                                </div> -->
+                                </div>
                             </div>
-                            <div *ngIf="showStatuswindow" class="connect-call-astro-popup">
+                            <div class="wallat-balance-popup">
+                                <div class="wallat-text">
+                                    Your Wallet Balance is Rs.<span>90000</span>
+                                </div>
+                                <p>You can chat with<span>Astro Mang</span> for  601 minutes.</p>
+                                <div class="btn-section">
+                                    <button>Proceed to Call</button>
+                                </div>
+                            </div>
+                            <div class="tryagain-connect-astro-popup">
+                                <div class="connect-text">
+                                    <span>Astro Mang</span> One moment please while i see if he's available..
+                                </div>
+                                <div class="btn-section">
+                                    <button>Try Again</button>
+                                </div>
+                            </div>
+                            <div class="connect-call-astro-popup">
                                 <div class="connect-img">
                                     <img src="/../assets/images/connecting-call.png">
                                 </div>
                                 <div class="connect-text">
-                                    {{ statusMessage }}
+                                    You are successfully connected to astrologer, Thanks !
                                 </div>
                                 <div class="btn-section">
                                     <!-- <button>Try Again</button> -->
                                 </div>
                             </div>
-                            <div *ngIf="showratingreviewmodalcall" class="review-astro-popup">
+                            <div class="review-astro-popup">
                                 <div class="ratingreview_screen_section">
-                                    <!-- <div class="user_name">
+                                    <div class="user_name">
                                       Rate: <span>Raj Kumar</span>
-                                    </div> -->
+                                    </div>
                                     <div class="astrology_section">
                                       <div class="user_icon">
-                                        <img src='{{ astrodetails.data.photo_url }}'>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
                                       </div>
-                                      <p color="danger">{{ astrodetails.data.first_name }}</p>
+                                      <p color="danger">Astro Mang</p>
                                       <p class="light-weight-text">Review are public if you are not anonymous.</p>
                                     </div>
                                     <div class="stars">
-                                        <span class="fa fa-star checked" (click)="addratingsonly(1)"></span>
-                                        <span class="fa fa-star checked" (click)="addratingsonly(2)"></span>
-                                        <span class="fa fa-star checked" (click)="addratingsonly(3)"></span>
-                                        <span class="fa fa-star checked" (click)="addratingsonly(4)"></span>
-                                        <span class="fa fa-star" (click)="addratingsonly(5)"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
                                     </div>
-                                    <textarea rows="3" cols="20" placeholder="Enter Comment here..." id="addreviewsonly"></textarea>
-                                    <p>{{ ratingreviewmsg }}</p>
+                                    <textarea rows="3" cols="20" placeholder="Enter Comment here..."></textarea>
                                     <div class="btn-section">
-                                        <button (click)="addratingsreviews()">Submit</button>
+                                        <button>Submit</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div *ngIf="showchatmodal" class="astro-chat-card-modal-body">
+                <div class="astro-chat-card-modal-body">
                     <div class="body-section">
                         <div class="left-side-img">
                             <div  class="astrologyer-call-card-box">
-                                <h3>{{ astrodetails.data.first_name }}</h3>
+                                <h3>Astro Mang</h3>
                                 <div class="astro-img">
                                     <div class="backimg-border">
-                                        <img src='{{ astrodetails.data.photo_url }}'>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&amp;h=387&amp;auto=compress&amp;fit=crop&amp;dpr=1.25" alt="kundali">
                                     </div>
                                 </div>
                                 <div class="astro-section">
-                                    <p>{{ astrodetails.data.expertise }}</p>
+                                    <p>Psychic-Medium</p>
                                 </div>
                                 <div class="cover-section-rating-exp">
                                     <div  class="status-section">
                                         <span><i  aria-hidden="true" class="fa fa-briefcase"></i></span>
-                                        <span>{{ astrodetails.data.experience }}</span>Year
+                                        <span>24</span>Year
                                     </div>
                                     <div class="star-ratings">
                                         <span><i  aria-hidden="true" class="fa fa-star"></i></span>
-                                        <div class="count-rating">{{ astrodetails.data.rating | number:'1.0-0' }}</div>
+                                        <div class="count-rating">8.5</div>
                                         <div class="count-rating newlyaddedastro">New</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="right-side-cover">
-                            <div *ngIf="chatsectionpopup" class="chat-section-popup">
-                                <div class="charge-per-minute">Charge per minute: <span><i class="fa fa-inr" aria-hidden="true"></i> {{ astrodetails.data.service_price }}</span></div>
-                                <div class="available-balance">Available balance: <span><i class="fa fa-inr" aria-hidden="true"></i> {{ checkuserbalance.data.userWallet }}</span></div>
-                                <div class="maximum-call-duration">Call duration: <span>{{ checkuserbalance.data.talktimeHMS }}</span></div>
+                            <div class="chat-section-popup">
+                                <div class="charge-per-minute">Charge per minute: <span><i class="fa fa-inr" aria-hidden="true"></i> 50</span></div>
+                                <div class="available-balance">Available balance: <span><i class="fa fa-inr" aria-hidden="true"></i> 90000</span></div>
+                                <div class="maximum-call-duration">Call duration: <span>1 Day 6 hours 1 min</span></div>
                                 <div class="fillsection">Please Fill Section</div>
                                 <div class="input-text-section">
-                                    <input  type="text" placeholder="Full Name" id="fullname">
+                                    <input  type="text" placeholder="Full Name">
                                     <div class="gender-section">
+                                        <!-- <mat-form-field appearance="fill">
+                                            <mat-label>Gender</mat-label>
+                                            <mat-select [(value)]="selected">
+                                              <mat-option value="option1">Male</mat-option>
+                                              <mat-option value="option2">Female</mat-option>
+                                            </mat-select>
+                                        </mat-form-field> -->
                                         <select id="gender">
-                                            <!-- <option>Gender</option> -->
+                                            <option>Gender</option>
                                             <option value="male">Male</option>
                                             <option value="female">Female</option>
                                         </select>
                                     </div>
-                                    <div *ngIf="errormessageforfullname != null" class="error-validation">{{ errormessageforfullname }}</div>
-                                    <div *ngIf="errormessageforgender != null" class="error-validation">{{ errormessageforgender }}</div>
+                                    <div class="error-validation">*Invalid</div>
                                 </div>
                                 <div class="dateandtime">
                                     <div class="dob-section">
                                         <label>DOB (dd/mm/yy)</label>
-                                        <select id="day" required>
+                                        <select id="day">
                                             <option value="day">Day</option>
                                             <option value="1">1</option>
                                             <option value="2">2</option>
@@ -364,10 +356,6 @@
                                                 <option value="1900">1900</option>
                                         </select>
                                     </div>
-
-                                    <div *ngIf="errormessagefordob != null" class="error-validation">{{ errormessagefordob }}</div>
-
-
                                     <div class="section-birth-time">
                                         <label>Birth Time</label>
                                         <select id="hour">
@@ -392,18 +380,13 @@
                                     </div>
                                     <div class="search-location">
                                         <label>Birth Place</label>
-                                        <input type="text" placeholder="Enter Place Of Birth.." id="searchcity" (keyup)="getCity()" value='{{ selectedcityname }}'>
-                                        <ul>
-                                            <li *ngFor="let city of getcities?.data" (click)="selectcity(city.name)" >
-                                                <span id="selectcityname">{{ city.name }}</span>
-                                            </li>
-                                        </ul>
+                                        <input type="text" placeholder="Enter Place Of Birth..">
                                     </div>
-                                    <div *ngIf="errormessageforbirthplace != null" class="error-validation">{{ errormessageforbirthplace }}</div>
+                                    <div class="error-validation">*Invalid</div>
                                 </div>
-                                <button class="chatnow-popup" type="button" (click)="chatnow()">Chat Now</button>
+                                <button class="chatnow-popup" type="button">Chat Now</button>
                             </div>
-                            <div *ngIf="chatwaitingscreenpopup" class="waiting-screen-popup">
+                            <div class="waiting-screen-popup">
                                 <div class="waiting-text">
                                     Please wait a while <span> Praveen </span>will accepet your call shortly... 
                                 </div>
@@ -413,10 +396,10 @@
                                     <div class="spinner spinner__1"></div>
                                 </div>
                                 <div class="count-dwn-time">
-                                    Please wait, will accept your request in<span>00:{{timeLeft}} Sec</span>
+                                    Please wait, will accept your request in<span>00:00:05 Sec</span>
                                 </div>
                             </div>
-                            <div *ngIf="oopsscreenpopup" class="oops-screen-popup">
+                            <div class="oops-screen-popup">
                                 <div class="oops-img">
                                     <h1 class="animate-charcter">Oops!</h1>
                                     <img src="/../assets/images/oops-img.png">
@@ -429,20 +412,16 @@
                                     <button>Try Again</button>
                                 </div>
                             </div>
-                            <div *ngIf="walletbalancepopup" class="wallat-balance-popup">
+                            <div class="wallat-balance-popup">
                                 <div class="wallat-text">
-                                    Your Wallet Balance is Rs.<span>{{ checkuserbalance.data.userWallet }}</span>
+                                    Your Wallet Balance is Rs.<span>90000</span>
                                 </div>
-                                <!-- <p *ngIf="checkuserbalance.status === true" >You can chat with<span>Astro Mang</span> for  {{ checkuserbalance.data.talktimeMinute }} minutes.</p> -->
-                                <p>You have insufficient balance to make a chat with astrologer, Please rechagre your wallet.</p>
-                                <!-- <div *ngIf="checkuserbalance.status === true" class="btn-section">
-                                    <button (click)="proceedtochat()">Proceed to Chat</button>
-                                </div> -->
-                                <div *ngIf="checkuserbalance.status === false" class="btn-section">
-                                    <button (click)="proceedtorecharge()">Proceed to Recharge</button>
+                                <p>You can chat with<span>Astro Mang</span> for  601 minutes.</p>
+                                <div class="btn-section">
+                                    <button>Proceed to Chat</button>
                                 </div>
                             </div>
-                            <div *ngIf="hide" class="connect-call-astro-popup">
+                            <div class="connect-call-astro-popup">
                                 <div class="connect-img">
                                     <img src="/../assets/images/connecting-call.png">
                                 </div>
@@ -453,39 +432,38 @@
                                     <!-- <button>Try Again</button> -->
                                 </div>
                             </div>
-                            <div *ngIf="showendchatmodal" class="closed-chat-astro-popup">
+                            <div class="closed-chat-astro-popup">
                                 <div class="closed-text">
                                     <h1 class="animate-charcter">Are you sure?</h1>
                                     You really want to end this Chat
                                 </div>
                                 <div class="btn-section">
-                                    <button (click)="endChat()">Complete</button>
-                                    <button (click)="resumechat()">Resume</button>
+                                    <button>Complete</button>
+                                    <button>Resume</button>
                                 </div>
                             </div>
-                            <div *ngIf="showratingreviewmodalchat" class="review-astro-popup">
+                            <div class="review-astro-popup">
                                 <div class="ratingreview_screen_section">
-                                    <!-- <div class="user_name">
+                                    <div class="user_name">
                                       Rate: <span>Raj Kumar</span>
-                                    </div> -->
+                                    </div>
                                     <div class="astrology_section">
                                       <div class="user_icon">
-                                        <img src='{{ astrodetails.data.photo_url }}'>
+                                        <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25">
                                       </div>
-                                      <p color="danger">{{ astrodetails.data.first_name }}</p>
+                                      <p color="danger">Astro Mang</p>
                                       <p class="light-weight-text">Review are public if you are not anonymous.</p>
                                     </div>
                                     <div class="stars">
-                                        <span class="fa fa-star checked" (click)="addratingsonly(1)"></span>
-                                        <span class="fa fa-star checked" (click)="addratingsonly(2)"></span>
-                                        <span class="fa fa-star checked" (click)="addratingsonly(3)"></span>
-                                        <span class="fa fa-star checked" (click)="addratingsonly(4)"></span>
-                                        <span class="fa fa-star" (click)="addratingsonly(5)"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star checked"></span>
+                                        <span class="fa fa-star"></span>
                                     </div>
-                                    <textarea rows="3" cols="20" placeholder="Enter Comment here..." id="addreviewsonly"></textarea>
-                                    <p>{{ ratingreviewmsg }}</p>
+                                    <textarea rows="3" cols="20" placeholder="Enter Comment here..."></textarea>
                                     <div class="btn-section">
-                                        <button (click)="addratingsreviews()">Submit</button>
+                                        <button>Submit</button>
                                     </div>
                                 </div>
                             </div>

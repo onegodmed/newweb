@@ -21,3 +21,20 @@
     }
 }
 
+@media only screen  and (max-width: 768px) {
+    .heading h2{ font-size: 15px; margin: 0px; }
+    .heading h3{ font-size: 15px; margin: 0px; }
+
+    .faq-back-section{
+        padding-top: 0;
+        padding-bottom: 0px;
+        .faq-main-page{
+            p{
+                font-size: 12px;
+                line-height: 18px;
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+

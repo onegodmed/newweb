@@ -1,199 +1,644 @@
 <!----asrto-talk------>
-<!-- <div class="search-results" 
-    infinite-scroll 
-    (scrolled)="onScroll()" style="overflow-y:scroll"> -->
 <section class="talk_full_cover">
 
-  <div class="container-card">
-
-    <div class="login-call-box">
-      <ul>
-        <li>
-          <div class="box_direction_flow">
-            <div class="flow-img-section">
-              <img src="../../assets/images/IMAGE3.png">
-            </div>
-            <div class="login">Login</div>
-            <div *ngIf="username != ''" class="amount-update">
-              <span>Hi, {{ username }}</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="box_direction_flow">
-            <div class="flow-img-section">
-              <img src="../../assets/images/IMAGE1.png">
-            </div>
-            <div class="wallet_amount">Recharge</div>
-            <div *ngIf="username != ''" class="amount-update">
-              <i class="fa fa-inr" aria-hidden="true"></i>
-              <span>{{ this.usercurrentbalance.data.balance }}</span>
-            </div>
-          </div>
-        </li>
-        <li>
-          <div class="box_direction_flow">
-            <div class="flow-img-section">
-              <img src="../../assets/images/IMAGE2.png">
-            </div>
-            <div class="connect_call">Connect</div>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <section class="data-filter-cover">
-
-      <div class="astrologer_breadcrumbs">
-        <ul>
-          <li><a href="/">
-              <i class="fa fa-home"></i>
-            </a>
-          </li>
-          <li>
-            <a class="active text-capitalize">Talk With Astrologer</a>
-          </li>
-        </ul>
-      </div>
-
-      <div class="multiple-action">
-        <div class="recharge-btn">
-          <button type="button" *ngIf="!IsLoggedIn" (click)="openlogin()">Recharge</button>
-          <button type="button" *ngIf="IsLoggedIn" (click)="walletPage()">Recharge</button>
-
+    <div class="container-card">
+    
+        <div class="login-call-box">
+            <ul>
+                <li>
+                    <div class="box_direction_flow">
+                        <div class="flow-img-section">
+                            <img src="../../assets/images/IMAGE3.png">
+                        </div>
+                        <div class="login">Login</div>
+                    </div>
+                </li>
+                <li>
+                    <div class="box_direction_flow">
+                        <div class="flow-img-section">
+                            <img src="../../assets/images/IMAGE1.png">
+                        </div>
+                        <div class="wallet_amount">Recharge</div>
+                        <div class="amount-update">
+                            <i class="fa fa-inr" aria-hidden="true"></i>
+                            <span>20,00000</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="box_direction_flow">
+                        <div class="flow-img-section">
+                            <img src="../../assets/images/IMAGE2.png">
+                        </div>
+                        <div class="connect_call">Connect</div>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="filter-section">
-          <mat-form-field>   
-            <mat-label>Filter</mat-label>
-            <mat-select multiple (selectionChange)="changefilter($event.value)">
-              <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="sort-price">
-          <mat-form-field>
-            <mat-label>Sort Price</mat-label>
-            <mat-select (selectionChange)="sortingchangefilter($event.value)">
-              <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-        </div>
-        <div class="search-box">
-          <mat-form-field class="example-form-field">
-            <mat-label>Search</mat-label>
-            <input matInput type="text" placeholder="Search here..." id="searchname" (keyup)="seachastrobyname()">
-          </mat-form-field>
-        </div>
-      </div>
 
-    </section>
+        <section class="data-filter-cover">
 
-    <section class="chat_card" infinite-scroll (scrolled)="onScroll()" [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000">
-      <!-- <div infinite-scroll (scrolled)="onScroll()" [infiniteScrollDistance]="2" [infiniteScrollThrottle]="1000" style="overflow-y:scroll"> -->
-        <ul>
-          <li *ngFor="let list of astrolist.data; trackBy:trackByFn ">
-            <div class="card_astro">
-              <div class="astro-img" (click)="astrodetailspage(list.astrologer_id)">
-                <img src='{{ list.photo_url }}'>
-                <div class="light-shad"></div>
-                <input type="text" id="astro_id" value="{{ list.astrologer_id }}" hidden>
-              </div>
-              <div class="status-section">
-                <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
-                <span>{{ list.experience }}</span>Year
-                <!-- <span *ngIf="(list.experience) === null">N/A</span> -->
-              </div>
-              <div class="star-ratings">
-                <span><i class="fa fa-star" aria-hidden="true"></i></span>
-                <div *ngIf="list.rating" class="count-rating">{{ list.rating }}</div>
-                <div *ngIf="!list.rating" class="count-rating">New</div>
-                <div class="count-rating newlyaddedastro">New</div>
-              </div>
-              <div class="call-status-astrolger">
-                <a *ngIf="IsLoggedIn" (click)="openDialogforchat(list.astrologer_id)">
+            <div class="astrologer_breadcrumbs">
+                <ul>
+                    <li><a href="/">
+                            <i class="fa fa-home"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="active text-capitalize">Talk With Astrologer</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="multiple-action">
+                <div class="recharge-btn">
+                    <button type="button">Recharge</button>
+                </div>
+                <div class="filter-section">
+                    <mat-form-field>
+                        <mat-label>Filter</mat-label>
+                        <mat-select multiple>
+                          <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="sort-price">
+                    <mat-form-field>
+                        <mat-label>Sort Price</mat-label>
+                        <mat-select multiple>
+                          <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </div>
+                <div class="search-box">
+                    <mat-form-field class="example-form-field">
+                        <mat-label>Search</mat-label>
+                        <input matInput type="text" placeholder="Search here...">
+                    </mat-form-field>
+                </div>
+            </div>
+
+        </section>
+
+        <!----mobile-view-only----->
+        <div class="mobile-multiple-action">
+            <div class="left-searchbox">
+                <mat-form-field class="example-form-field">
+                    <mat-label>Search</mat-label>
+                    <input matInput type="text" placeholder="Find Astrologer...">
+                </mat-form-field>
+            </div>
+            <div class="filter-icon" (click)="onclickOpenpopup()">
+                <svg viewBox="0 0 24 24" width="20" height="20" preserveAspectRatio="xMidYMid meet" class=""><path fill="currentColor" d="M10 18.1h4v-2h-4v2zm-7-12v2h18v-2H3zm3 7h12v-2H6v2z"></path></svg>
+            </div>
+        </div>
+
+        <section class="chat_card">
+            <ul>
+                <li>
+                    <div class="card_astro">
+                        <div class="astro-img">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
+                                alt="kundali">
+                            <div class="light-shad"></div>
+                        </div>
+                        <div class="status-section">
+                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span>24</span>Year
+                        </div>
+                        <div class="star-ratings">
+                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <div class="count-rating">8.5</div>
+                            <div class="count-rating newlyaddedastro">New</div>
+                        </div>
+                        <div class="call-status-astrolger">
+                            <a (click)="openDialog()">
                                 <span class="sprite-chat-astrologer"></span>
                             </a>
-                <a *ngIf="IsLoggedIn" (click)="openDialog(list.astrologer_id)">
-                  <span class="sprite-call-astrologer"></span>
-                </a>
-                <a *ngIf="!IsLoggedIn" (click)="logindialogopen(list.astrologer_id)">
-                  <span class="sprite-call-astrologer"></span>
-                </a>
-                <a *ngIf="!IsLoggedIn" (click)="logindialogopen(list.astrologer_id)">
-                  <span class="sprite-chat-astrologer"></span>
-                </a>
-                <a href="#">
-                  <span class="sprite-joincall-astrologer"></span>
-                </a>
-                <a href="#">
-                  <span class="sprite-offline-astrologer"></span>
-                </a>
-              </div>
-              <div class="astro-section" (click)="astrodetailspage(list.astrologer_id)">
-                <h5>{{ list.full_name }}</h5>
-                <p *ngIf="list.expertise">{{ list.expertise }}</p>
-                <p *ngIf="!list.expertise">Expertise Not Mentioned</p>
-                <div class="ratting">
-                  <div class="language-astrologer">
-                    <i class="fa fa-language" aria-hidden="true"></i>
-                    <span>{{ list.langknown }}</span>
-                  </div>
-                  <div class="skills-astrologer">
-                    <!-- <span>Love</span> -->
-                    <span>{{list.skills}}</span>
-                  </div>
-                  <div class="price">
-                    <span><i class="fa fa-inr" aria-hidden="true"></i>
-                      {{ list.service_price }}<span>/Min</span>
-                    </span>
-                    <div class="discount_price">{{ list.old_price }}<span>/Min</span></div>
-                  </div>
-                </div>   
-              </div>
-              <div class="follow-section">
+                            <a (click)="openDialog()">
+                                <span class="sprite-call-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-joincall-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-offline-astrologer"></span>
+                            </a>
+                        </div>
+                        <div class="astro-section">
+                            <h5>Poonam</h5>
+                            <p>Psychic-Medium</p>
+                            <div class="ratting">
+                                <div class="language-astrologer">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Hindi</span>
+                                    <span>English</span>
+                                    <span>Punjabi</span>
+                                </div>
+                                <div class="skills-astrologer">
+                                    <span>Love</span>
+                                    <span>Marriage</span>
+                                </div>
+                                <div class="price">
+                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                        80<span>/Min</span>
+                                    </span>
+                                    <div class="discount_price">30<span>/Min</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-section">
+                            <span class="follow-style">Follow</span>
+                            <span class="unfollow-style">Unfollow</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card_astro">
+                        <div class="astro-img">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
+                                alt="kundali">
+                            <div class="light-shad"></div>
+                        </div>
+                        <div class="status-section">
+                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span>24</span>Year
+                        </div>
+                        <div class="star-ratings">
+                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <div class="count-rating">8.5</div>
+                            <div class="count-rating newlyaddedastro">New</div>
+                        </div>
+                        <div class="call-status-astrolger">
+                            <a (click)="openDialog()">
+                                <span class="sprite-chat-astrologer"></span>
+                            </a>
+                            <a (click)="openDialog()">
+                                <span class="sprite-call-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-joincall-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-offline-astrologer"></span>
+                            </a>
+                        </div>
+                        <div class="astro-section">
+                            <h5>Poonam</h5>
+                            <p>Psychic-Medium</p>
+                            <div class="ratting">
+                                <div class="language-astrologer">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Hindi</span>
+                                    <span>English</span>
+                                    <span>Punjabi</span>
+                                </div>
+                                <div class="skills-astrologer">
+                                    <span>Love</span>
+                                    <span>Marriage</span>
+                                </div>
+                                <div class="price">
+                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                        80<span>/Min</span>
+                                    </span>
+                                    <div class="discount_price">30<span>/Min</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-section">
+                            <span class="follow-style">Follow</span>
+                            <span class="unfollow-style">Unfollow</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card_astro">
+                        <div class="astro-img">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
+                                alt="kundali">
+                            <div class="light-shad"></div>
+                        </div>
+                        <div class="status-section">
+                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span>24</span>Year
+                        </div>
+                        <div class="star-ratings">
+                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <div class="count-rating">8.5</div>
+                            <div class="count-rating newlyaddedastro">New</div>
+                        </div>
+                        <div class="call-status-astrolger">
+                            <a href="#">
+                                <span class="sprite-chat-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-call-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-joincall-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-offline-astrologer"></span>
+                            </a>
+                        </div>
+                        <div class="astro-section">
+                            <h5>Poonam</h5>
+                            <p>Psychic-Medium</p>
+                            <div class="ratting">
+                                <div class="language-astrologer">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Hindi</span>
+                                    <span>English</span>
+                                    <span>Punjabi</span>
+                                </div>
+                                <div class="skills-astrologer">
+                                    <span>Love</span>
+                                    <span>Marriage</span>
+                                </div>
+                                <div class="price">
+                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                        80<span>/Min</span>
+                                    </span>
+                                    <div class="discount_price">30<span>/Min</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-section">
+                            <span class="follow-style">Follow</span>
+                            <span class="unfollow-style">Unfollow</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card_astro">
+                        <div class="astro-img">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
+                                alt="kundali">
+                            <div class="light-shad"></div>
+                        </div>
+                        <div class="status-section">
+                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span>24</span>Year
+                        </div>
+                        <div class="star-ratings">
+                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <div class="count-rating">8.5</div>
+                            <div class="count-rating newlyaddedastro">New</div>
+                        </div>
+                        <div class="call-status-astrolger">
+                            <a href="#">
+                                <span class="sprite-chat-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-call-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-joincall-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-offline-astrologer"></span>
+                            </a>
+                        </div>
+                        <div class="astro-section">
+                            <h5>Poonam</h5>
+                            <p>Psychic-Medium</p>
+                            <div class="ratting">
+                                <div class="language-astrologer">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Hindi</span>
+                                    <span>English</span>
+                                    <span>Punjabi</span>
+                                </div>
+                                <div class="skills-astrologer">
+                                    <span>Love</span>
+                                    <span>Marriage</span>
+                                </div>
+                                <div class="price">
+                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                        80<span>/Min</span>
+                                    </span>
+                                    <div class="discount_price">30<span>/Min</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-section">
+                            <span class="follow-style">Follow</span>
+                            <span class="unfollow-style">Unfollow</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card_astro">
+                        <div class="astro-img">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
+                                alt="kundali">
+                            <div class="light-shad"></div>
+                        </div>
+                        <div class="status-section">
+                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span>24</span>Year
+                        </div>
+                        <div class="star-ratings">
+                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <div class="count-rating">8.5</div>
+                            <div class="count-rating newlyaddedastro">New</div>
+                        </div>
+                        <div class="call-status-astrolger">
+                            <a href="#">
+                                <span class="sprite-chat-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-call-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-joincall-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-offline-astrologer"></span>
+                            </a>
+                        </div>
+                        <div class="astro-section">
+                            <h5>Poonam</h5>
+                            <p>Psychic-Medium</p>
+                            <div class="ratting">
+                                <div class="language-astrologer">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Hindi</span>
+                                    <span>English</span>
+                                    <span>Punjabi</span>
+                                </div>
+                                <div class="skills-astrologer">
+                                    <span>Love</span>
+                                    <span>Marriage</span>
+                                </div>
+                                <div class="price">
+                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                        80<span>/Min</span>
+                                    </span>
+                                    <div class="discount_price">30<span>/Min</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-section">
+                            <span class="follow-style">Follow</span>
+                            <span class="unfollow-style">Unfollow</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card_astro">
+                        <div class="astro-img">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
+                                alt="kundali">
+                            <div class="light-shad"></div>
+                        </div>
+                        <div class="status-section">
+                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span>24</span>Year
+                        </div>
+                        <div class="star-ratings">
+                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <div class="count-rating">8.5</div>
+                            <div class="count-rating newlyaddedastro">New</div>
+                        </div>
+                        <div class="call-status-astrolger">
+                            <a href="#">
+                                <span class="sprite-chat-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-call-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-joincall-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-offline-astrologer"></span>
+                            </a>
+                        </div>
+                        <div class="astro-section">
+                            <h5>Poonam</h5>
+                            <p>Psychic-Medium</p>
+                            <div class="ratting">
+                                <div class="language-astrologer">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Hindi</span>
+                                    <span>English</span>
+                                    <span>Punjabi</span>
+                                </div>
+                                <div class="skills-astrologer">
+                                    <span>Love</span>
+                                    <span>Marriage</span>
+                                </div>
+                                <div class="price">
+                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                        80<span>/Min</span>
+                                    </span>
+                                    <div class="discount_price">30<span>/Min</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-section">
+                            <span class="follow-style">Follow</span>
+                            <span class="unfollow-style">Unfollow</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card_astro">
+                        <div class="astro-img">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
+                                alt="kundali">
+                            <div class="light-shad"></div>
+                        </div>
+                        <div class="status-section">
+                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span>24</span>Year
+                        </div>
+                        <div class="star-ratings">
+                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <div class="count-rating">8.5</div>
+                            <div class="count-rating newlyaddedastro">New</div>
+                        </div>
+                        <div class="call-status-astrolger">
+                            <a href="#">
+                                <span class="sprite-chat-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-call-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-joincall-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-offline-astrologer"></span>
+                            </a>
+                        </div>
+                        <div class="astro-section">
+                            <h5>Poonam</h5>
+                            <p>Psychic-Medium</p>
+                            <div class="ratting">
+                                <div class="language-astrologer">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Hindi</span>
+                                    <span>English</span>
+                                    <span>Punjabi</span>
+                                </div>
+                                <div class="skills-astrologer">
+                                    <span>Love</span>
+                                    <span>Marriage</span>
+                                </div>
+                                <div class="price">
+                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                        80<span>/Min</span>
+                                    </span>
+                                    <div class="discount_price">30<span>/Min</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-section">
+                            <span class="follow-style">Follow</span>
+                            <span class="unfollow-style">Unfollow</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card_astro">
+                        <div class="astro-img">
+                            <img src="https://d1muf25xaso8hp.cloudfront.net/https%3A%2F%2Fs3.amazonaws.com%2Fappforest_uf%2Ff1628103206226x670460344299477000%2FStacey%2520Head%2520Shot%2520.jpg?w=384&h=387&auto=compress&fit=crop&dpr=1.25"
+                                alt="kundali">
+                            <div class="light-shad"></div>
+                        </div>
+                        <div class="status-section">
+                            <span><i class="fa fa-briefcase" aria-hidden="true"></i></span>
+                            <span>24</span>Year
+                        </div>
+                        <div class="star-ratings">
+                            <span><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <div class="count-rating">8.5</div>
+                            <div class="count-rating newlyaddedastro">New</div>
+                        </div>
+                        <div class="call-status-astrolger">
+                            <a href="#">
+                                <span class="sprite-chat-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-call-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-joincall-astrologer"></span>
+                            </a>
+                            <a href="#">
+                                <span class="sprite-offline-astrologer"></span>
+                            </a>
+                        </div>
+                        <div class="astro-section">
+                            <h5>Poonam</h5>
+                            <p>Psychic-Medium</p>
+                            <div class="ratting">
+                                <div class="language-astrologer">
+                                    <i class="fa fa-language" aria-hidden="true"></i>
+                                    <span>Hindi</span>
+                                    <span>English</span>
+                                    <span>Punjabi</span>
+                                </div>
+                                <div class="skills-astrologer">
+                                    <span>Love</span>
+                                    <span>Marriage</span>
+                                </div>
+                                <div class="price">
+                                    <span><i class="fa fa-inr" aria-hidden="true"></i>
+                                        80<span>/Min</span>
+                                    </span>
+                                    <div class="discount_price">30<span>/Min</span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="follow-section">
+                            <span class="follow-style">Follow</span>
+                            <span class="unfollow-style">Unfollow</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
 
-                <span *ngIf="!list.followed" id="btn-{{list.astrologer_id}}" (click)="follow(list.astrologer_id)" class="follow-style">Follow</span> 
-                <span *ngIf="list.followed" class="unfollow-style" id="btn-{{list.astrologer_id}}"  (click)="unfollow(list.astrologer_id)">Following</span>
-                
-                <!-- <span *ngIf="!list.followed" id="btn-{{list.astrologer_id}}" (click)="follow(list.astrologer_id)" class="follow-style">Follow</span> 
-                <span *ngIf="list.followed" class="unfollow-style" id="btn-{{list.astrologer_id}}"  (click)="unfollow(list.astrologer_id)">Following</span>  -->
-                <!-- <span  (click)="follow()" class="follow-style">{{ list.astrologer_id }}</span> -->
-                <!-- <span *ngIf="list.followed" (click)="unfollow()" class="unfollow-style">Unfollow</span> -->
-                <!-- <span  (click)="unfollow()" class="unfollow-style">{{ followunfollow.astro_id }}</span> -->
-              </div>
-            </div>
-          </li>
-        </ul>
-      <!-- </div> -->
+    </div>
+    <!--container-->
+
+    <!----Free-Card------>
+    <section class="new_banner_2">
+        <div class="container">
+            <app-free-astrology></app-free-astrology>
+        </div>
     </section>
 
-  </div>
-  <!--container-->
-
-  <!----Free-Card------>
-  <section class="new_banner_2">
-    <div class="container">
-      <app-free-astrology></app-free-astrology>
+    <div class="slider-banner">
+        <div class="container heading">
+            <h2>Free Daily Horoscope</h2>
+            <app-slider></app-slider>
+        </div>
     </div>
-  </section>
 
-  <div class="slider-banner">
-    <div class="container heading">
-      <h2>Free Daily Horoscope</h2>
-      <app-slider></app-slider>
+    <div class="articles-section">
+        <app-articles-blog></app-articles-blog>
     </div>
-  </div>
 
-  <div class="articles-section">
-    <app-articles-blog></app-articles-blog>
-  </div>
+    <div class="city-astrologers">
+        <app-find-city-astrologers></app-find-city-astrologers>
+    </div>
 
-  <div class="city-astrologers">
-    <app-find-city-astrologers (category)="categorywiselist($event)"></app-find-city-astrologers>
-  </div>
-
-  <app-faqpage-page></app-faqpage-page>
+    <app-faqpage-page></app-faqpage-page>
 
 </section>
-<!-- </div> -->
 <!--talk_full_cover-->
+
+
+<!--astrologer_filter_Search_screen-->
+<div *ngIf="isOpenpopup" class="filter_screen_bg_color">
+    <div class="filter_search_section">
+      <div class="cover_screen_section">
+        <div class="title-bar">
+            <h5>Filter Multiple Search</h5>
+            <button class="btn-closed"><i class="fa fa-times" aria-hidden="true"></i></button>
+        </div>
+        <div class="filter-popup">
+            <div class="gender">
+                <mat-form-field appearance="fill">
+                    <mat-label>Gender</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="language-port">
+                <mat-form-field appearance="fill">
+                    <mat-label>Language</mat-label>
+                    <mat-select>
+                      <mat-option *ngFor="let language of language" [value]="language">{{language}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="filter-section">
+                <mat-form-field>
+                    <mat-label>Filter</mat-label>
+                    <mat-select multiple>
+                      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="sort-price">
+                <mat-form-field>
+                    <mat-label>Sort Price</mat-label>
+                    <mat-select multiple>
+                      <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <div class="dwn-btn">
+          <a class="reset-btn" ion-button>Reset</a>
+          <a class="apply-btn">Apply</a>
+        </div>
+      </div>
+    </div>
+</div>

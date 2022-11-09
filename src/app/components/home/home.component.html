@@ -10,7 +10,7 @@
                         <span class="po-subtitle">Chat with  <span class="swap"> </span> </span>
                         <span class="po-title">FOR FREE </span>
                     </h1>
-                    <a *ngIf="!IsLoggedIn" class="talk_now_button" (click)="openDialog()">Get Started <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+                    <a class="talk_now_button" href="#">Get Started <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="left_side_offer_icon">
                     <div></div>
@@ -19,6 +19,10 @@
             </div>
         </section>
     </div>
+</section>
+
+<section class="mobile-banner-slider">
+    <app-mobile-banner-slider></app-mobile-banner-slider>
 </section>
 
 <!----Free-Card------>
@@ -44,26 +48,22 @@
         <h2>Your Astrologer is Just 60 Seconds Away. We are Simply Awesome.</h2>
         <div class="full-wehave-section">
             <ul>
-                <li (click)="openDialog()">
+                <li>
                     <span><i class="fa fa-sign-in" aria-hidden="true"></i></span>
                     <p>Signup.</p>
                 </li>
-                <li *ngIf="!IsLoggedIn" (click)="openDialog()">
+                <li>
                     <span><i class="fa fa-google-wallet" aria-hidden="true"></i></span>
                     <p>Recharge Your Wallet.</p>
                 </li>
-                <li *ngIf="IsLoggedIn" (click)="rechargewallet()">
-                    <span><i class="fa fa-google-wallet" aria-hidden="true"></i></span>
-                    <p>Recharge Your Wallet.</p>
-                </li>
-                <!-- <li>
+                <li>
                     <span><i class="fa fa-commenting" aria-hidden="true"></i></span>
                     <p>Instant Chat / Call with Selected Astrologers.</p>
                 </li>
                 <li>
                     <span><i class="fa fa-meh-o" aria-hidden="true"></i></span>
                     <p>Rate & Review your Astrologer.</p>
-                </li> -->
+                </li>
             </ul>
         </div>
     </div>    

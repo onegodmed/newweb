@@ -1,6 +1,6 @@
 
     <ngx-slick-carousel class="carousel"  #slickModal="slick-carousel"  [config]="slideClientsConfig">
-        <div ngxSlickItem *ngFor="let list of testimoniallist.data; let i=index" class="slide">
+        <div ngxSlickItem *ngFor="let slide of slides" class="slide">
             <div class="content-section-cover">
                 <div class="star-ratting-profile">
                     <div class="wrapper">
@@ -19,12 +19,12 @@
                     </div>
                 </div>
                 <div class="clients-text">
-                    <p>{{ list.description }}</p>
+                    <p>{{slide.subtitle}}</p>
                     <div class="clients-profile">
-                        <img src='https://www.onegodmed.com/admin-assets/assets/images/testimonials/{{ list.image }}' alt="" width="100%">
+                        <img src="{{ slide.img }}" alt="" width="100%">
                         <div class="overlap-section">
-                            <h4>{{ list.title }}</h4>
-                            <span>{{ list.designation }}</span>
+                            <h4>{{slide.title}}</h4>
+                            <span>{{slide.designation}}</span>
                         </div>
                     </div>
                 </div>

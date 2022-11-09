@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BloglistService } from "../../services/bloglist.service";
-
 
 @Component({
   selector: 'app-articles-blog',
@@ -10,10 +8,9 @@ import { BloglistService } from "../../services/bloglist.service";
 })
 export class ArticlesBlogComponent implements OnInit {
 
-  constructor(private router: Router, public bloglistService: BloglistService) { }
+  constructor(private router: Router) { }
 
-   ngOnInit(): void {
-    this.bloglistService.bloglist(4);
+  ngOnInit(): void {
   }
 
 }

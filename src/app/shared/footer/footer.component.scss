@@ -5,7 +5,7 @@
 .footer-section{
     width: 100%;
     float: left;
-    padding: 50px 0;
+    padding: 50px 0 25px;
     box-sizing: border-box;
     background: $background_gradient_slider;
     .footer_info{
@@ -80,7 +80,7 @@
         .download_box{
             float: left;
             width: auto;
-            padding-top: 30px;
+            margin: 10px 0 40px;
             ul {
                 float: left;
                 width: 100%;
@@ -103,13 +103,13 @@
     .text-widget {
         float: left;
         width: 100%;
-        margin-bottom: 30px;
+        margin-bottom: 10px;
     }
     .widget-title {
         float: left;
         width: 100%;
         margin-top: 0;
-        margin-bottom: 25px;
+        margin-bottom: 10px;
         color: $footer_text_black_color;
         text-transform: capitalize;
         position: relative;
@@ -163,7 +163,7 @@
     .Contact-section{
         float: left;
         width: 100%;
-        margin: 30px 0;
+        margin: 0 auto;
         ul {
             float: left;
             width: 100%;
@@ -314,3 +314,184 @@
         }
     }
 }
+.mobile-bottom-nav{
+    display: none;
+}
+
+@media only screen  and (max-width: 768px) {
+    .footer-section .widget-title{ font-size: 14px;margin-bottom:0;padding-bottom: 4px; }
+    .copyright_wrapper { display: none; }
+    .text-widget{
+        margin-bottom: 0 !important;
+        .social-media{
+            display: none;
+            margin-top: 0 !important;
+            ul{
+                li{
+                    a{
+                        margin: 4px;
+                        i{            
+                            font-size: 20px;
+                            margin-top: 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .Contact-section{
+            margin: 0;
+            ul{
+                li{
+                    margin-bottom: 0;
+                    a{
+                        font-size: 11px;
+                        line-height: 20px;
+                        float: none;
+                        letter-spacing: 0;
+                        p{
+                            margin-bottom: 0;
+                        }
+                    }
+                    i{
+                        width: 15px;
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+        .payment-process{
+            margin: 10px 0 0;
+        }
+        h4.widget-title.menuitem{
+            
+        }
+    }
+    .footer-section{
+        padding: 10px 0 70px;
+        .footer_info{
+            .footer_newsletter{
+                margin: 10px auto;
+            }
+            p{
+                letter-spacing: 0;
+                margin-bottom: 0;
+                font-size: 12px;
+                line-height: 16px;        
+                text-align: justify;
+            }
+            .download_box{ 
+                margin: 10px 0;
+                width: 100%;
+                text-align: center;
+                ul{
+                    li{
+                        img{
+                            width: 88px;
+                            height: 35px;
+                        }
+                    }
+                }
+            }
+        }
+        .service-consulting{
+            margin-bottom: 20px;
+            ul{
+                li{
+                    width: 50%;
+                    padding-right: 10px;
+                    &:nth-child(2n){
+                        padding-right: 0;
+                    }
+                    a{
+                        font-size: 12px;
+                        line-height: 15px;
+                        letter-spacing: 0;
+                        padding: 10px 0 7px 0;
+                    }
+                }
+            }
+        }
+    }
+    
+.mobile-bottom-nav{
+	position:fixed;
+	bottom:0;
+	left:0;
+	right:0;
+	z-index:1000;
+	will-change:transform;
+	transform: translateZ(0);
+	display:flex;	
+	height:55px;
+    box-shadow: 0 -2px 5px -2px #2b2b27;
+    background: #fff;
+    li.active{
+        color: #fe8901;
+        // background: rgb(255, 247, 237);
+    }
+	&__item{
+		flex-grow:1;
+		text-align:center;
+		font-size:12px;
+		display:flex;
+		flex-direction:column;
+		justify-content:center;
+        color: #333;
+        &:first-child{
+            img{
+                width: 25px;
+                height: 25px;
+            }
+        }
+        &:last-child{
+            img{
+                width: 32px;
+                height: 32px;
+            }
+        }
+        img{
+            width: 30px;
+            height: 30px;
+        }
+        .callicon{
+            background-position: -134px -15px !important;
+            width: 38px;
+            height: 30px;
+            display: inline-block;
+            background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+        }	
+        .chaticon{
+            background-position: -71px -14px !important;
+            width: 40px;
+            height: 30px;
+            display: inline-block;
+            background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
+        }
+	}
+	&_item-content.active{
+		color: #fe8901;
+	}
+	&__item-content{ 
+		display:flex;
+		flex-direction:column;	
+        font-weight: 600;
+        letter-spacing: 1px;
+        align-items: center;
+	}
+    ul{
+        margin: 0;
+        padding: 0;
+        float: left;
+        list-style: none;
+        width: 100%;
+        li{
+            width: 20%;
+            float: left;
+            line-height: 50px;
+            text-align: center;      
+        }
+    }
+}
+
+}
+

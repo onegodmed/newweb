@@ -17,19 +17,99 @@
         <div class="latest-inner-section">
             <h2>Latest</h2>
             <ul>
-                <li *ngFor="let list of bloglistService?.response.data" (click)="forbloginnerpage(list.blog_id)">
+                <li>
                     <span>
-                        <img src='{{ list.photoURL }}' alt="">
+                        <img src="https://www.onegodmed.com/admin-assets/assets/blog-images/Why_isro_used_panchang.png" alt="">
                     </span>
                     <div class="view-post-section">
                         <i class="fa fa-eye" aria-hidden="true"></i>
-                        <span>{{ list.view }}</span>
+                        <span>129</span>
                     </div>
                     <div class="articles-text-box">
-                        <h4>{{ list.heading }}</h4>
+                        <h4>the Personality traits, characteristics, and temperament of </h4>
                         <div class="articles-details-section">
-                            <h6>ONEGODMED</h6>
-                            <div class="post-articles-date"><span>{{ list.date }}</span></div>
+                            <h6>Shiv Kumar</h6>
+                            <div class="post-articles-date"><span>Jun</span> 16 ,2022</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span>
+                        <img src="https://www.onegodmed.com/admin-assets/assets/blog-images/Why_isro_used_panchang.png" alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>1354</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>characteristics,Know the Personality traits, characteristics,“Taurus”</h4>
+                        <div class="articles-details-section">
+                            <h6>Ram Singh</h6>
+                            <div class="post-articles-date"><span>Jun</span> 26 ,2022</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span>
+                        <img src="https://www.onegodmed.com/admin-assets/assets/blog-images/Why_isro_used_panchang.png" alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>1013</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>Know the Personality traits, characteristics, and temperament of “Taurus”</h4>
+                        <div class="articles-details-section">
+                            <h6>R.k</h6>
+                            <div class="post-articles-date"><span>Feb</span> 03 ,2021</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span>
+                        <img src="https://www.onegodmed.com/admin-assets/assets/blog-images/Why_isro_used_panchang.png" alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>129</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>Punswan Sanskar - the Personality traits astro</h4>
+                        <div class="articles-details-section">
+                            <h6>Shiv Kumar</h6>
+                            <div class="post-articles-date"><span>Jun</span> 16 ,2022</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span>
+                        <img src="https://www.onegodmed.com/admin-assets/assets/blog-images/Why_isro_used_panchang.png" alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>1354</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>Know the Personality traits, characteristics.</h4>
+                        <div class="articles-details-section">
+                            <h6>Ram Singh</h6>
+                            <div class="post-articles-date"><span>Jun</span> 26 ,2022</div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <span>
+                        <img src="https://www.onegodmed.com/admin-assets/assets/blog-images/Why_isro_used_panchang.png" alt="">
+                    </span>
+                    <div class="view-post-section">
+                        <i class="fa fa-eye" aria-hidden="true"></i>
+                        <span>1013</span>
+                    </div>
+                    <div class="articles-text-box">
+                        <h4>The Know the Personality traits, characteristics, Asrto</h4>
+                        <div class="articles-details-section">
+                            <h6>R.k</h6>
+                            <div class="post-articles-date"><span>Feb</span> 03 ,2021</div>
                         </div>
                     </div>
                 </li>
@@ -40,7 +120,7 @@
                 <img src="../../assets/images/blog-adds-banner.png">
             </a>
         </div>
-        <!-- <div class="latest-inner-section">
+        <div class="latest-inner-section">
             <ul>
                 <li>
                     <span>
@@ -91,7 +171,7 @@
                     </div>
                 </li>
             </ul>
-        </div> -->
+        </div>
 
         <div class="paginator-blog">
             <mat-paginator [length]="100"

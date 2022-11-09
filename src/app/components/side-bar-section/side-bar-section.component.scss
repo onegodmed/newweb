@@ -126,3 +126,66 @@
         }
     }
 }
+
+
+@media only screen  and (max-width: 768px) {
+    .side_bar{
+        width: 100%;
+        margin-top: 0;
+        padding: 0;
+        border-left: none;
+        h4{
+            font-size: 13px;
+            padding: 3px 10px;
+            margin: 5px 0 10px;
+        }
+        .tranding-post, .update-post{
+            margin: 0 0 5px;
+            padding: 5px 0;
+            border-top: none;
+            ul{
+                li{
+                    margin: 0 10px 5px;
+                    padding-bottom: 5px;
+                    a{
+                        font-size: 11px;
+                        letter-spacing: 0;
+                        padding: 5px 0;
+                    }
+                }
+            }
+        }
+        .adds_sidebar_banner{
+            margin: 5px 0;
+            a{
+                height: 120px;
+                padding: 10px;
+            }
+        }
+        .astrolger_services{
+            .side_bar_section{
+                width: 33.3%;
+                padding: 0 10px;
+                .box_item{
+                    margin-bottom: 15px;
+                    padding: 10px 0;
+                    .icon{
+                        height: 15px;
+                        width: 15px;
+                        margin: 0 auto 7px;
+                        img{
+                            width: 15px;
+                            height: 15px;
+                        }
+                    }
+                    .text{
+                        font-size: 11px;
+                        margin-top: 3px;
+                    }
+                }
+            }
+        }
+    }
+
+
+}

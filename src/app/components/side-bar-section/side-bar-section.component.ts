@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { BloglistService } from "../../services/bloglist.service";
 
 
 @Component({
@@ -10,26 +9,24 @@ import { BloglistService } from "../../services/bloglist.service";
 })
 export class SideBarSectionComponent implements OnInit {
 
-  constructor(private router: Router, public bloglistService: BloglistService) { }
-
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.bloglistService.trendingbloglist(5);
   }
 
-  kundali() {
+  kundali(){
     this.router.navigateByUrl("/kundalipage");
   }
-  matchmaking() {
+  matchmaking(){
     this.router.navigateByUrl("/matchmakingpage");
   }
-  panchang() {
+  panchang(){
     this.router.navigateByUrl("/panchangpage");
   }
-  horoscope() {
+  horoscope(){
     this.router.navigateByUrl("/horoscopepage");
   }
-  numerology() {
+  numerology(){
     this.router.navigateByUrl("/numerologypage");
   }
 
