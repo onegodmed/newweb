@@ -1,9 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { AstrologerlistService } from "../../services/astrologerlist.service";
-import { FollounfollowService } from "../../services/follounfollow.service";
-
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-find-city-astrologers',
@@ -11,15 +6,10 @@ import { FollounfollowService } from "../../services/follounfollow.service";
   styleUrls: ['./find-city-astrologers.component.scss']
 })
 export class FindCityAstrologersComponent implements OnInit {
-  @Output() category: EventEmitter<any> = new EventEmitter<any>();
 
-  constructor(private router: Router, public astrologerlistService: AstrologerlistService) { }
+  constructor() { }
 
   ngOnInit(): void {
-  }
-
-  onclick(categoryfilter: any){
-    this.category.emit(categoryfilter);
   }
 
 }

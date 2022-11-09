@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { Router } from '@angular/router';
-import { TestimonialService } from "../../services/testimonial.service";
 
 
 @Component({
@@ -10,8 +7,6 @@ import { TestimonialService } from "../../services/testimonial.service";
   styleUrls: ['./slider-clients.component.scss']
 })
 export class SliderClientsComponent implements OnInit {
-  testimoniallist: any = [];
-  rating: boolean = false;
 
   slides = [
     {img: "https://www.onegodmed.com/admin-assets/assets/images/testimonials/Rohit1.jpeg" , title: "one tow", designation: "J.Engineer", subtitle: "Very helpful and interesting very talented astrologers .something that can help to know ourselves better." , hadding: "Very helpful and interesting very talented astrologers",},
@@ -24,13 +19,9 @@ export class SliderClientsComponent implements OnInit {
   
   slideClientsConfig : any = null;
 
-  constructor(private router: Router, public testimoniallistService: TestimonialService) { }
+  constructor() { }
 
   ngOnInit(): void {
-
-    this.testimoniallistService.testimonial().subscribe((data: any) => {
-      this.testimoniallist = data;
-    });
 
     this.slideClientsConfig = {
       infinite: true,

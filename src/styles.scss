@@ -190,7 +190,6 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
 }
 
 /*************Clients-Slider****************/
-// .clients_slider .slick-slide{ margin-right: 135px; }
 .clients_slider .slick-list{
   padding: 0 !important;
 }
@@ -544,44 +543,15 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             a{
               text-decoration: none;
               color: #fff;
-              .icon-call{
-                background-position: -134px -14px !important;
+              .sprite-chat-astrologer{
+                background-position: -71px -14px!important;
                 width: 40px;
                 height: 43px;
                 display: inline-block;
                 background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
               }
-              .icon-chat{
-                background-position: -71px -14px !important;
-                width: 40px;
-                height: 43px;
-                display: inline-block;
-                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
-              }
-              .icon-chat-bussy{
-                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
-                background-position: -77px -144px !important;
-                width: 40px;
-                height: 43px;
-                display: inline-block;
-              }
-              .icon-call-bussy{
-                background-position: -139px -144px !important;
-                width: 40px;
-                height: 43px;
-                display: inline-block;
-                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
-              }
-              .icon-chat-offline{
-                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
-                background-position: -75px -83px !important;
-                width: 40px;
-                height: 43px;
-                display: inline-block;
-                background: url(https://images.astroyogi.com/english/images/astrologer_chat_sprite.png) no-repeat;
-              }
-              .icon-call-offline{
-                background-position: -137px -83px !important;
+              .sprite-call-astrologer{
+                background-position: -134px -14px!important;
                 width: 40px;
                 height: 43px;
                 display: inline-block;
@@ -611,9 +581,9 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
           .switch{
             position: absolute;
             top: 1px;
-            right: 4px;
-            height: 20px;
-            width: 25px;        
+            right: 0px;
+            height: 18px;
+            width: 50px;
             transform: rotate(-90deg);
             background: linear-gradient(to right, #fafafa, #fafafa, #fafafa, rgb(255 178 95 / 82%), rgb(23 22 20 / 85%));
             border-bottom-left-radius: 20px;
@@ -630,34 +600,17 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               height: 15px;
               background-color: green;
               border-radius: 50%;
-              top: 50%;
-              left: 45%;
-              position: absolute;
-              transform: translate(-50%,-50%);          
+              display: inline-block;
+              margin-right: 4px;
+              margin-top: 2px;
             }
             .offline{
-              // display: none !important;
               width: 15px;
               margin-right: 4px;
               height: 15px;
               background-color: red;
               border-radius: 50%;
-              top: 50%;
-              left: 45%;
-              position: absolute;
-              transform: translate(-50%,-50%);          
-            }
-            .busy{
-              // display: none !important;
-              width: 15px;
-              margin-right: 4px;
-              height: 15px;
-              background-color: gray;
-              border-radius: 50%;
-              top: 50%;
-              left: 45%;
-              position: absolute;
-              transform: translate(-50%,-50%);          
+              display: inline-block;
             }
           }
           .star-ratings{
@@ -982,7 +935,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             margin-right: 20px;
             border-radius: 5px;
             border: solid 1px #a8afb5;
-            padding: 16px 10px;
+            padding: 10px;
             font-size: 15px;
             background: #ccc;
             font-family: Helvetica;
@@ -1028,152 +981,6 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               outline: none;
             }
           }
-          .dob-section {
-            float: left;
-            width: 48%;
-            padding: 0px 0 10px;
-            margin-right: 20px;
-            outline: none;
-            margin-bottom: 25px;
-            label{
-              width: 100%;
-              float: left;
-              font-size: 13px;
-              color: #000;
-              font-weight: 500;
-              padding-bottom: 10px;
-            }
-            select {
-              float: left;
-              width: 30%;
-              height: 40px;
-              margin-right: 4.5%;
-              border-radius: 3px !important;
-              background: #ccc;
-              padding: 0px 5px 0 8px;
-              font-size: 14px;
-              font-family: "Roboto Mono", monospace;
-              letter-spacing: 1px;
-              color: #000;
-              outline: none;
-              font-weight: 700;
-              text-align: left;
-              border: solid 1px #a8afb5;
-              &:last-child{
-                margin-right: 0 !important;
-              }
-            }
-          }
-          .section-birth-time{
-            float: left;
-            width: 48.5%;
-            padding: 0px 0 10px;
-            outline: none;
-            margin-bottom: 25px;
-            label{
-              width: 100%;
-              float: left;
-              font-size: 13px;
-              color: #000;
-              font-weight: 500;
-              padding-bottom: 10px;
-            }
-            select {
-              float: left;
-              width: 30%;
-              height: 40px;
-              margin-right: 4.5%;
-              border-radius: 3px !important;
-              background: #ccc;
-              padding: 0px 5px 0 8px;
-              font-size: 14px;
-              font-family: "Roboto Mono", monospace;
-              letter-spacing: 1px;
-              color: #000;
-              outline: none;
-              font-weight: 700;
-              text-align: left;
-              border: solid 1px #a8afb5;
-              &:last-child{
-                margin-right: 0 !important;
-              }
-            }
-          }
-          .search-location{
-            float: left;
-            width: 48.5%;
-            padding: 0px 0 10px;
-            outline: none;
-            label{
-              width: 100%;
-              float: left;
-              font-size: 13px;
-              color: #000;
-              font-weight: 500;
-              padding-bottom: 10px;
-            }
-            input{
-              width: 100%;
-              margin-bottom: 0;
-            }
-            ul{
-              padding: 0;
-              margin: 3px 0;
-              list-style: none;
-              float: left;
-              width: 100%;
-              // overflow-y: scroll;
-              height: 100px;
-              li{
-                cursor: pointer;
-                float: left;
-                font-size: 13px;
-                letter-spacing: 1px;
-                font-family: "Roboto Mono", monospace;
-                font-weight: 500;
-                width: 100%;
-                padding: 8px 12px;
-                border-bottom: 0.5px solid #eee;
-                &:last-child{
-                  border-bottom: none;
-                }
-              }
-            }
-          }
-          .gender-section{
-            float: left;
-            width: 48%;
-            padding: 0px 0 10px;
-            outline: none;
-            margin-bottom: 25px;
-            select {
-              float: left;
-              width: 100%;
-              height: 40px;
-              margin-right: 4.5%;
-              border-radius: 3px !important;
-              background: #ccc;
-              padding: 0px 5px 0 8px;
-              font-size: 14px;
-              font-family: "Roboto Mono", monospace;
-              letter-spacing: 1px;
-              color: #000;
-              outline: none;
-              font-weight: 700;
-              text-align: left;
-              border: solid 1px #a8afb5;
-              &:last-child{
-                margin-right: 0 !important;
-              }
-            }
-          }
-          .error-validation {
-            float: left;
-            width: 100%;
-            color: red;
-            font-size: 15px;
-            padding: 10px;
-          }
         }
         .data-save-section{
           width: 80%;
@@ -1209,16 +1016,9 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               margin: auto 10px;
             }
             button.update_edit_profile{
-              // display: none;
+              display: none;
             }
           }
-        }
-        .error-validation {
-          float: left;
-          width: 100%;
-          color: red;
-          font-size: 15px;
-          padding: 10px;
         }
       }
       .myastrologer-table-section{
@@ -1251,23 +1051,6 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             line-height: 40px;
             span{
               float: right;
-            }
-          }
-        }
-        .booking-id-section{
-          width: 100%;
-          float: left;
-          table{
-            width: 100%;
-            tr{
-              font-size: 13px;
-              border: 1px solid #eee;
-              letter-spacing: 2px;
-              font-family: "Roboto Mono", monospace;
-              td, th{
-                padding: 10px;
-                border-right: 1px solid #eee;
-              }
             }
           }
         }
@@ -1706,6 +1489,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
   }
 }
 
+/*************Payment_popup_modal-dialog**************/
 .mat-dialog-container{
   .modal-dialog{
     .modal-content.process_pay{
@@ -1924,79 +1708,100 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
         }
       }
       .successful_payment_popup{
+        display: none;
         background: #ffffff;
         width: 100%;
         float: left;
-        display: none;
         .success_pyment_section {
           animation: scroll 70s linear infinite;
-          background: url("/../../assets/images/lightbackimg.png"), #111111;
-          color: #eee;
-          min-width: 360px;
+          background: url(/../../assets/images/thankback.jpg), #212529;
+          color: #fff;
+          min-width: 500px;
           width: 100%;
           display: flex;
           justify-content: center;
           align-items: center;
+          background-size: cover;
           perspective: 1000px;
           perspective-origin: 50% 50%;
+          .screen_section{
+            padding: 20px 0;
+            text-align: center;
+            background: #ffffffb8;
+            width: 100%;
+            .success_icon_section{
+              margin: 30px auto;
+              max-width: 170px;
+              border: 5px solid green;
+              border-radius: 50%;
+              height: 170px;
+              line-height: 220px;
+              i.fa.fa-check{
+                font-size: 100px;
+                color: green;
+              }
+            }
+            p{
+              font-size: 40px;
+              letter-spacing: 3px;
+              font-family: "Roboto Mono", monospace;
+              line-height: 60px;
+              text-align: center;
+              width: 100%;
+              color: #000;
+              font-weight: 600;
+            }
+            .light-weight-text{
+              font-weight: 500;
+              font-family: "Roboto Mono", monospace;
+              font-size: 20px;
+              line-height: 50px;
+              margin-top: 21px;
+              letter-spacing: 1px;
+                span{
+                    font-weight: 600;
+                    display: block;
+                    margin: 10px auto;
+                }
+            }
+          }
         }
         @keyframes scroll {
           100%{
            background-position:0px -3000px;
          }
-       }
-       
+        } 
        @media (prefers-reduced-motion) {
          .success_pyment_section {
            animation: scroll 200s linear infinite;
          }
        }
-        .screen_section{
-          padding: 20px 0;
-          text-align: center;
-          .success_icon_section{
-            margin: 30px auto;
-            max-width: 170px;
-            border: 5px solid green;
-            border-radius: 50%;
-            height: 170px;
-            line-height: 220px;
-            i.fa.fa-check{
-              font-size: 100px;
-              color: green;
-            }
-          }
-          p{
-            font-size: 40px;
-            letter-spacing: 3px;
-            font-family: "Roboto Mono", monospace;
-            line-height: 60px;
-            text-align: center;
-            width: 100%;
-            color: #000;
-            font-weight: 600;
-          }
-          .light-weight-text{
-            font-weight: 500;
-            font-family: "Roboto Mono", monospace;
-            font-size: 20px;
-            line-height: 50px;
-            margin-top: 21px;
-            letter-spacing: 1px;
-              span{
-                  font-weight: 600;
-                  display: block;
-                  margin: 10px auto;
-              }
-          }
-        }
       }
       .failed_payment_popup{
         display: none;
         height: 100%;
         width: 100%;
-        float: left;
-        margin-bottom: 20px;
+        background-color: hsla(200,40%,30%,.4);
+        background-image:   
+          //url('https://78.media.tumblr.com/cae86e76225a25b17332dfc9cf8b1121/tumblr_p7n8kqHMuD1uy4lhuo1_540.png'), 
+          //url('https://78.media.tumblr.com/66445d34fe560351d474af69ef3f2fb0/tumblr_p7n908E1Jb1uy4lhuo1_1280.png'),
+          url('https://78.media.tumblr.com/8cd0a12b7d9d5ba2c7d26f42c25de99f/tumblr_p7n8kqHMuD1uy4lhuo2_1280.png'),
+          //url('https://78.media.tumblr.com/5ecb41b654f4e8878f59445b948ede50/tumblr_p7n8on19cV1uy4lhuo1_1280.png'),
+          url('https://78.media.tumblr.com/28bd9a2522fbf8981d680317ccbf4282/tumblr_p7n8kqHMuD1uy4lhuo3_1280.png');
+        background-repeat: repeat-x;
+        background-position: 
+          0 20%,
+          0 100%,
+          0 50%,
+          0 100%,
+          0 0;
+        background-size: 
+          2500px,
+          800px,
+          500px 200px,
+          1000px,
+          400px 260px;
+        animation: 50s para infinite linear;
         .screen_section{
           padding: 20px 0;
           text-align: center;
@@ -2052,6 +1857,19 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             transition: 0.5s all ease-in-out;
           }
         }
+        @keyframes para {
+          100% {
+            background-position: 
+              -5000px 20%,
+              -800px 95%,
+              500px 50%,
+              1000px 100%,
+              400px 0;
+            }
+        }
+      }
+      .eraly_payment_popup{
+        display: none;
       }
     }
   }
@@ -2320,7 +2138,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
       }
       .otp-verify-modal-body{
         padding: 0;
-        // display: none;
+        display: none;
         .body-section{
           width: 100%;
           float: left;
@@ -2534,7 +2352,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
       }
       .otp-registration-verify-modal-body{
         padding: 0;
-        // display: none;
+        display: none;
         .body-section{
           width: 100%;
           float: left;
@@ -2748,7 +2566,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
       }
       .login-call-card-modal-body{
         padding: 0;
-        // display: none;
+        display: none;
         .body-section{
           width: 100%;
           float: left;
@@ -2812,6 +2630,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                   img{
                     // width: 70%;
                     // margin: 0 auto;
+                    width: 100%;
                     border-radius: 8px;
                     height: 150px;
                   }
@@ -3133,7 +2952,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
       }
       .otp-call-verify-modal-body{
         padding: 0;
-        // display: none;
+        display: none;
         .body-section{
           width: 100%;
           float: left;
@@ -3197,6 +3016,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                   img{
                     // width: 70%;
                     // margin: 0 auto;
+                    width: 100%;
                     border-radius: 8px;
                     height: 150px;
                   }
@@ -3503,7 +3323,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
       }
       .otp-registration-call-verify-modal-body{
         padding: 0;
-        // display: none;
+        display: none;
         .body-section{
           width: 100%;
           float: left;
@@ -3569,6 +3389,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                   img{
                     // width: 70%;
                     // margin: 0 auto;
+                    width: 100%;
                     border-radius: 8px;
                     height: 150px;
                   }
@@ -3882,13 +3703,12 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
 .mat-dialog-container{
   .modal-dialog{
     .modal-content{
-      border: none;
       .modal-header{
         border-bottom: none;
       }
       .astro-call-card-modal-body{
         padding: 0;
-        // display: none;
+        //display: none;
         .body-section{
           width: 100%;
           float: left;
@@ -4041,7 +3861,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .call-section-popup{
               width: 100%;
               display: inline-block;
-              // display: none;
+              display: none;
               position: absolute;
               left: 48%;
               top: 12%;
@@ -4217,7 +4037,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .waiting-screen-popup{
               width: 420px;
               height: 501px;
-              // display: none;
+              display: none;
               float: left;
               background-color: #80808091;
               margin-left: -20px;
@@ -4470,7 +4290,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }      
             }
             .oops-screen-popup{
-              // display: none;
+              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -4553,7 +4373,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .wallat-balance-popup{
-              // display: none;
+              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -4613,7 +4433,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .tryagain-connect-astro-popup{
-              // display: none;
+              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -4656,7 +4476,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .connect-call-astro-popup{
-              // display: none;
+              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -4719,7 +4539,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .review-astro-popup{
-              // display: none;
+              //display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -4835,7 +4655,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
       }
       .astro-chat-card-modal-body{
         padding: 0;
-        display: block;
+        display: none;
         .body-section{
           width: 100%;
           float: left;
@@ -4988,7 +4808,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .chat-section-popup{
               width: 100%;
               display: inline-block;
-              // display: block;
+              display: none;
               position: absolute;
               left: 48%;
               top: 8%;
@@ -5231,28 +5051,10 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                   outline: none;
                   font-weight: 600;
                 }
-                ul{
-                  list-style: none;
-                  margin: 0;
-                  float: left;
-                  padding: 0;
-                  // border: 0.6px solid #ccc;
-                  width: 100%;
-                  // height: 95px;
-                  // overflow-y: scroll;
-                  li{
-                    width: 100%;
-                    float: left;
-                    padding: 5px 10px;
-                    line-height: 18px;
-                    font-size: 14px;
-                    border-bottom: 0.5px solid #eeeeee;
-                  }
-                }
               }
             }
             .error-validation{
-              // display: none;
+              display: none;
               float: left;
               color: red;
               font-size: 12px;
@@ -5260,7 +5062,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .waiting-screen-popup{
               width: 420px;
               height: 500px;
-              // display: none;
+              display: none;
               float: left;
               background-color: #80808091;
               margin-left: -20px;
@@ -5513,7 +5315,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }           
             }
             .oops-screen-popup{
-              // display: none;
+              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -5596,7 +5398,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .wallat-balance-popup{
-              // display: none;
+              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -5656,7 +5458,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .connect-call-astro-popup{
-              // display: none;
+              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -5771,6 +5573,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                         background-position: 200% center;
                       }
                 }
+
               }
               .btn-section{
                 margin: 0 auto;
@@ -5791,7 +5594,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .review-astro-popup{
-              // display: none;
+              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -5925,6 +5728,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
   }
 }
 
+
 /*************mat-filter**************/
 .multiple-action{
   .mat-form-field{
@@ -5944,6 +5748,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
     color: #212529;
   }
 }
+
 
 /*************mat-paginator**************/
 .paginator-blog{
@@ -6041,20 +5846,1885 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
     background: linear-gradient(42deg, rgb(188 174 152 / 63%) 0%, rgb(221 186 15 / 22%) 50%, rgb(238 148 12 / 38%) 100%);
   }
 
+  .mat-form-field-appearance-fill .mat-form-field-flex{
+    padding: 0px 0 !important;
+    background: transparent;
+  }
+
 /************Mobile-View************/
 
-@media only screen  and (max-width: 600px) {
+@media only screen  and (max-width: 768px) {
   .modal-dialog {
     max-width: 800px !important;
   }
-  .slick-slide img{
-    width: 120px;
-    height: 110px;
-    margin: 0 10px;
+  .slider-banner .slick-slide img{
+    width: 150px !important;
+    height: 130px !important;
   }
-  .slick-slide h4{
+  .slider-banner .slick-slide h4{
     font-size: 12px;
   }
+  .slider-banner .slick-dots{
+    display: none !important;
+  }
+  .slider-banner .slick-slider{
+    margin-bottom: 10px !important;
+  }
+  .slider-banner .slick-initialized .slick-slide .slider-text{
+    width: 150px !important;
+    height: 130px !important;
+    .icon-hover{
+      margin: 15px auto 50px;
+      width: 30%;
+      height: 35%;
+      line-height: 35px;
+      i.fa{
+        font-size: 15px;
+      }
+    }
+    span, p{
+      display: none;
+    }
+  }
+
+  /***mobile-banner-slider****/
+  .mobile-banner-slider .slick-slider .slick-dots{
+    display: none !important;
+  }
+  .mobile-banner-slider .slick-dotted.slick-slider{
+    margin-bottom: 0 !important;
+  }
+  .mobile-banner-slider .slick-slide{
+    margin-bottom: 0 !important;
+    img{
+      width: 240px;
+      height: 135px;
+      margin: 0 10px;
+      border-radius: 5px;
+      /**16*9**/
+    }
+  } 
+
+
+
+  /*Mobile-menu*/
+  .cdk-overlay-connected-position-bounding-box{
+    left: 0 !important;
+    .cdk-overlay-pane{
+      padding-top: 5px;
+      // width: 310px;
+      .mat-menu-panel{
+        width: 100%;
+        max-width: 100%;
+        height: 88vh;
+        border-radius: 0;
+        border: 1px solid rgb(252, 205, 202);
+        background: rgb(255, 247, 237);
+        .mat-menu-content{
+          background: transparent;
+          box-shadow: none;
+        }
+      }
+  
+    }
+  }
+  .mobile_sub_menu{
+    float: left;
+    width: 100%;
+    ul{
+      list-style: none;
+      float: left;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      li{
+        float: left;
+        width: 100%;
+        padding: 10px 15px;
+        border-bottom: 1px solid rgba(215, 141, 12, 0.4784313725);
+        &:last-child{
+          border-bottom: none;
+        }
+        a{
+          text-decoration: none;
+          font-size: 13px;
+          color: #000000;
+          font-family: "Roboto Mono", monospace;
+        }
+      }
+    }
+  }
+  .mobile-media{
+    float: left;
+    width: 100%;
+    text-align: center;
+    bottom: 0;
+    position: absolute;
+    ul{
+      list-style: none;
+      float: left;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      li{
+        display: inline-block;
+        width: auto;
+          a{
+              margin: 4px;   
+              float: left;
+              width: 40px;
+              height: 40px;
+              line-height: 40px;
+              border-radius: 3px;
+              text-align: center;
+              color: #ffffff;
+              transition: all 0.5s;
+              i{            
+                  font-size: 20px;
+                  margin-top: 11px;
+              }
+          }
+          a.facebook-back{
+            background: #45629f;
+          }
+          a.insta-back{
+            background: #ff4800;
+          }
+          a.youtube-back{
+            background: #c61d23;
+          }
+          a.twitter-back{
+            background: #5eb2ef;
+          }
+          a.linkedin-back{
+            background: #0083bb;
+          }
+      }
+    }
+  }
+
+  /**slider**/
+  .clients_slider{
+    min-height: auto !important;
+    background: #e68b1a54 !important;
+    padding: 0 !important;
+  }
+  .clients_slider .Clients{
+    padding: 0 !important;
+    .clientslider-container{
+      padding: 0 10px 20px;
+      border-color: transparent;
+    }
+    .slick-dotted.slick-slider{
+      margin-bottom: 0px;
+    }
+  }
+  .clients_slider .slick-slide .clients-text{
+    display: inline-grid;
+    margin-top: -26px;
+    background: #eeeeeec2;
+  }
+  .clients_slider .slick-slide .clients-text p{
+    font-size: 12px;
+    line-height: 16px;
+    margin: 10px 20px 10px;
+    min-height: 70px;
+    order: 2;
+  }
+  .clients_slider .slick-slide .clients-text .clients-profile{
+    width: 100%;
+    order: 1;
+    img{
+      width: 45%;
+      height: 100px;
+      margin: 0;
+      border-radius: 0;
+    }
+  }
+  .clients_slider .slick-slide .clients-text .clients-profile .overlap-section{
+    width: 55%;
+    padding: 0 5px;
+    bottom: auto;
+    top: 18%;
+    right: 0;
+    height: 60px;
+    h4{
+      // margin: 10px 0 0;
+    }
+  }
+  .clients_slider .slick-dots {
+    bottom: -17px;
+  }
+  .clients_slider .slick-dots li{
+    width: 15px;
+  }
+  .clients_slider .slick-dots li button:before{
+    height: 3px;
+    width: 15px;
+    margin: 0 10px;
+  }
+  .clients_slider .slick-dots li.slick-active button:before{
+    width: 27px;
+  }
+  .clients_slider .slick-slide .content-section-cover .star-ratting-profile{
+    padding-top: 20px;
+  }
+  .clients_slider .slick-slide .clients-text:before{
+    width: 14px;
+    height: 14px;
+    left: 6px;
+    bottom: 35%;
+    top: auto;
+  }
+  .clients_slider .slick-slide .clients-text:after{
+    width: 14px;
+    height: 14px;
+    right: 6px;
+    bottom: 35%;
+    top: auto;
+  }
+  .clients_slider .slick-slide .content-section-cover .star-ratting-profile .wrapper label{
+    width: 20px;
+  }
+  .clients_slider .slick-slide .content-section-cover .star-ratting-profile .wrapper label:before{
+    font-size: 20px;
+  }
+  .clients_slider .slick-slide .content-section-cover .star-ratting-profile .wrapper label:after{
+    font-size: 20px;
+  }
+  .clients_slider .slick-slide .content-section-cover .star-ratting-profile .wrapper{
+    top: 4px;
+    left: 72%;
+  }
+
+  /*****Selectior*****/
+  .multiple-action .mat-form-field {
+    font-size: 12px;
+    width: 100%;
+  }
+  .mat-form-field-appearance-legacy .mat-form-field-infix{
+    height: 40px;
+  }
+  .faq-main-page .mat-expansion-panel .mat-expansion-panel-header {
+    font-size: 12px;
+  }
+
+
+  /***mat-tab****/
+  .tabs-astrolgers .mat-tab-group .mat-tab-label-container .mat-tab-label, .tabs-astrolgers .mat-tab-group .mat-tab-label-container .mat-tab-link{
+    height: 25px !important;
+    margin: 0;
+    padding: 0;
+  }
+  .tabs-astrolgers{
+    h4{
+      font-size: 16px !important;
+      margin: 0px 10px !important;
+    }
+    .mat-tab-group .mat-tab-label-container .mat-tab-labels{
+      margin: 15px 0;
+      .mat-tab-label-content{
+        font-size: 12px;
+        padding: 10px;
+      }
+    }
+    .mat-tab-body-content{
+      overflow: hidden;
+    }
+    .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{
+      display: none;
+    }
+    .mat-tab-group .mat-tab-body-wrapper .astrolger-section .card-box{
+      width: 100%;
+      display: inline-block;
+      min-height: 130px;
+      padding: 5px 0px 35px;
+      border-radius: 0;
+      .astro-img{
+        width: 30%;
+        img{
+          height: auto;
+          border-radius: 0;
+        }
+        .light-shad{
+          display: none;
+        }
+      }
+      .switch{
+        background: #fff;
+        right: auto;
+        width: 20px;
+        left: 2px;
+        height: 16%;
+        span{
+          width: 10px !important;
+          height: 10px !important;
+          margin-right: 2px !important;
+        }
+      }
+      .status-section{
+        right: auto;
+        left: 5px;
+        top: auto;
+        bottom: 0;
+        color: #000;
+        font-size: 10px;
+        padding: 1px 5px;
+        border-radius: 3px;
+        border: 1px solid rgb(252, 205, 202);
+        background: rgb(255, 247, 237);
+        span{
+          i{
+            font-size: 12px;
+            color: #000;
+            margin-top: 4px;
+          }
+        }
+      }
+      .star-ratings{
+        top: auto;
+        left: 0;
+        padding: 2px 5px;
+        background: #000;
+        bottom: 30px;
+        span{
+          i{
+            font-size: 13px;
+          }
+        }
+        .count-rating, .count-rating{
+          font-size: 12px;           
+          line-height: 16px;
+        }
+      }
+      .astro-section{
+        float: left;
+        width: 70%;
+        padding: 0 10px;
+        h5{
+          font-size: 13px;
+          line-height: 15px;
+          margin-bottom: 4px;
+          &::after{
+            width: 12px;
+            height: 12px;
+            margin-left: 5px;
+            margin-top: 1px;
+          }
+        }
+        p{
+          font-size: 11px;
+          margin-bottom: 2px;
+          line-height: 15px;
+        }
+        .ratting{
+          width: 100%;
+          .language-astrologer{
+            font-size: 10px;
+            .fa{
+              font-size: 12px;
+            }
+            span{
+              font-size: 10px;
+              margin: 0 4px;
+            }
+          }
+          .skills-astrologer{
+            font-size: 10px;
+            line-height: 12px;
+            span{
+              font-size: 10px;
+              margin: 0 4px;
+            }
+          }
+          .price{
+            font-size: 11px;
+            margin-top: 0px;
+          }
+        }
+      }
+      .call-status-astrolger{
+        bottom: 0;
+      }
+      .follow-section{
+        z-index: 99 !important;
+        top: -14px;
+        right: 0px;
+        left: auto;
+        bottom: auto;
+        span{
+          font-size: 11px;
+          font-weight: 500;
+          padding: 2px 5px;
+          border-radius: 4px;
+        }
+      }
+    }
+  }
+
+  /*****astrologyer-mat-tab****/
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{
+    display: none;
+  }
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-label-container .mat-tab-labels{
+    margin: 0;
+    display: inline-block;
+  }
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-label-container .mat-tab-label, .tabs_vedic_astrolgers .mat-tab-group .mat-tab-label-container .mat-tab-link{
+    width: 32%;
+    height: auto !important;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    padding: 5px 10px !important;
+    &:nth-child(3n){
+      margin-right: 0;
+    }
+  }
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-label-container .mat-tab-labels .mat-tab-label-content img{
+    margin: 2px auto;
+    width: 18px;
+  }
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-label-container .mat-tab-labels .mat-tab-label-content{
+    font-size: 12px;
+    font-weight: 700;
+  }
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-body-wrapper .vedic_astrolger-section .astrology_vedic_img img{
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-body-wrapper .vedic_astrolger-section .astrology_vedic_text .backcolor-astrogy{
+    margin: 10px 0;
+    padding: 0 10px;
+    border-radius: 0;
+    p{
+      letter-spacing: 0;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: justify;
+      padding: 5px;
+    }
+  }
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-body-wrapper .vedic_astrolger-section .astrology_vedic_text p{
+    font-size: 13px;
+    letter-spacing: 0.1px;
+    text-align: justify;
+    line-height: 17px;
+    margin-bottom: 5px;
+  }
+  .tabs_vedic_astrolgers .mat-tab-group .mat-tab-body-wrapper .vedic_astrolger-section .astrology_vedic_text .btn-vedic{
+    margin: 10px auto;
+    text-align: center;
+    width: 100%;
+    a{
+      font-size: 15px;
+      height: 35px;
+      line-height: 40px;
+    }
+  }
+  
+  /******user-profile-section*****/
+  .user_profile_update{
+    padding-top: 0;
+    h2{
+      font-size: 16px !important;
+      margin: 0px 10px !important;
+    }
+    .mat-tab-group .mat-tab-body-wrapper .profile-data-section, .update-user-section, .booking_astrolger-section, .wallet_history-section, .vedic_astrolger-section, .myastrologer-table-section{
+      h3{
+        font-size: 15px !important;
+        margin: 10px 0;
+        line-height: 20px;
+      }
+    }
+  }
+  .user_profile_update .mat-tab-header-pagination-controls-enabled .mat-tab-header-pagination{
+    display: none;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-label-container .mat-tab-labels{
+    margin: 15px 0;
+    display: inline-block;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-label-container .mat-tab-label, .user_profile_update .mat-tab-group .mat-tab-label-container .mat-tab-link{
+    height: 40px !important;
+    margin: 1%;
+    padding: 0 10px;
+    width: 48%;
+    border: 1px solid #eee;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-label-container .mat-tab-labels .mat-tab-label-content{
+    font-size: 13px;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .profile-data-section .deshboard_bg_color{
+    margin-bottom: 20px;
+    min-height: auto;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .profile-data-section .deshboard_bg_color .imgcat{
+    height: 110px;
+    width: 80px;
+    bottom: 2px;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .profile-data-section .deshboard_bg_color .cat{
+    height: 7px;
+    width: 14px;
+    right: 32px;
+    top: 19%;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .update-user-section .edit_section_user input{
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .update-user-section .edit_section_user textarea{
+    width: 100%;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .update-user-section .data-save-section, .user_profile_update .mat-tab-group .mat-tab-body-wrapper .update-user-section .edit_section_user .edit_custom_file{
+    width: 100%;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .update-user-section .edit_section_user .Language_section{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .update-user-section .data-save-section .profile-handle-btn{
+    button{
+      font-size: 10px;
+      padding: 8px 10px;
+    }
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .wallet_history-section .wallet-amounts{
+    width: 45%;
+    display: none;
+    p{
+      font-size: 8px;
+    line-height: 15px;
+    }
+    .amouts-lable{
+      bottom: -4px;
+      left: 40%;
+      font-size: 12px;
+      i.fa.fa-inr{
+        margin: 0 2px;
+      }
+    }
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .wallet_history-section .recharge-btn{
+    margin: -40px auto 20px;
+    button{
+      height: 36px;
+      font-size: 13px;
+      padding: 0 15px;
+    }
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .wallet_history-section .scroll-section table tr th{
+    font-size: 12px;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .wallet_history-section .scroll-section table tr td{
+    font-size: 10px;
+    padding: 3px 5px;
+  }
+  .user_profile_update .mat-tab-group .mat-tab-body-wrapper .wallet_history-section .scroll-section{
+    height: auto;
+  }
+  .myastrologer-table-section{
+    .chat_card{
+      margin-top: 5px !important;
+      ul{
+        li{
+          width: 100% !important;
+        }
+      }
+    }
+  } 
+
+  /******login/call-pop-up******/
+  .cdk-overlay-pane{
+    max-width: 310px !important;
+    .mat-dialog-container{
+      border-radius: 6px !important;
+      .modal-dialog .modal-content{
+        width: auto;
+        .login-modal-body{  
+          display: none;
+          .left-side-img{
+            // display: none;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            height: 400px;
+            img{
+              filter: blur(5px);
+              -webkit-filter: blur(5px);
+              display: none;
+            }
+            .topup-namste{
+              top: 5%;
+              font-size: 30px;
+              background-image: linear-gradient(-225deg, #ffa113 0%, rgb(3, 245, 80) 29%, #d01446 67%, #000000 100%);
+              background-size: auto auto;
+              background-clip: border-box;
+              background-size: 200% auto;
+              color: #000000;
+              background-clip: text;
+              text-fill-color: transparent;
+              -webkit-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              animation: textclip 2s linear infinite;
+            }
+          }
+          .right-side-cover{
+            width: 100%;
+            .from-section{
+              width: 90%;
+              h3{
+                margin-bottom: 15px;
+              }
+              .check-login-signup{
+                font-size: 12px;
+                margin-bottom: 10px;
+              }
+              .country-code-section input{
+                margin-bottom: 0;
+              }
+              button{
+                font-size: 15px;
+                height: 34px;
+                width: 150px;
+              }
+              p{
+                font-size: 12px;
+                a{
+                  font-size: 12px;
+                }
+              }
+            } 
+          }
+        }
+        .otp-verify-modal-body{
+          .left-side-img{
+            // display: none;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            height: 400px;
+            img{
+              filter: blur(5px);
+              -webkit-filter: blur(5px);
+              display: none;
+            }
+          }
+          .right-side-cover{
+            width: 100%;
+            .from-section{
+              width: 90%;
+              top: 0;
+              .check-login-signup{
+                font-size: 12px;
+                margin-bottom: 10px;
+              }
+              .massage-otp-recived{
+                text-align: center;
+                letter-spacing: 0;
+                width: 100%;
+                font-size: 12px;
+              }
+              .country-code-section input{
+                margin-bottom: 0;
+              }
+              button{
+                font-size: 15px !important;
+                height: 34px;
+                width: 150px;
+                margin-bottom: 10px !important;
+                background: linear-gradient(to right, #ffeb6878, #fa88194f, #fa881940, #ffb25f61, #ffb25fa8) !important;
+              }
+              p{
+                font-size: 12px;
+                a{
+                  font-size: 12px;
+                }
+              }
+            } 
+          }
+        }
+        .otp-registration-verify-modal-body{
+          .left-side-img{
+            display: none;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            height: 400px;
+            img{
+              filter: blur(5px);
+              -webkit-filter: blur(5px);
+              height: auto;
+              width: 100%;
+            }
+          }
+          .right-side-cover{
+            width: 100%;
+            z-index: 9;
+            .from-section{
+              width: 90%;
+              .check-login-signup{
+                font-size: 12px;
+                margin-bottom: 10px;
+              }
+              input{
+                margin-bottom: 10px;
+              }
+              .massage-otp-recived{
+                text-align: center;
+                letter-spacing: 0;
+                width: 100%;
+                font-size: 12px;
+              }
+              .country-code-section input{
+                margin-bottom: 0;
+              }
+              button{
+                font-size: 15px !important;
+                height: 34px;
+                width: 150px;
+                margin-bottom: 10px !important;
+                background: linear-gradient(to right, #ffeb6878, #fa88194f, #fa881940, #ffb25f61, #ffb25fa8) !important;
+              }
+              p{
+                font-size: 12px;
+                margin-top: 10px;
+                a{
+                  font-size: 12px;
+                }
+              }
+            } 
+          }
+        }
+        .login-call-card-modal-body{
+          .left-side-img{
+            width: 100%;
+            height: 145px;
+            .card-box{
+              width: 100%;
+              left: 0;
+              padding: 0px 8px;
+              background-color: transparent;
+              box-shadow: none;
+              border-radius: 0;
+              border-bottom: 1px solid #eee;
+              h6{
+                font-size: 15px;
+                margin-bottom: 6px;
+              }
+              .astro-img{
+                width: 40%;
+                .backimg-border{
+                  height: 80px;
+                  float: left;
+                  width: 80%;
+                  padding: 20px 0px 0 26px;
+                  img{
+                    width: 60px;
+                    border-radius: 3px;
+                    height: 60px;                
+                  }
+                }
+              }
+              .astro-section{           
+                width: 60%;
+                padding: 10px 0 0;
+                h5{
+                  font-size: 15px;
+                  line-height: 18px;
+                }
+                p{
+                  font-size: 12px;
+                  line-height: 15px;
+                  letter-spacing: 0;
+                  margin-bottom: 5px;
+                }
+                .ratting{
+                  background: transparent;
+                  padding: 3px;
+                  border-radius: 1px;
+                  box-shadow: none;
+                  .price{
+                    font-size: 12px;
+                  }
+                }
+              }
+              .cover-section-rating-exp{
+                margin: 4px 0 0;
+                padding: 0 10px;
+                .status-section{
+                  font-size: 10px;
+                  span{
+                    font-size: 12px;
+                    i{
+                      margin-top: 4px;
+                      font-size: 12px;
+                    }
+                  }
+                }
+                .star-ratings{        
+                  line-height: 16px;
+                  padding: 0px 5px;
+                  span{
+                    margin-right: 2px;
+                    i{
+                      font-size: 13px;
+                    }
+                  }
+                  .count-rating{
+                    font-size: 12px;
+                    font-weight: 700;
+                  }
+                }
+              }
+            }
+          }
+          .right-side-cover{
+            width: 100%;
+            height: 300px;
+            .from-section{
+              width: 90%;
+              top: 5%;
+              h3{
+                margin-bottom: 10px;
+                font-size: 20px;
+              }
+              .check-login-signup{
+                font-size: 12px;
+                margin-bottom: 10px;
+              }
+              .country-code-section input{
+                margin-bottom: 0;
+              }
+              button{
+                font-size: 15px;
+                height: 34px;
+                width: 150px;
+              }
+              p{
+                font-size: 12px;
+                a{
+                  font-size: 12px;
+                }
+              }
+            } 
+          }
+        }
+        .otp-call-verify-modal-body{
+          .left-side-img{
+            width: 100%;
+            height: 145px;
+            .card-box{
+              width: 100%;
+              left: 0;
+              padding: 0px 8px;
+              background-color: transparent;
+              box-shadow: none;
+              border-radius: 0;
+              border-bottom: 1px solid #eee;
+              h6{
+                font-size: 15px;
+                margin-bottom: 6px;
+              }
+              .astro-img{
+                width: 40%;
+                .backimg-border{
+                  height: 80px;
+                  float: left;
+                  width: 80%;
+                  padding: 20px 0px 0 26px;
+                  img{
+                    width: 60px;
+                    border-radius: 3px;
+                    height: 60px;                
+                  }
+                }
+              }
+              .astro-section{           
+                width: 60%;
+                padding: 10px 0 0;
+                h5{
+                  font-size: 15px;
+                  line-height: 18px;
+                }
+                p{
+                  font-size: 12px;
+                  line-height: 15px;
+                  letter-spacing: 0;
+                  margin-bottom: 5px;
+                }
+                .ratting{
+                  background: transparent;
+                  padding: 3px;
+                  border-radius: 1px;
+                  box-shadow: none;
+                  .price{
+                    font-size: 12px;
+                  }
+                }
+              }
+              .cover-section-rating-exp{
+                margin: 4px 0 0;
+                padding: 0 10px;
+                .status-section{
+                  font-size: 10px;
+                  span{
+                    font-size: 12px;
+                    i{
+                      margin-top: 4px;
+                      font-size: 12px;
+                    }
+                  }
+                }
+                .star-ratings{        
+                  line-height: 16px;
+                  padding: 0px 5px;
+                  span{
+                    margin-right: 2px;
+                    i{
+                      font-size: 13px;
+                    }
+                  }
+                  .count-rating{
+                    font-size: 12px;
+                    font-weight: 700;
+                  }
+                }
+              }
+            }
+          }
+          .right-side-cover{
+            width: 100%;
+            height: 300px;
+            .from-section{
+              width: 90%;
+              top: 0;
+              .check-login-signup{
+                font-size: 12px;
+                margin-bottom: 10px;
+              }
+              .massage-otp-recived{
+                text-align: center;
+                letter-spacing: 0;
+                width: 100%;
+                font-size: 12px;
+              }
+              .country-code-section input{
+                margin-bottom: 0;
+              }
+              .otpimg{
+                max-width: 50%;
+              }
+              h4{
+                margin-bottom: 0;
+                font-size: 14px;
+              }
+              button{
+                font-size: 15px !important;
+                height: 34px;
+                width: 150px;
+                margin-bottom: 10px !important;
+                background: linear-gradient(to right, #ffeb6878, #fa88194f, #fa881940, #ffb25f61, #ffb25fa8) !important;
+              }
+              p{
+                margin: 5px 0;
+                font-size: 12px;
+                a{
+                  font-size: 12px !important
+                }
+              }
+              .timer{
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        .otp-registration-call-verify-modal-body{
+          display: block;
+          .body-section{
+            display: flex; 
+            flex-direction: column;
+            .left-side-img{
+              width: 100%;
+              height: 145px;
+              .card-box{
+                width: 100%;
+                left: 0;
+                padding: 0px 8px;
+                background-color: transparent;
+                box-shadow: none;
+                border-radius: 0;
+                border-bottom: 1px solid #eee;
+                h6{
+                  font-size: 15px;
+                  margin-bottom: 6px;
+                }
+                .astro-img{
+                  width: 40%;
+                  .backimg-border{
+                    height: 80px;
+                    float: left;
+                    width: 80%;
+                    padding: 20px 0px 0 26px;
+                    img{
+                      width: 60px;
+                      border-radius: 3px;
+                      height: 60px;                
+                    }
+                  }
+                }
+                .astro-section{           
+                  width: 60%;
+                  padding: 10px 0 0;
+                  h5{
+                    font-size: 15px;
+                    line-height: 18px;
+                  }
+                  p{
+                    font-size: 12px;
+                    line-height: 15px;
+                    letter-spacing: 0;
+                    margin-bottom: 5px;
+                  }
+                  .ratting{
+                    background: transparent;
+                    padding: 3px;
+                    border-radius: 1px;
+                    box-shadow: none;
+                    .price{
+                      font-size: 12px;
+                    }
+                  }
+                }
+                .cover-section-rating-exp{
+                  margin: 4px 0 0;
+                  padding: 0 10px;
+                  .status-section{
+                    font-size: 10px;
+                    span{
+                      font-size: 12px;
+                      i{
+                        margin-top: 4px;
+                        font-size: 12px;
+                      }
+                    }
+                  }
+                  .star-ratings{        
+                    line-height: 16px;
+                    padding: 0px 5px;
+                    span{
+                      margin-right: 2px;
+                      i{
+                        font-size: 13px;
+                      }
+                    }
+                    .count-rating{
+                      font-size: 12px;
+                      font-weight: 700;
+                    }
+                  }
+                }
+              }
+            }
+            .right-side-cover{
+              width: 100%;
+              height: 300px;
+              order: 1;
+              .from-section{
+                width: 90%;
+                top: 3%;
+                h4{
+                  font-size: 13px;
+                  margin-bottom: 0;
+                }
+                .check-login-signup{
+                  font-size: 12px;
+                  margin-bottom: 10px;
+                }
+                .otp-input-section{
+                  margin-bottom: 0;
+                }
+                input{
+                  margin-bottom: 8px;
+                }
+                .massage-otp-recived{
+                  text-align: center;
+                  letter-spacing: 0;
+                  width: 100%;
+                  font-size: 12px;
+                }
+                .country-code-section input{
+                  margin-bottom: 0;
+                }
+                button{
+                  font-size: 15px !important;
+                  height: 34px;
+                  width: 150px;
+                  margin-bottom: 5px !important;
+                  background: linear-gradient(to right, #ffeb6878, #fa88194f, #fa881940, #ffb25f61, #ffb25fa8) !important;
+                }
+                p{
+                  font-size: 12px;
+                  margin: 2px 0;
+                  a{
+                    font-size: 12px;
+                  }
+                }
+                .timer{
+                  margin: 2px auto;
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+        /*********call/chat*********/
+        .astro-call-card-modal-body{
+          .left-side-img{
+            width: 100%;
+            height: 122px;
+            .astrologyer-call-card-box{
+              width: 100%;
+              left: 0;
+              padding: 0px 8px;
+              background-color: transparent;
+              box-shadow: none;
+              border-radius: 0;
+              border-bottom: 1px solid #eee;
+              h3{
+                font-size: 15px;
+                line-height: 18px;
+                width: 60%;
+                float: none;
+                display: inline-block;
+                margin-bottom: 0;
+                margin-top: 20px;
+                &:after{
+                  margin-left: 4px;
+                  margin-top: 2px;
+                  width: 15px;
+                  height: 15px;
+                }
+              }
+              .astro-img{
+                width: 40%;
+                .backimg-border{
+                  height: 80px;
+                  float: left;
+                  width: 80%;
+                  padding: 20px 0px 0 26px;
+                  img{
+                    width: 60px;
+                    border-radius: 3px;
+                    height: 60px;                
+                  }
+                }
+              }
+              .astro-section{           
+                width: 60%;
+                padding: 0px 0 0;
+                h5{
+                  font-size: 15px;
+                  line-height: 18px;
+                }
+                p{
+                  font-size: 12px;
+                  line-height: 15px;
+                  letter-spacing: 0;
+                  margin-bottom: 5px;
+                }
+                .ratting{
+                  background: transparent;
+                  padding: 3px;
+                  border-radius: 1px;
+                  box-shadow: none;
+                  .price{
+                    font-size: 12px;
+                  }
+                }
+              }
+              .cover-section-rating-exp{
+                margin: 4px 0 0;
+                padding: 0 10px;
+                .status-section{
+                  font-size: 10px;
+                  span{
+                    font-size: 12px;
+                    i{
+                      margin-top: 4px;
+                      font-size: 12px;
+                    }
+                  }
+                }
+                .star-ratings{        
+                  line-height: 16px;
+                  padding: 0px 5px;
+                  span{
+                    margin-right: 2px;
+                    i{
+                      font-size: 13px;
+                    }
+                  }
+                  .count-rating{
+                    font-size: 12px;
+                    font-weight: 700;
+                  }
+                }
+              }
+            }
+          }
+          .right-side-cover{
+            width: 100%;
+            height: 300px;
+            .call-section-popup{
+              width: 95%;
+              left: 50%;
+              top: 6%;
+              h6{
+                font-size: 13px;
+                line-height: 15px;
+                span{
+                  font-size: 12px;
+                }
+              }
+              .charge-per-minute, .available-balance, .maximum-call-duration{
+                font-size: 12px;
+                line-height: 15px;
+                padding: 5px 0;
+              }
+              .getcallfrom, .getcallon{
+                font-size: 10px;
+                margin-bottom: 10px;
+                width: 100%;
+              }
+              button{
+                font-size: 14px;
+                height: 30px;
+                width: 100%;
+              }
+            }
+            .waiting-screen-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              .waiting-text{
+                font-size: 15px;
+                line-height: 24px;     
+                padding: 10% 15px 25px;
+              }
+              .wait-img{
+                padding-top: 0;
+                .spinner{
+                  width: 40px;
+                  height: 40px;
+                  margin: 5px;
+                  &:before{
+                    width: 30px;
+                    height: 30px;
+                  }
+                  &:after{
+                    width: 40px;
+                    height: 40px;
+                  }
+                }
+                .spinner__1{
+                  &:after{
+                    top: -1px;
+                    left: 1px;
+                  }
+                  &:before{
+                    top: 10px;
+                    left: 11px;
+                    height: 20px;
+                    width: 20px;
+                  }
+                }
+                .spinner__3{
+                  &:before{
+                    top: 8px;
+                    height: 25px;
+                    width: 25px;
+                  }
+                  &:after{
+                    top: 8px;
+                    left: 0px;
+                    height: 25px;
+                    width: 25px;
+                  }
+                }
+              }
+              .count-dwn-time{
+                font-size: 12px;
+                width: 90%;
+                padding: 20px 0 0px;
+              }
+            }
+            .oops-screen-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              padding-top: 2%;
+              .oops-img{
+                h1{
+                  line-height: 50px;
+                  font-size: 45px;
+                }
+                img{
+                  width: 80px;
+                }
+              }
+              .oops-text{
+                font-size: 12px;
+                padding: 10px 0;
+                width: 98%;
+              }
+              .btn-section{
+                button{
+                  font-size: 12px;
+                  margin: 20px 5px;
+                  height: 35px;
+                }
+              }
+            }
+            .wallat-balance-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              .wallat-text{
+                font-size: 12px;
+                padding: 5px 0 0;
+                width: 98%;
+              }
+              p{
+                font-size: 13px;
+                padding: 10px 0;
+                margin: 0 auto 5px;
+              }
+              .btn-section{
+                button{
+                  font-size: 12px;
+                  margin: 20px 5px;
+                  height: 35px;
+                }
+              }
+            }
+            .tryagain-connect-astro-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              .connect-text{
+                font-size: 14px;
+                line-height: 30px;
+                padding: 20px 0 10px;
+                width: 90%;
+              }
+              .btn-section{
+                button{
+                  font-size: 12px;
+                  margin: 20px 5px;
+                  height: 35px;
+                }
+              }
+            }
+            .connect-call-astro-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              padding-top: 10%;
+              .connect-img{
+                width: 45%;
+                &:after{
+                  width: 60px;
+                  height: 75px;
+                }
+              }
+              .connect-text{
+                font-size: 15px;
+                line-height: 22px;
+                width: 98%;
+              }
+            }
+            .review-astro-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              padding-top: 4%;
+              background-color: transparent;
+              .ratingreview_screen_section{
+                width: 95%;
+                padding: 5px 4% 10px;
+                .user_name{
+                  font-size: 14px;
+                  margin-bottom: 0;
+                }
+                .astrology_section{
+                  margin-top: 0px;
+                  .user_icon{
+                    img{
+                      width: 50px;
+                    }
+                  }
+                  p{
+                    font-size: 14px;
+                  }
+                  .light-weight-text{
+                    font-size: 13px;
+                    margin-bottom: 0;
+                  }
+                }
+                .stars{
+                  margin-bottom: 3px;
+                  .fa.fa-star.checked, .fa.fa-star{
+                    font-size: 15px;
+                  }
+                }
+                textarea{
+                  margin: 2px auto 5px;
+                }
+                .btn-section{
+                  button{
+                    font-size: 12px;
+                    margin: 0 5px;
+                    height: 30px;
+                    width: 95%;
+                    line-height: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        .astro-chat-card-modal-body{
+          .left-side-img{
+            width: 100%;
+            height: 122px;
+            .astrologyer-call-card-box{
+              width: 100%;
+              left: 0;
+              padding: 0px 8px;
+              background-color: transparent;
+              box-shadow: none;
+              border-radius: 0;
+              border-bottom: 1px solid #eee;
+              h3{
+                font-size: 15px;
+                line-height: 18px;
+                width: 60%;
+                float: none;
+                display: inline-block;
+                margin-bottom: 0;
+                margin-top: 20px;
+                &:after{
+                  margin-left: 4px;
+                  margin-top: 2px;
+                  width: 15px;
+                  height: 15px;
+                }
+              }
+              .astro-img{
+                width: 40%;
+                .backimg-border{
+                  height: 80px;
+                  float: left;
+                  width: 80%;
+                  padding: 20px 0px 0 26px;
+                  img{
+                    width: 60px;
+                    border-radius: 3px;
+                    height: 60px;                
+                  }
+                }
+              }
+              .astro-section{           
+                width: 60%;
+                padding: 0px 0 0;
+                h5{
+                  font-size: 15px;
+                  line-height: 18px;
+                }
+                p{
+                  font-size: 12px;
+                  line-height: 15px;
+                  letter-spacing: 0;
+                  margin-bottom: 5px;
+                }
+                .ratting{
+                  background: transparent;
+                  padding: 3px;
+                  border-radius: 1px;
+                  box-shadow: none;
+                  .price{
+                    font-size: 12px;
+                  }
+                }
+              }
+              .cover-section-rating-exp{
+                margin: 4px 0 0;
+                padding: 0 10px;
+                .status-section{
+                  font-size: 10px;
+                  span{
+                    font-size: 12px;
+                    i{
+                      margin-top: 4px;
+                      font-size: 12px;
+                    }
+                  }
+                }
+                .star-ratings{        
+                  line-height: 16px;
+                  padding: 0px 5px;
+                  span{
+                    margin-right: 2px;
+                    i{
+                      font-size: 13px;
+                    }
+                  }
+                  .count-rating{
+                    font-size: 12px;
+                    font-weight: 700;
+                  }
+                }
+              }
+            }
+          }
+          .right-side-cover{
+            width: 100%;
+            height: 300px;
+            .chat-section-popup{
+              width: 95%;
+              left: 50%;
+              top: 0%;
+              .charge-per-minute, .available-balance, .maximum-call-duration{
+                font-size: 12px;
+                line-height: 10px;
+                padding: 2px 0;            
+              }
+              .getcallfrom, .getcallon, .fillsection{
+                font-size: 10px;
+                margin: 1px 0 0;
+              }
+              .input-text-section{
+                width: 100%;
+                margin-top: 0;
+                input{
+                  height: 25px;
+                  font-size: 12px;
+                }
+                .gender-section{
+                  width: 25%;
+                  select{
+                    height: 25px;
+                    border-radius: 0px !important;
+                    font-size: 11px;
+                    padding: 0px 2px 0 0px;
+                  }
+                }
+                .error-validation{
+                  font-size: 10px;
+                }
+              }
+              .dateandtime{
+                width: 100%;
+                margin-top: 0px;
+                .dob-section{
+                  margin-bottom: 0px;
+                  label{
+                    font-size: 11px;
+                    margin: 2px 0 0px;
+                    letter-spacing: 0;
+                  }
+                  select{
+                    height: 25px;
+                    margin-right: 5%;
+                    border-radius: 0px !important;
+                    font-size: 11px;
+                    padding: 0px 2px 0 0px;
+                    &:last-child{
+                      margin-right: 0;
+                    }
+                  }
+                }
+                .section-birth-time{
+                  margin-bottom: 0px;
+                  label{
+                    font-size: 11px;
+                    margin: 2px 0 0px;
+                    letter-spacing: 0;
+                  }
+                  select{
+                    height: 25px;
+                    margin-right: 5%;
+                    border-radius: 0px !important;
+                    font-size: 11px;
+                    padding: 0px 2px 0 0px;
+                    &:last-child{
+                      margin-right: 0;
+                    }
+                  }
+                }
+                .search-location{
+                  width: 100%;
+                  margin: 2px 0;
+                  label{
+                    font-size: 11px;
+                    letter-spacing: 0;
+                  }
+                  input{
+                    height: 25px;
+                    font-size: 10px;
+                    padding: 0px 5px 0 5px;
+                  }
+                }
+                .error-validation{
+                  font-size: 9px;
+                }
+              }
+              button.chatnow-popup{
+                font-size: 14px;
+                height: 30px;
+                width: 100%;
+                margin: 4px 0 0;
+              }
+            }
+            .waiting-screen-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              .waiting-text{
+                font-size: 15px;
+                line-height: 24px;     
+                padding: 10% 15px 25px;
+              }
+              .wait-img{
+                padding-top: 0;
+                .spinner{
+                  width: 40px;
+                  height: 40px;
+                  margin: 5px;
+                  &:before{
+                    width: 30px;
+                    height: 30px;
+                  }
+                  &:after{
+                    width: 40px;
+                    height: 40px;
+                  }
+                }
+                .spinner__1{
+                  &:after{
+                    top: -1px;
+                    left: 1px;
+                  }
+                  &:before{
+                    top: 10px;
+                    left: 11px;
+                    height: 20px;
+                    width: 20px;
+                  }
+                }
+                .spinner__3{
+                  &:before{
+                    top: 8px;
+                    height: 25px;
+                    width: 25px;
+                  }
+                  &:after{
+                    top: 8px;
+                    left: 0px;
+                    height: 25px;
+                    width: 25px;
+                  }
+                }
+              }
+              .count-dwn-time{
+                font-size: 12px;
+                width: 90%;
+                padding: 20px 0 0px;
+              }
+            }
+            .oops-screen-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              padding-top: 2%;
+              .oops-img{
+                h1{
+                  line-height: 50px;
+                  font-size: 45px;
+                }
+                img{
+                  width: 80px;
+                }
+              }
+              .oops-text{
+                font-size: 12px;
+                padding: 10px 0;
+                width: 98%;
+              }
+              .btn-section{
+                button{
+                  font-size: 12px;
+                  margin: 20px 5px;
+                  height: 35px;
+                }
+              }
+            }
+            .wallat-balance-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              .wallat-text{
+                font-size: 12px;
+                padding: 5px 0 0;
+                width: 98%;
+              }
+              p{
+                font-size: 13px;
+                padding: 10px 0;
+                margin: 0 auto 5px;
+              }
+              .btn-section{
+                button{
+                  font-size: 12px;
+                  margin: 20px 5px;
+                  height: 35px;
+                }
+              }
+            }
+            .tryagain-connect-astro-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              .connect-text{
+                font-size: 14px;
+                line-height: 30px;
+                padding: 20px 0 10px;
+                width: 90%;
+              }
+              .btn-section{
+                button{
+                  font-size: 12px;
+                  margin: 20px 5px;
+                  height: 35px;
+                }
+              }
+            }
+            .connect-call-astro-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              padding-top: 10%;
+              .connect-img{
+                width: 45%;
+                &:after{
+                  width: 60px;
+                  height: 75px;
+                }
+              }
+              .connect-text{
+                font-size: 15px;
+                line-height: 22px;
+                width: 98%;
+              }
+            }
+            .closed-chat-astro-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              padding-top: 15px;
+              background-color: #eee;
+              .closed-text{
+                width: 100%;
+                font-size: 13px;
+                line-height: 24px;
+                padding: 10% 15px 20px;            
+                h1{
+                  margin: 30px auto;
+                  font-size: 30px;
+                }            
+              }
+              .btn-section{
+                button{
+                  font-size: 14px;
+                  margin: 20px 10px;
+                  height: 40px;
+                }
+              }
+            }
+            .review-astro-popup{
+              width: 98%;
+              height: 99%;
+              margin-left: 3px;
+              border-radius: 5px;
+              padding-top: 4%;
+              background-color: transparent;
+              .ratingreview_screen_section{
+                width: 95%;
+                padding: 5px 4% 10px;
+                .user_name{
+                  font-size: 14px;
+                  margin-bottom: 0;
+                }
+                .astrology_section{
+                  margin-top: 0px;
+                  .user_icon{
+                    img{
+                      width: 50px;
+                    }
+                  }
+                  p{
+                    font-size: 14px;
+                  }
+                  .light-weight-text{
+                    font-size: 13px;
+                    margin-bottom: 0;
+                  }
+                }
+                .stars{
+                  margin-bottom: 3px;
+                  .fa.fa-star.checked, .fa.fa-star{
+                    font-size: 15px;
+                  }
+                }
+                textarea{
+                  margin: 2px auto 5px;
+                }
+                .btn-section{
+                  button{
+                    font-size: 12px;
+                    margin: 0 5px;
+                    height: 30px;
+                    width: 95%;
+                    line-height: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+
+
 }
 
 
@@ -6064,6 +7734,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
     max-width: 700px !important;
     margin: 0 !important;
   }
+
 }
 
 /********End-mobile-view********/

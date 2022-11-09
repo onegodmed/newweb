@@ -234,4 +234,65 @@ button {
       transform: rotateZ(0);
     }
   }
+
+  @media only screen  and (max-width: 768px) {
+    .wallet_section{
+        padding: 0;
+        .balance_wallet{
+            h2{
+                margin: 10px 0;
+                font-size: 13px;
+                line-height: 24px;
+                letter-spacing: 0;
+            }
+        }
+        .wallet-card-section{
+            .wallet_card{
+                width: 50%; 
+                margin: 13px 0 0;
+                .top_amounts_img{
+                    img{
+                        height: 120px;
+                    }
+                    .tag_offer_packages{
+                        padding: 0;
+                        font-size: 14px;
+                        line-height: 20px;                    
+                        .fa{
+                            font-size: 15px; 
+                        }
+                    }
+                }
+                .welcomeimg{
+                    right: 5px;
+                    width: 32px;
+                    height: 50px;
+                }
+                .back-title-img{
+                    width: 92px;
+                    height: 92px;
+                    left: -4px;
+                    top: -8px;
+                    z-index: 99 !important;
+                    .title_name{
+                        font-size: 10px;
+                        left: -23px;
+                        top: 25px;                    
+                    }
+                }
+                .bottom_content_section{
+                    height: 140px;
+                    .youpay{ line-height: 22px;margin-bottom: 0;margin-top: 0;font-size: 11px; }
+                    .youget{ padding: 0 2px;line-height: 15px; margin: 0;font-size: 10px; }
+                }
+                .bag_tag{
+                    button{
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+  }  
   

@@ -2,7 +2,7 @@
     <div class="container">
         <div class="logo">
             <!-- <img src="../../assets/images/logo.png"> -->
-            <a href=" "><img src="https://www.onegodmed.com/front-assets/images/header/logo-dark.png"></a>
+            <img src="https://www.onegodmed.com/front-assets/images/header/logo-dark.png">
         </div>
         <div class="menu-section">
             <div class="left-section">
@@ -10,28 +10,28 @@
                     <i class="fa fa-headphones" aria-hidden="true"></i>
                     <a href="tel:+91 9169-305-305">+91 9169-305-305</a>
                 </div>
-                <div *ngIf="isLoggedOut" class="withoutloginsection" (click)="openDialog()">Login/Signup</div>
-                <div *ngIf="isLoggedIn"  class="withinloginsection">
-                    <div  class="wallet-amounts"  (click)="walletPage()">
+                <div class="withoutloginsection" (click)="openDialog()">Login/Signup</div>
+                <div class="withinloginsection">
+                    <div class="wallet-amounts"  (click)="walletPage()">
                         <img src="../../assets/images/walletimage.png">
-                        <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i> {{ CurrentBalance }} </span>
+                        <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i> 0:00 </span>
                     </div>
-                    <div  class="user-section_onlogin">
+                    <div class="user-section_onlogin">
                         <div class="user-avatar">
                             <img src="../../assets/images/avatar-icon.png" alt="avatar">
                         </div>
                         <div class="user_name">
-                            <h3>{{ showusername }}</h3>
+                            <h3>User Name</h3>
                         </div>
                     </div>
-                    <button  mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                    <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
                         <i class="fa fa-bars" aria-hidden="true"></i>
                     </button>
                     <mat-menu #menu="matMenu">
+                        <button mat-menu-item>Item 2</button>
                         <button mat-menu-item (click)="openProfileedite()">My Account</button>
-                        <button mat-menu-item (click)="follow()">My Astrologers</button>
-                        <button mat-menu-item (click)="walletPage()">Wallet Recharge</button>
-                        <button mat-menu-item (click)="loggedout()">Logout</button>
+                        <button mat-menu-item (click)="follow()">follow Details</button>
+                        <button mat-menu-item (click)="walletPage()">Wallet</button>
                     </mat-menu>
                 </div>
             </div>
@@ -44,6 +44,70 @@
             </ul>
         </div>
     </div>
+</div>
+
+<div class="mobile-header-section">
+    <div class="menu_mobile">
+        <button mat-icon-button [matMenuTriggerFor]="mobilemenu" aria-label="Example icon-button with a menu">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </button>
+        <mat-menu #mobilemenu="matMenu">
+            <div class="mobile_sub_menu">
+                <ul>
+                    <li><a (click)="route1()">Talk to astrologer</a></li>
+                    <li><a (click)="route2()">Chat with astrologer</a></li>
+                    <li><a (click)="route3()">Blog</a></li>
+                    <li><a (click)="route5()">Astrology</a></li>
+                    <li><a (click)="follow()">Follow Details</a></li>
+                    <li><a (click)="walletPage()">Wallet</a></li>
+                    <li><a (click)="route6()">Premium Report</a></li>
+                    <li><a (click)="openProfileedite()">My Account</a></li>
+                    <!-- <li><a href="#">Business Astrology</a></li>
+                    <li><a href="#">Career &amp; Education</a></li>
+                    <li><a href="#">Marriage &amp; Children</a></li>
+                    <li><a href="#">Relationship &amp; Compatibility</a></li>
+                    <li><a href="#">Wealth &amp; Property</a></li>
+                    <li><a href="#">Family Consultation</a></li>
+                    <li><a href="#">Medical Astrology</a></li>
+                    <li><a href="#">Palmistry</a></li>
+                    <li><a href="#">Vastu Shastra</a></li>
+                    <li><a href="#">Tarot Cards</a></li>
+                    <li><a href="#">Kundali</a></li>
+                    <li><a href="#">Match Making</a></li>
+                    <li><a href="#">Panchang</a></li>
+                    <li><a href="#">Numerology</a></li>
+                    <li><a href="#">Horoscope</a></li> -->
+                </ul>
+            </div>
+
+            <div class="mobile-media">
+                <ul>
+                    <li><a class="facebook-back" target="_blank" href="https://www.facebook.com/1godmed"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                    <li><a class="insta-back" target="_blank" href="https://www.instagram.com/onegodmed/"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                    <li><a class="youtube-back" href="https://www.youtube.com/channel/UC_0rLhyj1PQ_78EjpHH_beQ" target="_blank"><i class="fa fa-youtube" aria-hidden="true"></i></a></li>
+                    <li><a class="twitter-back" target="_blank" href="https://twitter.com/OnegodmedC"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                    <li><a class="linkedin-back" href="https://www.linkedin.com/company/onegodmed/" target="blank"><i class="fa fa-linkedin"></i></a></li>
+                </ul>
+            </div>
+        </mat-menu>
+        
+    </div>
+    <div class="logo">
+        <!-- <img src="../../assets/images/logo.png"> -->
+        <img src="https://www.onegodmed.com/front-assets/images/header/logo-dark.png">
+    </div>
+    <div class="withoutloginsection" (click)="openDialog()">Login/Signup</div>
+    <div class="withinloginsection">
+        <div class="wallet-amounts"  (click)="walletPage()">
+            <img src="../../assets/images/walletimage.png">
+            <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i> 0:00 </span>
+        </div>
+        <div class="user-section_onlogin">
+            <div class="user_name">
+               Hi, <span>User Name</span>
+            </div>
+        </div>
+    </div>    
 </div>
 
 
