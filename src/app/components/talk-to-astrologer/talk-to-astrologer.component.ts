@@ -17,7 +17,7 @@ import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup
   styleUrls: ['./talk-to-astrologer.component.scss']
 })
 export class TalkToAstrologerComponent implements OnInit {
-
+  isOpenpopup:boolean=false;
   IsLoggedIn: boolean = false;
   username: any = '';
   usercurrentbalance: any = [];

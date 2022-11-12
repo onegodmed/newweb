@@ -50,6 +50,10 @@
     background: $background_gradient_slider;
 }
 
+.mobile-banner-slider{
+    display: none;
+}
+
 .new_banner, .new_banner_2 {
     background-size: contain;
     background-position: 50%;
@@ -318,6 +322,13 @@
 @media only screen  and (max-width: 600px) {
     .slider-banner{ padding: 10px 0; height: auto;}
     .heading h2{ font-size: 15px; margin: 0px; }
+
+    .mobile-banner-slider{
+        display: block;
+        margin: 10px 0 20px;
+        float: left;
+        width: 100%;
+    }
 
     .new_banner{
         .special_offer_Design{

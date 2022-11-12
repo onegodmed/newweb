@@ -318,6 +318,10 @@
 
     }
 
+    .mobile-multiple-action{
+      display: none;
+    }
+
     .chat_card{
         width: 100%;
         float: left;
@@ -642,4 +646,330 @@
       background: $background_gradient_articles;
     }
 
+}
+
+
+
+.filter_screen_bg_color{
+  width: 100vw;
+  height: 100vh;
+  background: #27292d9e;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1000;
+  .filter_search_section{
+    position: absolute;
+    width: 90%;
+    height: 85%;
+    background: #ffffff;
+    padding: 10px 6px;
+    z-index: 9999;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    border-radius: 5px;
+    text-align: center;
+      .cover_screen_section{
+          padding: 5px 10px 10px;
+          text-align: left;
+          width: 100%;
+          float: left;
+          .title-bar{
+            width: 100%;
+            float: left;
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ccc;
+            h5{
+              float: left;
+              font-size: 15px;
+              font-weight: 500;
+              line-height: 30px;
+              letter-spacing: 1px;
+            }
+            button.btn-closed {
+              float: right;
+              background: transparent;
+              outline: none;
+              border: none;
+              font-size: 20px;
+              cursor: pointer;
+              padding: 5px;
+            }
+          }
+          .filter-popup{
+            float: left;
+            .gender{
+              width: 100%;
+              float: left;
+              .mat-form-field{
+                width: 100%;
+              }
+            }
+            .language-port{
+              width: 100%;
+              float: left;
+              .mat-form-field{
+                width: 100%;
+              }
+            }
+            .filter-section{
+              width: 100%;
+              float: left;
+              .mat-form-field{
+                width: 100%;
+              }
+            }
+            .sort-price{
+              width: 100%;
+              float: left;
+              .mat-form-field{
+                width: 100%;
+              }
+            }
+          }
+          p{
+              font-size: 25px;
+              line-height: 30px;
+              text-align: center;
+              width: 100%;
+              color: #000;
+              font-weight: 600;
+              margin-top: 0;
+          }
+          .dwn-btn{
+              display: flex;
+              align-items: center;
+              position: fixed;
+              bottom: 5%;
+              left: 50%;
+              transform: translate(-50% ,0);
+              max-width: 300px;
+             .apply-btn {
+                text-align: center;
+                font-size: 20px;
+                text-decoration: none;
+                color: #000;
+                letter-spacing: 1px;
+                width: 100px;
+                padding: 10px;
+                display: inline-block;
+                margin: 10px 8px;
+                cursor: pointer !important;
+                border-radius: 10px;
+                border: 1px solid rgb(252, 205, 202);
+                background: rgb(255, 247, 237);
+                box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+              }
+              .reset-btn{
+                text-align: center;
+                box-shadow: rgba(0, 0, 0, 0.1) -7px 7px 20px 0px;
+                font-size: 20px;
+                text-decoration: none;
+                color: #000;
+                letter-spacing: 1px;
+                width: 100px;
+                padding: 10px;
+                display: inline-block;
+                margin: 10px 8px;
+                cursor: pointer !important;
+                border-radius: 10px;
+                border: 1px solid rgb(252, 205, 202);
+                background: rgb(255, 247, 237);
+              }
+          }            
+      }
+  }
+}
+
+
+@media only screen  and (max-width: 768px) {
+  .heading h2{ font-size: 15px; margin: 0px; }
+  .heading h3{ font-size: 15px; margin: 0px; }
+  .slider-banner{ height: auto;padding: 5px 0;}
+  .talk_full_cover{
+    .login-call-box{ display: none; }
+    .mobile-multiple-action{
+      display: block;
+      float: left;
+      width: 100%;
+      margin: 15px 0 10px;
+      padding: 0 15px;
+      .left-searchbox{
+        float: left;
+        width: 85%;
+        .mat-form-field{
+          width: 100%;
+          font-size: 15px;
+          font-weight: 500;
+          letter-spacing: 1px;
+          font-family: "Roboto Mono", monospace;
+          .mat-form-field-wrapper{
+            padding-bottom: 0;
+          }
+        }
+      }
+      .filter-icon{
+        float: left;
+        cursor: pointer;
+        width: 12%;
+        text-align: center;
+        padding: 5px;
+        border: 1px solid #ccc;
+        margin: 3% 0 0 3%;
+        border-radius: 2px;
+        .fa{
+          font-size: 18px;
+        }
+      }
+    }
+    .data-filter-cover{ 
+      margin-top:0;
+      display: none;
+      .astrologer_breadcrumbs{ display: none; }
+      .multiple-action{
+        width: 100%;
+        .recharge-btn{  display: none; }
+        .filter-section, .sort-price{
+          width: 48%;
+          margin: 0 2px;
+          padding: 0 10px;
+        }
+        .search-box{
+          width: 100%;
+          float: left;
+          margin: 0;
+          padding: 10px 16px 0px 10px;
+          input.mat-input-element{
+            height: 25px;
+          }
+        }
+      }
+    }
+    .chat_card{
+      margin-top: 15px;
+      ul{
+        li{
+          width: 100%;
+          padding: 0 10px;
+          margin-bottom: 0;
+          .card_astro{
+            display: inline-block;
+            min-height: 130px;
+            padding: 5px 0px 35px;
+            border-radius: 0;
+            .astro-img{
+              width: 30%;
+              img{
+                height: auto;
+                border-radius: 0;
+              }
+              .light-shad{
+                display: none;
+              }
+            }
+            .status-section{
+              right: auto;
+              left: 5px;
+              top: auto;
+              bottom: 0;
+              color: #000;
+              font-size: 10px;
+              padding: 1px 5px;
+              border-radius: 3px;
+              border: 1px solid rgb(252, 205, 202);
+              background: rgb(255, 247, 237);
+              span{
+                i{
+                  font-size: 12px;
+                  color: #000;
+                  margin-top: 4px;
+                }
+              }
+            }
+            .star-ratings{
+              top: auto;
+              left: 0;
+              padding: 2px 5px;
+              background: #000;
+              bottom: 30px;
+              span{
+                i{
+                  font-size: 13px;
+                }
+              }
+              .count-rating, .count-rating{
+                font-size: 12px;           
+                line-height: 16px;
+              }
+            }
+            .astro-section{
+              float: left;
+              width: 70%;
+              padding: 0 10px;
+              h5{
+                font-size: 13px;
+                line-height: 15px;
+                margin-bottom: 4px;
+                &::after{
+                  width: 12px;
+                  height: 12px;
+                  margin-left: 5px;
+                  margin-top: 1px;
+                }
+              }
+              p{
+                font-size: 11px;
+                margin-bottom: 2px;
+                line-height: 15px;
+              }
+              .ratting{
+                width: 100%;
+                .language-astrologer{
+                  font-size: 10px;
+                  .fa{
+                    font-size: 12px;
+                  }
+                  span{
+                    font-size: 10px;
+                    margin: 0 4px;
+                  }
+                }
+                .skills-astrologer{
+                  font-size: 10px;
+                  line-height: 12px;
+                  span{
+                    font-size: 10px;
+                    margin: 0 4px;
+                  }
+                }
+                .price{
+                  font-size: 11px;
+                  margin-top: 0px;
+                }
+              }
+            }
+            .call-status-astrolger{
+              bottom: 0;
+            }
+            .follow-section{
+              z-index: 99 !important;
+              top: -14px;
+              right: 0px;
+              left: auto;
+              bottom: auto;
+              span{
+                font-size: 11px;
+                font-weight: 500;
+                padding: 2px 5px;
+                border-radius: 4px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
