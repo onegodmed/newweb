@@ -102,3 +102,41 @@
       }
     }
   }  
+  @media only screen  and (max-width: 768px) {
+    .heading h2{ font-size: 15px; margin: 0px; }
+    .heading h3{ font-size: 15px; margin: 0px; }
+    .find-best-astrologers{
+      padding: 10px 0;
+      height: auto;
+      .find_city_astrologer{
+        margin: 0 0 10px;
+        .city_title{
+          font-size: 15px;
+          height: 40px;
+          line-height: 21px;
+          i{
+            font-size: 14px;
+            margin: 2px 12px;        
+          }
+        }
+        .city_category_title{
+          height: 150px;
+          ul{
+            li{
+              padding: 7px 15px;
+              margin-bottom: 0px;
+              a{
+                font-size: 12px;
+                line-height: 20px;
+              }
+              span{
+                i{
+                  font-size: 12px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }

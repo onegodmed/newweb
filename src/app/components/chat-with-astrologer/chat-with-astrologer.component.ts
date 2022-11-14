@@ -8,6 +8,7 @@ import { AstrologerCallPopupComponent } from '../../shared/astrologer-call-popup
 import { UserService } from 'src/app/services/user.service';
 import { FollounfollowService } from 'src/app/services/follounfollow.service';
 import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup.component';
+import { faL } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-chat-with-astrologer',
@@ -15,7 +16,7 @@ import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup
   styleUrls: ['./chat-with-astrologer.component.scss']
 })
 export class ChatWithAstrologerComponent implements OnInit {
-
+  isOpenpopup:boolean=true;
   IsLoggedIn: boolean = false;
   astro_id: any = '';
   username: any = '';
@@ -274,4 +275,7 @@ export class ChatWithAstrologerComponent implements OnInit {
     }
   }
 
+  onclickOpenpopup(){
+    this.isOpenpopup = false
+  }
 }

@@ -625,12 +625,64 @@ height: 100px;
 }
 
 @media (max-width: 780px) {
+  .chat-app{
+    margin: 2px auto 0;
+    height: 86vh;
+  }
  .conversation-area {
   display: none;
  }
  .chat-thread {
     width: 100%;
-    min-height: 320px;
+    min-height: 300px;
+    padding: 0 5px 0 3px;
+    margin-top: 5px;
+    .astro-chat{
+      margin-bottom: 5px;
+      padding: 10px 10px 0 43px;
+      .ogm-astro-img{
+        left: 0;
+        width: 30px;
+        height: 30px;
+        &::after{
+          right: -13px;
+          top: 6px;
+        }
+      }
+      .astro-text{
+        padding: 5px 32px 5px 10px;
+        border-radius: 4px;
+        font-size: 12px;
+      }
+      .astro-time-msg{
+        font-size: 10px;
+        margin-top: -20px;
+        margin-left: 10px;
+      }
+    }
+    .user-chat{
+      margin-bottom: 5px;
+      padding: 10px 43px 0 10px;
+      .user-chat-img{
+        right: 0;
+        width: 30px;
+        height: 30px;
+        &::after{
+          left: -13px;
+          top: 6px;
+        }
+      }
+      .user-chat-text{
+        font-size: 12px;
+        border-radius: 4px;
+        padding: 5px 12px 5px 25px;
+      }
+     .user-time-msg{
+        font-size: 10px;
+        margin-top: -20px;
+        margin-right: 10px;
+      }
+    }
 }
  .search-bar {
   margin-left: 0;
@@ -639,6 +691,76 @@ height: 100px;
    padding-right: 10px;
   }
  }
+ .chat-area{
+  border-right: none;
+  .chat-area-header{
+    padding: 5px 0;
+    .chat-area-title{
+      font-size: 12px;
+      float: left;
+      margin-right: 15px;
+    }
+    .time-chat-min{
+      font-size: 10px;
+      i.fa.fa-clock-o{
+        font-size: 11px;
+        left: -12px;
+        top: 5px;
+        padding: 0;
+      }
+    }
+    .end-process-chat{
+      width: 35%;
+      font-size: 15px;
+      .ref-btn{
+        left: 2px;
+        top: 0px;
+        i.fa{
+          padding: 1px;
+          font-size: 14px;
+        }
+      }
+      button{
+        font-size: 12px;
+        padding: 1px 4px;
+        border-radius: 5px;
+        margin-right: 5px;
+      }
+    }
+  }
+  .chat-area-footer{
+    bottom: 20px;
+    padding: 8px;
+    z-index: 999;
+    input{
+      font-size: 12px;
+      margin: 0 5px;
+      padding: 10px 40px 10px 8px;
+    }
+    button{
+      right: 9%;
+      height: 20px;
+      width: 20px;
+      font-size: 16px;
+    }
+  }
+ }
+ .waiting-chat-app{
+    z-index: 999;
+    .chat_waiting_section{
+      .avatar{
+        width: 100px;
+      }
+    }
+    .chat-text{
+      p{
+        font-size: 12px !important;
+        width: 100% !important;
+        line-height: 25px !important;
+      }
+    }
+ }
+
 }
 
 

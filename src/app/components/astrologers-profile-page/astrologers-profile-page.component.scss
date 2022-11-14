@@ -946,3 +946,340 @@ button {
   font-size: 1em;
   transform-origin: 50% 5em;
 }
+
+
+@media only screen  and (max-width: 678px) {
+  .container{
+    padding: 0 10px;
+    max-width: 100%;
+  }
+  .astrologer_profile{
+    .profile_top_section{
+      padding-top: 0;
+      .astrologer_breadcrumbs{ display: none; }
+      .astro_profile_img{
+        img{
+          width: auto;
+          height: 150px;
+          margin: 0 auto;
+        }
+      }
+      .following_section{
+        margin: 10px auto 0;
+        width: 100%;
+        text-align: center;
+        ul{
+          float: none;
+          li{
+            padding: 0px 5px;
+            float: none;
+            display: inline-block;
+            vertical-align: top;
+            &:last-child{
+              padding: 10.5px 5px;
+              min-height: min-content;
+            }
+            span{
+              font-size: 13px;
+            }
+            a{
+              font-size: 11px;
+            }
+            i{
+              font-size: 12px !important;
+              margin-right: 4px !important;
+            }
+          }
+        }
+      }
+      .astro_details_section{
+        margin: 5px 0;
+        h1{ 
+          font-size: 19px; 
+          margin-bottom: 0;
+          &::after{
+            width: 14px;
+            height: 14px;
+            margin-top: 10px;
+          }
+        }
+        .astro-professional{
+          span{
+            font-size: 12px;
+            padding: 2px 0;
+          }
+        }
+        .language{
+          span{
+            font-size: 12px;
+            margin: 4px;
+          }
+        }
+        .exprinces{
+          margin: 3px;
+          font-size: 12px;
+          span{
+            font-size: 13px;
+            margin-right: 1px;
+          }
+        }
+        .categories-tag{
+          span{
+            font-size: 12px;
+            padding: 2px 6px;
+            margin: 0;
+            margin-right: 5px;
+            border-radius: 5px;
+          }
+        }
+        .callchat-btn{
+          position: fixed;
+          margin: 0px auto;
+          bottom: 60px;
+          z-index: 999;
+          background: linear-gradient(45deg, #64a66c, rgb(185 156 183 / 96%));
+          left: 50%;
+          transform: translate(-50%, 0);
+          padding: 4px 0px;
+          button{
+            width: 48%;
+            margin: auto 1%;
+            border-radius: 20px;
+            font-size: 15px;
+            background: #fff;
+            .call-section{
+              display: none;
+            }
+            .price {
+              font-size: 14px;
+              display: grid;
+              margin-left: 15px;
+            }
+          }
+        }
+      }
+      .starrating{
+        width: 100%;
+        min-height: max-content;
+        .total_rating{
+          max-width: max-content;
+          .fa{
+            color: #ffc107;
+            margin: 0 5px;
+          }
+        }
+        .side_right_one, .side_right_two, .side_right_three, .side_right_four, .side_right_five{
+          display: none;
+        }
+        .user_comment_img{
+          right: 2px;
+          img{
+            height: 120px;
+          }
+        }
+      }
+    }
+    .profile_bottom_section{
+      .profile-tabs-astrolgers{
+        .profile_details{
+          .aboutus_section{
+            width: 100% !important;
+            .text-cover_styles{
+              margin-bottom: 10px;
+              .back_color{
+                h2{
+                  font-size: 16px;
+                  margin: 10px;
+                  line-height: initial;
+                }
+              }
+              p{
+                font-size: 12px;
+                padding: 10px;
+                letter-spacing: 0;
+                line-height: 18px;
+                overflow-y: scroll;
+                height: 200px;
+                .bg-clr{
+                  line-height: 20px;
+                  font-size: 12px;
+                  padding: 10px;
+                  margin: 0;
+                }
+                .order-listing-about{
+                  padding: 0;
+                  ol{
+                    float: left;
+                    width: 100%;
+                    margin-bottom: 0;
+                    margin-top: 10px;
+                    li{
+                      font-size: 12px;
+                      line-height: 10px;
+                      margin-bottom: 10px;
+                    }
+                  }
+                }
+              }
+            }
+            .gallery_astrologer_section{
+              margin-bottom: 5px;
+              ul{
+                li{
+                  img{
+                    max-width: 55px;
+                    min-height: 55px;                
+                  }
+                }
+              }
+            }
+            .guarantee_box_section{
+              padding: 0;
+              margin-bottom: 5px;
+              .secure_section{
+                padding: 5px 0;
+                font-size: 12px;
+                .sprite_icons{
+                  width: 45px;
+                  height: 45px;
+                }
+              }
+            }
+          }
+          .sectionright_side{
+            width: 100% !important;
+            margin-bottom: 0;
+            .back_color{
+              h3{
+                font-size: 16px;
+                margin: 10px;
+                line-height: initial;
+              }
+            }
+            .scroll-fixed {
+              padding: 0 5px;
+              height: 200px;
+              .profile-rates{
+                padding: 5px;
+                margin-bottom: 5px;
+                .rating_h4{
+                  line-height: 20px;
+                  padding: 0;
+                  .section-left{
+                    .rating_blue{  
+                      font-size: 12px;
+                      margin-right: 5px;
+                      text-align: center;
+                      width: 20px;
+                      height: 20px;
+                      line-height: 18px;
+                    }
+                  }
+                  .section-right{            
+                    font-size: 11px;
+                  }
+                }
+                .rating_comment{
+                  margin-top: 5px;
+                  font-size: 11px;
+                  line-height: 16px;              
+                }
+                .astro-comment-section{
+                  width: 90%;
+                  padding: 5px;
+                  span{
+                    font-size: 13px;
+                  }
+                  .astro-date{
+                    font-size: 8px;
+                    letter-spacing: 0;
+                  }
+                  .ratingastro_comment{
+                    margin-top: 3px;
+                    font-size: 10px;
+                    margin-bottom: 2px;
+                    letter-spacing: 0;
+                    line-height: 12px;
+                  }
+                }
+              }
+            }
+            .input-comment-section {
+              padding: 0 8px;
+              .star_ratinguser{
+                margin-top: 5px;
+                h4{
+                  font-size: 12px;
+                  margin: -3px;
+                  padding-right: 5px;
+                }
+                .star-icon{
+                  margin: 0;
+                  .fa.fa-star{
+                    font-size: 14px;
+                  }
+                  .fa.fa-star.checked{
+                    font-size: 14px;
+                  }
+                }
+              }
+              .success_message{
+                margin: 10px auto;
+                padding: 5px;
+                p{
+                  font-size: 10px;
+                  line-height: 15px;
+                }
+              }
+              textarea {
+                font-size: 12px;
+                margin: 7px 0;
+                padding: 2px 3px 2px;
+              }
+              .sendbtn{
+                width: auto;
+                height: auto;
+                line-height: 25px;
+                font-size: 14px;
+              }
+            }
+            .astrologer_weekly_status {
+              margin: 5px;
+              border: none;
+              box-shadow: none;
+              background: transparent;
+              float: right;
+              padding: 0;
+              .btnclass{
+                margin: 5px 0;
+                padding: 5px 10px;
+                font-size: 14px;            
+              }
+              .week{
+                ul{
+                  li{
+                    padding-top: 0px;
+                    padding-left: 32px;
+                    a{
+                      margin: 4px;
+                      font-size: 13px;
+                      padding: 2px 5px;
+                    }
+                    .days-name{
+                      font-size: 12px;
+                      margin-left: -26px;
+                      line-height: 31px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+
+}

@@ -29,3 +29,42 @@
         }
     }
 }
+
+@media only screen  and (max-width: 768px) {
+    .heading h2, .heading h3{
+        font-size: 15px;
+        line-height: 17px;
+        margin: 10px auto;
+    }
+    .tabs_vedic_astrolgers{
+        padding: 20px 0;
+    }
+    .vedic_astrology{
+        .about_vedic_astrology{
+            padding: 10px 0;
+            margin-bottom: 0;
+            
+            h2{
+                font-size: 15px;
+                line-height: 17px;
+                margin: 10px auto;
+            }
+            p{
+                letter-spacing: 0;
+                font-size: 13px;
+                line-height: 17px;
+                text-align: justify;
+                margin: 5px 0;
+            }
+        }
+    }
+    .astrology_type{
+        .tabs_vedic_astrolgers{
+            h2{
+                font-size: 15px;
+                line-height: 18px;
+                margin: 10px auto;
+            }
+        }
+    }
+}

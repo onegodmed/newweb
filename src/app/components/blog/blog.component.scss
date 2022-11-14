@@ -180,3 +180,58 @@
         }
     }
 }
+
+@media only screen  and (max-width: 768px) {
+    .astrologer_breadcrumbs{ display: none; }
+    .banner-blog{
+        width: 100%;
+        margin-top: 0;
+        .latest-inner-section{
+            margin-bottom: 0;
+            h2{
+                font-size: 15px;
+                margin: 10px 0;
+                line-height: 20px;
+            }
+            ul{
+                li{
+                    width: 100%;
+                    margin-bottom: 15px;
+                    min-height: auto;
+                    span{
+                        img{
+                            height: auto;
+                            max-height: 110px;
+                            min-height: auto;
+                        }
+                    }
+                    .articles-text-box{
+                        padding: 10px 15px;
+                        h4{
+                            font-size: 12px;
+                            height: auto;
+                            line-height: 18px;    
+                            margin-bottom: 5px;                    
+                        }
+                        .articles-details-section{
+                            font-size: 12px;
+                            .post-articles-date{
+                                font-size: 12px;
+                                margin-top: 0px;
+                            }
+                            h6{
+                                margin-top: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .adds-banner{
+            margin: 10px 0 20px;
+        }
+        .paginator-blog{
+            display: none;
+        }
+    }
+} 

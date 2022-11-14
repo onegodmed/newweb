@@ -249,3 +249,110 @@
     }
 
 }
+@media only screen  and (max-width: 768px) {
+    .astrologer_breadcrumbs{ display: none; }
+    .blog_inner_page{
+        width: 100%;
+        margin-top: 5px;
+        .inner-blogbanner{
+            .image-banner-section{
+                img{
+                    height: 160px;
+                }
+                .inner-details-section{
+                    padding: 5px 3px;
+                    line-height: 20px;
+                    border-radius: 0;
+                    letter-spacing: 0;
+                    font-size: 10px;
+                    h6{
+                        font-size: 10px;
+                        margin-right: 2px;
+                        letter-spacing: 0;
+                        float: none;
+                        display: contents;
+                    }             
+                }
+            }
+            .inner-text-box{
+                padding: 10px;
+                border-radius: 0;
+                .categories-tag{
+                    margin: 0 0 5px;
+                    a{
+                        font-size: 11px;                 
+                        padding: 2px 3px;
+                    }
+                }
+                h4{
+                    letter-spacing: 0;
+                    font-size: 15px;
+                    line-height: 22px;                
+                }
+                p{
+                    letter-spacing: 0;
+                    font-size: 12px;
+                    line-height: 16px;
+                    text-align: justify;
+                }
+            }
+        }
+        .post-data{
+            p{
+                letter-spacing: 0;
+                font-size: 12px;
+                line-height: 16px;
+                text-align: justify;
+                margin: 5px 0 10px;
+                padding: 0 10px;
+            }
+        }
+        .adds-banner{
+            margin: 10px 0;
+            a{
+                img{
+                    border-radius: 5px;
+                }
+            }
+        }
+        .related-inner-section{
+            h2{
+                font-size: 15px;
+                margin: 10px 0;
+            }
+            ul{
+                li{
+                    width: 100%;
+                    margin-bottom: 15px;
+                    min-height: auto;
+                    span{
+                        img{
+                            height: auto;
+                            max-height: 110px;
+                            min-height: auto;
+                        }
+                    }
+                    .articles-text-box{
+                        padding: 10px 15px;
+                        h4{
+                            font-size: 12px;
+                            height: auto;
+                            line-height: 18px;    
+                            margin-bottom: 5px;                    
+                        }
+                        .articles-details-section{
+                            font-size: 12px;
+                            .post-articles-date{
+                                font-size: 12px;
+                                margin-top: 0px;
+                            }
+                            h6{
+                                margin-top: 6px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}  
