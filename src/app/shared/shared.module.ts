@@ -11,6 +11,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { ProcessPayPopupComponent } from './process-pay-popup/process-pay-popup.component';
 import { ChatScreenComponent } from './chat-screen/chat-screen.component';
 import { AstrologerCallPopupComponent } from './astrologer-call-popup/astrologer-call-popup.component';
+import { MobileBannerSliderComponent } from './mobile-banner-slider/mobile-banner-slider.component';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,8 @@ import { AstrologerCallPopupComponent } from './astrologer-call-popup/astrologer
     SingUpPopupComponent,
     ProcessPayPopupComponent,
     ChatScreenComponent,
-    AstrologerCallPopupComponent
+    AstrologerCallPopupComponent,
+    MobileBannerSliderComponent
   ],
   imports: [
     CommonModule,
@@ -37,7 +40,8 @@ import { AstrologerCallPopupComponent } from './astrologer-call-popup/astrologer
     SingUpPopupComponent,
     ProcessPayPopupComponent,
     ChatScreenComponent,
-    AstrologerCallPopupComponent
+    AstrologerCallPopupComponent,
+    MobileBannerSliderComponent
   ]
 })
 

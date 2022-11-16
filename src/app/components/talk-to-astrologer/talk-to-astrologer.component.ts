@@ -312,4 +312,12 @@ export class TalkToAstrologerComponent implements OnInit {
     })
 
   }
+
+
+  onclickOpenpopup(){
+    this.isOpenpopup = true
+  }
+  closeFilter(){
+    this.isOpenpopup = false
+  }
 }
