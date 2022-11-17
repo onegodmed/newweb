@@ -97,17 +97,34 @@
         <!-- <img src="../../assets/images/logo.png"> -->
         <img src="https://www.onegodmed.com/front-assets/images/header/logo-dark.png">
     </div>
-    <div class="withoutloginsection" (click)="openDialog()">Login/Signup</div>
-    <div class="withinloginsection">
+    <div *ngIf="isLoggedOut" class="withoutloginsection" (click)="openDialog()">Login/Signup</div>
+    <div *ngIf="isLoggedIn"  class="withinloginsection">
         <div class="wallet-amounts"  (click)="walletPage()">
             <img src="../../assets/images/walletimage.png">
-            <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i> 0:00 </span>
+            <span class="amouts-lable"><i class="fa fa-inr" aria-hidden="true"></i>{{ CurrentBalance }} </span>
+
+            <button  mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                <i class="fa fa-bars" aria-hidden="true"></i>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openProfileedite()">My Account</button>
+                <button mat-menu-item (click)="follow()">My Astrologers</button>
+                <button mat-menu-item (click)="walletPage()">Wallet Recharge</button>
+                <button mat-menu-item (click)="loggedout()">Logout</button>
+            </mat-menu>
+
+
+            
         </div>
         <div class="user-section_onlogin">
             <div class="user_name">
-               Hi, <span>User Name</span>
+               Hi, <span>{{ showusername }}</span>
             </div>
+
+            
         </div>
+
+        
     </div>    
 </div>
 

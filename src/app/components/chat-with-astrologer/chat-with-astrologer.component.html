@@ -89,7 +89,7 @@
       <div class="left-searchbox">
           <mat-form-field class="example-form-field">
               <mat-label>Search</mat-label>
-              <input matInput type="text" placeholder="Find Astrologer...">
+              <input matInput type="text" placeholder="Find Astrologer..." id="searchname" (keyup)="seachastrobyname()">
           </mat-form-field>
       </div>
       <div class="filter-icon" (click)="onclickOpenpopup()">
