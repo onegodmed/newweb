@@ -8,6 +8,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { AstrologerCallPopupComponent } from 'src/app/shared/astrologer-call-popup/astrologer-call-popup.component';
 import { UserService } from 'src/app/services/user.service';
 import { SingUpPopupComponent } from 'src/app/shared/sing-up-popup/sing-up-popup.component';
+//import {  } from '@angular/material';
 
 
 
@@ -37,6 +38,17 @@ export class TalkToAstrologerComponent implements OnInit {
 
   sortings = new FormControl('');
   sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: Low To High'];
+
+  language = new FormControl('');
+  languageList: string[] = ['Hindi','English', 'Marathi', 'Arabic'];
+
+  gender='';
+  languages=[];
+  category=[];
+  skills=[];
+  country='';
+  searchParam = ''
+
 
   constructor(
     private router: Router,
@@ -320,4 +332,53 @@ export class TalkToAstrologerComponent implements OnInit {
   closeFilter(){
     this.isOpenpopup = false
   }
+
+   resetFilter(){
+
+    this.categoryfilter   = '';
+    this.sortingfilter    = '';
+    this.searchbyname     = '';
+
+   // alert('dws');
+  //   //sortings = new FormControl('');
+  //   this.sortings = new FormControl('');
+  //   //sortingList: string[] = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: Low To High'];
+  //  this.sortingList = ['Price: High To Low', 'Price: Low To High', 'Rating: High To Low', 'Rating: Low To High', 'Exp: High To Low', 'Exp: Low To High'];
+  
+  //  this.language = new FormControl('');
+  //  this.languageList = ['Hindi','English', 'Marathi', 'Arabic'];
+  //  // languageList: string[] = ['Hindi','English', 'Marathi', 'Arabic'];
+  }
+
+  applyFilter(){
+    this.isOpenpopup = false
+    // this.categoryfilter   = '';
+    // this.sortingfilter    = '';
+    // this.searchbyname     = '';
+
+    var deese =  (<HTMLInputElement>document.getElementById("mobSort")).value;
+    console.log(deese);
+    return;
+
+   var mobSort = '';
+    if (mobSort === 'Price: High To Low') {
+      this.sortingfilter = { field: 'price', sortby: 'DESC' }
+    } else {
+      this.sortingfilter = { field: 'price', sortby: 'ASC' }
+    }
+
+    if (mobSort === 'Rating: High To Low') {
+      this.sortingfilter = { field: 'rating', sortby: 'ASC' }
+    } else {
+      this.sortingfilter = { field: 'rating', sortby: 'DESC' }
+    }
+
+    if (mobSort === 'Exp: High To Low') {
+      this.sortingfilter = { field: 'experience', sortby: 'DESC' }
+    } else {
+      this.sortingfilter = { field: 'experience', sortby: 'ASC' }
+    }
+
+  }
+
 }

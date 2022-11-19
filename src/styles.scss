@@ -2687,8 +2687,8 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               .cover-section-rating-exp{
                 width: 100%;
                 float: left;
-                margin: 10px 0;
-                padding: 0 10px;
+                margin: 11px 0;
+                padding: 0 9px;
                 .status-section{
                   font-family: "Roboto Mono", monospace;
                   font-weight: 600;
@@ -3476,7 +3476,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                   width: 50%;
                   text-align: right;
                   span{
-                    margin-right: 5px;
+                    margin-right: 6px;
                     i{
                       font-size: 20px;
                       color: #E6B91E;
@@ -3518,7 +3518,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               input{
                 float: left;
                 width: 100%;
-                height: 40px;
+                height: 41px;
                 margin-bottom: 25px;
                 border-radius: 40px;
                 border: solid 1px #a8afb5;
@@ -3579,7 +3579,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                   width: 40px;
                   height: 40px;
                   margin: 5px;
-                  border-radius: 10px;
+                  border-radius: 12px;
                   border: solid 1px #a8afb5;
                   padding: 2px;
                   font-size: 15px;
@@ -3657,7 +3657,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
                 width: 100%;
                 margin: 5px auto;
                 font-weight: 500;
-                letter-spacing: 1px;
+                letter-spacing: 1.2px;
                 span{
                   margin-left: 10px;
                   font-weight: 600;
@@ -4036,7 +4036,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .waiting-screen-popup{
               width: 420px;
               height: 501px;
-              display: none;
+              //display: none;
               float: left;
               background-color: #80808091;
               margin-left: -20px;
@@ -4289,12 +4289,11 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }      
             }
             .oops-screen-popup{
-              display: none;
               width: 420px;
               height: 502px;
               float: left;
               margin-left: -20px;
-              background-color: rgba(128, 128, 128, 0.568627451);
+              //background-color: rgba(128, 128, 128, 0.568627451);
               padding-top: 10%;
               .oops-img{
                 width: 100%;
@@ -4432,7 +4431,7 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .tryagain-connect-astro-popup{
-              display: none;
+              
               width: 420px;
               height: 502px;
               float: left;
@@ -4475,7 +4474,6 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
               }
             }
             .connect-call-astro-popup{
-              display: none;
               width: 420px;
               height: 502px;
               float: left;
@@ -5061,7 +5059,6 @@ body { margin: 0;  font-family: "Roboto Mono", monospace; }
             .waiting-screen-popup{
               width: 420px;
               height: 500px;
-              display: none;
               float: left;
               background-color: #80808091;
               margin-left: -20px;

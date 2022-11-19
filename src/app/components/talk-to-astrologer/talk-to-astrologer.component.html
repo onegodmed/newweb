@@ -73,7 +73,7 @@
         <div class="sort-price">
           <mat-form-field>
             <mat-label>Sort Price</mat-label>
-            <mat-select (selectionChange)="sortingchangefilter($event.value)">
+            <mat-select (selectionChange)="sortingchangefilter($event.value)" id="">
               <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option>
             </mat-select>
           </mat-form-field>
@@ -225,16 +225,17 @@
             <div class="gender">
                 <mat-form-field appearance="fill">
                     <mat-label>Gender</mat-label>
-                    <mat-select>
-                      <!-- <mat-option *ngFor="let state of states" [value]="state">{{state}}</mat-option> -->
+                    <mat-select >
+                      <mat-option value="Male" >Male</mat-option>
+                      <mat-option value="Female" >Female</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="language-port">
                 <mat-form-field appearance="fill">
                     <mat-label>Language</mat-label>
-                    <mat-select>
-                      <!-- <mat-option *ngFor="let language of language" [value]="language">{{language}}</mat-option> -->
+                    <mat-select multiple>
+                      <mat-option *ngFor="let language of languageList" [value]="language">{{language}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -242,22 +243,22 @@
                 <mat-form-field>
                     <mat-label>Filter</mat-label>
                     <mat-select multiple>
-                      <!-- <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option> -->
+                      <mat-option *ngFor="let topping of toppingList" [value]="topping">{{topping}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
             <div class="sort-price">
                 <mat-form-field>
                     <mat-label>Sort Price</mat-label>
-                    <mat-select multiple>
-                      <!-- <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option> -->
+                    <mat-select>
+                      <mat-option *ngFor="let sorting of sortingList" [value]="sorting">{{sorting}}</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
         </div>
         <div class="dwn-btn">
-          <a class="reset-btn" ion-button>Reset</a>
-          <a class="apply-btn">Apply</a>
+          <a class="reset-btn" ion-button  (click)="resetFilter()">Reset</a>
+          <a class="apply-btn" (click)="applyFilter()">Apply</a>
         </div>
       </div>
     </div>
