@@ -129,7 +129,7 @@
         <ul>
           <li *ngFor="let list of astrolist.data; trackBy:trackByFn ">
             <div class="card_astro">
-              <div class="astro-img" (click)="astrodetailspage(list.astrologer_id)">
+              <div class="astro-img" (click)="astrodetailspage(list.astrologer_id, list.full_name)">
                 <img src='{{ list.photo_url }}'>
                 <div class="light-shad"></div>
                 <input type="text" id="astro_id" value="{{ list.astrologer_id }}" hidden>
@@ -165,7 +165,7 @@
                   <span class="sprite-offline-astrologer"></span>
                 </a>
               </div>
-              <div class="astro-section" (click)="astrodetailspage(list.astrologer_id)">
+              <div class="astro-section" (click)="astrodetailspage(list.astrologer_id, list.full_name)">
                 <h5>{{ list.full_name }}</h5>
                 <p *ngIf="list.expertise">{{ list.expertise }}</p>
                 <p *ngIf="!list.expertise">Expertise Not Mentioned</p>

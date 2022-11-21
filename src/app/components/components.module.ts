@@ -91,10 +91,16 @@ const routes: Routes = [
     path: 'horoscopepage',
     component: HoroscopePageComponent,
   },
+  // {
+  //   path: 'profileastrologer',
+  //   component: AstrologersProfilePageComponent,
+  // },
+
   {
-    path: 'profileastrologer',
-    component: AstrologersProfilePageComponent,
+      path: 'astrologer/:id',
+      component: AstrologersProfilePageComponent,
   },
+
   {
     path: 'followinguserdetails',
     component: FollowUserPageComponent,

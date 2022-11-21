@@ -283,14 +283,14 @@ export class TalkToAstrologerComponent implements OnInit {
     // window.scroll(0, 0);
   }
 
-  astrodetailspage(id: any) {
+  astrodetailspage(id: any, name:any) {
     if (id != null) {
       if (localStorage.getItem('astrologer_id') != null) {
         localStorage.setItem('astrologer_id', id);
       } else {
         localStorage.setItem('astrologer_id', id);
       }
-      this.router.navigateByUrl('/profileastrologer');
+      this.router.navigateByUrl('/astrologer/'+name);
     } else {
       alert('Astrologer Id Required');
     }
