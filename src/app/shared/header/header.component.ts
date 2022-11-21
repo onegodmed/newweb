@@ -118,25 +118,25 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl("/loginpage");
   }
   route1() {
-    this.router.navigateByUrl("/talktoastro");
+    this.router.navigateByUrl("/talk-to-astrologers/");
   }
   route2() {
-    this.router.navigateByUrl("/chatwithastro");
+    this.router.navigateByUrl("/chat-with-astrologer/");
   }
   route3() {
-    this.router.navigateByUrl("/blogpage");
+    this.router.navigateByUrl("/blog/");
   }
   route5() {
-    this.router.navigateByUrl("/vedic-astrology");
+    this.router.navigateByUrl("/vedic-astrology/");
   }
   route6() {
-    this.router.navigateByUrl("/premium-report");
+    this.router.navigateByUrl("/premium-report/");
   }
   follow() {
     this.router.navigateByUrl("/followinguserdetails");
   }
   walletPage() {
-    this.router.navigateByUrl("/wallet");
+    this.router.navigateByUrl("/wallet/");
   }
   openProfileedite() {
     this.router.navigateByUrl("/profileupdate");

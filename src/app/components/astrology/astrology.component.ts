@@ -72,6 +72,43 @@ export class AstrologyComponent implements OnInit {
     this.router.navigateByUrl("/talktoastro");
   }
 
+  route2() {
+    this.router.navigateByUrl("vedic-astrology/business-astrology/");
+  }
+  route3() {
+    this.router.navigateByUrl("vedic-astrology/career-&-education/");
+  }
+  route4() {
+    this.router.navigateByUrl("vedic-astrology/marriage-prediction/");
+  }
+  route5() {
+    this.router.navigateByUrl("vedic-astrology/relationship-&-compatibility/");
+  }
+  route6() {
+    this.router.navigateByUrl("vedic-astrology/wealth-&-property/");
+  }
+  route7() {
+    this.router.navigateByUrl("vedic-astrology/family-consultation/");
+  }
+
+  route8() {
+    this.router.navigateByUrl("vedic-astrology/medical-astrology/");
+  }
+  route9() {
+    this.router.navigateByUrl("vedic-astrology/numerology/");
+  }
+  route10() {
+    this.router.navigateByUrl("vedic-astrology/vastu-shastra/");
+  }
+  route11() {
+    this.router.navigateByUrl("vedic-astrology/tarot-cards/");
+  }
+  route12() {
+    this.router.navigateByUrl("vedic-astrology/palmistry/");
+  }
+  
+ 
+
 
 
 

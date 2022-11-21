@@ -44,15 +44,15 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'talktoastro',
+    path: 'talk-to-astrologers/',
     component: TalkToAstrologerComponent,
   },
   {
-    path: 'chatwithastro',
+    path: 'chat-with-astrologer/',
     component: ChatWithAstrologerComponent,
   },
   {
-    path: 'blogpage',
+    path: 'blog/',
     component: BlogComponent,
   },
   {
@@ -60,15 +60,11 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'vedic-astrology',
+    path: 'vedic-astrology/',
     component: AstrologyComponent,   
   },
   {
-    path: 'vedic-astrology/:id',
-    component: AstrologyComponent,   
-  },
-  {
-    path: 'premium-report',
+    path: 'premium-report/',
     component: PremiumreportComponent,
   },
   {
@@ -104,7 +100,7 @@ const routes: Routes = [
     component: FollowUserPageComponent,
   },
   {
-    path: 'wallet',
+    path: 'wallet/',
     component: WalletPageComponent,
   },
   {
@@ -115,6 +111,46 @@ const routes: Routes = [
     path: 'profileupdate',
     component: ProfileInfoUpdateComponent,
   },
+  {
+    path: 'vedic-astrology/business-astrology/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/career-&-education/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/marriage-prediction/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/relationship-&-compatibility/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/wealth-&-property/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/family-consultation/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/medical-astrology/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/numerology/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/vastu-shastra/',
+    component: AstrologyComponent,
+  },
+  {
+    path: 'vedic-astrology/tarot-cards/',
+    component: AstrologyComponent,
+  }
 
 
 
